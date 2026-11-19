@@ -2,154 +2,121 @@
 
 import React from "react";
 import Link from "next/link";
-import { Heart, Phone, ShieldCheck, Mail, MapPin } from "lucide-react";
-import { useApp } from "@/context/AppContext";
+import { Heart, ShieldAlert, Phone, Lock } from "lucide-react";
+import { WHATSAPP_DISPLAY, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
 
 export default function Footer() {
-  const { openCrisisModal } = useApp();
+  const seoLinks = [
+    { label: "Talk to Someone Online", href: "/talk-to-someone" },
+    { label: "I Feel Lonely", href: "/feeling-lonely" },
+    { label: "Divorce Support", href: "/divorce-support" },
+    { label: "Separation Support", href: "/separation-support" },
+    { label: "Breakup & Heartbreak", href: "/breakup-support" },
+    { label: "Relationship Support", href: "/relationship-support" },
+    { label: "Marriage Problems", href: "/marriage-problems" },
+    { label: "Family Problems", href: "/family-problems" },
+    { label: "Emotional Support India", href: "/emotional-support-india" },
+    { label: "Someone to Listen", href: "/someone-to-listen" },
+  ];
 
   return (
-    <footer className="bg-warm-beige/80 border-t border-warm-sand text-charcoal pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-warm-sand/80">
-          {/* Brand info */}
-          <div className="lg:col-span-2 space-y-4">
+    <footer className="bg-light-beige/70 border-t border-light-beige text-dark-charcoal pt-14 pb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Top Crisis Emergency Strip */}
+        <div className="p-4 rounded-2xl bg-white border border-light-beige flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2">
+            <ShieldAlert className="w-4 h-4 text-coral-soft shrink-0" />
+            <span className="text-charcoal-muted">
+              <strong>Need Immediate Emergency Crisis Support?</strong> India National Mental Health Helpline:{" "}
+              <a href="tel:14416" className="font-bold underline text-muted-green">
+                Tele-MANAS: {TELE_MANAS_NUMBER}
+              </a>{" "}
+              | Emergency:{" "}
+              <a href="tel:112" className="font-bold underline text-coral-soft">
+                {EMERGENCY_NUMBER}
+              </a>
+            </span>
+          </div>
+
+          <span className="text-[11px] text-charcoal-subtle whitespace-nowrap">
+            Free • 24/7 • Government of India
+          </span>
+        </div>
+
+        {/* Main Footer Links */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+          {/* Brand Info */}
+          <div className="md:col-span-2 space-y-3">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-2xl bg-sage-500 flex items-center justify-center text-white">
-                <Heart className="w-4 h-4 fill-white/90" />
+              <div className="w-8 h-8 rounded-xl bg-muted-green flex items-center justify-center text-white">
+                <Heart className="w-4 h-4 fill-white" />
               </div>
-              <span className="text-2xl font-serif font-bold text-charcoal tracking-tight">
+              <span className="text-xl font-serif font-bold text-dark-charcoal">
                 Haven
               </span>
             </Link>
-
-            <p className="text-sm text-charcoal-muted max-w-sm leading-relaxed">
-              &ldquo;Nobody should feel like they have to face everything alone.&rdquo;
-              A warm, compassionate sanctuary combining trained peer listeners, verified licensed therapists, empathetic AI companionship, and a safe anonymous community.
+            <p className="text-charcoal-muted leading-relaxed max-w-sm">
+              &ldquo;Sometimes, you just need someone to listen.&rdquo; A private, safe, and confidential human emotional support service for anyone navigating loneliness, separation, divorce, heartbreak, or grief.
             </p>
-
-            {/* India Emergency Highlights */}
-            <div className="p-3.5 rounded-2xl bg-white border border-warm-sand space-y-1.5 max-w-sm">
-              <div className="text-xs font-bold text-charcoal flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-sage-600" />
-                Emergency Crisis Care (India)
-              </div>
-              <p className="text-[11px] text-charcoal-muted">
-                National Mental Health Helpline:{" "}
-                <a href="tel:14416" className="font-bold text-sage-700 underline">
-                  Tele-MANAS (14416)
-                </a>{" "}
-                | Emergency:{" "}
-                <a href="tel:112" className="font-bold text-coral-soft underline">
-                  112
-                </a>
-              </p>
+            <div className="text-[11px] text-charcoal-subtle">
+              WhatsApp Support: <strong>{WHATSAPP_DISPLAY}</strong>
             </div>
           </div>
 
-          {/* Quick links: Services */}
+          {/* Emotional Support Topics (SEO Pages) */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-              Our Services
+            <h4 className="font-serif font-bold text-dark-charcoal uppercase tracking-wider text-[11px] mb-3">
+              Explore Support
             </h4>
-            <ul className="space-y-2.5 text-sm text-charcoal-muted">
-              <li>
-                <Link href="/dashboard/listeners" className="hover:text-charcoal transition-colors">
-                  Talk to a Human Listener
-                </Link>
-              </li>
-              <li>
-                <Link href="/therapists" className="hover:text-charcoal transition-colors">
-                  Find Licensed Therapists
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard/ai-companion" className="hover:text-charcoal transition-colors">
-                  AI Emotional Companion
-                </Link>
-              </li>
-              <li>
-                <Link href="/community" className="hover:text-charcoal transition-colors">
-                  Anonymous Community
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard/self-care" className="hover:text-charcoal transition-colors">
-                  Meditation & Self-Care
-                </Link>
-              </li>
+            <ul className="space-y-2 text-charcoal-muted">
+              {seoLinks.slice(0, 5).map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-dark-charcoal transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Platform & Community */}
+          {/* More Topics & Legal */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-              Explore
+            <h4 className="font-serif font-bold text-dark-charcoal uppercase tracking-wider text-[11px] mb-3">
+              Information & Privacy
             </h4>
-            <ul className="space-y-2.5 text-sm text-charcoal-muted">
-              <li>
-                <Link href="/how-it-works" className="hover:text-charcoal transition-colors">
-                  How It Works
+            <ul className="space-y-2 text-charcoal-muted">
+              {seoLinks.slice(5).map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-dark-charcoal transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-2 border-t border-gray-200">
+                <Link href="/privacy" className="hover:text-dark-charcoal transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-charcoal transition-colors">
-                  About Our Mission
-                </Link>
-              </li>
-              <li>
-                <Link href="/crisis-support" className="hover:text-charcoal transition-colors text-coral-soft font-medium">
-                  Crisis Support (14416)
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard" className="hover:text-charcoal transition-colors">
-                  User Dashboard
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={openCrisisModal}
-                  className="hover:text-charcoal transition-colors text-left"
-                >
-                  Emergency Resources
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal & Trust */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-              Trust & Legal
-            </h4>
-            <ul className="space-y-2.5 text-sm text-charcoal-muted">
-              <li>
-                <Link href="/privacy" className="hover:text-charcoal transition-colors">
-                  Privacy Policy (DPDP)
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-charcoal transition-colors">
+                <Link href="/terms" className="hover:text-dark-charcoal transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <span className="text-xs text-charcoal-subtle block pt-1">
-                  Compliant with Indian digital health & mental healthcare privacy standards.
-                </span>
+                <Link href="/admin" className="hover:text-dark-charcoal transition-colors text-charcoal-subtle">
+                  Admin Console
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Disclaimer & Bottom Bar */}
-        <div className="pt-8 text-xs text-charcoal-subtle flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="max-w-3xl leading-relaxed text-center md:text-left">
-            <strong>Medical Disclaimer:</strong> Haven is an emotional wellness and support platform. Our peer listeners and AI companions provide empathetic support and are not licensed healthcare providers. If you are experiencing acute medical or psychiatric emergencies, please immediately contact Tele-MANAS (14416) or National Emergency Services (112).
+        {/* Medical Non-Advice Disclaimer */}
+        <div className="pt-6 border-t border-light-beige text-[11px] text-charcoal-subtle leading-relaxed flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="max-w-2xl text-center sm:text-left">
+            <strong>Medical Disclaimer:</strong> Haven provides human emotional support and peer listening. We do not provide clinical therapy, medical diagnosis, psychiatric care, or crisis intervention. If you are experiencing acute medical or suicidal emergencies, please immediately contact Tele-MANAS (14416) or National Emergency Services (112).
           </p>
-          <div className="text-center md:text-right whitespace-nowrap">
+          <div className="whitespace-nowrap text-center sm:text-right">
             © 2026 Haven. All rights reserved.
           </div>
         </div>

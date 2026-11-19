@@ -2,91 +2,80 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, Lock, Download, Trash2, ArrowLeft } from "lucide-react";
+import { ShieldCheck, Lock, ArrowLeft } from "lucide-react";
+import { WHATSAPP_DISPLAY, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-charcoal space-y-12">
-      {/* Header */}
+    <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-dark-charcoal space-y-10">
       <div>
         <Link
           href="/"
-          className="text-xs text-charcoal-subtle hover:text-charcoal inline-flex items-center gap-1.5 mb-4"
+          className="text-xs text-charcoal-subtle hover:text-dark-charcoal inline-flex items-center gap-1.5 mb-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Home</span>
         </Link>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage-100 text-sage-800 text-xs font-bold uppercase tracking-wider mb-2">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage-50 text-muted-green text-xs font-bold uppercase tracking-wider mb-2">
           <ShieldCheck className="w-3.5 h-3.5" />
-          DPDP Act (India) Compliant
+          Privacy & Trust Commitment
         </div>
-        <h1 className="text-3xl sm:text-4xl font-serif font-bold text-charcoal">
-          Privacy Policy & Mental Health Data Safeguards
+        <h1 className="text-3xl sm:text-4xl font-serif font-bold text-dark-charcoal">
+          Privacy Policy
         </h1>
         <p className="text-xs text-charcoal-muted mt-2">
-          Last revised: February 2026 • Designed for complete patient dignity and confidentiality.
+          Effective date: February 2026 • Designed for emotional safety and confidentiality.
         </p>
       </div>
 
-      {/* Content blocks */}
       <div className="space-y-8 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
         <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            1. Our Foundational Privacy Pledge
+          <h2 className="text-lg font-serif font-bold text-dark-charcoal">
+            1. Nature of Our Emotional Support Service
           </h2>
           <p>
-            At Haven, we recognize that emotional vulnerability and mental wellness information require the highest standard of protection. We do not sell your data to advertisers, health insurers, or third-party brokers under any circumstances.
+            Haven provides human emotional support and peer listening. We are not a hospital, clinical medical practice, or formal psychiatric facility. When you contact us, you connect with caring human listeners who offer empathy and a listening ear.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            2. Confidentiality of Private Journals & Chats
+          <h2 className="text-lg font-serif font-bold text-dark-charcoal">
+            2. How We Collect and Use Your Information
           </h2>
           <p>
-            Your private journal reflections, mood logs, and 1-on-1 conversations with trained listeners and therapists are protected by Row Level Security (RLS) in PostgreSQL. No other community member or unauthorized staff can access your private vault.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            3. Anonymous Community Persona
-          </h2>
-          <p>
-            When participating in the anonymous community feed, your real email, phone number, and legal identity are never visible. You are assigned a randomly generated nature handle. Our moderation filters prevent users from accidentally posting personal phone numbers or contact details.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            4. Emergency Safety & Duty of Care Disclosures
-          </h2>
-          <p>
-            In rare cases where an imminent threat to human life or self-harm is detected, our platform provides prominent emergency links to Tele-MANAS (14416) and National Emergency Services (112). We do not conduct surreptitious tracking.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            5. Your Rights Under India&apos;s DPDP Act
-          </h2>
-          <p>
-            In compliance with the Digital Personal Data Protection Act, you have the right to:
+            When you submit our support request form, we collect your Full Name, WhatsApp Mobile Number, Email Address, selected support categories, and any optional message you choose to provide.
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Access and download a full JSON copy of all your personal data at any time via your Profile page.</li>
-            <li>Request instantaneous permanent deletion of your account and all associated journals.</li>
-            <li>Revoke consent for notification processing at any time in Settings.</li>
+            <li>We use this information exclusively to communicate with you regarding your support request via WhatsApp ({WHATSAPP_DISPLAY}).</li>
+            <li>We never publicly display your submitted details.</li>
+            <li>We never sell, rent, or share your contact information with advertisers or marketing brokers.</li>
           </ul>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-serif font-bold text-charcoal">
-            6. Contact Our Data Protection Officer
+          <h2 className="text-lg font-serif font-bold text-dark-charcoal">
+            3. Explicit Consent
           </h2>
           <p>
-            For privacy inquiries or grievance redressal, contact our Safety & Privacy Officer at:{" "}
-            <strong className="text-charcoal">privacy@haven.care</strong>.
+            Before initiating a connection, we obtain your explicit consent via our consent checkbox. You have full control over the conversation and may discontinue WhatsApp messaging at any time by simply letting us know.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-lg font-serif font-bold text-dark-charcoal">
+            4. Emergency Situations & Limitations
+          </h2>
+          <p>
+            Haven is not equipped to handle acute life-threatening emergencies or severe self-harm interventions. If you or someone you know is in immediate danger, please contact India&apos;s 24/7 Government Mental Health Helpline at <strong>Tele-MANAS ({TELE_MANAS_NUMBER})</strong> or <strong>Emergency Services ({EMERGENCY_NUMBER})</strong> immediately.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-lg font-serif font-bold text-dark-charcoal">
+            5. Data Access & Deletion Requests
+          </h2>
+          <p>
+            You have the right to request deletion of your contact information from our administrative records at any time. Simply send a message to our WhatsApp support ({WHATSAPP_DISPLAY}) requesting data removal, and our administrators will promptly erase your record.
           </p>
         </section>
       </div>
