@@ -7,7 +7,6 @@ import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import {
   Heart,
   ChevronRight,
-  MessageCircle,
   ShieldCheck,
   Lock,
   Phone,
@@ -17,6 +16,7 @@ import {
   HelpCircle,
   Share2,
 } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, TELE_MANAS_NUMBER } from "@/lib/constants";
 
 export interface RelatedArticle {
@@ -191,10 +191,10 @@ export default function SeoLandingTemplate({
                 href={directWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-2 bg-whatsapp-green hover:bg-[#20bd5a] text-white rounded-full text-xs font-semibold shadow-sm transition-all text-center flex-1 sm:flex-none flex items-center justify-center gap-1"
+                className="px-3.5 py-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full text-xs font-semibold shadow-sm transition-all text-center flex-1 sm:flex-none flex items-center justify-center gap-1.5"
               >
-                <MessageCircle className="w-3.5 h-3.5 fill-white" />
-                WhatsApp
+                <WhatsAppIcon className="w-3.5 h-3.5" color="#FFFFFF" />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>

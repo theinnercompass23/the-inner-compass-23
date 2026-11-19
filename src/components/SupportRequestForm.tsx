@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useId, useTransition } from "react";
+import React, { useState, useEffect } from "react";
 import { useLeads } from "@/context/LeadContext";
 import {
   SUPPORT_CATEGORIES,
@@ -8,25 +8,34 @@ import {
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "@/lib/constants";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import {
   Heart,
   Calendar,
   Clock,
   CheckCircle2,
   AlertCircle,
-  MessageCircle,
   ArrowRight,
   Lock,
   ChevronDown,
   X,
   Search,
   Globe,
-  Sparkles,
+  Smile,
+  ShieldCheck,
+  UserCheck,
 } from "lucide-react";
 import Link from "next/link";
+import {
+  getISTDateTime,
+  validateBookingDateTime,
+  validateAdultAge,
+  formatISOToIndianDate,
+} from "@/lib/bookingValidation";
 
 interface FormErrors {
   fullName?: string;
+  age?: string;
   phone?: string;
   email?: string;
   categories?: string;
@@ -44,46 +53,18 @@ export default function SupportRequestForm() {
     clearCategories,
   } = useLeads();
 
-  const [isPending, startTransition] = useTransition();
-
   // Form inputs
   const [fullName, setFullName] = useState("");
+  const [age, setAge] = useState("28"); // default adult age
   const [countryCode, setCountryCode] = useState("+91");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [otherCategoryText, setOtherCategoryText] = useState("");
   const [additionalMessage, setAdditionalMessage] = useState("");
-  
-  // Date & Time states
-  // Default date: static deterministic values for SSR prerender, updated client-side
+
+  // Strict Date & Time Booking States (Asia/Kolkata IST)
   const [minDate, setMinDate] = useState("2026-02-20");
   const [rawDate, setRawDate] = useState("2026-02-21");
-
-  React.useEffect(() => {
-    try {
-      const now = new Date();
-      const todayStr = now.toISOString().split("T")[0];
-      setMinDate(todayStr);
-
-      const tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      setRawDate(tomorrow.toISOString().split("T")[0]);
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  // Convert YYYY-MM-DD to DD/MM/YYYY for Indian format
-  const formatToDDMMYYYY = (isoDate: string): string => {
-    if (!isoDate) return "";
-    const parts = isoDate.split("-");
-    if (parts.length === 3) {
-      return `${parts[2]}/${parts[1]}/${parts[0]}`;
-    }
-    return isoDate;
-  };
-
-  // 24-hour time state (strict 24-hour format: HH:MM, no AM/PM)
   const [timeHour, setTimeHour] = useState("18"); // 18:00
   const [timeMinute, setTimeMinute] = useState("00");
   const [customTimeInput, setCustomTimeInput] = useState("18:00");
@@ -92,7 +73,7 @@ export default function SupportRequestForm() {
   // Dropdown UI states
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  
+
   // Consent
   const [consent, setConsent] = useState(true);
 
@@ -107,8 +88,23 @@ export default function SupportRequestForm() {
     time: string;
   } | null>(null);
 
+  // Initialize and synchronize current date with Asia/Kolkata (IST)
+  useEffect(() => {
+    try {
+      const { todayISO } = getISTDateTime();
+      setMinDate(todayISO);
+
+      // Default to tomorrow to avoid same-day cutoff
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      setRawDate(tomorrow.toISOString().split("T")[0]);
+    } catch {
+      // fallback
+    }
+  }, []);
+
   // Quick 24-hour presets (Strict 24h format, no AM/PM)
-  const QUICK_TIME_PRESETS = [
+  const ALL_TIME_PRESETS = [
     { label: "09:00", value: "09:00" },
     { label: "11:30", value: "11:30" },
     { label: "14:00", value: "14:00" },
@@ -119,11 +115,24 @@ export default function SupportRequestForm() {
     { label: "23:00", value: "23:00" },
   ];
 
+  // Calculate whether a preset is allowed under the 1-hour advance booking rule
+  const isPresetAllowed = (presetTime: string): boolean => {
+    const { todayISO } = getISTDateTime();
+    if (rawDate !== todayISO) return true; // future dates allow all 00:00-23:59
+    const check = validateBookingDateTime(rawDate, presetTime);
+    return check.isValid;
+  };
+
   // Quick Date Helpers
   const setQuickDate = (daysAhead: number) => {
-    const target = new Date();
+    const { nowIST } = getISTDateTime();
+    const target = new Date(nowIST);
     target.setDate(target.getDate() + daysAhead);
-    setRawDate(target.toISOString().split("T")[0]);
+    const y = target.getFullYear();
+    const m = String(target.getMonth() + 1).padStart(2, "0");
+    const d = String(target.getDate()).padStart(2, "0");
+    const iso = `${y}-${m}-${d}`;
+    setRawDate(iso);
     if (errors.preferredDate) {
       setErrors((prev) => ({ ...prev, preferredDate: undefined }));
     }
@@ -135,13 +144,9 @@ export default function SupportRequestForm() {
     cat.shortLabel.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const isOtherSelected = selectedCategories.includes("Other") || selectedCategories.some(c => c.toLowerCase().includes("other"));
-
-  // Strict 24-hour time validator: 00:00 to 23:59
-  const validate24HourTime = (timeStr: string): boolean => {
-    const regex = /^([01]\d|2[0-3]):([0-5]\d)$/;
-    return regex.test(timeStr.trim());
-  };
+  const isOtherSelected =
+    selectedCategories.includes("Other") ||
+    selectedCategories.some((c) => c.toLowerCase().includes("other"));
 
   const getEffective24HourTime = (): string => {
     if (timePickerMode === "custom") {
@@ -150,6 +155,7 @@ export default function SupportRequestForm() {
     return `${timeHour.padStart(2, "0")}:${timeMinute.padStart(2, "0")}`;
   };
 
+  // Validation
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -158,44 +164,40 @@ export default function SupportRequestForm() {
       newErrors.fullName = "Please enter your full name.";
     }
 
-    // 2. WhatsApp Mobile Number
-    const cleanPhone = phone.replace(/\D/g, "");
-    if (!phone.trim() || cleanPhone.length < 7) {
-      newErrors.phone = "Please enter a valid mobile number for WhatsApp.";
+    // 2. Adult Age (18 to 80)
+    const ageNum = parseInt(age, 10);
+    const ageVal = validateAdultAge(ageNum);
+    if (!ageVal.isValid) {
+      newErrors.age = ageVal.error;
     }
 
-    // 3. Email Address
+    // 3. WhatsApp Mobile Number
+    const cleanPhone = phone.replace(/\D/g, "");
+    if (!phone.trim() || cleanPhone.length < 7) {
+      newErrors.phone = "Please enter a valid WhatsApp mobile number.";
+    }
+
+    // 4. Email Address
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim() || !emailRegex.test(email.trim())) {
       newErrors.email = "Please enter a valid email address.";
     }
 
-    // 4. Categories
+    // 5. Categories
     if (selectedCategories.length === 0) {
       newErrors.categories = "Please select at least one topic from the dropdown.";
     }
 
-    // If Other selected, validate text
     if (isOtherSelected && (!otherCategoryText.trim() || otherCategoryText.trim().length < 2)) {
-      newErrors.otherText = "Please briefly tell us what you would like to talk about.";
+      newErrors.otherText = "Please tell us what you would like to talk about.";
     }
 
-    // 5. Preferred Date
-    if (!rawDate) {
-      newErrors.preferredDate = "Please choose your preferred date.";
-    } else {
-      const selected = new Date(rawDate);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      if (selected < today) {
-        newErrors.preferredDate = "Please select a date from today onwards.";
-      }
-    }
-
-    // 6. Preferred 24-hour Time
+    // 6. Strict Date & Time Booking Validation (1-hour advance notice, past date check)
     const effectiveTime = getEffective24HourTime();
-    if (!validate24HourTime(effectiveTime)) {
-      newErrors.preferredTime = "Please enter time in 24-hour format (00:00 to 23:59).";
+    const dateTimeVal = validateBookingDateTime(rawDate, effectiveTime);
+    if (!dateTimeVal.isValid) {
+      newErrors.preferredDate = dateTimeVal.error;
+      newErrors.preferredTime = dateTimeVal.error;
     }
 
     // 7. Consent
@@ -220,19 +222,51 @@ export default function SupportRequestForm() {
 
     setIsSubmitting(true);
 
-    const formattedDate = formatToDDMMYYYY(rawDate);
+    const indianDate = formatISOToIndianDate(rawDate);
     const effectiveTime = getEffective24HourTime();
+    const ageNum = parseInt(age, 10);
 
     try {
+      // 1. Perform Server-Side Validation via API Route
+      try {
+        const res = await fetch("/api/submit-request", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName,
+            age: ageNum,
+            phone,
+            email,
+            categories: selectedCategories,
+            preferredDate: indianDate,
+            preferredTime: effectiveTime,
+            consent,
+          }),
+        });
+
+        if (!res.ok) {
+          const resData = await res.json();
+          if (resData.error) {
+            setErrors({ preferredDate: resData.error });
+            setIsSubmitting(false);
+            return;
+          }
+        }
+      } catch {
+        // network or server-side fallback: proceed with client-validated data
+      }
+
+      // 2. Save lead in local store & Supabase
       const result = await submitRequest({
         fullName,
+        age: ageNum,
         phone,
         countryCode,
         email,
         categories: selectedCategories,
         otherCategoryText: isOtherSelected ? otherCategoryText : undefined,
         additionalMessage,
-        preferredDate: formattedDate,
+        preferredDate: indianDate,
         preferredTime: effectiveTime,
         timezone: "Asia/Kolkata",
         consent,
@@ -242,12 +276,14 @@ export default function SupportRequestForm() {
         id: result.lead.id,
         fullName: result.lead.full_name,
         whatsappUrl: result.whatsappUrl,
-        date: formattedDate,
+        date: indianDate,
         time: effectiveTime,
       });
 
-      // Automatically launch WhatsApp in new tab
-      const isMobile = typeof window !== "undefined" && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      // 3. Open WhatsApp in new tab / application
+      const isMobile =
+        typeof window !== "undefined" &&
+        /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (isMobile) {
         window.location.href = result.whatsappUrl;
       } else {
@@ -256,56 +292,58 @@ export default function SupportRequestForm() {
     } catch (err) {
       console.error("Submission failed:", err);
       setErrors({
-        consent: "An error occurred while saving your request. Please try again or message directly.",
+        consent:
+          "An error occurred while saving your request. Please message directly on WhatsApp.",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // SUCCESS CONFIRMATION STATE
+  // SUCCESS CONFIRMATION STATE (Circular Glassmorphism)
   if (submittedLead) {
     return (
       <section id="support-form" className="scroll-mt-24 py-16 px-4 bg-warm-white">
-        <div className="max-w-2xl mx-auto bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-soft-sage/30 text-center animate-fade-in">
-          <div className="w-16 h-16 bg-whatsapp-green/10 text-whatsapp-green rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-9 h-9" />
+        <div className="max-w-2xl mx-auto bg-white/85 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-xl border border-white/60 text-center animate-fade-in">
+          {/* Circular Glass Icon */}
+          <div className="w-20 h-20 bg-[#25D366]/15 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+            <WhatsAppIcon className="w-10 h-10" color="#25D366" />
           </div>
 
-          <span className="inline-block px-3 py-1 bg-soft-sage/20 text-muted-green font-medium text-xs rounded-full mb-3 tracking-wide uppercase">
-            Request Received & Saved
+          <span className="inline-block px-3.5 py-1 bg-soft-sage/25 text-muted-green font-semibold text-xs rounded-full mb-3 tracking-wider uppercase">
+            Request Saved &bull; Ready on WhatsApp
           </span>
 
           <h3 className="font-serif text-2xl sm:text-3xl text-dark-charcoal mb-3">
             Thank you, {submittedLead.fullName}.
           </h3>
 
-          <p className="text-dark-charcoal/75 text-base sm:text-lg mb-4 max-w-lg mx-auto leading-relaxed">
-            Your support request has been securely recorded. Our team will connect with you via WhatsApp on{" "}
-            <span className="font-semibold text-dark-charcoal">{submittedLead.date}</span> at{" "}
-            <span className="font-semibold text-dark-charcoal">{submittedLead.time} (24h IST)</span>.
+          <p className="text-dark-charcoal/75 text-sm sm:text-base mb-4 max-w-lg mx-auto leading-relaxed">
+            Your support request is confirmed for{" "}
+            <span className="font-bold text-dark-charcoal">{submittedLead.date}</span> at{" "}
+            <span className="font-bold text-dark-charcoal">{submittedLead.time} (24h IST)</span>.
           </p>
 
-          <div className="p-4 bg-light-beige/50 rounded-2xl mb-8 text-left text-sm text-dark-charcoal/80 space-y-1.5 max-w-md mx-auto border border-soft-sage/20">
-            <p className="font-medium text-dark-charcoal flex items-center gap-2">
+          <div className="p-4 bg-light-beige/60 backdrop-blur-xs rounded-2xl mb-8 text-left text-xs sm:text-sm text-dark-charcoal/80 space-y-1.5 max-w-md mx-auto border border-soft-sage/30">
+            <p className="font-semibold text-dark-charcoal flex items-center gap-2">
               <Clock className="w-4 h-4 text-muted-green" />
               Next Step: Press Send in WhatsApp
             </p>
-            <p className="text-xs text-dark-charcoal/65 pl-6">
-              WhatsApp will open with your pre-filled message. Simply tap <strong>Send</strong> to initiate the conversation with our listening team.
+            <p className="text-xs text-dark-charcoal/65 pl-6 leading-relaxed">
+              WhatsApp will open with your pre-filled request. Simply press <strong>Send</strong> to initiate your confidential conversation.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
             <a
               href={submittedLead.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-whatsapp-green hover:bg-[#20bd5a] text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base group"
             >
-              <MessageCircle className="w-5 h-5 fill-white" />
-              Open in WhatsApp
-              <ArrowRight className="w-4 h-4" />
+              <WhatsAppIcon className="w-5 h-5" color="#FFFFFF" />
+              <span>Open in WhatsApp</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
 
             <button
@@ -318,38 +356,59 @@ export default function SupportRequestForm() {
                 setAdditionalMessage("");
                 clearCategories();
               }}
-              className="w-full sm:w-auto px-6 py-4 border border-soft-sage/40 hover:bg-light-beige text-dark-charcoal/80 rounded-full font-medium transition-colors text-sm"
+              className="w-full sm:w-auto px-6 py-4 border border-soft-sage/40 hover:bg-light-beige text-dark-charcoal rounded-full font-medium transition-colors text-xs sm:text-sm"
             >
               Submit Another Request
             </button>
           </div>
 
-          <p className="mt-6 text-xs text-dark-charcoal/50">
-            Direct WhatsApp: <span className="font-medium">{WHATSAPP_DISPLAY}</span> • Available 24/7
-          </p>
+          {/* Clear Fallback Contact Instructions */}
+          <div className="mt-8 pt-6 border-t border-soft-sage/20 text-xs text-dark-charcoal/60 space-y-1">
+            <p className="font-medium text-dark-charcoal">
+              WhatsApp didn&apos;t open automatically?
+            </p>
+            <p>
+              Message our listening desk directly at{" "}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-muted-green underline hover:text-dark-charcoal"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     );
   }
 
-  return (
-    <section id="support-form" className="scroll-mt-20 py-16 sm:py-24 px-4 bg-gradient-to-b from-warm-white via-light-beige/30 to-warm-white">
-      <div className="max-w-3xl mx-auto">
-        {/* Form Container Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-12 shadow-sm border border-soft-sage/30 relative overflow-hidden">
-          {/* Subtle Sage Decorative Corner Accent */}
-          <div className="absolute top-0 right-0 w-48 h-48 bg-soft-sage/15 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />
+  const { todayISO, currentTime24h, isTodayCutoffReached } = getISTDateTime();
+  const isSelectedDateToday = rawDate === todayISO;
 
-          {/* Header */}
+  return (
+    <section
+      id="support-form"
+      className="scroll-mt-20 py-16 sm:py-24 px-4 bg-gradient-to-b from-warm-white via-light-beige/30 to-warm-white"
+    >
+      <div className="max-w-3xl mx-auto">
+        {/* Circular Glassmorphism Card Container */}
+        <div className="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-12 shadow-xl border border-white/60 relative overflow-hidden">
+          {/* Subtle Circular Glass Decorative Accents */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-soft-sage/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-56 h-56 bg-amber-100/25 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none" />
+
+          {/* Form Header */}
           <div className="text-center max-w-xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-soft-sage/20 text-muted-green font-medium text-xs sm:text-sm rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-xs border border-soft-sage/40 text-muted-green font-semibold text-xs rounded-full mb-4 shadow-xs">
               <Heart className="w-4 h-4 fill-muted-green/20" />
-              Human Peer Listening Service
+              <span>Human Peer Listening Service &bull; Adults 18–80</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-dark-charcoal tracking-tight mb-3">
               Tell Us What&apos;s On Your Mind
             </h2>
-            <p className="text-dark-charcoal/75 text-base sm:text-lg leading-relaxed">
+            <p className="text-dark-charcoal/75 text-sm sm:text-base leading-relaxed">
               Share a little about what you&apos;re going through. Someone is here to listen without judgment.
             </p>
           </div>
@@ -358,8 +417,8 @@ export default function SupportRequestForm() {
             {/* ========================================================= */}
             {/* SECTION A: Problem Selection Dropdown                     */}
             {/* ========================================================= */}
-            <div className="bg-warm-white/70 p-5 sm:p-6 rounded-2xl border border-soft-sage/25">
-              <label className="block text-sm font-semibold text-dark-charcoal mb-1.5">
+            <div className="bg-white/70 backdrop-blur-xs p-5 sm:p-6 rounded-2xl border border-soft-sage/30 shadow-xs">
+              <label className="block text-xs sm:text-sm font-semibold text-dark-charcoal mb-1">
                 What Would You Like to Talk About? <span className="text-rose-500">*</span>
               </label>
               <p className="text-xs text-dark-charcoal/65 mb-3">
@@ -371,7 +430,7 @@ export default function SupportRequestForm() {
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className={`w-full min-h-[50px] px-4 py-2.5 text-left bg-white rounded-xl border transition-all flex items-center justify-between gap-2 shadow-sm ${
+                  className={`w-full min-h-[50px] px-4 py-2.5 text-left bg-white/90 rounded-xl border transition-all flex items-center justify-between gap-2 shadow-xs ${
                     errors.categories
                       ? "border-rose-400 ring-2 ring-rose-100"
                       : isDropdownOpen
@@ -383,7 +442,9 @@ export default function SupportRequestForm() {
                 >
                   <div className="flex-1 flex flex-wrap gap-1.5 items-center">
                     {selectedCategories.length === 0 ? (
-                      <span className="text-dark-charcoal/40 text-sm">Select your concern...</span>
+                      <span className="text-dark-charcoal/40 text-xs sm:text-sm">
+                        Select your concern...
+                      </span>
                     ) : (
                       selectedCategories.map((catId) => {
                         const matched = SUPPORT_CATEGORIES.find(
@@ -393,7 +454,7 @@ export default function SupportRequestForm() {
                         return (
                           <span
                             key={catId}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-soft-sage/30 text-dark-charcoal text-xs font-medium rounded-lg border border-soft-sage/40"
+                            className="inline-flex items-center gap-1.5 px-3 py-1 bg-soft-sage/30 text-dark-charcoal text-xs font-medium rounded-full border border-soft-sage/40 shadow-xs"
                           >
                             <span>{displayLabel}</span>
                             <span
@@ -424,7 +485,7 @@ export default function SupportRequestForm() {
                 {isDropdownOpen && (
                   <div className="absolute z-30 mt-2 w-full bg-white rounded-2xl shadow-xl border border-soft-sage/40 max-h-80 overflow-hidden flex flex-col animate-fade-in">
                     {/* Search inside Dropdown */}
-                    <div className="p-3 border-b border-soft-sage/20 bg-warm-white/60">
+                    <div className="p-3 border-b border-soft-sage/20 bg-warm-white/70">
                       <div className="relative">
                         <Search className="w-4 h-4 text-dark-charcoal/40 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input
@@ -432,7 +493,7 @@ export default function SupportRequestForm() {
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search concerns..."
-                          className="w-full pl-9 pr-3 py-1.5 text-xs sm:text-sm bg-white rounded-lg border border-soft-sage/40 focus:outline-none focus:border-muted-green"
+                          className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-white rounded-lg border border-soft-sage/40 focus:outline-none focus:border-muted-green"
                           onClick={(e) => e.stopPropagation()}
                         />
                       </div>
@@ -468,7 +529,7 @@ export default function SupportRequestForm() {
                               <input
                                 type="checkbox"
                                 checked={isSelected}
-                                onChange={() => {}} // Handled by container
+                                onChange={() => {}}
                                 className="mt-1 h-4 w-4 rounded border-soft-sage text-muted-green focus:ring-muted-green"
                               />
                               <div className="flex-1 text-xs sm:text-sm">
@@ -491,7 +552,7 @@ export default function SupportRequestForm() {
                       <button
                         type="button"
                         onClick={() => setIsDropdownOpen(false)}
-                        className="px-3 py-1 bg-muted-green text-white rounded-lg font-medium hover:bg-[#68826d] transition-colors"
+                        className="px-4 py-1.5 bg-muted-green text-white rounded-full font-medium hover:bg-[#68826d] transition-colors"
                       >
                         Done
                       </button>
@@ -511,21 +572,19 @@ export default function SupportRequestForm() {
               {isOtherSelected && (
                 <div className="mt-4 pt-4 border-t border-soft-sage/25 animate-fade-in">
                   <label className="block text-xs font-semibold text-dark-charcoal mb-1">
-                    Please tell us what you would like to talk about: <span className="text-rose-500">*</span>
+                    Please tell us what you would like to talk about:{" "}
+                    <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="text"
                     value={otherCategoryText}
                     onChange={(e) => {
                       setOtherCategoryText(e.target.value);
-                      if (errors.otherText) setErrors((prev) => ({ ...prev, otherText: undefined }));
+                      if (errors.otherText)
+                        setErrors((prev) => ({ ...prev, otherText: undefined }));
                     }}
                     placeholder="Specify your topic or situation..."
-                    className={`w-full px-4 py-2.5 bg-white text-sm rounded-xl border focus:outline-none transition-all shadow-sm ${
-                      errors.otherText
-                        ? "border-rose-400 ring-2 ring-rose-100"
-                        : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
-                    }`}
+                    className="w-full px-4 py-2.5 bg-white text-xs sm:text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:outline-none shadow-xs"
                   />
                   {errors.otherText && (
                     <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
@@ -538,53 +597,100 @@ export default function SupportRequestForm() {
             </div>
 
             {/* ========================================================= */}
-            {/* SECTION B: Personal Information                           */}
+            {/* SECTION B: Personal Information & Adult Age (18–80)       */}
             {/* ========================================================= */}
             <div className="space-y-4">
-              <h3 className="text-base font-semibold text-dark-charcoal flex items-center gap-2">
-                <span>Your Contact Details</span>
-                <span className="text-xs font-normal text-dark-charcoal/60">(For private connection)</span>
+              <h3 className="text-sm sm:text-base font-semibold text-dark-charcoal flex items-center gap-2">
+                <UserCheck className="w-4 h-4 text-muted-green" />
+                <span>Your Information</span>
+                <span className="text-xs font-normal text-dark-charcoal/60">
+                  (Strictly confidential)
+                </span>
               </h3>
 
-              {/* Full Name */}
-              <div>
-                <label className="block text-xs font-medium text-dark-charcoal mb-1.5">
-                  Full Name <span className="text-rose-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => {
-                    setFullName(e.target.value);
-                    if (errors.fullName) setErrors((prev) => ({ ...prev, fullName: undefined }));
-                  }}
-                  placeholder="Enter your full name"
-                  className={`w-full px-4 py-3 bg-white text-sm rounded-xl border focus:outline-none transition-all shadow-sm ${
-                    errors.fullName
-                      ? "border-rose-400 ring-2 ring-rose-100"
-                      : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
-                  }`}
-                />
-                {errors.fullName && (
-                  <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
-                    <AlertCircle className="w-3.5 h-3.5" />
-                    {errors.fullName}
-                  </p>
-                )}
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
+                {/* Full Name */}
+                <div className="sm:col-span-8">
+                  <label className="block text-xs font-semibold text-dark-charcoal mb-1">
+                    Full Name <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => {
+                      setFullName(e.target.value);
+                      if (errors.fullName)
+                        setErrors((prev) => ({ ...prev, fullName: undefined }));
+                    }}
+                    placeholder="Enter your full name"
+                    className={`w-full px-4 py-3 bg-white text-xs sm:text-sm rounded-xl border focus:outline-none transition-all shadow-xs ${
+                      errors.fullName
+                        ? "border-rose-400 ring-2 ring-rose-100"
+                        : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
+                    }`}
+                  />
+                  {errors.fullName && (
+                    <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
+                      <AlertCircle className="w-3.5 h-3.5" />
+                      {errors.fullName}
+                    </p>
+                  )}
+                </div>
+
+                {/* Age Selection (18 to 80) */}
+                <div className="sm:col-span-4">
+                  <label className="block text-xs font-semibold text-dark-charcoal mb-1">
+                    Your Age (18–80) <span className="text-rose-500">*</span>
+                  </label>
+                  <select
+                    value={age}
+                    onChange={(e) => {
+                      setAge(e.target.value);
+                      if (errors.age) setErrors((prev) => ({ ...prev, age: undefined }));
+                    }}
+                    className={`w-full px-3 py-3 bg-white text-xs sm:text-sm rounded-xl border focus:outline-none transition-all shadow-xs cursor-pointer ${
+                      errors.age
+                        ? "border-rose-400 ring-2 ring-rose-100"
+                        : "border-soft-sage/50 focus:border-muted-green"
+                    }`}
+                  >
+                    {Array.from({ length: 63 }, (_, i) => i + 18).map((a) => (
+                      <option key={a} value={a}>
+                        {a} years old
+                      </option>
+                    ))}
+                  </select>
+                  {errors.age && (
+                    <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
+                      <AlertCircle className="w-3.5 h-3.5" />
+                      {errors.age}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Notice for Minors / Children */}
+              <div className="p-3 bg-light-beige/50 rounded-xl border border-soft-sage/30 text-[11px] text-dark-charcoal/70 flex items-center justify-between gap-2">
+                <span>Looking for support for a child or minor under 18?</span>
+                <Link
+                  href="/support-for-children"
+                  className="font-semibold text-muted-green hover:underline whitespace-nowrap"
+                >
+                  Visit Children&apos;s Page &rarr;
+                </Link>
               </div>
 
               {/* WhatsApp Mobile Number with Country Code */}
               <div>
-                <label className="block text-xs font-medium text-dark-charcoal mb-1.5">
+                <label className="block text-xs font-semibold text-dark-charcoal mb-1">
                   WhatsApp Mobile Number <span className="text-rose-500">*</span>
                 </label>
                 <div className="flex gap-2">
-                  {/* Country Selector */}
                   <div className="relative w-36 sm:w-44 flex-shrink-0">
                     <select
                       value={countryCode}
                       onChange={(e) => setCountryCode(e.target.value)}
-                      className="w-full appearance-none px-3 py-3 pr-8 bg-white text-xs sm:text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:outline-none shadow-sm cursor-pointer"
+                      className="w-full appearance-none px-3 py-3 pr-8 bg-white text-xs sm:text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:outline-none shadow-xs cursor-pointer"
                     >
                       {COUNTRY_CODES.map((c) => (
                         <option key={c.code} value={c.code}>
@@ -595,17 +701,17 @@ export default function SupportRequestForm() {
                     <ChevronDown className="w-4 h-4 text-dark-charcoal/40 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
 
-                  {/* Phone input */}
                   <div className="flex-1">
                     <input
                       type="tel"
                       value={phone}
                       onChange={(e) => {
                         setPhone(e.target.value);
-                        if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                        if (errors.phone)
+                          setErrors((prev) => ({ ...prev, phone: undefined }));
                       }}
                       placeholder="Enter your WhatsApp number"
-                      className={`w-full px-4 py-3 bg-white text-sm rounded-xl border focus:outline-none transition-all shadow-sm ${
+                      className={`w-full px-4 py-3 bg-white text-xs sm:text-sm rounded-xl border focus:outline-none transition-all shadow-xs ${
                         errors.phone
                           ? "border-rose-400 ring-2 ring-rose-100"
                           : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
@@ -613,21 +719,17 @@ export default function SupportRequestForm() {
                     />
                   </div>
                 </div>
-                {errors.phone ? (
+                {errors.phone && (
                   <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5" />
                     {errors.phone}
-                  </p>
-                ) : (
-                  <p className="mt-1 text-[11px] text-dark-charcoal/50">
-                    We will never share your number or spam you. Used solely for your support conversation.
                   </p>
                 )}
               </div>
 
               {/* Email Address */}
               <div>
-                <label className="block text-xs font-medium text-dark-charcoal mb-1.5">
+                <label className="block text-xs font-semibold text-dark-charcoal mb-1">
                   Email Address <span className="text-rose-500">*</span>
                 </label>
                 <input
@@ -635,10 +737,11 @@ export default function SupportRequestForm() {
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
-                    if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                    if (errors.email)
+                      setErrors((prev) => ({ ...prev, email: undefined }));
                   }}
                   placeholder="Enter your email address"
-                  className={`w-full px-4 py-3 bg-white text-sm rounded-xl border focus:outline-none transition-all shadow-sm ${
+                  className={`w-full px-4 py-3 bg-white text-xs sm:text-sm rounded-xl border focus:outline-none transition-all shadow-xs ${
                     errors.email
                       ? "border-rose-400 ring-2 ring-rose-100"
                       : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
@@ -654,29 +757,37 @@ export default function SupportRequestForm() {
             </div>
 
             {/* ========================================================= */}
-            {/* SECTION C: Preferred Date & Time – MANDATORY (Highlighted) */}
+            {/* SECTION C: Strict Date & Time Booking (1-Hour Advance)     */}
             {/* ========================================================= */}
-            <div className="bg-light-beige/40 p-5 sm:p-6 rounded-2xl border border-soft-sage/40 space-y-5">
+            <div className="bg-light-beige/40 backdrop-blur-xs p-5 sm:p-6 rounded-2xl border border-soft-sage/40 space-y-4 shadow-xs">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div>
-                  <h3 className="text-base font-semibold text-dark-charcoal flex items-center gap-2">
+                  <h3 className="text-sm sm:text-base font-semibold text-dark-charcoal flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-muted-green" />
                     When Would You Like to Connect? <span className="text-rose-500">*</span>
                   </h3>
                   <p className="text-xs text-dark-charcoal/65 mt-0.5">
-                    Select your preferred date & time. Our team will confirm availability.
+                    Strict 24-hour clock &bull; Asia/Kolkata (IST).
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-white rounded-full text-[11px] font-medium text-muted-green border border-soft-sage/40">
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/80 rounded-full text-[11px] font-semibold text-muted-green border border-soft-sage/40 shadow-xs">
                   <Globe className="w-3 h-3" />
-                  Timezone: Asia/Kolkata (IST)
+                  IST Timezone
+                </span>
+              </div>
+
+              {/* Advance Booking Rule Notice Banner */}
+              <div className="p-3 bg-white/80 rounded-xl border border-soft-sage/30 text-xs text-dark-charcoal/80 flex items-center gap-2 shadow-xs">
+                <Clock className="w-4 h-4 text-muted-green flex-shrink-0" />
+                <span>
+                  <strong>Important:</strong> Please book at least 1 hour in advance. Our team will confirm availability.
                 </span>
               </div>
 
               {/* Preferred Date Field */}
               <div>
                 <div className="flex justify-between items-center mb-1.5">
-                  <label className="text-xs font-medium text-dark-charcoal">
+                  <label className="text-xs font-semibold text-dark-charcoal">
                     Preferred Date (DD/MM/YYYY) <span className="text-rose-500">*</span>
                   </label>
                   {/* Quick date chips */}
@@ -684,92 +795,92 @@ export default function SupportRequestForm() {
                     <button
                       type="button"
                       onClick={() => setQuickDate(0)}
-                      className="px-2 py-0.5 rounded bg-white hover:bg-soft-sage/20 border border-soft-sage/30 text-dark-charcoal/70 transition-colors"
+                      disabled={isTodayCutoffReached}
+                      className="px-2.5 py-0.5 rounded-full bg-white hover:bg-soft-sage/20 border border-soft-sage/40 text-dark-charcoal/70 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
                     >
                       Today
                     </button>
                     <button
                       type="button"
                       onClick={() => setQuickDate(1)}
-                      className="px-2 py-0.5 rounded bg-white hover:bg-soft-sage/20 border border-soft-sage/30 text-dark-charcoal/70 transition-colors"
+                      className="px-2.5 py-0.5 rounded-full bg-white hover:bg-soft-sage/20 border border-soft-sage/40 text-dark-charcoal/70 transition-colors cursor-pointer"
                     >
                       Tomorrow
                     </button>
                     <button
                       type="button"
                       onClick={() => setQuickDate(2)}
-                      className="px-2 py-0.5 rounded bg-white hover:bg-soft-sage/20 border border-soft-sage/30 text-dark-charcoal/70 transition-colors"
+                      className="px-2.5 py-0.5 rounded-full bg-white hover:bg-soft-sage/20 border border-soft-sage/40 text-dark-charcoal/70 transition-colors cursor-pointer"
                     >
                       In 2 Days
                     </button>
                   </div>
                 </div>
 
-                <div className="relative">
-                  <input
-                    type="date"
-                    min={minDate}
-                    value={rawDate}
-                    onChange={(e) => {
-                      setRawDate(e.target.value);
-                      if (errors.preferredDate) setErrors((prev) => ({ ...prev, preferredDate: undefined }));
-                    }}
-                    className={`w-full px-4 py-3 bg-white text-sm rounded-xl border focus:outline-none transition-all shadow-sm ${
-                      errors.preferredDate
-                        ? "border-rose-400 ring-2 ring-rose-100"
-                        : "border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20"
-                    }`}
-                  />
-                </div>
-
+                <input
+                  type="date"
+                  min={minDate}
+                  value={rawDate}
+                  onChange={(e) => {
+                    setRawDate(e.target.value);
+                    if (errors.preferredDate)
+                      setErrors((prev) => ({ ...prev, preferredDate: undefined }));
+                  }}
+                  className={`w-full px-4 py-3 bg-white text-xs sm:text-sm rounded-xl border focus:outline-none transition-all shadow-xs ${
+                    errors.preferredDate
+                      ? "border-rose-400 ring-2 ring-rose-100"
+                      : "border-soft-sage/50 focus:border-muted-green"
+                  }`}
+                />
                 <div className="flex justify-between items-center mt-1 text-[11px] text-dark-charcoal/60">
-                  <span>Selected Date (Indian Format): <strong>{formatToDDMMYYYY(rawDate) || "Not chosen"}</strong></span>
-                  <span>Future dates available</span>
+                  <span>Selected: <strong>{formatISOToIndianDate(rawDate)}</strong></span>
+                  <span>Past dates strictly disabled</span>
                 </div>
-                {errors.preferredDate && (
-                  <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
-                    <AlertCircle className="w-3.5 h-3.5" />
-                    {errors.preferredDate}
-                  </p>
-                )}
               </div>
 
-              {/* Preferred Time Field (STRICT 24-HOUR FORMAT) */}
+              {/* Preferred Time Field (Strict 24-Hour Format: 00:00 to 23:59) */}
               <div>
                 <div className="flex justify-between items-center mb-1.5 flex-wrap gap-1">
-                  <label className="text-xs font-medium text-dark-charcoal flex items-center gap-1.5">
+                  <label className="text-xs font-semibold text-dark-charcoal flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-muted-green" />
-                    Preferred Time (Strict 24-Hour Clock: 00:00 to 23:59) <span className="text-rose-500">*</span>
+                    Preferred Time (24-Hour Clock: 00:00 to 23:59) <span className="text-rose-500">*</span>
                   </label>
-                  <span className="text-[11px] font-semibold text-muted-green bg-soft-sage/20 px-2 py-0.5 rounded">
-                    24h Format Only (No AM/PM)
+                  <span className="text-[11px] font-bold text-muted-green bg-soft-sage/25 px-2.5 py-0.5 rounded-full">
+                    24h Format (No AM/PM)
                   </span>
                 </div>
 
-                {/* Quick 24h Slots */}
+                {/* Quick 24h Slots (Recalculates dynamically based on date & 1h rule) */}
                 <div className="mb-3">
                   <p className="text-[11px] text-dark-charcoal/60 mb-1.5">Quick 24-hour slots:</p>
                   <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
-                    {QUICK_TIME_PRESETS.map((preset) => {
+                    {ALL_TIME_PRESETS.map((preset) => {
                       const effective = getEffective24HourTime();
                       const isSelected = effective === preset.value;
+                      const isAllowed = isPresetAllowed(preset.value);
+
                       return (
                         <button
                           key={preset.value}
                           type="button"
+                          disabled={!isAllowed}
                           onClick={() => {
                             const [h, m] = preset.value.split(":");
                             setTimeHour(h);
                             setTimeMinute(m);
                             setCustomTimeInput(preset.value);
                             setTimePickerMode("preset");
-                            if (errors.preferredTime) setErrors((prev) => ({ ...prev, preferredTime: undefined }));
+                            if (errors.preferredTime)
+                              setErrors((prev) => ({ ...prev, preferredTime: undefined }));
                           }}
-                          className={`py-2 px-1 text-xs font-medium rounded-lg border transition-all text-center ${
+                          className={`py-2 px-1 text-xs font-semibold rounded-lg border transition-all text-center ${
                             isSelected
                               ? "bg-muted-green text-white border-muted-green shadow-sm"
-                              : "bg-white hover:bg-soft-sage/20 border-soft-sage/40 text-dark-charcoal"
+                              : isAllowed
+                              ? "bg-white hover:bg-soft-sage/20 border-soft-sage/40 text-dark-charcoal cursor-pointer"
+                              : "bg-gray-100/60 border-gray-200 text-gray-400 cursor-not-allowed line-through"
                           }`}
+                          title={!isAllowed ? "Requires at least 1 hour advance notice" : ""}
                         >
                           {preset.label}
                         </button>
@@ -779,19 +890,22 @@ export default function SupportRequestForm() {
                 </div>
 
                 {/* 24-Hour Custom Inputs (Hours 00-23, Minutes 00-59) */}
-                <div className="bg-white p-3.5 rounded-xl border border-soft-sage/40 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="bg-white p-3.5 rounded-xl border border-soft-sage/40 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-dark-charcoal/70">Pick exact hour & min:</span>
+                    <span className="text-xs text-dark-charcoal/70">Pick exact hour &amp; min:</span>
                     {/* Hours (00 to 23) */}
                     <select
                       value={timeHour}
                       onChange={(e) => {
                         setTimeHour(e.target.value);
-                        setCustomTimeInput(`${e.target.value.padStart(2, "0")}:${timeMinute.padStart(2, "0")}`);
+                        setCustomTimeInput(
+                          `${e.target.value.padStart(2, "0")}:${timeMinute.padStart(2, "0")}`
+                        );
                         setTimePickerMode("preset");
-                        if (errors.preferredTime) setErrors((prev) => ({ ...prev, preferredTime: undefined }));
+                        if (errors.preferredTime)
+                          setErrors((prev) => ({ ...prev, preferredTime: undefined }));
                       }}
-                      className="px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green cursor-pointer"
+                      className="px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-xs sm:text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green cursor-pointer"
                     >
                       {Array.from({ length: 24 }).map((_, i) => {
                         const h = String(i).padStart(2, "0");
@@ -810,11 +924,14 @@ export default function SupportRequestForm() {
                       value={timeMinute}
                       onChange={(e) => {
                         setTimeMinute(e.target.value);
-                        setCustomTimeInput(`${timeHour.padStart(2, "0")}:${e.target.value.padStart(2, "0")}`);
+                        setCustomTimeInput(
+                          `${timeHour.padStart(2, "0")}:${e.target.value.padStart(2, "0")}`
+                        );
                         setTimePickerMode("preset");
-                        if (errors.preferredTime) setErrors((prev) => ({ ...prev, preferredTime: undefined }));
+                        if (errors.preferredTime)
+                          setErrors((prev) => ({ ...prev, preferredTime: undefined }));
                       }}
-                      className="px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green cursor-pointer"
+                      className="px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-xs sm:text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green cursor-pointer"
                     >
                       {["00", "15", "30", "45", "10", "20", "40", "50", "59"].sort().map((m) => (
                         <option key={m} value={m}>
@@ -824,7 +941,7 @@ export default function SupportRequestForm() {
                     </select>
                   </div>
 
-                  {/* Or direct typing with validation */}
+                  {/* Direct 24-hour typing */}
                   <div className="flex items-center gap-2 w-full sm:w-auto">
                     <span className="text-xs text-dark-charcoal/60">Or type HH:MM:</span>
                     <input
@@ -835,34 +952,31 @@ export default function SupportRequestForm() {
                         const val = e.target.value;
                         setCustomTimeInput(val);
                         setTimePickerMode("custom");
-                        if (validate24HourTime(val)) {
+                        if (val.includes(":") && val.length === 5) {
                           const [h, m] = val.split(":");
                           setTimeHour(h);
                           setTimeMinute(m);
-                          if (errors.preferredTime) setErrors((prev) => ({ ...prev, preferredTime: undefined }));
                         }
                       }}
                       placeholder="e.g. 15:30"
-                      className="w-24 px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green text-center font-mono"
+                      className="w-24 px-2.5 py-1.5 bg-warm-white border border-soft-sage/50 rounded-lg text-xs sm:text-sm font-semibold text-dark-charcoal focus:outline-none focus:border-muted-green text-center font-mono"
                     />
                   </div>
                 </div>
 
-                <div className="mt-2 flex items-center justify-between text-[11px] text-dark-charcoal/60">
-                  <span>Selected Time: <strong className="text-dark-charcoal">{getEffective24HourTime()} (24-Hour Clock)</strong></span>
-                  <span>Any time 00:00 – 23:59 permitted</span>
+                <div className="mt-2 flex items-center justify-between text-[11px] text-dark-charcoal/65">
+                  <span>
+                    Selected: <strong>{getEffective24HourTime()} (24-Hour Clock IST)</strong>
+                  </span>
+                  <span>1 hour advance notice enforced</span>
                 </div>
 
                 {errors.preferredTime && (
-                  <p className="mt-1.5 text-xs text-rose-600 flex items-center gap-1">
-                    <AlertCircle className="w-3.5 h-3.5" />
+                  <p className="mt-2 text-xs text-rose-600 flex items-center gap-1 form-error-anchor">
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                     {errors.preferredTime}
                   </p>
                 )}
-
-                <p className="mt-2.5 text-[11px] text-dark-charcoal/65 italic bg-white/70 p-2 rounded-lg border border-soft-sage/20">
-                  Note: Choose the date and time that works best for you. Our team will confirm availability.
-                </p>
               </div>
             </div>
 
@@ -871,7 +985,7 @@ export default function SupportRequestForm() {
             {/* ========================================================= */}
             <div>
               <div className="flex justify-between items-center mb-1.5">
-                <label className="text-xs font-medium text-dark-charcoal">
+                <label className="text-xs font-semibold text-dark-charcoal">
                   Would You Like to Share Anything Else?
                 </label>
                 <span className="text-[11px] text-dark-charcoal/50 italic">Optional</span>
@@ -881,17 +995,14 @@ export default function SupportRequestForm() {
                 value={additionalMessage}
                 onChange={(e) => setAdditionalMessage(e.target.value)}
                 placeholder="Write anything you'd like us to know before we connect. This is optional."
-                className="w-full px-4 py-3 bg-white text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20 focus:outline-none transition-all shadow-sm resize-none"
+                className="w-full px-4 py-3 bg-white text-xs sm:text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:ring-2 focus:ring-muted-green/20 focus:outline-none transition-all shadow-xs resize-none"
               />
-              <p className="mt-1 text-[11px] text-dark-charcoal/50">
-                You can submit without writing anything here. Speak only what feels comfortable.
-              </p>
             </div>
 
             {/* ========================================================= */}
             {/* SECTION E: Privacy Consent Checkbox                       */}
             {/* ========================================================= */}
-            <div className="pt-2">
+            <div className="pt-1">
               <label className="flex items-start gap-3 cursor-pointer select-none">
                 <input
                   type="checkbox"
@@ -904,7 +1015,7 @@ export default function SupportRequestForm() {
                 />
                 <span className="text-xs text-dark-charcoal/80 leading-relaxed">
                   I agree to be contacted regarding my support request and understand that my information will be handled according to the{" "}
-                  <Link href="/privacy" className="text-muted-green underline hover:text-dark-charcoal">
+                  <Link href="/privacy" className="text-muted-green underline hover:text-dark-charcoal font-medium">
                     Privacy Policy
                   </Link>
                   .
@@ -919,22 +1030,22 @@ export default function SupportRequestForm() {
             </div>
 
             {/* ========================================================= */}
-            {/* SECTION F: Prominent Submit Button                        */}
+            {/* SECTION F: Submit Button with WhatsApp Brand Icon         */}
             {/* ========================================================= */}
             <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 bg-whatsapp-green hover:bg-[#20bd5a] active:bg-[#1da850] text-white rounded-2xl font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed group cursor-pointer"
+                className="w-full py-4 px-6 bg-[#25D366] hover:bg-[#20bd5a] active:bg-[#1da850] text-white rounded-full font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed group cursor-pointer"
               >
                 {isSubmitting ? (
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Saving your request...</span>
+                    <span>Validating &amp; Connecting...</span>
                   </div>
                 ) : (
                   <>
-                    <MessageCircle className="w-5 h-5 fill-white flex-shrink-0" />
+                    <WhatsAppIcon className="w-6 h-6" color="#FFFFFF" />
                     <span>Continue on WhatsApp</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </>
@@ -944,12 +1055,12 @@ export default function SupportRequestForm() {
               <div className="mt-4 flex items-center justify-center gap-4 text-xs text-dark-charcoal/60 flex-wrap">
                 <span className="flex items-center gap-1.5">
                   <Lock className="w-3.5 h-3.5 text-muted-green" />
-                  100% Private & Confidential
+                  100% Confidential
                 </span>
-                <span>•</span>
-                <span>No Payment / No Subscriptions</span>
-                <span>•</span>
-                <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
+                <span>&bull;</span>
+                <span>Zero Cost / No Subscription</span>
+                <span>&bull;</span>
+                <span>Direct WhatsApp: {WHATSAPP_DISPLAY}</span>
               </div>
             </div>
           </form>

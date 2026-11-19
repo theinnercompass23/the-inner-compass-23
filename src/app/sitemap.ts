@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/someone-to-listen",
     "/breakup-support",
     "/emotional-support-india",
+    "/support-for-children",
     "/about",
     "/contact",
     "/privacy",

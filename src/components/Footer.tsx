@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Heart, ShieldAlert, Lock } from "lucide-react";
+import { Heart, ShieldAlert, Lock, Smile } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
 
 export default function Footer() {
@@ -23,7 +24,7 @@ export default function Footer() {
   const companyLinks = [
     { label: "About Us", href: "/about" },
     { label: "Contact Us", href: "/contact" },
-    { label: "Admin Console", href: "/admin" },
+    { label: "Support for Children", href: "/support-for-children" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
   ];
@@ -31,16 +32,16 @@ export default function Footer() {
   return (
     <footer className="bg-light-beige/70 border-t border-soft-sage/30 text-dark-charcoal pt-14 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Top Crisis Emergency Strip */}
-        <div className="p-4 rounded-2xl bg-white border border-soft-sage/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs shadow-sm">
-          <div className="flex items-center gap-2">
+        {/* Top Crisis Emergency Strip (Glassmorphism styling) */}
+        <div className="p-4 rounded-3xl bg-white/80 backdrop-blur-md border border-white/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs shadow-sm">
+          <div className="flex items-center gap-2.5">
             <ShieldAlert className="w-4 h-4 text-rose-600 shrink-0" />
             <span className="text-dark-charcoal/80">
               <strong>Need Immediate Emergency Crisis Support?</strong> India National Mental Health Helpline:{" "}
               <a href="tel:14416" className="font-bold underline text-muted-green">
                 Tele-MANAS: {TELE_MANAS_NUMBER}
               </a>{" "}
-              | Emergency:{" "}
+              &bull; Emergency:{" "}
               <a href="tel:112" className="font-bold underline text-rose-600">
                 {EMERGENCY_NUMBER}
               </a>
@@ -57,8 +58,8 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-muted-green flex items-center justify-center text-white">
-                <Heart className="w-4 h-4 fill-white" />
+              <div className="w-9 h-9 rounded-full bg-soft-sage/25 border border-soft-sage/40 flex items-center justify-center text-muted-green shadow-xs">
+                <Heart className="w-4 h-4 fill-muted-green/20 text-muted-green" />
               </div>
               <span className="text-xl font-serif font-bold text-dark-charcoal">
                 Haven
@@ -67,8 +68,11 @@ export default function Footer() {
             <p className="text-dark-charcoal/70 leading-relaxed max-w-sm">
               &ldquo;Sometimes, you just need someone to listen.&rdquo; A private, safe, and confidential human emotional support service for anyone navigating loneliness, separation, divorce, heartbreak, or grief.
             </p>
-            <div className="text-[11px] text-dark-charcoal/60 pt-1">
-              Direct WhatsApp Support: <strong>{WHATSAPP_DISPLAY}</strong>
+            <div className="text-[11px] text-dark-charcoal/70 pt-1 flex items-center gap-1.5">
+              <span className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shadow-xs">
+                <WhatsAppIcon className="w-3 h-3" color="#FFFFFF" />
+              </span>
+              <span>Direct WhatsApp: <strong>{WHATSAPP_DISPLAY}</strong></span>
             </div>
           </div>
 
@@ -91,7 +95,7 @@ export default function Footer() {
           {/* More Topics & Information */}
           <div>
             <h4 className="font-serif font-bold text-dark-charcoal uppercase tracking-wider text-[11px] mb-3">
-              More &amp; Legal
+              Information &amp; Safety
             </h4>
             <ul className="space-y-2 text-dark-charcoal/70">
               {supportTopics.slice(6).map((link) => (
@@ -116,13 +120,13 @@ export default function Footer() {
         {/* Disclaimer & Copyright */}
         <div className="pt-6 border-t border-soft-sage/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-dark-charcoal/60">
           <p>
-            &copy; 2026 Haven Peer Support. All rights reserved. Non-clinical emotional support.
+            &copy; 2026 Haven Peer Support. All rights reserved. Non-clinical human emotional support.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-dark-charcoal">Privacy</Link>
-            <Link href="/terms" className="hover:text-dark-charcoal">Terms</Link>
+            <Link href="/privacy" className="hover:text-dark-charcoal">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-dark-charcoal">Terms of Service</Link>
+            <Link href="/support-for-children" className="hover:text-dark-charcoal">For Children</Link>
             <Link href="/contact" className="hover:text-dark-charcoal">Contact</Link>
-            <Link href="/admin" className="hover:text-dark-charcoal">Admin</Link>
           </div>
         </div>
       </div>

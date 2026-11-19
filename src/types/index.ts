@@ -5,6 +5,7 @@ export type PreferredLanguage = "Hindi" | "English" | "Hinglish" | "Other";
 export interface SupportRequest {
   id: string;
   full_name: string;
+  age: number; // 18-80 for adult support
   phone: string;
   country_code?: string;
   email: string;
@@ -15,9 +16,10 @@ export interface SupportRequest {
   preferred_time: string; // 24-hour format HH:MM (e.g. "15:30", "00:00", "23:59")
   timezone: string; // "Asia/Kolkata"
   preferred_language?: PreferredLanguage | string;
+  is_child_request?: boolean;
+  guardian_name?: string;
   consent: boolean;
   status: LeadStatus;
-  admin_notes?: string;
   created_at: string;
   updated_at: string;
 }

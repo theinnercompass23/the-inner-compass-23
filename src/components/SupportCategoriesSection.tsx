@@ -13,7 +13,7 @@ import {
   UserX,
   Headphones,
   ArrowRight,
-  BookOpen,
+  Smile,
 } from "lucide-react";
 
 interface CategoryCard {
@@ -22,6 +22,7 @@ interface CategoryCard {
   desc: string;
   slug: string;
   icon: React.ElementType;
+  badge?: string;
 }
 
 export default function SupportCategoriesSection() {
@@ -96,16 +97,28 @@ export default function SupportCategoriesSection() {
       slug: "/someone-to-talk",
       icon: Headphones,
     },
+    {
+      id: "children",
+      title: "Support for Children",
+      desc: "Safe emotional guidance and listening support requested with parent/guardian consent.",
+      slug: "/support-for-children",
+      icon: Smile,
+      badge: "Kids & Guardians",
+    },
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-warm-white border-t border-soft-sage/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-warm-white border-t border-soft-sage/20 relative overflow-hidden">
+      {/* Circular glass accents in background */}
+      <div className="absolute top-1/2 left-10 w-96 h-96 bg-soft-sage/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-amber-100/20 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-muted-green bg-soft-sage/20 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-muted-green bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-soft-sage/30 shadow-xs">
             Safe &amp; Confidential Conversations
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-dark-charcoal mt-3 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-dark-charcoal mt-4 mb-3">
             Whatever You&apos;re Going Through, You Can Talk About It.
           </h2>
           <p className="text-sm sm:text-base text-dark-charcoal/70 leading-relaxed">
@@ -113,18 +126,25 @@ export default function SupportCategoriesSection() {
           </p>
         </div>
 
-        {/* 10 Category Cards Grid */}
+        {/* Category Cards Grid with Circular Glassmorphism */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((c) => {
             const Icon = c.icon;
             return (
               <div
                 key={c.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-soft-sage/30 hover:border-muted-green shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-white/60 hover:border-soft-sage shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-soft-sage/20 text-muted-green flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-14 h-14 rounded-full bg-soft-sage/20 text-muted-green flex items-center justify-center group-hover:scale-110 group-hover:bg-soft-sage/30 transition-all shadow-xs">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    {c.badge && (
+                      <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-200 shadow-xs">
+                        {c.badge}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-lg font-serif font-semibold text-dark-charcoal mb-2 group-hover:text-muted-green transition-colors">
                     {c.title}
@@ -137,7 +157,7 @@ export default function SupportCategoriesSection() {
                 <div className="pt-4 border-t border-soft-sage/20 flex items-center justify-between">
                   <Link
                     href={c.slug}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-green hover:text-dark-charcoal transition-colors group-hover:translate-x-0.5"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-green hover:text-dark-charcoal transition-colors group-hover:translate-x-1"
                   >
                     <span>Read More</span>
                     <ArrowRight className="w-3.5 h-3.5" />

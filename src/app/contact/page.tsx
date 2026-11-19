@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { MessageCircle, Mail, MapPin, Clock, Phone, AlertTriangle, Lock } from "lucide-react";
+import { Mail, MapPin, Clock, Phone, AlertTriangle, Lock } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
 import SupportRequestForm from "@/components/SupportRequestForm";
 
@@ -38,9 +39,9 @@ export default function ContactPage() {
       <section className="py-12 sm:py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* WhatsApp Direct */}
-          <div className="bg-white rounded-3xl p-6 border border-soft-sage/30 shadow-sm space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-whatsapp-green/10 text-whatsapp-green flex items-center justify-center">
-              <MessageCircle className="w-6 h-6 fill-whatsapp-green" />
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 border border-white/60 shadow-sm space-y-3">
+            <div className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xs">
+              <WhatsAppIcon className="w-6 h-6" color="#FFFFFF" />
             </div>
             <h3 className="text-base font-semibold text-dark-charcoal">WhatsApp Direct</h3>
             <p className="text-xs text-dark-charcoal/65 leading-relaxed">
@@ -51,7 +52,7 @@ export default function ContactPage() {
               href={directWhatsApp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-whatsapp-green hover:underline pt-1"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#25D366] hover:underline pt-1"
             >
               Open in WhatsApp &rarr;
             </a>

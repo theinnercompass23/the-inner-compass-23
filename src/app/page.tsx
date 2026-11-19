@@ -6,6 +6,7 @@ import SupportCategoriesSection from "@/components/SupportCategoriesSection";
 import WhyPeopleCome from "@/components/WhyPeopleCome";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { Heart, ArrowDown, Lock, ShieldCheck, Compass } from "lucide-react";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 
@@ -92,9 +93,12 @@ export default function HomePage() {
                     <p className="text-sm font-serif italic drop-shadow-md">
                       &ldquo;A safe, quiet place where you can be yourself and let down your guard.&rdquo;
                     </p>
-                    <p className="text-[11px] text-white/80 mt-1">
-                      Direct WhatsApp: {WHATSAPP_DISPLAY}
-                    </p>
+                    <div className="flex items-center gap-1.5 text-xs text-white/90 mt-2 font-medium">
+                      <span className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center">
+                        <WhatsAppIcon className="w-3 h-3" color="#FFFFFF" />
+                      </span>
+                      <span>Direct WhatsApp: {WHATSAPP_DISPLAY}</span>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -233,9 +233,10 @@ export const PREFERRED_LANGUAGES = [
   "Other",
 ];
 
-// Generates the strict WhatsApp message required by Section 4
+// Generates the strict WhatsApp message required by the service
 export function buildWhatsAppMessage(data: {
   fullName: string;
+  age?: number;
   phone: string;
   countryCode?: string;
   email: string;
@@ -245,38 +246,61 @@ export function buildWhatsAppMessage(data: {
   preferredTime: string; // HH:MM 24h
   timezone?: string;
   additionalMessage?: string;
+  guardianName?: string;
+  isChildRequest?: boolean;
 }): string {
   const fullPhone = `${data.countryCode || "+91"} ${data.phone}`.trim();
-  
+
   let concernList = data.categories.join(", ");
   if (data.categories.includes("Other") && data.otherText) {
     concernList += ` (Other: ${data.otherText})`;
   }
 
-  const lines = [
-    "Hello, I would like to connect for emotional support.",
-    "",
-    `Name: ${data.fullName.trim()}`,
-    `WhatsApp Number: ${fullPhone}`,
-    `Email: ${data.email.trim()}`,
-    `Concern: ${concernList || "Emotional Support"}`,
-    `Preferred Date: ${data.preferredDate}`,
-    `Preferred Time: ${data.preferredTime}`,
-    `Timezone: ${data.timezone || "Asia/Kolkata"}`,
-  ];
+  const lines: string[] = [];
+
+  if (data.isChildRequest) {
+    lines.push("Hello Haven Team, I am reaching out as a Parent/Guardian regarding support for a child.");
+    lines.push("");
+    lines.push(`Guardian Name: ${data.guardianName?.trim() || data.fullName.trim()}`);
+    if (data.fullName && data.guardianName && data.fullName !== data.guardianName) {
+      lines.push(`Child First Name / Reference: ${data.fullName.trim()}`);
+    }
+    if (data.age) {
+      lines.push(`Child Age: ${data.age} years old`);
+    }
+  } else {
+    lines.push("Hello, I would like to connect for emotional support.");
+    lines.push("");
+    lines.push(`Name: ${data.fullName.trim()}`);
+    if (data.age) {
+      lines.push(`Age: ${data.age} (Adult 18-80)`);
+    }
+  }
+
+  lines.push(`WhatsApp Number: ${fullPhone}`);
+  lines.push(`Email: ${data.email.trim()}`);
+  lines.push(`Concern: ${concernList || "Emotional Support"}`);
+  lines.push(`Preferred Date: ${data.preferredDate}`);
+  lines.push(`Preferred Time: ${data.preferredTime} (24-Hour Clock)`);
+  lines.push(`Timezone: ${data.timezone || "Asia/Kolkata"}`);
 
   if (data.additionalMessage && data.additionalMessage.trim().length > 0) {
     lines.push(`Additional Message: ${data.additionalMessage.trim()}`);
   }
 
   lines.push("");
-  lines.push("I would like to speak with someone regarding my situation.");
+  if (data.isChildRequest) {
+    lines.push("I confirm I am the parent/legal guardian and request safe guidance/consultation.");
+  } else {
+    lines.push("I would like to speak with someone regarding my situation.");
+  }
 
   return lines.join("\n");
 }
 
 export function buildWhatsAppUrl(data: {
   fullName: string;
+  age?: number;
   phone: string;
   countryCode?: string;
   email: string;
@@ -286,10 +310,13 @@ export function buildWhatsAppUrl(data: {
   preferredTime: string;
   timezone?: string;
   additionalMessage?: string;
+  guardianName?: string;
+  isChildRequest?: boolean;
 }): string {
   const message = buildWhatsAppMessage(data);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
 
 export function buildDirectWhatsAppUrl(customMessage?: string): string {
   const message =

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export default function FloatingWhatsApp() {
@@ -14,12 +14,14 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Connect with human emotional support team on WhatsApp"
-        className="group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white pl-4 pr-5 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+        className="group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white pl-3.5 pr-5 py-3 rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 active:translate-y-0 border-2 border-white/60 backdrop-blur-xs"
       >
-        <MessageCircle className="w-5 h-5 fill-white" />
+        <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+          <WhatsAppIcon className="w-5 h-5" color="#FFFFFF" />
+        </span>
         <div className="flex flex-col text-left">
           <span className="text-xs font-bold leading-tight">Talk on WhatsApp</span>
-          <span className="text-[10px] text-white/90 leading-none">{WHATSAPP_DISPLAY}</span>
+          <span className="text-[10px] text-white/95 font-medium leading-none">{WHATSAPP_DISPLAY}</span>
         </div>
       </a>
     </div>
