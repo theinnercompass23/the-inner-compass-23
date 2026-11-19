@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
+@theme {
+  --color-sage-50: #F4F7F4;
+  --color-sage-100: #E5EDE5;
+  --color-sage-200: #C9DBC8;
+  --color-sage-300: #A8BDA5;
+  --color-sage-400: #8CA58A;
+  --color-sage-500: #78947D;
+  --color-sage-600: #5E7763;
+  --color-sage-700: #465B4A;
+  --color-sage-800: #314034;
+  --color-sage-900: #1F2921;
+
+  --color-warm-white: #F8F8F4;
+  --color-warm-card: #FFFFFF;
+  --color-warm-beige: #EEECE4;
+  --color-warm-sand: #E6E2D8;
+  --color-charcoal: #292D2A;
+  --color-charcoal-muted: #595F5A;
+  --color-charcoal-subtle: #858B86;
+  
+  --color-coral-soft: #D97762;
+  --color-coral-light: #FDF2EE;
+  
+  --color-calm-sky: #8EA7C2;
+  --color-calm-mist: #EEF4FA;
+
+  --font-serif-comfort: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F8F8F4;
+  --foreground: #292D2A;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom gentle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9DBC8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8BDA5;
+}
+
+/* Smooth breathing animation keyframes */
+@keyframes breathingPulse {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-breathing {
+  animation: breathingPulse 8s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: gentleFloat 5s ease-in-out infinite;
 }

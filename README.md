@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Haven — Mental Wellness & Emotional Support Platform
 
-## Getting Started
+> **"Nobody should feel like they have to face everything alone."**
 
-First, run the development server:
+Haven is a modern, responsive, production-ready mental wellness and emotional support web application engineered using **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **PostgreSQL / Supabase**.
 
+It combines:
+1. **Talk to a Human Listener**: Real-time peer chat with trained empathetic listeners.
+2. **Online Counselling**: Directory and working booking system for verified clinical psychologists (RCI registered) and psychiatrists (MD).
+3. **AI Emotional Companion**: Multilingual conversational support (English & Hindi) with crisis safety detection.
+4. **Safe Anonymous Community**: Peer support circle with pseudonyms, content moderation, and supportive reactions.
+5. **Self-Care Suite**: Interactive box breathing animations, guided meditation audio, daily mood tracking charts, and an encrypted private journal vault.
+6. **Crisis Support (India)**: Dedicated crisis page featuring **Tele-MANAS (14416)**, **Emergency (112)**, **KIRAN (1800-599-0019)**, and an interactive 6-step Safety Plan generator.
+7. **Admin Moderation Console**: Role-based access control, analytics, reported content moderation, and therapist verification.
+
+---
+
+## 🎨 Visual Identity & Color Palette
+
+- **Primary:** Soft Sage Green (`#A8BDA5`)
+- **Background:** Warm Off-White (`#F8F8F4`)
+- **Secondary:** Light Beige (`#EEECE4`)
+- **Text:** Dark Charcoal (`#292D2A`)
+- **Accent:** Muted Green (`#78947D`)
+- **Emergency / Warm Alert:** Soft Coral (`#D97762` / `#FDF2EE`)
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Run the Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Production Build
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔑 Demo Personas (One-Click Logins)
 
-To learn more about Next.js, take a look at the following resources:
+On the login page (`/auth/login`), one-click demo persona buttons are provided:
+- **Member / User:** Aarav Mehta (`aarav.mehta@example.com`)
+- **Licensed Therapist:** Dr. Ananya Sharma (`dr.ananya@haven.care`)
+- **Peer Listener:** Priya Malhotra (`priya@haven.care`)
+- **Safety Admin Officer:** Haven Safety Team (`admin@haven.care`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗄️ Database & Supabase Integration
 
-## Deploy on Vercel
+The complete PostgreSQL database schema with Row Level Security (RLS) policies is located in:
+[`supabase/schema.sql`](supabase/schema.sql)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Environment variables template is available in:
+[`.env.example`](.env.example)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🚨 Emergency Helplines (India)
+
+- **Tele-MANAS (Toll-Free 24/7):** `14416` or `1800-891-4416`
+- **National Emergency Services:** `112`
+- **KIRAN Mental Health Helpline:** `1800-599-0019`
+- **Vandrevala Foundation:** `9999 666 555`
+- **AASRA Suicide Prevention:** `9820466726`
