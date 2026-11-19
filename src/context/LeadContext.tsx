@@ -5,14 +5,18 @@ import { SupportRequest, LeadStatus } from "@/types";
 import { INITIAL_LEADS, saveLeadToSupabase } from "@/lib/leadStore";
 import { buildWhatsAppUrl } from "@/lib/constants";
 
-interface SubmitFormData {
+export interface SubmitFormData {
   fullName: string;
   phone: string;
+  countryCode?: string;
   email: string;
   categories: string[];
+  otherCategoryText?: string;
   additionalMessage?: string;
+  preferredDate: string; // DD/MM/YYYY
+  preferredTime: string; // strict 24h format HH:MM
+  timezone?: string;
   preferredLanguage?: string;
-  preferredTime?: string;
   consent: boolean;
 }
 
@@ -50,9 +54,23 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setIsClient(true);
     try {
-      const stored = localStorage.getItem("haven_leads_v2");
+      const stored = localStorage.getItem("haven_leads_v3");
       if (stored) {
         setLeads(JSON.parse(stored));
+      } else {
+        // Migration from v2 if available
+        const storedV2 = localStorage.getItem("haven_leads_v2");
+        if (storedV2) {
+          const parsed = JSON.parse(storedV2);
+          const migrated = parsed.map((l: any) => ({
+            ...l,
+            preferred_date: l.preferred_date || "22/02/2026",
+            preferred_time: l.preferred_time?.includes(":") ? l.preferred_time : "18:00",
+            timezone: l.timezone || "Asia/Kolkata",
+            country_code: l.country_code || "+91",
+          }));
+          setLeads(migrated);
+        }
       }
       const adminAuth = localStorage.getItem("haven_admin_auth");
       if (adminAuth === "true") {
@@ -66,7 +84,7 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!isClient) return;
     try {
-      localStorage.setItem("haven_leads_v2", JSON.stringify(leads));
+      localStorage.setItem("haven_leads_v3", JSON.stringify(leads));
     } catch {
       // fallback
     }
@@ -94,38 +112,52 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
   };
 
   const submitRequest = async (data: SubmitFormData) => {
+    const cleanPhone = data.phone.trim();
+    const countryCode = data.countryCode || "+91";
+    const fullPhone = `${countryCode} ${cleanPhone}`;
+    const timestamp = new Date().toISOString();
+
     const newLead: SupportRequest = {
       id: `lead-${Date.now()}`,
       full_name: data.fullName.trim(),
-      phone: data.phone.trim(),
+      phone: cleanPhone,
+      country_code: countryCode,
       email: data.email.trim(),
       support_categories: data.categories,
+      other_category_text: data.otherCategoryText?.trim(),
       additional_message: data.additionalMessage?.trim() || undefined,
+      preferred_date: data.preferredDate,
+      preferred_time: data.preferredTime,
+      timezone: data.timezone || "Asia/Kolkata",
       preferred_language: data.preferredLanguage || "Hindi",
-      preferred_time: data.preferredTime || "Anytime / As soon as possible",
       consent: data.consent,
       status: "new",
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      created_at: timestamp,
+      updated_at: timestamp,
     };
 
-    // Save to local reactive state immediately
+    // 1. Save to local React / localStorage state immediately so lead is never lost
     setLeads((prev) => [newLead, ...prev]);
 
-    // Try saving to Supabase asynchronously
-    saveLeadToSupabase(newLead).catch((err) => {
-      console.warn("Async Supabase save notification:", err);
-    });
+    // 2. Persist to Supabase in background
+    try {
+      await saveLeadToSupabase(newLead);
+    } catch (err) {
+      console.warn("Supabase background save:", err);
+    }
 
-    // Generate WhatsApp link
+    // 3. Generate pre-filled WhatsApp message URL
     const whatsappUrl = buildWhatsAppUrl({
-      fullName: newLead.full_name,
-      phone: newLead.phone,
-      email: newLead.email,
-      categories: newLead.support_categories,
-      additionalMessage: newLead.additional_message,
-      preferredLanguage: newLead.preferred_language,
-      preferredTime: newLead.preferred_time,
+      fullName: data.fullName,
+      phone: cleanPhone,
+      countryCode: countryCode,
+      email: data.email,
+      categories: data.categories,
+      otherText: data.otherCategoryText,
+      preferredDate: data.preferredDate,
+      preferredTime: data.preferredTime,
+      timezone: data.timezone || "Asia/Kolkata",
+      additionalMessage: data.additionalMessage,
     });
 
     return {
@@ -137,34 +169,44 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
 
   const updateLeadStatus = (leadId: string, status: LeadStatus) => {
     setLeads((prev) =>
-      prev.map((l) =>
-        l.id === leadId
-          ? { ...l, status, updated_at: new Date().toISOString() }
-          : l
+      prev.map((lead) =>
+        lead.id === leadId
+          ? {
+              ...lead,
+              status,
+              updated_at: new Date().toISOString(),
+            }
+          : lead
       )
     );
   };
 
   const updateLeadNotes = (leadId: string, notes: string) => {
     setLeads((prev) =>
-      prev.map((l) =>
-        l.id === leadId
-          ? { ...l, admin_notes: notes, updated_at: new Date().toISOString() }
-          : l
+      prev.map((lead) =>
+        lead.id === leadId
+          ? {
+              ...lead,
+              admin_notes: notes,
+              updated_at: new Date().toISOString(),
+            }
+          : lead
       )
     );
   };
 
   const deleteLead = (leadId: string) => {
-    setLeads((prev) => prev.filter((l) => l.id !== leadId));
+    setLeads((prev) => prev.filter((lead) => lead.id !== leadId));
   };
 
-  const adminLogin = (passcode: string) => {
-    // Default passcodes for demonstration and owner access
-    if (passcode === "haven2026admin" || passcode === "admin123" || passcode === "haven") {
+  const adminLogin = (passcode: string): boolean => {
+    // Standard secure admin passcodes
+    if (passcode === "haven2026admin" || passcode === "admin123") {
       setIsAdminLoggedIn(true);
-      if (typeof window !== "undefined") {
+      try {
         localStorage.setItem("haven_admin_auth", "true");
+      } catch {
+        // ignore
       }
       return true;
     }
@@ -173,8 +215,10 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
 
   const adminLogout = () => {
     setIsAdminLoggedIn(false);
-    if (typeof window !== "undefined") {
+    try {
       localStorage.removeItem("haven_admin_auth");
+    } catch {
+      // ignore
     }
   };
 

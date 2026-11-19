@@ -5,24 +5,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "",
-    "/talk-to-someone",
     "/feeling-lonely",
+    "/heartbreak-support",
     "/divorce-support",
     "/separation-support",
-    "/breakup-support",
-    "/relationship-support",
     "/marriage-problems",
+    "/relationship-support",
     "/family-problems",
-    "/emotional-support-india",
+    "/grief-support",
+    "/emotional-stress-support",
+    "/feeling-misunderstood",
+    "/someone-to-talk",
+    "/talk-to-someone",
     "/someone-to-listen",
+    "/breakup-support",
+    "/emotional-support-india",
+    "/about",
+    "/contact",
     "/privacy",
     "/terms",
   ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
+    lastModified: "2026-02-20",
     changeFrequency: route === "" ? "daily" : "weekly",
-    priority: route === "" ? 1.0 : route.startsWith("/privacy") || route.startsWith("/terms") ? 0.3 : 0.8,
+    priority:
+      route === ""
+        ? 1.0
+        : route.startsWith("/privacy") || route.startsWith("/terms")
+        ? 0.3
+        : 0.8,
   }));
 }

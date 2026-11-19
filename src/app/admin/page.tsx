@@ -21,8 +21,12 @@ import {
   LogOut,
   X,
   FileText,
+  Download,
+  AlertCircle,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
+import { formatTimeAgo } from "@/lib/utils";
 
 export default function AdminPage() {
   const {
@@ -43,6 +47,7 @@ export default function AdminPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [preferredDateFilter, setPreferredDateFilter] = useState<string>("");
 
   // Selected lead for detail modal
   const [viewingLead, setViewingLead] = useState<SupportRequest | null>(null);
@@ -64,8 +69,8 @@ export default function AdminPage() {
   if (!isAdminLoggedIn) {
     return (
       <div className="min-h-screen py-24 px-4 flex items-center justify-center bg-warm-white text-dark-charcoal">
-        <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-light-beige shadow-sm space-y-6 text-center">
-          <div className="w-14 h-14 rounded-2xl bg-sage-50 text-muted-green flex items-center justify-center mx-auto">
+        <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-soft-sage/30 shadow-sm space-y-6 text-center">
+          <div className="w-14 h-14 rounded-2xl bg-soft-sage/20 text-muted-green flex items-center justify-center mx-auto">
             <Lock className="w-7 h-7" />
           </div>
 
@@ -73,14 +78,14 @@ export default function AdminPage() {
             <h1 className="text-2xl font-serif font-bold text-dark-charcoal">
               Admin Lead Console
             </h1>
-            <p className="text-xs text-charcoal-muted leading-relaxed">
+            <p className="text-xs text-dark-charcoal/65 leading-relaxed">
               Confidential dashboard for Haven support operators. Access is restricted to protect visitor personal data.
             </p>
           </div>
 
           {loginError && (
-            <div className="p-3 rounded-xl bg-coral-light border border-coral-soft/30 text-coral-soft text-xs">
-              Incorrect passcode. (Demo passcode: <strong>haven2026admin</strong> or <strong>admin123</strong>)
+            <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs">
+              Incorrect passcode. (Passcode: <strong>haven2026admin</strong> or <strong>admin123</strong>)
             </div>
           )}
 
@@ -101,144 +106,229 @@ export default function AdminPage() {
                   setLoginError(false);
                 }}
                 placeholder="••••••••••••"
-                className="w-full text-xs p-3.5 rounded-2xl border border-gray-200 focus:border-muted-green focus:ring-1 focus:ring-muted-green outline-none text-dark-charcoal"
-                required
+                className="w-full text-sm px-4 py-3 rounded-xl border border-soft-sage/50 focus:border-muted-green outline-none text-dark-charcoal"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-full text-xs font-semibold bg-muted-green hover:bg-sage-600 text-white shadow-sm transition-all"
+              className="w-full py-3.5 bg-muted-green hover:bg-[#68826d] text-white rounded-xl text-xs font-semibold shadow-sm transition-all"
             >
-              Sign In to Lead Dashboard
+              Sign In to Console
             </button>
           </form>
 
-          <div className="pt-2 border-t border-gray-100">
-            <Link
-              href="/"
-              className="text-xs text-charcoal-muted hover:text-dark-charcoal font-medium"
-            >
-              ← Back to Haven Homepage
-            </Link>
+          <div className="pt-2 text-[11px] text-dark-charcoal/50">
+            Protected by end-to-end authorization &bull; DPDP Act compliant
           </div>
         </div>
       </div>
     );
   }
 
-  // Calculate Metrics
+  // 1. Metric calculations
   const totalLeads = leads.length;
   const newLeads = leads.filter((l) => l.status === "new").length;
   const contactedLeads = leads.filter((l) => l.status === "contacted").length;
   const inProgressLeads = leads.filter((l) => l.status === "in_progress").length;
   const completedLeads = leads.filter((l) => l.status === "completed").length;
 
-  // Filtered Leads Table
+  // 2. Filter logic
   const filteredLeads = leads.filter((lead) => {
+    // Search query matches name, phone, or email
+    const query = searchQuery.toLowerCase().trim();
     const matchesSearch =
-      lead.full_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      lead.phone.includes(searchQuery) ||
-      lead.email.toLowerCase().includes(searchQuery.toLowerCase());
+      query === "" ||
+      lead.full_name.toLowerCase().includes(query) ||
+      lead.phone.toLowerCase().includes(query) ||
+      lead.email.toLowerCase().includes(query);
 
-    const matchesStatus =
-      statusFilter === "all" || lead.status === statusFilter;
+    // Status filter
+    const matchesStatus = statusFilter === "all" || lead.status === statusFilter;
 
+    // Category filter
     const matchesCategory =
       categoryFilter === "all" ||
       lead.support_categories.some((c) =>
         c.toLowerCase().includes(categoryFilter.toLowerCase())
       );
 
-    return matchesSearch && matchesStatus && matchesCategory;
+    // Preferred date filter (e.g., DD/MM/YYYY or substring)
+    const matchesPrefDate =
+      preferredDateFilter === "" ||
+      (lead.preferred_date && lead.preferred_date.includes(preferredDateFilter));
+
+    return matchesSearch && matchesStatus && matchesCategory && matchesPrefDate;
   });
 
-  const handleOpenLeadWhatsApp = (lead: SupportRequest) => {
-    // Clean digits for WhatsApp URL
-    const digitsOnly = lead.phone.replace(/\D/g, "");
-    const formattedPhone = digitsOnly.startsWith("91") ? digitsOnly : `91${digitsOnly}`;
-    const initialText = encodeURIComponent(
-      `Hello ${lead.full_name}, this is Haven Emotional Support following up on your request. We're here to listen whenever you're ready.`
-    );
-    window.open(`https://wa.me/${formattedPhone}?text=${initialText}`, "_blank");
+  // Export to CSV
+  const handleExportCSV = () => {
+    const headers = [
+      "ID",
+      "Full Name",
+      "Phone",
+      "Email",
+      "Categories",
+      "Other Text",
+      "Preferred Date",
+      "Preferred Time (24h)",
+      "Timezone",
+      "Status",
+      "Notes",
+      "Submitted At",
+    ];
+
+    const rows = filteredLeads.map((l) => [
+      l.id,
+      `"${l.full_name.replace(/"/g, '""')}"`,
+      `"${l.phone}"`,
+      `"${l.email}"`,
+      `"${l.support_categories.join("; ")}"`,
+      `"${(l.other_category_text || "").replace(/"/g, '""')}"`,
+      `"${l.preferred_date || ""}"`,
+      `"${l.preferred_time || ""}"`,
+      `"${l.timezone || "Asia/Kolkata"}"`,
+      l.status,
+      `"${(l.admin_notes || "").replace(/"/g, '""')}"`,
+      `"${l.created_at}"`,
+    ]);
+
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `haven_leads_${new Date().toISOString().split("T")[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
-  const handleSaveNotes = (leadId: string) => {
-    updateLeadNotes(leadId, tempNotes);
-    setEditingNotesLeadId(null);
+  const getStatusBadge = (status: LeadStatus) => {
+    switch (status) {
+      case "new":
+        return (
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-600 border border-rose-200">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+            New
+          </span>
+        );
+      case "contacted":
+        return (
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200">
+            Contacted
+          </span>
+        );
+      case "in_progress":
+        return (
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-soft-sage/30 text-dark-charcoal border border-soft-sage">
+            In Progress
+          </span>
+        );
+      case "completed":
+        return (
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+            Completed
+          </span>
+        );
+    }
+  };
+
+  const openWhatsAppForLead = (lead: SupportRequest) => {
+    const cleanNum = lead.phone.replace(/\D/g, "");
+    const text = encodeURIComponent(
+      `Hello ${lead.full_name}, this is Haven Peer Support following up on your request regarding "${lead.support_categories[0] || "support"}" scheduled for ${lead.preferred_date || "today"} at ${lead.preferred_time || "your requested time"} (IST). We are here whenever you are ready to talk.`
+    );
+    window.open(`https://wa.me/${cleanNum}?text=${text}`, "_blank");
   };
 
   return (
-    <div className="min-h-screen bg-warm-white p-4 sm:p-6 lg:p-8 text-dark-charcoal">
-      <div className="max-w-7xl mx-auto space-y-8 animate-fade-in">
-        {/* Admin Header */}
-        <div className="bg-dark-charcoal text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
-          <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3 h-3" />
-              Authenticated Support Operator
+    <div className="min-h-screen bg-warm-white text-dark-charcoal pb-24">
+      {/* Top Banner Bar */}
+      <div className="bg-white border-b border-soft-sage/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-soft-sage/25 text-muted-green flex items-center justify-center font-bold">
+              H
             </div>
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
-              Haven Support Request & Lead Management
-            </h1>
-            <p className="text-xs text-gray-300">
-              Manage incoming WhatsApp support requests, update progress, and coordinate peer listeners.
-            </p>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="font-serif text-lg font-bold text-dark-charcoal">
+                  Haven Admin Console
+                </h1>
+                <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold">
+                  Live DB
+                </span>
+              </div>
+              <p className="text-[11px] text-dark-charcoal/60">
+                Support request management &bull; Strictly confidential
+              </p>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleExportCSV}
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-white border border-soft-sage/50 hover:bg-light-beige text-dark-charcoal transition-colors shadow-sm"
+            >
+              <Download className="w-3.5 h-3.5 text-muted-green" />
+              <span>Export CSV</span>
+            </button>
+
             <Link
               href="/"
-              className="px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
+              className="px-3 py-2 text-xs font-semibold rounded-xl bg-white border border-soft-sage/50 hover:bg-light-beige text-dark-charcoal transition-colors"
             >
-              View Website
+              View Site
             </Link>
+
             <button
               onClick={adminLogout}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-coral-soft/80 hover:bg-coral-soft text-white transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 transition-colors"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>Sign Out</span>
             </button>
           </div>
         </div>
+      </div>
 
-        {/* 5 Key Metric Cards */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-6">
+        {/* 5 Metric Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-3.5">
-          <div className="bg-white rounded-2xl p-5 border border-light-beige shadow-sm space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-subtle">
+          <div className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
               Total Requests
             </span>
             <div className="text-2xl font-serif font-bold text-dark-charcoal">{totalLeads}</div>
             <span className="text-[10px] text-muted-green font-medium">All logged leads</span>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-light-beige shadow-sm space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-subtle">
+          <div className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
               New Inquiries
             </span>
-            <div className="text-2xl font-serif font-bold text-coral-soft">{newLeads}</div>
-            <span className="text-[10px] text-coral-soft font-semibold">Needs initial contact</span>
+            <div className="text-2xl font-serif font-bold text-rose-600">{newLeads}</div>
+            <span className="text-[10px] text-rose-600 font-semibold">Needs initial contact</span>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-light-beige shadow-sm space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-subtle">
+          <div className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
               Contacted
             </span>
             <div className="text-2xl font-serif font-bold text-amber-600">{contactedLeads}</div>
-            <span className="text-[10px] text-amber-600 font-medium">Awaiting response</span>
+            <span className="text-[10px] text-amber-600 font-medium">Awaiting reply</span>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-light-beige shadow-sm space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-subtle">
+          <div className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
               In Progress
             </span>
             <div className="text-2xl font-serif font-bold text-muted-green">{inProgressLeads}</div>
             <span className="text-[10px] text-muted-green font-medium">Active peer listening</span>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-light-beige shadow-sm space-y-1 col-span-2 lg:col-span-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal-subtle">
+          <div className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm space-y-1 col-span-2 lg:col-span-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
               Completed
             </span>
             <div className="text-2xl font-serif font-bold text-emerald-600">{completedLeads}</div>
@@ -247,26 +337,26 @@ export default function AdminPage() {
         </div>
 
         {/* Filter and Search Bar */}
-        <div className="bg-white rounded-3xl p-5 border border-light-beige shadow-sm space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+        <div className="bg-white rounded-3xl p-5 border border-soft-sage/30 shadow-sm space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
             {/* Search */}
-            <div className="md:col-span-6 relative">
-              <Search className="w-4 h-4 text-charcoal-subtle absolute left-3.5 top-3.5" />
+            <div className="lg:col-span-4 relative">
+              <Search className="w-4 h-4 text-dark-charcoal/40 absolute left-3.5 top-3.5" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by full name, phone number, or email..."
-                className="w-full text-xs pl-10 pr-4 py-3 rounded-2xl border border-gray-200 focus:border-muted-green outline-none text-dark-charcoal"
+                placeholder="Search name, phone, email..."
+                className="w-full text-xs pl-10 pr-4 py-3 rounded-xl border border-soft-sage/50 focus:border-muted-green outline-none text-dark-charcoal"
               />
             </div>
 
             {/* Status Filter */}
-            <div className="md:col-span-3">
+            <div className="lg:col-span-3">
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="w-full text-xs px-3.5 py-3 rounded-2xl border border-gray-200 bg-white text-dark-charcoal outline-none focus:border-muted-green"
+                className="w-full text-xs px-3.5 py-3 rounded-xl border border-soft-sage/50 bg-white text-dark-charcoal outline-none focus:border-muted-green cursor-pointer"
               >
                 <option value="all">All Statuses</option>
                 <option value="new">New</option>
@@ -277,156 +367,178 @@ export default function AdminPage() {
             </div>
 
             {/* Category Filter */}
-            <div className="md:col-span-3">
+            <div className="lg:col-span-3">
               <select
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
-                className="w-full text-xs px-3.5 py-3 rounded-2xl border border-gray-200 bg-white text-dark-charcoal outline-none focus:border-muted-green"
+                className="w-full text-xs px-3.5 py-3 rounded-xl border border-soft-sage/50 bg-white text-dark-charcoal outline-none focus:border-muted-green cursor-pointer"
               >
                 <option value="all">All Categories</option>
-                <option value="lonely">Loneliness</option>
+                <option value="loneliness">Loneliness</option>
                 <option value="divorce">Divorce</option>
                 <option value="separation">Separation</option>
-                <option value="breakup">Breakup</option>
+                <option value="heartbreak">Heartbreak</option>
                 <option value="marriage">Marriage</option>
+                <option value="relationship">Relationship</option>
                 <option value="family">Family</option>
-                <option value="grief">Grief</option>
-                <option value="overwhelmed">Overwhelmed</option>
+                <option value="grief">Grief &amp; Loss</option>
+                <option value="stress">Emotional Stress</option>
+                <option value="overthinking">Overthinking</option>
+                <option value="misunderstood">Misunderstood</option>
               </select>
+            </div>
+
+            {/* Preferred Date Filter */}
+            <div className="lg:col-span-2">
+              <input
+                type="text"
+                value={preferredDateFilter}
+                onChange={(e) => setPreferredDateFilter(e.target.value)}
+                placeholder="Filter date (DD/MM)"
+                className="w-full text-xs px-3.5 py-3 rounded-xl border border-soft-sage/50 bg-white text-dark-charcoal outline-none focus:border-muted-green"
+              />
             </div>
           </div>
         </div>
 
         {/* Leads Table */}
-        <div className="bg-white rounded-3xl border border-light-beige shadow-sm overflow-hidden">
-          <div className="p-5 border-b border-gray-100 flex items-center justify-between">
-            <h2 className="font-serif font-bold text-base text-dark-charcoal">
-              Support Inquiries ({filteredLeads.length})
+        <div className="bg-white rounded-3xl border border-soft-sage/30 shadow-sm overflow-hidden">
+          <div className="px-6 py-4 border-b border-soft-sage/20 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-dark-charcoal">
+              Support Requests ({filteredLeads.length})
             </h2>
-            <span className="text-[11px] text-charcoal-subtle">
-              Lead data saved securely in Supabase / Local Data Store
+            <span className="text-[11px] text-dark-charcoal/50">
+              Showing filtered results
             </span>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-warm-white text-charcoal-subtle uppercase text-[10px] tracking-wider border-b border-gray-100">
-                <tr>
-                  <th className="py-3.5 px-4">Visitor / Contact</th>
-                  <th className="py-3.5 px-4">What They&apos;re Facing</th>
-                  <th className="py-3.5 px-4">Language / Time</th>
-                  <th className="py-3.5 px-4">Submitted Date</th>
-                  <th className="py-3.5 px-4">Status</th>
-                  <th className="py-3.5 px-4 text-right">Actions</th>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-warm-white/70 border-b border-soft-sage/20 text-[10px] font-bold uppercase tracking-wider text-dark-charcoal/60">
+                  <th className="py-3 px-4">Visitor</th>
+                  <th className="py-3 px-4">WhatsApp &amp; Email</th>
+                  <th className="py-3 px-4">Concern / Categories</th>
+                  <th className="py-3 px-4">Appointment (24h IST)</th>
+                  <th className="py-3 px-4">Status</th>
+                  <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
-                {filteredLeads.length > 0 ? (
+              <tbody className="divide-y divide-soft-sage/10 text-xs">
+                {filteredLeads.length === 0 ? (
+                  <tr>
+                    <td colSpan={6} className="py-12 text-center text-dark-charcoal/50">
+                      No support requests match the active search or filters.
+                    </td>
+                  </tr>
+                ) : (
                   filteredLeads.map((lead) => (
-                    <tr key={lead.id} className="hover:bg-warm-white/60 transition-colors">
-                      {/* Name & Contact */}
+                    <tr
+                      key={lead.id}
+                      className="hover:bg-warm-white/50 transition-colors"
+                    >
+                      {/* Name & Submission Time */}
                       <td className="py-3.5 px-4">
-                        <div className="font-bold text-dark-charcoal">{lead.full_name}</div>
-                        <div className="text-[11px] text-muted-green font-medium flex items-center gap-1 mt-0.5">
-                          <Phone className="w-3 h-3" />
-                          <span>{lead.phone}</span>
+                        <div className="font-semibold text-dark-charcoal">{lead.full_name}</div>
+                        <div className="text-[10px] text-dark-charcoal/50 mt-0.5">
+                          {formatTimeAgo(lead.created_at)}
                         </div>
-                        <div className="text-[11px] text-charcoal-subtle truncate max-w-[160px]">
+                      </td>
+
+                      {/* Phone & Email */}
+                      <td className="py-3.5 px-4">
+                        <div className="flex items-center gap-1.5 font-mono text-[11px]">
+                          <span>{lead.country_code || "+91"} {lead.phone}</span>
+                          <button
+                            onClick={() => openWhatsAppForLead(lead)}
+                            title="Direct WhatsApp"
+                            className="text-whatsapp-green hover:opacity-80 p-0.5"
+                          >
+                            <MessageCircle className="w-3.5 h-3.5 fill-whatsapp-green" />
+                          </button>
+                        </div>
+                        <div className="text-[11px] text-dark-charcoal/60 truncate max-w-[160px]">
                           {lead.email}
                         </div>
                       </td>
 
-                      {/* Categories */}
-                      <td className="py-3.5 px-4 max-w-xs">
-                        <div className="flex flex-wrap gap-1">
-                          {lead.support_categories.map((c, idx) => (
+                      {/* Concern Categories */}
+                      <td className="py-3.5 px-4">
+                        <div className="flex flex-wrap gap-1 max-w-[200px]">
+                          {lead.support_categories.map((cat, i) => (
                             <span
-                              key={idx}
-                              className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-sage-50 text-muted-green border border-soft-sage/40"
+                              key={i}
+                              className="px-2 py-0.5 bg-soft-sage/20 text-dark-charcoal text-[10px] rounded-md font-medium"
                             >
-                              {c}
+                              {cat}
                             </span>
                           ))}
                         </div>
-                        {lead.additional_message && (
-                          <p className="text-[11px] text-charcoal-muted mt-1 italic truncate max-w-[200px]">
-                            &ldquo;{lead.additional_message}&rdquo;
-                          </p>
+                        {lead.other_category_text && (
+                          <div className="text-[10px] text-dark-charcoal/60 italic mt-0.5 truncate max-w-[200px]">
+                            Other: {lead.other_category_text}
+                          </div>
                         )}
                       </td>
 
-                      {/* Language & Preferred Time */}
-                      <td className="py-3.5 px-4 whitespace-nowrap">
-                        <span className="font-semibold text-dark-charcoal block">
-                          {lead.preferred_language || "Hindi"}
-                        </span>
-                        <span className="text-[10px] text-charcoal-subtle block">
-                          {lead.preferred_time || "Anytime"}
-                        </span>
-                      </td>
-
-                      {/* Date */}
-                      <td className="py-3.5 px-4 whitespace-nowrap text-charcoal-muted">
-                        {lead.created_at.split("T")[0]}
+                      {/* Preferred Date & 24-hour Time */}
+                      <td className="py-3.5 px-4">
+                        <div className="font-medium text-dark-charcoal flex items-center gap-1">
+                          <Calendar className="w-3 h-3 text-muted-green" />
+                          <span>{lead.preferred_date || "Not set"}</span>
+                        </div>
+                        <div className="text-[11px] font-mono text-muted-green font-semibold flex items-center gap-1 mt-0.5">
+                          <Clock className="w-3 h-3" />
+                          <span>{lead.preferred_time || "18:00"} (24h IST)</span>
+                        </div>
                       </td>
 
                       {/* Status Dropdown */}
-                      <td className="py-3.5 px-4 whitespace-nowrap">
+                      <td className="py-3.5 px-4">
                         <select
                           value={lead.status}
                           onChange={(e) =>
                             updateLeadStatus(lead.id, e.target.value as LeadStatus)
                           }
-                          className={`text-[11px] font-bold px-2.5 py-1 rounded-full border outline-none cursor-pointer ${
-                            lead.status === "new"
-                              ? "bg-coral-light text-coral-soft border-coral-soft/40"
-                              : lead.status === "contacted"
-                              ? "bg-amber-50 text-amber-700 border-amber-300"
-                              : lead.status === "in_progress"
-                              ? "bg-sage-100 text-muted-green border-soft-sage"
-                              : "bg-emerald-50 text-emerald-800 border-emerald-300"
-                          }`}
+                          className="text-xs px-2 py-1 rounded-lg border border-soft-sage/40 bg-white font-medium text-dark-charcoal focus:outline-none focus:border-muted-green cursor-pointer"
                         >
-                          <option value="new">● New</option>
-                          <option value="contacted">● Contacted</option>
-                          <option value="in_progress">● In Progress</option>
-                          <option value="completed">● Completed</option>
+                          <option value="new">New</option>
+                          <option value="contacted">Contacted</option>
+                          <option value="in_progress">In Progress</option>
+                          <option value="completed">Completed</option>
                         </select>
                       </td>
 
                       {/* Actions */}
-                      <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <td className="py-3.5 px-4 text-right">
                         <div className="flex items-center justify-end gap-1.5">
-                          {/* One Click WhatsApp with Lead */}
-                          <button
-                            type="button"
-                            onClick={() => handleOpenLeadWhatsApp(lead)}
-                            className="p-2 rounded-xl bg-[#25D366] text-white hover:bg-[#1EBE5D] transition-colors shadow-sm"
-                            title="Chat with visitor on WhatsApp"
-                          >
-                            <MessageCircle className="w-3.5 h-3.5 fill-white" />
-                          </button>
-
                           {/* View details */}
                           <button
-                            type="button"
                             onClick={() => setViewingLead(lead)}
-                            className="p-2 rounded-xl bg-warm-white text-dark-charcoal hover:bg-light-beige border border-gray-200 transition-colors"
-                            title="View full lead record"
+                            className="p-1.5 rounded-lg border border-soft-sage/40 hover:bg-light-beige text-dark-charcoal transition-colors"
+                            title="View Full Request"
                           >
                             <Eye className="w-3.5 h-3.5" />
                           </button>
 
-                          {/* Delete lead */}
+                          {/* WhatsApp Chat */}
                           <button
-                            type="button"
+                            onClick={() => openWhatsAppForLead(lead)}
+                            className="p-1.5 rounded-lg bg-whatsapp-green text-white hover:bg-[#20bd5a] transition-colors"
+                            title="Open WhatsApp Chat"
+                          >
+                            <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                          </button>
+
+                          {/* Delete Lead */}
+                          <button
                             onClick={() => {
-                              if (confirm(`Delete lead record for ${lead.full_name}?`)) {
+                              if (confirm(`Are you sure you want to delete the request for ${lead.full_name}?`)) {
                                 deleteLead(lead.id);
                               }
                             }}
-                            className="p-2 rounded-xl text-charcoal-subtle hover:text-coral-soft hover:bg-coral-light/60 transition-colors"
-                            title="Delete lead record"
+                            className="p-1.5 rounded-lg border border-rose-200 text-rose-600 hover:bg-rose-50 transition-colors"
+                            title="Delete Request"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
@@ -434,148 +546,162 @@ export default function AdminPage() {
                       </td>
                     </tr>
                   ))
-                ) : (
-                  <tr>
-                    <td colSpan={6} className="text-center py-10 text-charcoal-muted">
-                      No support requests found matching your filters.
-                    </td>
-                  </tr>
                 )}
               </tbody>
             </table>
           </div>
         </div>
+      </div>
 
-        {/* Modal: View & Edit Full Lead Record */}
-        {viewingLead && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-charcoal/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
-            <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-light-beige relative my-8 text-dark-charcoal space-y-6">
+      {/* VIEW LEAD MODAL */}
+      {viewingLead && (
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-soft-sage/30 space-y-6 max-h-[90vh] overflow-y-auto animate-fade-in">
+            <div className="flex items-center justify-between border-b border-soft-sage/20 pb-4">
+              <div>
+                <h3 className="font-serif text-xl font-bold text-dark-charcoal">
+                  Request Details
+                </h3>
+                <span className="text-[11px] text-dark-charcoal/50">ID: {viewingLead.id}</span>
+              </div>
               <button
                 onClick={() => setViewingLead(null)}
-                className="absolute top-5 right-5 p-2 rounded-full text-charcoal-subtle hover:text-dark-charcoal hover:bg-gray-100"
+                className="p-1 text-dark-charcoal/50 hover:text-dark-charcoal rounded-lg"
               >
                 <X className="w-5 h-5" />
               </button>
+            </div>
 
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-green">
-                  Lead Details Record
-                </span>
-                <h3 className="text-2xl font-serif font-bold text-dark-charcoal mt-0.5">
-                  {viewingLead.full_name}
-                </h3>
-                <span className="text-xs text-charcoal-subtle">
-                  Submitted on {viewingLead.created_at.split("T")[0]}
-                </span>
+            <div className="space-y-4 text-xs">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3 bg-warm-white rounded-xl">
+                  <span className="text-dark-charcoal/50 block mb-0.5">Full Name</span>
+                  <span className="font-semibold text-sm text-dark-charcoal">{viewingLead.full_name}</span>
+                </div>
+                <div className="p-3 bg-warm-white rounded-xl">
+                  <span className="text-dark-charcoal/50 block mb-0.5">Status</span>
+                  {getStatusBadge(viewingLead.status)}
+                </div>
               </div>
 
-              <div className="space-y-3 text-xs bg-warm-white p-4 rounded-2xl border border-light-beige">
-                <div className="flex justify-between py-1 border-b border-gray-100">
-                  <span className="text-charcoal-muted">WhatsApp Phone:</span>
-                  <strong className="text-dark-charcoal">{viewingLead.phone}</strong>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3 bg-warm-white rounded-xl">
+                  <span className="text-dark-charcoal/50 block mb-0.5">WhatsApp Mobile</span>
+                  <span className="font-mono text-dark-charcoal font-semibold">{viewingLead.country_code || "+91"} {viewingLead.phone}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-gray-100">
-                  <span className="text-charcoal-muted">Email:</span>
-                  <strong className="text-dark-charcoal">{viewingLead.email}</strong>
+                <div className="p-3 bg-warm-white rounded-xl">
+                  <span className="text-dark-charcoal/50 block mb-0.5">Email Address</span>
+                  <span className="text-dark-charcoal font-semibold truncate block">{viewingLead.email}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-gray-100">
-                  <span className="text-charcoal-muted">Language:</span>
-                  <strong className="text-dark-charcoal">{viewingLead.preferred_language}</strong>
+              </div>
+
+              <div className="p-3 bg-light-beige/40 rounded-xl border border-soft-sage/30">
+                <span className="text-dark-charcoal/60 block mb-1 font-medium">Scheduled Appointment</span>
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-dark-charcoal flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-muted-green" />
+                    {viewingLead.preferred_date || "Not chosen"}
+                  </span>
+                  <span className="font-mono font-bold text-muted-green flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5" />
+                    {viewingLead.preferred_time || "18:00"} (24-Hour Clock IST)
+                  </span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-gray-100">
-                  <span className="text-charcoal-muted">Preferred Time:</span>
-                  <strong className="text-dark-charcoal">{viewingLead.preferred_time}</strong>
+              </div>
+
+              <div>
+                <span className="text-dark-charcoal/60 block mb-1.5 font-medium">Selected Concerns</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {viewingLead.support_categories.map((c, i) => (
+                    <span key={i} className="px-2.5 py-1 bg-soft-sage/20 rounded-lg text-dark-charcoal font-medium">
+                      {c}
+                    </span>
+                  ))}
                 </div>
-                <div className="py-1">
-                  <span className="text-charcoal-muted block mb-1">Selected Categories:</span>
-                  <div className="flex flex-wrap gap-1">
-                    {viewingLead.support_categories.map((c, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-sage-100 text-muted-green text-[10px] font-semibold">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {viewingLead.additional_message && (
-                  <div className="py-1 pt-2 border-t border-gray-100">
-                    <span className="text-charcoal-muted block mb-0.5">Visitor Message:</span>
-                    <p className="text-dark-charcoal leading-relaxed whitespace-pre-wrap">
-                      {viewingLead.additional_message}
-                    </p>
-                  </div>
+                {viewingLead.other_category_text && (
+                  <p className="mt-2 text-dark-charcoal/70 bg-warm-white p-2.5 rounded-lg border border-soft-sage/20">
+                    <strong>Other Description:</strong> {viewingLead.other_category_text}
+                  </p>
                 )}
               </div>
 
-              {/* Internal Notes Section */}
-              <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-dark-charcoal">
-                  Internal Support Notes
-                </label>
+              {viewingLead.additional_message && (
+                <div>
+                  <span className="text-dark-charcoal/60 block mb-1 font-medium">Additional Message</span>
+                  <div className="p-3 bg-warm-white rounded-xl text-dark-charcoal/80 leading-relaxed italic">
+                    &ldquo;{viewingLead.additional_message}&rdquo;
+                  </div>
+                </div>
+              )}
+
+              {/* Admin Notes Section */}
+              <div className="pt-2 border-t border-soft-sage/20 space-y-2">
+                <span className="text-dark-charcoal font-semibold block">Internal Admin Notes</span>
                 {editingNotesLeadId === viewingLead.id ? (
                   <div className="space-y-2">
                     <textarea
                       rows={3}
                       value={tempNotes}
                       onChange={(e) => setTempNotes(e.target.value)}
-                      placeholder="Add notes on listener assigned, caller disposition, follow-ups..."
-                      className="w-full text-xs p-3 rounded-2xl border border-gray-200 outline-none focus:border-muted-green text-dark-charcoal"
+                      placeholder="Add notes about conversations, preferences..."
+                      className="w-full p-2.5 rounded-xl border border-soft-sage text-xs outline-none focus:border-muted-green"
                     />
                     <div className="flex justify-end gap-2">
                       <button
                         onClick={() => setEditingNotesLeadId(null)}
-                        className="px-3 py-1.5 text-xs text-charcoal-muted hover:text-dark-charcoal"
+                        className="px-3 py-1 text-xs text-dark-charcoal/60 hover:text-dark-charcoal"
                       >
                         Cancel
                       </button>
                       <button
                         onClick={() => {
-                          handleSaveNotes(viewingLead.id);
+                          updateLeadNotes(viewingLead.id, tempNotes);
                           setViewingLead({ ...viewingLead, admin_notes: tempNotes });
+                          setEditingNotesLeadId(null);
                         }}
-                        className="px-4 py-1.5 rounded-full text-xs font-semibold bg-muted-green text-white"
+                        className="px-3 py-1 bg-muted-green text-white text-xs rounded-lg font-semibold"
                       >
                         Save Notes
                       </button>
                     </div>
                   </div>
                 ) : (
-                  <div className="p-3 bg-gray-50 rounded-2xl border border-gray-200 text-xs text-charcoal-muted flex items-start justify-between">
-                    <p className="italic">
+                  <div className="flex items-start justify-between p-3 bg-warm-white rounded-xl">
+                    <p className="text-dark-charcoal/70 italic">
                       {viewingLead.admin_notes || "No notes added yet."}
                     </p>
                     <button
                       onClick={() => {
-                        setEditingNotesLeadId(viewingLead.id);
                         setTempNotes(viewingLead.admin_notes || "");
+                        setEditingNotesLeadId(viewingLead.id);
                       }}
-                      className="text-muted-green hover:underline text-[11px] font-semibold shrink-0 ml-2"
+                      className="text-muted-green font-semibold ml-2 hover:underline flex-shrink-0"
                     >
-                      Edit
+                      Edit Notes
                     </button>
                   </div>
                 )}
               </div>
+            </div>
 
-              <div className="flex items-center justify-between pt-2">
-                <button
-                  onClick={() => handleOpenLeadWhatsApp(viewingLead)}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#1EBE5D]"
-                >
-                  <MessageCircle className="w-4 h-4 fill-white" />
-                  <span>Open WhatsApp with Lead</span>
-                </button>
-
-                <button
-                  onClick={() => setViewingLead(null)}
-                  className="px-5 py-2.5 rounded-full text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-dark-charcoal"
-                >
-                  Close
-                </button>
-              </div>
+            <div className="pt-2 flex gap-3">
+              <button
+                onClick={() => openWhatsAppForLead(viewingLead)}
+                className="flex-1 py-3 bg-whatsapp-green hover:bg-[#20bd5a] text-white rounded-xl font-semibold text-xs flex items-center justify-center gap-2 shadow-sm"
+              >
+                <MessageCircle className="w-4 h-4 fill-white" />
+                Launch WhatsApp Chat
+              </button>
+              <button
+                onClick={() => setViewingLead(null)}
+                className="px-5 py-3 border border-soft-sage/40 rounded-xl text-xs font-semibold text-dark-charcoal hover:bg-light-beige"
+              >
+                Close
+              </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

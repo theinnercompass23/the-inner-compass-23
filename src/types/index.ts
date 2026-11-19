@@ -6,11 +6,15 @@ export interface SupportRequest {
   id: string;
   full_name: string;
   phone: string;
+  country_code?: string;
   email: string;
   support_categories: string[];
+  other_category_text?: string;
   additional_message?: string;
-  preferred_language: PreferredLanguage | string;
-  preferred_time?: string;
+  preferred_date: string; // DD/MM/YYYY
+  preferred_time: string; // 24-hour format HH:MM (e.g. "15:30", "00:00", "23:59")
+  timezone: string; // "Asia/Kolkata"
+  preferred_language?: PreferredLanguage | string;
   consent: boolean;
   status: LeadStatus;
   admin_notes?: string;
@@ -21,6 +25,8 @@ export interface SupportRequest {
 export interface SupportCategoryItem {
   id: string;
   label: string;
-  iconName: string;
-  description?: string;
+  shortLabel: string;
+  description: string;
+  icon: string;
+  articleSlug?: string;
 }
