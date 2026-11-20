@@ -7,6 +7,7 @@ import SupportRequestForm from "@/components/SupportRequestForm";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import CityProgrammaticLinks from "@/components/CityProgrammaticLinks";
+import SpotifyPodcastSection from "@/components/SpotifyPodcastSection";
 import { AI_READY_FAQS } from "@/data/aiFaqs";
 import {
   CITIES_DATA,
@@ -49,15 +50,18 @@ export async function generateMetadata({
   const city = getCityBySlug(countrySlug, citySlug);
   if (!city) return {};
 
+  const pageTitle = `Someone to Talk to in ${city.name} — Anonymous Human Emotional Support | 24/7 Online Help – Haven`;
+  const metaDescription = `Feeling lonely or dealing with emotional stress in ${city.name}? Talk anonymously to a trained listener or counselor online 24/7. Zero judgment, instant connect, no real name required.`;
+
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
+    title: pageTitle,
+    description: metaDescription,
     alternates: {
       canonical: `https://haven.care/locations/${city.countrySlug}/${city.slug}`,
     },
     openGraph: {
-      title: city.metaTitle,
-      description: city.metaDescription,
+      title: pageTitle,
+      description: metaDescription,
       url: `https://haven.care/locations/${city.countrySlug}/${city.slug}`,
       type: "article",
     },
@@ -643,9 +647,17 @@ export default async function CityPage({
         </div>
       </section>
 
+      {/* Spotify Podcast & Calming Audio Section */}
+      <SpotifyPodcastSection
+        title={`Listen to Haven on Spotify: Calming Reflections for ${city.name}`}
+        subtitle={`Stream our guided mindful emotional support episodes on Spotify, or play our interactive binaural audio previews directly below.`}
+        badge="Official Spotify Podcast &amp; Calming Voice Station"
+      />
+
       {/* Programmatic Issue & Long-Tail Internal Linking */}
       <CityProgrammaticLinks
         cityName={city.name}
+        citySlug={city.slug}
         countryName={city.countryName}
         countrySlug={city.countrySlug}
       />

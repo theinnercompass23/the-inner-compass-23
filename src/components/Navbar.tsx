@@ -27,6 +27,7 @@ export default function Navbar() {
     { label: "Support Topics", href: "/#categories-section" },
     { label: "Articles", href: "/#articles-section" },
     { label: "Video Stories", href: "/video-stories" },
+    { label: "Spotify", href: "https://open.spotify.com/episode/3Ard2e43YuXqp0Vk4UXBs7" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];

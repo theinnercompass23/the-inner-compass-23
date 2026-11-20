@@ -27,6 +27,7 @@ export default function Footer() {
     { label: "Contact Us", href: "/contact" },
     { label: "Global Locations", href: "/locations" },
     { label: "Support for Children", href: "/support-for-children" },
+    { label: "Spotify Podcast", href: "https://open.spotify.com/episode/3Ard2e43YuXqp0Vk4UXBs7" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
   ];
@@ -54,6 +55,17 @@ export default function Footer() {
                 <WhatsAppIcon className="w-3 h-3" color="#FFFFFF" />
               </span>
               <span>Direct WhatsApp: <strong>{WHATSAPP_DISPLAY}</strong></span>
+            </div>
+            <div className="pt-2">
+              <a
+                href="https://open.spotify.com/episode/3Ard2e43YuXqp0Vk4UXBs7?si=jMSJUoP-SMuZIG14iqD5vQ&utm_source=whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1DB954]/15 hover:bg-[#1DB954]/25 border border-[#1DB954]/30 text-[#127735] text-[11px] font-semibold transition-all cursor-pointer"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#1DB954] animate-pulse" />
+                <span>Listen to Haven on Spotify</span>
+              </a>
             </div>
           </div>
 

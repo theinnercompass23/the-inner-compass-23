@@ -6,6 +6,7 @@ import SupportRequestForm from "@/components/SupportRequestForm";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
 import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
+import SpotifyPodcastSection from "@/components/SpotifyPodcastSection";
 import AiFaqSection from "@/components/AiFaqSection";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
@@ -207,7 +208,12 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 6. AI-READY FAQS & FEATURED SNIPPETS SECTION              */}
+      {/* 6. SPOTIFY PODCAST & AI VOICE CALM REFLECTIONS            */}
+      {/* ========================================================= */}
+      <SpotifyPodcastSection />
+
+      {/* ========================================================= */}
+      {/* 7. AI-READY FAQS & FEATURED SNIPPETS SECTION              */}
       {/* ========================================================= */}
       <AiFaqSection
         title="Frequently Asked Questions & AI Answers"

@@ -16,19 +16,21 @@ import {
 
 interface CityProgrammaticLinksProps {
   cityName: string;
+  citySlug?: string;
   countryName: string;
   countrySlug: string;
 }
 
 export default function CityProgrammaticLinks({
   cityName,
+  citySlug,
   countryName,
   countrySlug,
 }: CityProgrammaticLinksProps) {
   const issues = [
     {
       title: `${cityName} Loneliness & Companionship`,
-      href: "/feeling-lonely",
+      href: citySlug ? `/locations/${countrySlug}/${citySlug}/loneliness` : "/feeling-lonely",
       targetQuery: `feeling lonely in ${cityName.toLowerCase()} where to talk to someone online`,
       desc: `Overcome urban isolation, living alone in ${cityName}, and feeling disconnected in a crowded city.`,
       icon: Heart,
@@ -36,7 +38,7 @@ export default function CityProgrammaticLinks({
     },
     {
       title: `${cityName} Divorce & Separation Support`,
-      href: "/divorce-support",
+      href: citySlug ? `/locations/${countrySlug}/${citySlug}/divorce-support` : "/divorce-support",
       targetQuery: `affordable divorce emotional support counselor in ${cityName.toLowerCase()}`,
       desc: `Survive difficult weekends alone after divorce, custody stress, and heartbreak without insurance paperwork.`,
       icon: HeartCrack,
@@ -44,7 +46,7 @@ export default function CityProgrammaticLinks({
     },
     {
       title: `${cityName} Breakup & Heartbreak Recovery`,
-      href: "/heartbreak-support",
+      href: citySlug ? `/locations/${countrySlug}/${citySlug}/heartbreak` : "/heartbreak-support",
       targetQuery: `confidential breakup support chat for ${cityName.toLowerCase()} residents`,
       desc: `Compassionate sounding board for moving forward after a relationship ends, betrayal, and quiet grief.`,
       icon: Users,
@@ -52,27 +54,27 @@ export default function CityProgrammaticLinks({
     },
     {
       title: `${cityName} 3 AM Late-Night Venting`,
-      href: "/overthinking-support",
+      href: citySlug ? `/locations/${countrySlug}/${citySlug}/late-night-venting` : "/overthinking-support",
       targetQuery: `who can i call or chat with at 3am when feeling depressed in ${cityName.toLowerCase()}`,
       desc: `Immediate confidential ear for racing thoughts, midnight insomnia, and emotional overwhelm.`,
       icon: Clock,
       badge: "24/7 Late-Night",
     },
     {
+      title: `${cityName} Depression & Anxiety Support`,
+      href: citySlug ? `/locations/${countrySlug}/${citySlug}/depression-anxiety` : "/emotional-stress-support",
+      targetQuery: `best online emotional support for anxiety in ${cityName.toLowerCase()}`,
+      desc: `A grounding, non-clinical human space for racing thoughts, panic, and nervous exhaustion.`,
+      icon: Compass,
+      badge: "Anxiety Support",
+    },
+    {
       title: `${cityName} Anonymous Online Active Listener`,
       href: "/someone-to-talk",
-      targetQuery: `talk to a trained listener online instead of a therapist in ${cityName.toLowerCase()}`,
+      targetQuery: `talk to a trained listener in ${cityName.toLowerCase()} instead of a therapist`,
       desc: `Safe space to vent to a real human listener using a temporary nickname—no clinical checklists.`,
       icon: MessageCircle,
       badge: "Active Listening",
-    },
-    {
-      title: `${cityName} Marriage & Family Struggles`,
-      href: "/marriage-problems",
-      targetQuery: `confidential relationship and marriage venting in ${cityName.toLowerCase()}`,
-      desc: `Patient, judgment-free listening space to process marital friction, domestic stress, and silent tension.`,
-      icon: Compass,
-      badge: "Relationship Care",
     },
   ];
 

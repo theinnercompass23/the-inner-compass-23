@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { COUNTRIES_DATA } from "@/data/countries";
 import { CITIES_DATA } from "@/data/cities";
+import { CORE_ISSUES } from "@/data/issues";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://haven.care";
@@ -11,6 +12,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: "2026-02-20",
       changeFrequency: "daily",
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/us`,
+      lastModified: "2026-02-20",
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/uk`,
+      lastModified: "2026-02-20",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ca`,
+      lastModified: "2026-02-20",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/au`,
+      lastModified: "2026-02-20",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ae`,
+      lastModified: "2026-02-20",
+      changeFrequency: "daily",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/countries`,
@@ -102,8 +133,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/locations/${city.countrySlug}/${city.slug}`,
     lastModified: "2026-02-20",
     changeFrequency: "weekly",
-    priority: 0.8,
+    priority: 0.85,
   }));
 
-  return [...staticRoutes, ...topicRoutes, ...countryRoutes, ...cityRoutes];
+  // City + Issue Programmatic Routes
+  const cityIssueRoutes: MetadataRoute.Sitemap = [];
+  for (const city of CITIES_DATA) {
+    for (const issue of CORE_ISSUES) {
+      cityIssueRoutes.push({
+        url: `${baseUrl}/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
+        lastModified: "2026-02-20",
+        changeFrequency: "weekly",
+        priority: 0.8,
+      });
+    }
+  }
+
+  return [...staticRoutes, ...topicRoutes, ...countryRoutes, ...cityRoutes, ...cityIssueRoutes];
 }
