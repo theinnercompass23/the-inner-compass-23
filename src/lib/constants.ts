@@ -211,19 +211,59 @@ export const HOMEPAGE_CATEGORY_CARDS = [
 ];
 
 export const COUNTRY_CODES = [
-  { code: "+91", country: "India (भारत)", flag: "🇮🇳" },
-  { code: "+1", country: "USA / Canada", flag: "🇺🇸" },
+  { code: "+1", country: "United States", flag: "🇺🇸" },
   { code: "+44", country: "United Kingdom", flag: "🇬🇧" },
-  { code: "+971", country: "United Arab Emirates", flag: "🇦🇪" },
-  { code: "+65", country: "Singapore", flag: "🇸🇬" },
+  { code: "+1", country: "Canada", flag: "🇨🇦" },
   { code: "+61", country: "Australia", flag: "🇦🇺" },
+  { code: "+971", country: "United Arab Emirates", flag: "🇦🇪" },
+  { code: "+353", country: "Ireland", flag: "🇮🇪" },
+  { code: "+65", country: "Singapore", flag: "🇸🇬" },
+  { code: "+49", country: "Germany", flag: "🇩🇪" },
+  { code: "+31", country: "Netherlands", flag: "🇳🇱" },
+  { code: "+41", country: "Switzerland", flag: "🇨🇭" },
+  { code: "+64", country: "New Zealand", flag: "🇳🇿" },
   { code: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
   { code: "+974", country: "Qatar", flag: "🇶🇦" },
-  { code: "+49", country: "Germany", flag: "🇩🇪" },
-  { code: "+33", country: "France", flag: "🇫🇷" },
   { code: "+965", country: "Kuwait", flag: "🇰🇼" },
   { code: "+968", country: "Oman", flag: "🇴🇲" },
+  { code: "+973", country: "Bahrain", flag: "🇧🇭" },
+  { code: "+47", country: "Norway", flag: "🇳🇴" },
+  { code: "+46", country: "Sweden", flag: "🇸🇪" },
+  { code: "+45", country: "Denmark", flag: "🇩🇰" },
+  { code: "+43", country: "Austria", flag: "🇦🇹" },
+  { code: "+32", country: "Belgium", flag: "🇧🇪" },
+  { code: "+358", country: "Finland", flag: "🇫🇮" },
+  { code: "+33", country: "France", flag: "🇫🇷" },
   { code: "+60", country: "Malaysia", flag: "🇲🇾" },
+  { code: "+91", country: "India (भारत)", flag: "🇮🇳" },
+];
+
+export const TARGET_TIMEZONES = [
+  { value: "Asia/Kolkata", label: "IST (India Standard Time, UTC+5:30)", city: "India / Operations", offsetHours: 5.5 },
+  { value: "America/New_York", label: "US Eastern (EST / UTC-5: New York, Miami, Atlanta, Boston)", city: "New York", offsetHours: -5 },
+  { value: "America/Chicago", label: "US Central (CST / UTC-6: Chicago, Dallas, Houston, Austin)", city: "Chicago", offsetHours: -6 },
+  { value: "America/Denver", label: "US Mountain (MST / UTC-7: Denver, Phoenix)", city: "Denver", offsetHours: -7 },
+  { value: "America/Los_Angeles", label: "US Pacific (PST / UTC-8: Los Angeles, SF, Seattle)", city: "Los Angeles", offsetHours: -8 },
+  { value: "America/Toronto", label: "Canada Eastern (EST / UTC-5: Toronto, Montreal, Ottawa)", city: "Toronto", offsetHours: -5 },
+  { value: "America/Vancouver", label: "Canada Pacific (PST / UTC-8: Vancouver)", city: "Vancouver", offsetHours: -8 },
+  { value: "Europe/London", label: "UK Time (GMT / UTC+0: London, Manchester, Edinburgh)", city: "London", offsetHours: 0 },
+  { value: "Europe/Dublin", label: "Ireland (GMT / UTC+0: Dublin, Cork)", city: "Dublin", offsetHours: 0 },
+  { value: "Europe/Berlin", label: "CET (Central Europe / UTC+1: Berlin, Amsterdam, Zurich, Paris)", city: "Berlin / Amsterdam", offsetHours: 1 },
+  { value: "Asia/Dubai", label: "GST (Gulf Standard Time / UTC+4: Dubai, Abu Dhabi)", city: "Dubai", offsetHours: 4 },
+  { value: "Asia/Riyadh", label: "AST (Arabia Standard Time / UTC+3: Riyadh, Doha, Kuwait)", city: "Riyadh", offsetHours: 3 },
+  { value: "Asia/Singapore", label: "SGT (Singapore / UTC+8: Singapore, KL)", city: "Singapore", offsetHours: 8 },
+  { value: "Australia/Sydney", label: "AEST / AEDT (Australia Eastern / UTC+11: Sydney, Melbourne)", city: "Sydney", offsetHours: 11 },
+  { value: "Australia/Perth", label: "AWST (Australia Western / UTC+8: Perth)", city: "Perth", offsetHours: 8 },
+  { value: "Pacific/Auckland", label: "NZDT (New Zealand / UTC+13: Auckland, Wellington)", city: "Auckland", offsetHours: 13 },
+];
+
+export const INTERNATIONAL_MARKETS = [
+  { code: "global", name: "Global (English)", flag: "🌐", path: "/" },
+  { code: "us", name: "United States", flag: "🇺🇸", path: "/us", currency: "USD", symbol: "$" },
+  { code: "uk", name: "United Kingdom", flag: "🇬🇧", path: "/uk", currency: "GBP", symbol: "£" },
+  { code: "ca", name: "Canada", flag: "🇨🇦", path: "/ca", currency: "CAD", symbol: "C$" },
+  { code: "au", name: "Australia", flag: "🇦🇺", path: "/au", currency: "AUD", symbol: "A$" },
+  { code: "ae", name: "United Arab Emirates", flag: "🇦🇪", path: "/ae", currency: "AED", symbol: "AED" },
 ];
 
 export const PREFERRED_LANGUAGES = [

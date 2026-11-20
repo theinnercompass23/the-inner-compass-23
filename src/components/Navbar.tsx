@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Heart, Smile } from "lucide-react";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import RegionSelector from "@/components/RegionSelector";
 
 export default function Navbar() {
   return (
@@ -29,35 +30,32 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/#categories-section"
-            className="hidden md:inline-flex text-xs font-semibold text-dark-charcoal/80 hover:text-dark-charcoal px-3.5 py-2 rounded-full hover:bg-white/60 transition-colors"
+            className="hidden md:inline-flex text-xs font-semibold text-dark-charcoal/80 hover:text-dark-charcoal px-3 py-2 rounded-full hover:bg-white/60 transition-colors"
           >
             Support Topics
           </Link>
 
           <Link
             href="/support-for-children"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-muted-green hover:text-dark-charcoal px-3.5 py-2 rounded-full hover:bg-white/60 transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-muted-green hover:text-dark-charcoal px-3 py-2 rounded-full hover:bg-white/60 transition-colors"
           >
             <Smile className="w-3.5 h-3.5" />
             <span>For Children</span>
           </Link>
 
-          <a
-            href="#support-form"
-            className="hidden sm:inline-flex text-xs font-semibold text-dark-charcoal hover:text-muted-green px-3.5 py-2 rounded-full hover:bg-white/60 transition-colors"
-          >
-            Talk to Someone
-          </a>
+          {/* Region / Country Selector */}
+          <RegionSelector />
 
           {/* Direct WhatsApp CTA Button (Official Brand Green & Logo) */}
           <a
             href={buildDirectWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
           >
             <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-            <span className="font-semibold">WhatsApp: {WHATSAPP_DISPLAY}</span>
+            <span className="font-semibold hidden xs:inline">WhatsApp</span>
+            <span className="font-semibold hidden md:inline">: {WHATSAPP_DISPLAY}</span>
           </a>
         </div>
       </div>

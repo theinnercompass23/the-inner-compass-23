@@ -2,9 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
-import { Heart, Lock, Smile } from "lucide-react";
+import { Heart, Globe } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY } from "@/lib/constants";
+import RegionSelector from "@/components/RegionSelector";
 
 export default function Footer() {
   const supportTopics = [
@@ -24,6 +25,7 @@ export default function Footer() {
   const companyLinks = [
     { label: "About Us", href: "/about" },
     { label: "Contact Us", href: "/contact" },
+    { label: "Global Locations", href: "/locations" },
     { label: "Support for Children", href: "/support-for-children" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
@@ -94,6 +96,11 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* International Service Hubs Bar */}
+        <div className="pt-6 border-t border-soft-sage/30">
+          <RegionSelector variant="footer" />
         </div>
 
         {/* Disclaimer & Copyright */}

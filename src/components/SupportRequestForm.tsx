@@ -5,6 +5,7 @@ import { useLeads } from "@/context/LeadContext";
 import {
   SUPPORT_CATEGORIES,
   COUNTRY_CODES,
+  TARGET_TIMEZONES,
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "@/lib/constants";
@@ -61,6 +62,9 @@ export default function SupportRequestForm() {
   const [email, setEmail] = useState("");
   const [otherCategoryText, setOtherCategoryText] = useState("");
   const [additionalMessage, setAdditionalMessage] = useState("");
+
+  // International Timezone State
+  const [selectedTimezone, setSelectedTimezone] = useState("Asia/Kolkata");
 
   // Strict Date & Time Booking States (Asia/Kolkata IST)
   const [minDate, setMinDate] = useState("2026-02-20");
@@ -268,7 +272,7 @@ export default function SupportRequestForm() {
         additionalMessage,
         preferredDate: indianDate,
         preferredTime: effectiveTime,
-        timezone: "Asia/Kolkata",
+        timezone: selectedTimezone,
         consent,
       });
 
@@ -689,7 +693,19 @@ export default function SupportRequestForm() {
                   <div className="relative w-36 sm:w-44 flex-shrink-0">
                     <select
                       value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        setCountryCode(val);
+                        if (val === "+1") setSelectedTimezone("America/New_York");
+                        else if (val === "+44") setSelectedTimezone("Europe/London");
+                        else if (val === "+61") setSelectedTimezone("Australia/Sydney");
+                        else if (val === "+971") setSelectedTimezone("Asia/Dubai");
+                        else if (val === "+353") setSelectedTimezone("Europe/Dublin");
+                        else if (val === "+49" || val === "+31" || val === "+41") setSelectedTimezone("Europe/Berlin");
+                        else if (val === "+65") setSelectedTimezone("Asia/Singapore");
+                        else if (val === "+64") setSelectedTimezone("Pacific/Auckland");
+                        else if (val === "+91") setSelectedTimezone("Asia/Kolkata");
+                      }}
                       className="w-full appearance-none px-3 py-3 pr-8 bg-white text-xs sm:text-sm rounded-xl border border-soft-sage/50 focus:border-muted-green focus:outline-none shadow-xs cursor-pointer"
                     >
                       {COUNTRY_CODES.map((c) => (
@@ -767,13 +783,32 @@ export default function SupportRequestForm() {
                     When Would You Like to Connect? <span className="text-rose-500">*</span>
                   </h3>
                   <p className="text-xs text-dark-charcoal/65 mt-0.5">
-                    Strict 24-hour clock &bull; Asia/Kolkata (IST).
+                    Coordinated via 24-hour clock &bull; Worldwide booking with IST coordination.
                   </p>
                 </div>
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/80 rounded-full text-[11px] font-semibold text-muted-green border border-soft-sage/40 shadow-xs">
                   <Globe className="w-3 h-3" />
-                  IST Timezone
+                  Global Support
                 </span>
+              </div>
+
+              {/* Timezone Selector for International Clients */}
+              <div className="p-3 bg-white/85 rounded-xl border border-soft-sage/40 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div className="text-xs text-dark-charcoal/80 flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-muted-green flex-shrink-0" />
+                  <span className="font-semibold">Your Timezone:</span>
+                </div>
+                <select
+                  value={selectedTimezone}
+                  onChange={(e) => setSelectedTimezone(e.target.value)}
+                  className="px-3 py-1.5 bg-warm-white/60 border border-soft-sage/50 rounded-lg text-xs text-dark-charcoal focus:outline-none focus:border-muted-green shadow-xs"
+                >
+                  {TARGET_TIMEZONES.map((tz) => (
+                    <option key={tz.value} value={tz.value}>
+                      {tz.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Advance Booking Rule Notice Banner */}

@@ -5,6 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "",
+    "/us",
+    "/uk",
+    "/ca",
+    "/au",
+    "/ae",
+    "/locations",
     "/feeling-lonely",
     "/heartbreak-support",
     "/divorce-support",
