@@ -36,23 +36,38 @@ export const CITIES_DATA: CityData[] = [
     intro: "New York City is one of the most vibrant cities on earth, yet it also has one of the highest concentrations of single-person households and late-night loneliness. Surrounded by millions of people, you can still feel entirely alone. Haven provides a private, comforting space to be heard without judgment.",
     localContext: "Living in NYC involves intense career competition, soaring rents, and crowded subway cars that paradoxically amplify personal isolation. When relationships fracture or work pressure mounts, traditional therapy can cost $200+ per session with long waiting lists. Haven offers immediate, non-clinical human listening.",
     situations: [
-      "Feeling lonely in a tiny studio apartment late at night",
-      "Grief and disorientation after an unexpected breakup in the city",
+      "Feeling lonely in New York City where to talk to someone online",
+      "Affordable divorce emotional support counselor in New York",
+      "Where can I talk to someone anonymously when I feel lonely",
+      "Who can I call or chat with at 3am when feeling depressed",
+      "Safe space to talk anonymously without giving real name",
       "Corporate burnout, imposter syndrome, and high-pressure career fatigue",
-      "Family relationship tension thousands of miles away",
+      "Grief and disorientation after an unexpected breakup in the city",
       "Insomnia and overthinking between midnight and 4:00 AM"
     ],
     faqs: [
       {
-        q: "Do you have a physical office in NYC?",
-        a: "No. Haven is an online human peer listening service delivered completely remotely over WhatsApp. This ensures 100% privacy and comfort without needing to commute to an office."
+        q: "Is there a website where I can talk to someone anonymously when I feel lonely in NYC?",
+        a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
       },
       {
-        q: "What hours can I connect in New York?",
-        a: "We support Eastern Standard Time (EST) with daytime, evening, and late-night booking slots available."
+        q: "What is the difference between an active listener and a therapist?",
+        a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery."
+      },
+      {
+        q: "Who can I talk to when going through a divorce in New York and feeling completely alone?",
+        a: "During a divorce, you can talk to a divorce-focused active listener for immediate late-night venting, or book a private online session with a Licensed Marriage and Family Therapist (LMFT) who specializes in separation and post-divorce loneliness."
+      },
+      {
+        q: "Can I get emotional support online without health insurance in New York?",
+        a: "Yes. Most online active listening and private emotional wellness platforms offer transparent pay-per-session pricing or free initial venting sessions, allowing US residents in cities like New York or Los Angeles to get instant support without insurance paperwork or waitlists."
+      },
+      {
+        q: "Do you have a physical office in NYC?",
+        a: "No. Haven is an online human peer listening service delivered completely remotely over WhatsApp. This ensures 100% privacy and comfort without needing to commute to an office."
       }
     ],
-    nearbyCitySlugs: ["boston", "chicago"]
+    nearbyCitySlugs: ["boston", "chicago", "miami"]
   },
   {
     slug: "los-angeles",
@@ -70,6 +85,10 @@ export const CITIES_DATA: CityData[] = [
     intro: "Behind the sunny skies and creative energy of Los Angeles, many residents struggle with transient social networks, traffic isolation, and career volatility. Having someone neutral who listens with genuine empathy brings immense comfort.",
     localContext: "LA can feel sprawling and emotionally isolating. When a relationship ends or creative projects stall, carrying the emotional weight alone feels overwhelming. Haven offers a gentle, judgment-free sounding board.",
     situations: [
+      "Best online active listener for loneliness in Los Angeles",
+      "How to survive weekends alone after getting divorced in Southern California",
+      "Safe space to talk anonymously without giving real name",
+      "Talk to a trained listener online instead of a therapist",
       "Creative industry burnout and career volatility",
       "Heartbreak and post-breakup isolation in Southern California",
       "Difficulty building deep, dependable friendships",
@@ -77,11 +96,23 @@ export const CITIES_DATA: CityData[] = [
     ],
     faqs: [
       {
+        q: "Is there an online active listening platform for Los Angeles residents?",
+        a: "Yes. Haven offers 24/7 private, judgment-free active listening for LA residents dealing with loneliness, heartbreak, or career stress without clinical therapy paperwork."
+      },
+      {
+        q: "What is the difference between an active listener and a therapist?",
+        a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery."
+      },
+      {
+        q: "Can I get emotional support in California without health insurance?",
+        a: "Yes. Online active listening and peer emotional support platforms like Haven offer transparent, accessible direct access without insurance paperwork or doctor referrals."
+      },
+      {
         q: "What time can I book in Los Angeles?",
         a: "We accommodate Pacific Standard Time (PST/PDT) throughout the afternoon and late evening."
       }
     ],
-    nearbyCitySlugs: ["san-francisco", "seattle"]
+    nearbyCitySlugs: ["san-francisco", "seattle", "miami"]
   },
   {
     slug: "chicago",
@@ -99,18 +130,30 @@ export const CITIES_DATA: CityData[] = [
     intro: "Chicago's deep winter freeze and demanding metropolitan pace can intensify feelings of isolation. When you need to talk about relationship heartache, marital tension, or quiet stress, Haven is here to listen.",
     localContext: "Long winter months in the Windy City make reaching out in person challenging. Having an immediate, private WhatsApp ear gives Chicagoans an approachable outlet to speak freely.",
     situations: [
+      "Confidential breakup support chat for Chicago residents",
+      "Surviving lonely winter weekends after getting divorced",
+      "Affordable online divorce emotional support without insurance in Chicago",
+      "Who can I call or chat with at 3am when feeling depressed in Chicago",
+      "Websites to vent to a real person without signing up",
       "Winter seasonal loneliness and confinement",
       "Navigating divorce, separation, and marital strain",
-      "Workplace burnout in corporate and logistics sectors",
-      "Overcoming grief and personal transitions"
+      "Workplace burnout in corporate and logistics sectors"
     ],
     faqs: [
+      {
+        q: "Who can I talk to when going through a divorce in Chicago and feeling completely alone?",
+        a: "During a divorce, you can talk to a divorce-focused active listener on Haven for immediate late-night venting, or connect with dedicated peer support specialists who understand separation and post-divorce loneliness."
+      },
+      {
+        q: "Is there a website to vent to a real person without signing up or insurance in Chicago?",
+        a: "Yes. Haven lets you connect directly via WhatsApp without complicated signups, clinical forms, or health insurance."
+      },
       {
         q: "Is this service therapy?",
         a: "No. Haven is non-clinical human peer support. We do not provide clinical therapy or medical treatment; we provide attentive, non-judgmental human listening."
       }
     ],
-    nearbyCitySlugs: ["new-york", "boston"]
+    nearbyCitySlugs: ["new-york", "boston", "miami"]
   },
   {
     slug: "san-francisco",
@@ -197,7 +240,51 @@ export const CITIES_DATA: CityData[] = [
         a: "Yes. All conversations are 1-on-1 via WhatsApp with full confidentiality."
       }
     ],
-    nearbyCitySlugs: ["new-york", "chicago"]
+    nearbyCitySlugs: ["new-york", "chicago", "miami"]
+  },
+  {
+    slug: "miami",
+    countrySlug: "united-states",
+    countryName: "United States",
+    name: "Miami",
+    stateOrRegion: "Florida",
+    tier: 1,
+    population: "6.2 Million (Metro)",
+    timezone: "Eastern Time (EST / EDT, UTC-5)",
+    heroImage: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200",
+    tagline: "24/7 Anonymous Emotional Support Platform in Miami",
+    metaTitle: "24/7 Anonymous Emotional Support Platform in Miami | Haven",
+    metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Miami? Connect with a compassionate human listener 24/7. Real people, no judgment. 1-on-1 private WhatsApp support.",
+    intro: "Behind the glamorous skyline and beaches of Miami, many residents experience intense social loneliness, transient relationships, and post-breakup heartbreak. Haven provides a 24/7 confidential space to talk freely to a real human being without judgment.",
+    localContext: "South Florida's high cost of living, transient population, and fast-paced culture can make genuine, lasting connection difficult. When navigating divorce, breakup grief, or late-night overthinking, finding immediate human listening without insurance paperwork or long waiting lists is essential.",
+    situations: [
+      "24/7 anonymous emotional support platform in Miami",
+      "Overcoming transplant loneliness and shallow social circles in South Florida",
+      "Affordable online divorce emotional support without insurance in Miami",
+      "Confidential breakup support chat for Miami and South Florida residents",
+      "Who can I call or chat with at 3am when feeling depressed in Miami",
+      "Safe space to talk anonymously without giving real name",
+      "Late-night overthinking, insomnia, and racing thoughts"
+    ],
+    faqs: [
+      {
+        q: "Is there a 24/7 anonymous emotional support platform in Miami?",
+        a: "Yes. Haven provides 24/7 private, judgment-free human active listening for Miami and South Florida residents directly over WhatsApp."
+      },
+      {
+        q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
+        a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
+      },
+      {
+        q: "Can I get emotional support in Miami without health insurance?",
+        a: "Yes. Most online active listening and private emotional wellness platforms offer transparent pay-per-session pricing or free initial venting sessions, allowing US residents in cities like Miami, New York, or Los Angeles to get instant support without insurance paperwork or waitlists."
+      },
+      {
+        q: "Who can I talk to when going through a divorce and feeling completely alone?",
+        a: "During a divorce, you can talk to a divorce-focused active listener for immediate late-night venting, or book a private online session with a Licensed Marriage and Family Therapist (LMFT) who specializes in separation and post-divorce loneliness."
+      }
+    ],
+    nearbyCitySlugs: ["new-york", "chicago", "los-angeles"]
   },
 
   // ================= UNITED KINGDOM =================

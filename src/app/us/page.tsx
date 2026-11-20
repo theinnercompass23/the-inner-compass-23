@@ -19,28 +19,52 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk to Online in USA — Human Listening & Emotional Support | Haven",
+  title: "Online Emotional Support & Active Listening USA — Anonymous 24/7 Chat | Haven",
   description:
-    "Feeling lonely, heartbroken, or overwhelmed in the US? Connect with a compassionate human listener. Real people, real conversations, no judgment. Private 1-on-1 support for NYC, LA, Chicago, and nationwide via WhatsApp.",
+    "Private, anonymous human emotional support and active listening across the United States. Connect 24/7 on WhatsApp for loneliness, divorce, heartbreak, and 3 AM emotional venting without insurance or waiting lists.",
   keywords: [
-    "someone to talk to online usa",
-    "i need someone to talk to us",
-    "online human listener united states",
-    "someone to talk to in new york",
-    "someone to talk to in los angeles",
-    "emotional support online chicago",
-    "talk to someone online without therapy",
-    "lonely late at night someone to talk to",
-    "heartbreak support online usa",
-    "private peer listening service",
+    // Short-tail Core
+    "online emotional support",
+    "active listening service",
+    "anonymous chat support",
+    "online therapy usa",
+    "talk to someone online",
+    "loneliness help",
+    "feeling lonely",
+    "overcome loneliness",
+    "companionship online",
+    "divorce support",
+    "divorce counseling online",
+    "breakup support",
+    "post divorce loneliness",
+    "depression chat online",
+    "anxiety support chat",
+    "late night emotional support",
+    "vent online",
+    // Long-tail High-Intent
+    "where can i talk to someone anonymously when i feel lonely",
+    "who can i call or chat with at 3am when feeling depressed",
+    "websites to vent to a real person without signing up",
+    "safe space to talk anonymously without giving real name",
+    "talk to a trained listener online instead of a therapist",
+    "who to talk to when going through a lonely divorce",
+    "how to survive weekends alone after getting divorced",
+    "affordable online divorce emotional support without insurance",
+    "anonymous support for men going through divorce",
+    // US City Programmatic
+    "feeling lonely in new york city where to talk to someone online",
+    "affordable divorce emotional support counselor in new york",
+    "best online active listener for loneliness in los angeles",
+    "confidential breakup support chat for chicago residents",
+    "24/7 anonymous emotional support platform in miami",
   ],
   alternates: {
     canonical: "https://haven.care/us",
   },
   openGraph: {
-    title: "Someone to Talk to Online in USA — Haven Human Peer Support",
+    title: "Online Emotional Support & Active Listening USA — Haven",
     description:
-      "Private, confidential human emotional support across the United States. Speak with someone who truly listens without judgment.",
+      "Private, confidential human emotional support across NYC, LA, Chicago, Miami, and nationwide. Connect 24/7 on WhatsApp.",
     url: "https://haven.care/us",
     locale: "en_US",
     type: "website",
@@ -50,47 +74,72 @@ export const metadata: Metadata = {
 export default function UnitedStatesPage() {
   const usCities = [
     {
+      slug: "new-york",
       name: "New York City",
       state: "NY",
       tagline: "High-paced urban life, late-night overthinking, living alone in the city",
       tier: "Tier 1 Metro",
     },
     {
+      slug: "los-angeles",
       name: "Los Angeles",
       state: "CA",
       tagline: "Career transition pressure, creative burnout, feeling disconnected",
       tier: "Tier 1 Metro",
     },
     {
+      slug: "chicago",
       name: "Chicago",
       state: "IL",
       tagline: "Winter isolation, family stress, navigating difficult breakups",
       tier: "Tier 1 Metro",
     },
     {
+      slug: "miami",
+      name: "Miami",
+      state: "FL",
+      tagline: "24/7 anonymous emotional support, transplant loneliness, post-breakup recovery",
+      tier: "Tier 1 Metro",
+    },
+    {
+      slug: "san-francisco",
       name: "San Francisco & Bay Area",
       state: "CA",
       tagline: "Tech pressure, imposter syndrome, high cost of living stress",
       tier: "Tier 1 Metro",
     },
     {
+      slug: "seattle",
       name: "Seattle",
       state: "WA",
       tagline: "Seasonal mood changes, social isolation, relocation loneliness",
       tier: "Tier 1 Metro",
     },
     {
-      name: "Austin & Dallas",
-      state: "TX",
-      tagline: "New city adaptation, relationship challenges, finding someone to confide in",
-      tier: "Tier 2 Metro",
+      slug: "boston",
+      name: "Boston",
+      state: "MA",
+      tagline: "Academic pressure, life transitions, young professional isolation",
+      tier: "Tier 1 Metro",
     },
   ];
 
   const faqs = [
     {
-      q: "How is Haven different from licensed therapy in the US?",
-      a: "Haven provides non-clinical human peer listening and compassionate emotional support. We are not therapists, psychiatric doctors, or medical providers. Our service is for anyone feeling lonely, sad, misunderstood, or going through relationship challenges who simply wants a warm, non-judgmental human being to talk to without clinical diagnoses or high therapy fees.",
+      q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
+      a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+    },
+    {
+      q: "What is the difference between an active listener and a therapist?",
+      a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery.",
+    },
+    {
+      q: "Who can I talk to when going through a divorce and feeling completely alone?",
+      a: "During a divorce, you can talk to a divorce-focused active listener for immediate late-night venting, or book a private online session with a Licensed Marriage and Family Therapist (LMFT) who specializes in separation and post-divorce loneliness.",
+    },
+    {
+      q: "Can I get emotional support online without health insurance in the US?",
+      a: "Yes. Most online active listening and private emotional wellness platforms offer transparent pay-per-session pricing or free initial venting sessions, allowing US residents in cities like New York or Los Angeles to get instant support without insurance paperwork or waitlists.",
     },
     {
       q: "What timezones across the United States do you support?",
@@ -100,28 +149,77 @@ export default function UnitedStatesPage() {
       q: "How does the WhatsApp conversation work?",
       a: "When you submit your request, you are connected directly to our support team on WhatsApp (+91 8810381949). You speak with an attentive human listener in a private, encrypted 1-on-1 chat. You can share your story at your own pace.",
     },
-    {
-      q: "Is Haven an emergency hotline?",
-      a: "No. Haven is non-clinical emotional listening. If you are in immediate physical danger, experiencing a severe mental health crisis, or thinking about self-harm, please dial 988 (the US Suicide & Crisis Lifeline) or 911 immediately.",
-    },
   ];
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Human Emotional Support & Peer Listening in the United States",
-    "provider": {
-      "@type": "Organization",
-      "name": "Haven Human Emotional Support",
-      "url": "https://haven.care"
-    },
-    "serviceType": "Peer Support & Active Listening",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
-    "description":
-      "Private, non-clinical human emotional listening service for individuals in the United States experiencing loneliness, relationship breakdown, divorce, or emotional distress."
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://haven.care"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "United States",
+            "item": "https://haven.care/us"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Online Emotional Support & Active Listening Across the United States",
+        "description": "Private, anonymous human emotional support and active listening in US cities including New York, Los Angeles, Chicago, and Miami.",
+        "image": "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800",
+        "datePublished": "2026-01-15T08:00:00+00:00",
+        "dateModified": "2026-02-20T08:00:00+00:00",
+        "author": {
+          "@type": "Organization",
+          "name": "Haven Human Support Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Haven Human Emotional Support",
+          "url": "https://haven.care"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://haven.care/us"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Human Emotional Support & Peer Listening in the United States",
+        "provider": {
+          "@type": "Organization",
+          "name": "Haven Human Emotional Support",
+          "url": "https://haven.care"
+        },
+        "serviceType": "Peer Support & Active Listening",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "description":
+          "Private, non-clinical human emotional listening service for individuals in the United States experiencing loneliness, relationship breakdown, divorce, or emotional distress."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
@@ -221,12 +319,13 @@ export default function UnitedStatesPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {usCities.map((c) => (
-            <div
+            <Link
               key={c.name}
-              className="p-6 rounded-2xl bg-white/70 backdrop-blur-xs border border-soft-sage/40 shadow-xs space-y-3 hover:border-muted-green/60 transition-all"
+              href={`/locations/united-states/${c.slug}`}
+              className="p-6 rounded-2xl bg-white/70 backdrop-blur-xs border border-soft-sage/40 shadow-xs space-y-3 hover:border-muted-green/60 hover:bg-white hover:shadow-md transition-all group block"
             >
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5 font-serif font-bold text-base text-dark-charcoal">
+                <div className="flex items-center gap-1.5 font-serif font-bold text-base text-dark-charcoal group-hover:text-muted-green transition-colors">
                   <MapPin className="w-4 h-4 text-muted-green" />
                   <span>{c.name}, {c.state}</span>
                 </div>
@@ -237,11 +336,14 @@ export default function UnitedStatesPage() {
               <p className="text-xs text-dark-charcoal/75 leading-relaxed">
                 {c.tagline}
               </p>
-              <div className="pt-2 text-[11px] text-muted-green font-medium flex items-center gap-1">
-                <span>Private listening available</span>
-                <CheckCircle2 className="w-3 h-3" />
+              <div className="pt-2 text-[11px] text-muted-green font-medium flex items-center justify-between">
+                <span className="flex items-center gap-1">
+                  <span>Connect in {c.name}</span>
+                  <CheckCircle2 className="w-3 h-3" />
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

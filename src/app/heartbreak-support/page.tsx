@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "Heartbreak Support – Someone to Talk to When You Are Hurting | Haven",
   description:
     "Struggling with heartbreak after a breakup? Missing someone deeply? Connect with a compassionate human listener. Real conversations, no judgment, private 1-on-1 WhatsApp support.",
+  keywords: [
+    "breakup support",
+    "heartbreak support",
+    "confidential breakup support chat",
+    "talk to someone after a breakup",
+    "where can i talk to someone anonymously when i feel lonely",
+    "safe space to talk anonymously without giving real name",
+    "talk to a trained listener online instead of a therapist",
+    "post breakup loneliness",
+  ],
   alternates: {
     canonical: "https://haven.care/heartbreak-support",
   },
@@ -109,6 +119,14 @@ export default function HeartbreakSupportPage() {
       }}
       hindiHinglishNote="'Breakup ke baad dil toot gaya hai aur koi samajhne wala nahi?' ब्रेकअप के बाद का दर्द और किसी की याद भुलाना बहुत मुश्किल होता है। अगर आपका दिल भारी है और आप किसी ऐसे इंसान से बात करना चाहते हैं जो आपको बिना जज किए सिर्फ सुने, तो आज ही WhatsApp पर हमसे जुड़ें।"
       faqs={[
+        {
+          q: "What is the difference between an active listener and a therapist?",
+          a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery.",
+        },
+        {
+          q: "Is there a website where I can talk to someone anonymously when I feel lonely after a breakup?",
+          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+        },
         {
           q: "How long does heartbreak usually last?",
           a: "There is no fixed schedule. For some people, acute pain eases in a few months; for others, it takes longer depending on the relationship's depth and circumstances. Allow yourself to heal at your own pace without self-criticism.",

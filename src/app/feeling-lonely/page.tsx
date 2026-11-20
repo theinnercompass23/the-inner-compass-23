@@ -5,6 +5,20 @@ export const metadata: Metadata = {
   title: "Feeling Lonely? Someone to Talk to When You Feel Isolated | Haven",
   description:
     "Feeling lonely even in a crowded room? Living alone and need someone to talk to? Connect with a warm, caring human listener on WhatsApp. No judgment, 100% confidential.",
+  keywords: [
+    "loneliness help",
+    "feeling lonely",
+    "overcome loneliness",
+    "companionship online",
+    "where can i talk to someone anonymously when i feel lonely",
+    "who can i call or chat with at 3am when feeling depressed",
+    "websites to vent to a real person without signing up",
+    "safe space to talk anonymously without giving real name",
+    "talk to a trained listener online instead of a therapist",
+    "feeling lonely in new york city where to talk to someone online",
+    "best online active listener for loneliness in los angeles",
+    "someone to talk to when lonely",
+  ],
   alternates: {
     canonical: "https://haven.care/feeling-lonely",
   },
@@ -109,6 +123,18 @@ export default function FeelingLonelyPage() {
       }}
       hindiHinglishNote="'Zindagi me sab kuch hai par baat karne ke liye koi apna nahi?' अगर आप खुद को अकेला महसूस कर रहे हैं और किसी ऐसे इंसान से बात करना चाहते हैं जो आपकी बात बिना जज किए सुने, तो हमारे WhatsApp पर कनेक्ट करें। हम आपके लिए मौजूद हैं।"
       faqs={[
+        {
+          q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
+          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+        },
+        {
+          q: "What is the difference between an active listener and a therapist?",
+          a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery.",
+        },
+        {
+          q: "Can I get emotional support online without health insurance in the US?",
+          a: "Yes. Most online active listening and private emotional wellness platforms offer transparent pay-per-session pricing or free initial venting sessions, allowing US residents in cities like New York or Los Angeles to get instant support without insurance paperwork or waitlists.",
+        },
         {
           q: "Is it normal to feel lonely even when I have family and friends?",
           a: "Yes, completely normal. Emotional loneliness occurs when your deeper thoughts, values, and vulnerabilities cannot be safely expressed with the people around you, regardless of how many people exist in your life.",

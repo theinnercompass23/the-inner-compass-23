@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Divorce Support – Someone to Talk to During a Difficult Life Change | Haven",
   description:
     "Looking for someone to talk to during divorce? Feeling lonely after separation? Connect with an empathetic human peer listener. Real conversations, no judgment, 100% private.",
+  keywords: [
+    "divorce support",
+    "divorce counseling online",
+    "breakup support",
+    "post divorce loneliness",
+    "who to talk to when going through a lonely divorce",
+    "how to survive weekends alone after getting divorced",
+    "affordable online divorce emotional support without insurance",
+    "anonymous support for men going through divorce",
+    "affordable divorce emotional support counselor in new york",
+    "someone to talk to after divorce",
+  ],
   alternates: {
     canonical: "https://haven.care/divorce-support",
   },
@@ -119,6 +131,18 @@ export default function DivorceSupportPage() {
       }}
       hindiHinglishNote="'Divorce ke baad akelapan aur samaj ka dabav?' अगर आप तलाक, कोर्ट की उलझनों या सेपरेशन के भावनात्मक दर्द से गुजर रहे हैं और अपनी बात किसी के साथ खुलकर बांटना चाहते हैं, तो हमारे WhatsApp पर कनेक्ट करें। हम बिना किसी जजमेंट के आपकी पूरी बात सुनेंगे।"
       faqs={[
+        {
+          q: "Who can I talk to when going through a divorce and feeling completely alone?",
+          a: "During a divorce, you can talk to a divorce-focused active listener for immediate late-night venting, or book a private online session with a Licensed Marriage and Family Therapist (LMFT) who specializes in separation and post-divorce loneliness.",
+        },
+        {
+          q: "What is the difference between an active listener and a therapist?",
+          a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery.",
+        },
+        {
+          q: "Can I get emotional support online without health insurance in the US?",
+          a: "Yes. Most online active listening and private emotional wellness platforms offer transparent pay-per-session pricing or free initial venting sessions, allowing US residents in cities like New York or Los Angeles to get instant support without insurance paperwork or waitlists.",
+        },
         {
           q: "How can I deal with intense loneliness after divorce?",
           a: "Acknowledge the silence without rushing into harmful distractions or rebound relationships. Establishing gentle daily routines, connecting with empathetic human listeners, and giving yourself permission to mourn the shared past are steadying foundations.",

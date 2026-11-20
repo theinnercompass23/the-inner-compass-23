@@ -5,6 +5,17 @@ export const metadata: Metadata = {
   title: "Overthinking Support – Someone to Talk to When Your Mind Won't Stop | Haven",
   description:
     "Trapped in chronic overthinking, midnight worry loops, and mental exhaustion? Connect with a calming, empathetic human listener on WhatsApp. No judgment, 100% confidential.",
+  keywords: [
+    "depression chat online",
+    "anxiety support chat",
+    "late night emotional support",
+    "vent online",
+    "who can i call or chat with at 3am when feeling depressed",
+    "websites to vent to a real person without signing up",
+    "safe space to talk anonymously without giving real name",
+    "someone to talk to late at night",
+    "overthinking support",
+  ],
   alternates: {
     canonical: "https://haven.care/overthinking-support",
   },
@@ -87,6 +98,18 @@ export default function OverthinkingSupportPage() {
       }}
       hindiHinglishNote="'Dimag me ek hi baat baar-baar ghoom rahi hai aur neend nahi aa rahi?' ओवरथिंकिंग दिमाग को थका देती है। जब मन में विचारों का बवंडर हो, तब किसी शांत और समझदार इंसान से बात करना मन को तुरंत सुकून देता है। आज ही WhatsApp पर हमसे जुड़ें।"
       faqs={[
+        {
+          q: "Who can I call or chat with at 3am when feeling depressed or overwhelmed?",
+          a: "You can connect with an empathetic human peer listener on Haven. We provide confidential, non-judgmental WhatsApp support for midnight anxiety, racing thoughts, and late-night insomnia.",
+        },
+        {
+          q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
+          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+        },
+        {
+          q: "What is the difference between an active listener and a therapist?",
+          a: "An active listener provides immediate, judgment-free emotional support and companionship when you just need to vent about loneliness, stress, or a breakup. A licensed therapist provides structured clinical counseling for deeper issues like clinical depression, trauma, or divorce recovery.",
+        },
         {
           q: "How can I stop my mind from racing when I want to sleep?",
           a: "Write down your thoughts in a physical notebook to give your brain proof that the thoughts are captured. Avoid screens for at least 45 minutes before bed, practice deep abdominal breathing, and speak through daytime stress with a listener before evening.",

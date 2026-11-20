@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import SupportRequestForm from "@/components/SupportRequestForm";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
 import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
+import AiFaqSection from "@/components/AiFaqSection";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
@@ -205,12 +207,149 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 6. TRUST AND PRIVACY                                      */}
+      {/* 6. AI-READY FAQS & FEATURED SNIPPETS SECTION              */}
+      {/* ========================================================= */}
+      <AiFaqSection
+        title="Frequently Asked Questions & AI Answers"
+        subtitle="Direct, factual answers to help you understand online active listening, privacy, and support options."
+        badge="Direct Snippet Answers • AI & Search Optimized"
+        includeSchema={true}
+      />
+
+      {/* ========================================================= */}
+      {/* 7. PROGRAMMATIC CITY DIRECTORY (US & GLOBAL HUBS)         */}
+      {/* ========================================================= */}
+      <section className="py-14 sm:py-20 border-t border-soft-sage/30 bg-warm-white/80">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-soft-sage/25 text-xs font-semibold text-muted-green">
+                <Globe className="w-3.5 h-3.5" />
+                <span>Local Timezones &amp; Active Listening Hubs</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-dark-charcoal">
+                Available in 50+ Cities Across the US &amp; Worldwide
+              </h2>
+              <p className="text-xs sm:text-sm text-dark-charcoal/70 max-w-xl">
+                Connect with an attentive human listener in your local timezone. 100% confidential, remote via WhatsApp.
+              </p>
+            </div>
+            <Link
+              href="/locations"
+              className="text-xs font-semibold text-muted-green hover:underline inline-flex items-center gap-1 shrink-0"
+            >
+              <span>Explore All Global Cities</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <Link
+              href="/locations/united-states/new-york"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                New York City, NY
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                EST &bull; Late-Night Venting
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/los-angeles"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                Los Angeles, CA
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                PST &bull; Career &amp; Breakups
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/chicago"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                Chicago, IL
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                CST &bull; Divorce &amp; Loneliness
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/miami"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                Miami, FL
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                EST &bull; 24/7 Anonymous Support
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/san-francisco"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                San Francisco, CA
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                PST &bull; Startup Burnout &amp; Empathy
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/seattle"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                Seattle, WA
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                PST &bull; Seasonal Blues
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-states/boston"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                Boston, MA
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                EST &bull; Young Adult Support
+              </div>
+            </Link>
+
+            <Link
+              href="/locations/united-kingdom/london"
+              className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1"
+            >
+              <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                London, UK
+              </div>
+              <div className="text-[11px] text-dark-charcoal/50">
+                GMT &bull; Tube Isolation
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* 8. TRUST AND PRIVACY                                      */}
       {/* ========================================================= */}
       <TrustAndPrivacy />
 
       {/* ========================================================= */}
-      {/* 7. FINAL WHATSAPP CTA                                     */}
+      {/* 9. FINAL WHATSAPP CTA                                     */}
       {/* ========================================================= */}
       <FinalWhatsAppCta />
     </div>

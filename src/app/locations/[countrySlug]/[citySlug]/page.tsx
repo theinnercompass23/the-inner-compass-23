@@ -6,6 +6,8 @@ import SafeImage from "@/components/SafeImage";
 import SupportRequestForm from "@/components/SupportRequestForm";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import CityProgrammaticLinks from "@/components/CityProgrammaticLinks";
+import { AI_READY_FAQS } from "@/data/aiFaqs";
 import {
   CITIES_DATA,
   getCityBySlug,
@@ -116,6 +118,8 @@ export default async function CityPage({
         "headline": `Someone to Talk to in ${city.name} — Human Emotional Support & Peer Listening`,
         "description": city.metaDescription,
         "image": city.heroImage,
+        "datePublished": "2026-01-15T08:00:00+00:00",
+        "dateModified": "2026-02-20T08:00:00+00:00",
         "author": {
           "@type": "Organization",
           "name": "Haven Emotional Support Editorial Team"
@@ -147,7 +151,10 @@ export default async function CityPage({
       },
       {
         "@type": "FAQPage",
-        "mainEntity": city.faqs.map((f) => ({
+        "mainEntity": [
+          ...city.faqs,
+          ...AI_READY_FAQS.map(f => ({ q: f.q, a: f.a }))
+        ].map((f) => ({
           "@type": "Question",
           "name": f.q,
           "acceptedAnswer": {
@@ -635,6 +642,13 @@ export default async function CityPage({
           </Link>
         </div>
       </section>
+
+      {/* Programmatic Issue & Long-Tail Internal Linking */}
+      <CityProgrammaticLinks
+        cityName={city.name}
+        countryName={city.countryName}
+        countrySlug={city.countrySlug}
+      />
 
       {/* ========================================================= */}
       {/* 11. SIBLING CITIES IN THIS COUNTRY                        */}
