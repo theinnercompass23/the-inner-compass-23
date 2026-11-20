@@ -1,5 +1,6 @@
-import React from "react";
-import type { Metadata } from "next";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Globe,
@@ -8,150 +9,183 @@ import {
   ShieldCheck,
   Clock,
   Heart,
-  Lock,
+  Search,
+  CheckCircle2,
 } from "lucide-react";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { CITIES_DATA } from "@/data/cities";
+import { COUNTRIES_DATA } from "@/data/countries";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
-
-export const metadata: Metadata = {
-  title: "Global Service Directory — Worldwide Human Emotional Support | Haven",
-  description:
-    "Explore Haven's international human emotional listening hubs across the United States, United Kingdom, Canada, Australia, UAE, Europe, and worldwide. Real people, real conversations, no judgment.",
-  alternates: {
-    canonical: "https://haven.care/locations",
-  },
-};
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function LocationsPage() {
-  const hubs = [
-    {
-      country: "United States",
-      flag: "🇺🇸",
-      path: "/us",
-      description: "Dedicated peer support for New York, Los Angeles, Chicago, San Francisco, and nationwide across EST, CST, MST, and PST timezones.",
-      cities: "New York, LA, Chicago, Houston, Seattle, Austin",
-    },
-    {
-      country: "United Kingdom",
-      flag: "🇬🇧",
-      path: "/uk",
-      description: "Confidential human listening across London, Manchester, Birmingham, Edinburgh, and Great Britain throughout GMT & BST hours.",
-      cities: "London, Manchester, Birmingham, Edinburgh, Bristol",
-    },
-    {
-      country: "Canada",
-      flag: "🇨🇦",
-      path: "/ca",
-      description: "Empathetic emotional support for Toronto, Vancouver, Montreal, Calgary, and nationwide through winter blues and personal transitions.",
-      cities: "Toronto, Vancouver, Montreal, Calgary, Ottawa",
-    },
-    {
-      country: "Australia",
-      flag: "🇦🇺",
-      path: "/au",
-      description: "Warm, respectful conversations for Sydney, Melbourne, Brisbane, Perth, and across Australia in AEST, ACST, and AWST timezones.",
-      cities: "Sydney, Melbourne, Brisbane, Perth, Adelaide",
-    },
-    {
-      country: "United Arab Emirates",
-      flag: "🇦🇪",
-      path: "/ae",
-      description: "Discreet, private emotional sanctuary for expatriates and residents in Dubai, Abu Dhabi, and Sharjah in GST (UTC+4).",
-      cities: "Dubai, Abu Dhabi, Sharjah",
-    },
-    {
-      country: "Global & Other Countries",
-      flag: "🌐",
-      path: "/",
-      description: "Available to English, Hindi, and multilingual speakers worldwide in Ireland, Singapore, Germany, Netherlands, New Zealand, and beyond.",
-      cities: "Dublin, Singapore, Berlin, Amsterdam, Auckland",
-    },
-  ];
+  const [selectedCountry, setSelectedCountry] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCities = CITIES_DATA.filter((city) => {
+    const matchesCountry =
+      selectedCountry === "all" || city.countrySlug === selectedCountry;
+    const matchesSearch =
+      city.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      city.countryName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      city.stateOrRegion.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCountry && matchesSearch;
+  });
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-soft-sage/25 border border-soft-sage/40 text-xs font-semibold text-muted-green shadow-xs">
-          <Globe className="w-3.5 h-3.5" />
-          <span>Global Service Directory</span>
+          <MapPin className="w-3.5 h-3.5" />
+          <span>Explore Cities Worldwide</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-serif font-bold text-dark-charcoal">
-          Human Emotional Support Worldwide
+          City-Wise Human Emotional Support
         </h1>
         <p className="text-xs sm:text-sm text-dark-charcoal/70 leading-relaxed">
-          Loneliness, heartbreak, and emotional stress know no borders. Haven connects people from major metropolitan centers across the globe with caring human listeners via private WhatsApp messaging.
+          From bustling financial hubs like New York and London to coastal cities like Sydney and Vancouver, find confidential, remote human listening support tailored to your local timezone and pace of life.
         </p>
       </div>
 
-      {/* Hub Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hubs.map((hub) => (
-          <div
-            key={hub.path}
-            className="p-6 rounded-3xl bg-white/70 backdrop-blur-xs border border-soft-sage/40 shadow-xs flex flex-col justify-between hover:border-muted-green/60 transition-all space-y-4"
+      {/* Filter and Search Bar */}
+      <div className="bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-3xl border border-soft-sage/40 shadow-xs space-y-4">
+        {/* Search input */}
+        <div className="relative">
+          <Search className="w-4 h-4 text-dark-charcoal/40 absolute left-4 top-1/2 -translate-y-1/2" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search by city, state, or country name..."
+            className="w-full pl-11 pr-4 py-2.5 bg-warm-white/70 text-xs sm:text-sm rounded-full border border-soft-sage/50 focus:border-muted-green focus:outline-none transition-all shadow-xs"
+          />
+        </div>
+
+        {/* Country Filter Chips */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+          <button
+            onClick={() => setSelectedCountry("all")}
+            className={`px-3.5 py-1.5 rounded-full font-medium transition-colors cursor-pointer border ${
+              selectedCountry === "all"
+                ? "bg-dark-charcoal text-warm-white border-dark-charcoal"
+                : "bg-white text-dark-charcoal/70 border-soft-sage/40 hover:text-dark-charcoal"
+            }`}
           >
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl p-2 rounded-2xl bg-light-beige/70 border border-soft-sage/30">
-                  {hub.flag}
+            All Cities ({CITIES_DATA.length})
+          </button>
+          {COUNTRIES_DATA.map((c) => {
+            const count = CITIES_DATA.filter((city) => city.countrySlug === c.slug).length;
+            if (count === 0) return null;
+            return (
+              <button
+                key={c.slug}
+                onClick={() => setSelectedCountry(c.slug)}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-colors cursor-pointer border whitespace-nowrap flex items-center gap-1.5 ${
+                  selectedCountry === c.slug
+                    ? "bg-dark-charcoal text-warm-white border-dark-charcoal"
+                    : "bg-white text-dark-charcoal/70 border-soft-sage/40 hover:text-dark-charcoal"
+                }`}
+              >
+                <span>{c.flag}</span>
+                <span>{c.name}</span>
+                <span className="opacity-60 text-[10px]">({count})</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Cities Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredCities.map((city) => (
+          <Link
+            key={`${city.countrySlug}-${city.slug}`}
+            href={`/locations/${city.countrySlug}/${city.slug}`}
+            className="p-6 rounded-3xl bg-white/75 hover:bg-white backdrop-blur-xs border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-xl transition-all group block space-y-3"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="font-serif font-bold text-lg text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  {city.name}
                 </span>
-                <div>
-                  <h2 className="font-serif font-bold text-lg text-dark-charcoal">
-                    {hub.country}
-                  </h2>
-                  <p className="text-[11px] text-muted-green font-medium">
-                    {hub.cities}
-                  </p>
-                </div>
+                <p className="text-[11px] text-dark-charcoal/50">
+                  {city.stateOrRegion}, {city.countryName}
+                </p>
               </div>
-              <p className="text-xs text-dark-charcoal/75 leading-relaxed">
-                {hub.description}
-              </p>
+              <span className="text-[10px] font-semibold text-muted-green bg-soft-sage/20 px-2 py-0.5 rounded-full">
+                Tier {city.tier}
+              </span>
             </div>
 
-            <Link
-              href={hub.path}
-              className="inline-flex items-center justify-between px-4 py-2.5 rounded-full text-xs font-semibold bg-soft-sage/25 hover:bg-soft-sage/40 text-dark-charcoal transition-colors group"
-            >
-              <span>Explore {hub.country} Hub</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+            <p className="text-xs text-dark-charcoal/75 line-clamp-2 leading-relaxed">
+              {city.intro}
+            </p>
+
+            <div className="pt-2 border-t border-soft-sage/20 flex items-center justify-between text-xs">
+              <span className="text-[11px] text-dark-charcoal/60 flex items-center gap-1">
+                <Clock className="w-3 h-3 text-muted-green" />
+                <span className="truncate max-w-[140px]">{city.timezone.split("(")[0]}</span>
+              </span>
+              <span className="font-semibold text-muted-green flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View City</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* Global Guarantees */}
+      {filteredCities.length === 0 && (
+        <div className="text-center py-12 p-8 rounded-3xl bg-white/70 border border-soft-sage/40 space-y-3">
+          <p className="text-sm font-semibold text-dark-charcoal">
+            No cities found matching &ldquo;{searchQuery}&rdquo;.
+          </p>
+          <p className="text-xs text-dark-charcoal/70">
+            Our listening team provides online support worldwide. You can connect with us directly from any location.
+          </p>
+          <button
+            onClick={() => {
+              setSearchQuery("");
+              setSelectedCountry("all");
+            }}
+            className="px-4 py-2 rounded-full bg-dark-charcoal text-white text-xs font-semibold"
+          >
+            Reset Filters
+          </button>
+        </div>
+      )}
+
+      {/* Online Delivery Guarantee */}
       <div className="p-8 rounded-3xl bg-light-beige/60 border border-soft-sage/40 space-y-4">
         <h3 className="font-serif font-bold text-lg text-dark-charcoal">
-          How Our International Service Works
+          How Our City-Level Service Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-dark-charcoal/75 pt-2">
-          <div className="space-y-1.5">
-            <div className="font-semibold text-dark-charcoal flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-muted-green" />
-              <span>Timezone Coordination</span>
-            </div>
+          <div className="space-y-1">
+            <h4 className="font-semibold text-dark-charcoal flex items-center gap-1.5">
+              <Globe className="w-4 h-4 text-muted-green" />
+              <span>100% Remote Delivery</span>
+            </h4>
             <p>
-              When you submit a request, you can select your local timezone. Our coordinators convert your slot and ensure a dedicated listener is ready.
+              We do not operate physical clinics or walk-in offices in any city. All support is delivered online via private WhatsApp messaging.
             </p>
           </div>
-          <div className="space-y-1.5">
-            <div className="font-semibold text-dark-charcoal flex items-center gap-1.5">
-              <Lock className="w-4 h-4 text-muted-green" />
-              <span>Universal Privacy</span>
-            </div>
+          <div className="space-y-1">
+            <h4 className="font-semibold text-dark-charcoal flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-muted-green" />
+              <span>Strict Privacy</span>
+            </h4>
             <p>
-              Your identity, phone number, and personal circumstances are never shared or sold. Conversations occur directly through encrypted WhatsApp chats.
+              Your contact details are never logged in medical databases, shared with employers, or subjected to insurance audits.
             </p>
           </div>
-          <div className="space-y-1.5">
-            <div className="font-semibold text-dark-charcoal flex items-center gap-1.5">
+          <div className="space-y-1">
+            <h4 className="font-semibold text-dark-charcoal flex items-center gap-1.5">
               <Heart className="w-4 h-4 text-muted-green" />
-              <span>Real Human Presence</span>
-            </div>
+              <span>Non-Clinical Peer Support</span>
+            </h4>
             <p>
-              No algorithms, no canned responses, and no AI chatbots. You speak with real, empathetic people whose sole focus is listening without judgment.
+              We provide human listening for life&apos;s personal struggles—not psychiatric prescriptions or clinical diagnoses.
             </p>
           </div>
         </div>

@@ -3,11 +3,14 @@
 import React from "react";
 import SupportRequestForm from "@/components/SupportRequestForm";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
+import CountriesSection from "@/components/CountriesSection";
+import VideoStoriesSection from "@/components/VideoStoriesSection";
 import WhyPeopleCome from "@/components/WhyPeopleCome";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Heart, ArrowDown, Lock, ShieldCheck, Compass } from "lucide-react";
+import SafeImage from "@/components/SafeImage";
+import { Heart, ArrowDown, Lock, ShieldCheck, Compass, Globe, Video } from "lucide-react";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default function HomePage() {
@@ -79,17 +82,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Emotional Photography */}
+            {/* Right Emotional Photography with SafeImage */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-md">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                  <img
+                <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-4/3 sm:aspect-square">
+                  <SafeImage
                     src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800"
                     alt="Comforting human connection and peaceful emotional support"
-                    className="w-full h-84 sm:h-96 object-cover"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 450px"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal/60 via-dark-charcoal/10 to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal/70 via-dark-charcoal/15 to-transparent z-10 pointer-events-none" />
+                  <div className="absolute bottom-5 left-5 right-5 text-white z-20">
                     <p className="text-sm font-serif italic drop-shadow-md">
                       &ldquo;A safe, quiet place where you can be yourself and let down your guard.&rdquo;
                     </p>
@@ -120,17 +126,44 @@ export default function HomePage() {
       </div>
 
       {/* ========================================================= */}
-      {/* 4. WHY PEOPLE COME TO US                                  */}
+      {/* 4. EXPLORE COUNTRIES (International Hubs)                 */}
+      {/* ========================================================= */}
+      <section className="py-16 sm:py-20 border-t border-soft-sage/30 bg-light-beige/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CountriesSection
+            title="Worldwide Emotional Listening Hubs"
+            subtitle="Compassionate, non-judgmental human listening tailored to life in major English-speaking and international nations."
+            showViewAll={true}
+          />
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* 5. VIDEO STORIES & EXPERIENCES (9:16 Vertical Carousel)   */}
+      {/* ========================================================= */}
+      <section className="py-16 sm:py-20 border-t border-soft-sage/30 bg-white/70">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <VideoStoriesSection
+            layout="carousel"
+            showViewAll={true}
+            title="Real People. Genuine Relief."
+            subtitle="Hear how having someone who truly listens helped people work through heartbreak, isolation, career stress, and quiet evenings."
+          />
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* 6. WHY PEOPLE COME TO US                                  */}
       {/* ========================================================= */}
       <WhyPeopleCome />
 
       {/* ========================================================= */}
-      {/* 5. PRIVACY & TRUST SECTION                                */}
+      {/* 7. PRIVACY & TRUST SECTION                                */}
       {/* ========================================================= */}
       <TrustAndPrivacy />
 
       {/* ========================================================= */}
-      {/* 6. FINAL WHATSAPP CTA                                     */}
+      {/* 8. FINAL WHATSAPP CTA                                     */}
       {/* ========================================================= */}
       <FinalWhatsAppCta />
     </div>
