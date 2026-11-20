@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Heart, ShieldCheck, Lock, Headphones, MessageCircle, AlertTriangle, Users } from "lucide-react";
-import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
+import { Heart, ShieldCheck, Lock, Headphones, MessageCircle, Users } from "lucide-react";
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 
 export const metadata: Metadata = {
@@ -80,28 +80,15 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Clear Boundaries & Crisis Notice */}
-        <div className="p-6 sm:p-8 bg-light-beige/60 rounded-3xl border border-soft-sage/40 space-y-4">
+        {/* Clear Boundaries */}
+        <div className="p-6 sm:p-8 bg-light-beige/60 rounded-3xl border border-soft-sage/40 space-y-3">
           <div className="flex items-center gap-2 text-dark-charcoal font-semibold text-base">
             <ShieldCheck className="w-5 h-5 text-muted-green" />
-            Important Notice on Our Boundaries &amp; Crisis Support
+            Important Notice on Our Boundaries
           </div>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            Haven is a peer listening and emotional support platform. We are <strong>not</strong> medical professionals, licensed psychiatrists, therapists, or doctors. We do not diagnose illness, prescribe medication, or offer clinical psychotherapy.
+            Haven is a peer listening and emotional support platform. We are <strong>not</strong> medical professionals, licensed psychiatrists, therapists, or doctors. We do not diagnose illness, prescribe medication, or offer clinical psychotherapy. We offer an empathetic, private space to express your thoughts and feel heard.
           </p>
-          <div className="pt-2 p-4 bg-white/80 rounded-2xl border border-soft-sage/30 text-xs text-dark-charcoal/80 space-y-1.5">
-            <div className="flex items-center gap-2 font-semibold text-rose-600">
-              <AlertTriangle className="w-4 h-4" />
-              Not an Emergency Response Service
-            </div>
-            <p>
-              If you or someone you know is in immediate danger, having thoughts of self-harm, or undergoing a life-threatening crisis, please contact verified 24/7 national emergency helplines:
-            </p>
-            <ul className="list-disc pl-5 font-medium text-dark-charcoal pt-1">
-              <li>Tele-MANAS (Govt of India 24/7 Free Helpline): <strong>{TELE_MANAS_NUMBER}</strong></li>
-              <li>National Emergency Response Service: <strong>{EMERGENCY_NUMBER}</strong></li>
-            </ul>
-          </div>
         </div>
       </section>
 

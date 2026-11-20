@@ -169,19 +169,6 @@ export default function SupportForChildrenPage() {
               <strong>Non-Clinical Scope:</strong> We provide gentle guidance and listening support; we do not provide medical treatment, diagnosis, or clinical psychiatry.
             </li>
           </ul>
-
-          <div className="p-4 bg-rose-50/70 rounded-2xl border border-rose-200 text-xs text-dark-charcoal/80 space-y-1">
-            <div className="flex items-center gap-1.5 font-bold text-rose-700">
-              <AlertTriangle className="w-4 h-4" />
-              Emergency &amp; Childline India Helplines (24/7 Free)
-            </div>
-            <p>
-              If a child is in immediate danger, distress, or experiencing abuse, please contact:
-            </p>
-            <p className="font-semibold text-dark-charcoal pt-0.5">
-              Childline India (Ministry of Women &amp; Child Development): <a href="tel:1098" className="underline text-rose-700 font-bold">1098</a> &bull; Emergency: <a href="tel:112" className="underline text-rose-700 font-bold">112</a> &bull; Tele-MANAS: <a href="tel:14416" className="underline text-rose-700 font-bold">14416</a>
-            </p>
-          </div>
         </div>
       </section>
 

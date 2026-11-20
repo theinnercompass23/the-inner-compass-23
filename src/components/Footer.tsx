@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { Heart, ShieldAlert, Lock, Smile } from "lucide-react";
+import { Heart, Lock, Smile } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
+import { WHATSAPP_DISPLAY } from "@/lib/constants";
 
 export default function Footer() {
   const supportTopics = [
@@ -32,27 +32,6 @@ export default function Footer() {
   return (
     <footer className="bg-light-beige/70 border-t border-soft-sage/30 text-dark-charcoal pt-14 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Top Crisis Emergency Strip (Glassmorphism styling) */}
-        <div className="p-4 rounded-3xl bg-white/80 backdrop-blur-md border border-white/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs shadow-sm">
-          <div className="flex items-center gap-2.5">
-            <ShieldAlert className="w-4 h-4 text-rose-600 shrink-0" />
-            <span className="text-dark-charcoal/80">
-              <strong>Need Immediate Emergency Crisis Support?</strong> India National Mental Health Helpline:{" "}
-              <a href="tel:14416" className="font-bold underline text-muted-green">
-                Tele-MANAS: {TELE_MANAS_NUMBER}
-              </a>{" "}
-              &bull; Emergency:{" "}
-              <a href="tel:112" className="font-bold underline text-rose-600">
-                {EMERGENCY_NUMBER}
-              </a>
-            </span>
-          </div>
-
-          <span className="text-[11px] text-dark-charcoal/55 whitespace-nowrap">
-            Free &bull; 24/7 &bull; Government of India
-          </span>
-        </div>
-
         {/* Main Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
           {/* Brand Info */}

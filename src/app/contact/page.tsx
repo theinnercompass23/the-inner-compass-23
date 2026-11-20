@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Clock, Phone, AlertTriangle, Lock } from "lucide-react";
+import { Mail, MapPin, Clock, Phone, Lock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 import SupportRequestForm from "@/components/SupportRequestForm";
 
 export const metadata: Metadata = {
@@ -88,17 +88,6 @@ export default function ContactPage() {
             <p className="text-sm font-semibold text-dark-charcoal">Flexible 24/7 Requests</p>
             <p className="text-xs text-dark-charcoal/50">Our team confirms availability on WhatsApp</p>
           </div>
-        </div>
-
-        {/* Crisis Notice */}
-        <div className="p-5 bg-rose-50/60 rounded-2xl border border-rose-200 text-xs text-dark-charcoal/80 space-y-1 mb-12">
-          <div className="flex items-center gap-2 font-semibold text-rose-700">
-            <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-            Emergency Crisis Notice
-          </div>
-          <p>
-            Haven is a peer listening service, not an emergency intervention unit. If you are experiencing suicidal thoughts or immediate physical crisis, please call Tele-MANAS at <strong>{TELE_MANAS_NUMBER}</strong> (24/7 free helpline) or Emergency at <strong>{EMERGENCY_NUMBER}</strong>.
-          </p>
         </div>
       </section>
 
