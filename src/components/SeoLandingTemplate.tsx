@@ -17,6 +17,8 @@ import {
   CheckCircle2,
   XCircle,
   Sparkles,
+  ListOrdered,
+  UserCheck,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
@@ -34,6 +36,7 @@ export interface SeoLandingProps {
   subheadline: string;
   readTime?: string;
   heroImage?: string;
+  keyTakeaways?: string[];
   introParagraphs: string[];
   keySections: {
     heading: string;
@@ -59,8 +62,9 @@ export default function SeoLandingTemplate({
   badge,
   headline,
   subheadline,
-  readTime = "6 min read",
+  readTime = "7 min read",
   heroImage,
+  keyTakeaways,
   introParagraphs,
   keySections,
   practicalSteps,
@@ -174,7 +178,7 @@ export default function SeoLandingTemplate({
           {/* Badge, Metadata & H1 */}
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-soft-sage/25 text-xs font-semibold text-muted-green">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-soft-sage/25 text-xs font-semibold text-muted-green">
                 <Heart className="w-3.5 h-3.5 fill-muted-green/20" />
                 {badge}
               </span>
@@ -184,7 +188,7 @@ export default function SeoLandingTemplate({
               </span>
               <span className="text-xs text-dark-charcoal/40">&bull;</span>
               <span className="text-xs text-dark-charcoal/60">
-                Published by Haven Peer Support Team
+                Updated February 2026 &bull; Haven Editorial Board
               </span>
             </div>
 
@@ -236,6 +240,48 @@ export default function SeoLandingTemplate({
             </div>
           </div>
 
+          {/* Key Takeaways Box (SEO Highlight) */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-white to-light-beige/60 border border-soft-sage/40 shadow-xs space-y-3">
+            <div className="flex items-center gap-2 text-xs font-bold text-muted-green uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-muted-green" />
+              <span>Key Takeaways at a Glance</span>
+            </div>
+            <ul className="space-y-2 text-xs sm:text-sm text-dark-charcoal/80">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-muted-green flex-shrink-0 mt-0.5" />
+                <span><strong>Natural Emotional Response:</strong> Emotional distress during life transitions is not an illness—it is an expected human adjustment.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-muted-green flex-shrink-0 mt-0.5" />
+                <span><strong>The Power of Verbalization:</strong> Vocalizing unspoken grief to an empathetic listener deactivates chronic thought loops.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-muted-green flex-shrink-0 mt-0.5" />
+                <span><strong>Zero Clinical Stigma:</strong> Connect 1-on-1 on WhatsApp without intrusive forms, medical records, or waiting lists.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Table of Contents */}
+          <div className="p-5 sm:p-6 bg-white rounded-2xl border border-soft-sage/30 space-y-3">
+            <div className="flex items-center gap-2 font-serif font-bold text-sm text-dark-charcoal">
+              <ListOrdered className="w-4 h-4 text-muted-green" />
+              <span>Table of Contents</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-green">
+              {keySections.map((sec, idx) => (
+                <a
+                  key={idx}
+                  href={`#section-${idx}`}
+                  className="hover:underline flex items-center gap-1.5 truncate"
+                >
+                  <span className="text-dark-charcoal/40 font-mono">{idx + 1}.</span>
+                  <span className="truncate">{sec.heading.replace(/^\d+\.\s*/, "")}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           {/* Intro Paragraphs */}
           <div className="space-y-4 text-sm sm:text-base text-dark-charcoal/80 leading-relaxed pt-2">
             {introParagraphs.map((para, idx) => (
@@ -246,7 +292,7 @@ export default function SeoLandingTemplate({
           {/* Detailed Editorial Sections (H2 & H3) */}
           <div className="space-y-12 pt-4">
             {keySections.map((section, idx) => (
-              <section key={idx} className="space-y-3">
+              <section key={idx} id={`section-${idx}`} className="space-y-3.5 scroll-mt-24">
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-dark-charcoal">
                   {section.heading}
                 </h2>
@@ -255,7 +301,7 @@ export default function SeoLandingTemplate({
                     {section.subheading}
                   </h3>
                 )}
-                <div className="space-y-3 text-sm sm:text-base text-dark-charcoal/80 leading-relaxed">
+                <div className="space-y-3.5 text-sm sm:text-base text-dark-charcoal/80 leading-relaxed">
                   {section.paragraphs.map((p, pIdx) => (
                     <p key={pIdx}>{p}</p>
                   ))}
@@ -363,6 +409,21 @@ export default function SeoLandingTemplate({
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Author & Editorial Credibility (E-E-A-T) */}
+          <div className="p-6 bg-white rounded-3xl border border-soft-sage/30 shadow-xs flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-soft-sage/25 text-muted-green flex items-center justify-center font-bold flex-shrink-0">
+              <UserCheck className="w-6 h-6" />
+            </div>
+            <div className="space-y-1 text-xs">
+              <div className="font-semibold text-sm text-dark-charcoal">
+                Reviewed by Haven Peer Support Editorial &amp; Safeguarding Team
+              </div>
+              <p className="text-dark-charcoal/70 leading-relaxed">
+                Our content is authored by experienced peer listeners and emotional support practitioners. Haven adheres to strict active-listening protocols, compassionate presence, and non-clinical safeguarding boundaries.
+              </p>
             </div>
           </div>
 
