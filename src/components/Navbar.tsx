@@ -39,27 +39,27 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
+      className={`sticky top-0 z-50 transition-all duration-200 w-full overflow-hidden ${
         scrolled
           ? "bg-warm-white/95 backdrop-blur-md shadow-xs border-b border-soft-sage/30"
           : "bg-warm-white/80 backdrop-blur-xs border-b border-soft-sage/20"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-6">
         {/* Left: Clean Brand Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group shrink-0"
+          className="flex items-center gap-2 sm:gap-2.5 group shrink-0 min-w-0"
           aria-label="Haven Home"
         >
-          <div className="w-9 h-9 rounded-full bg-soft-sage/25 border border-soft-sage/40 flex items-center justify-center text-muted-green shadow-xs group-hover:scale-105 transition-transform">
-            <Heart className="w-4.5 h-4.5 fill-muted-green/20 text-muted-green" />
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-soft-sage/25 border border-soft-sage/40 flex items-center justify-center text-muted-green shadow-xs group-hover:scale-105 transition-transform shrink-0">
+            <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-muted-green/20 text-muted-green" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none">
+          <div className="flex flex-col min-w-0">
+            <span className="text-lg sm:text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none truncate">
               Haven
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5 truncate">
               Human Emotional Support
             </span>
           </div>
@@ -73,7 +73,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-xs font-semibold px-3.5 py-2 rounded-full transition-all ${
+                className={`text-xs font-semibold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full transition-all ${
                   active
                     ? "bg-muted-green text-white shadow-xs"
                     : "text-dark-charcoal/75 hover:text-dark-charcoal hover:bg-white/80"
@@ -85,17 +85,18 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right: Clean WhatsApp CTA Button */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Right: Clean Responsive WhatsApp CTA & Mobile Toggle */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <a
             href={buildDirectWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xs hover:shadow-md transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xs hover:shadow-md transition-all cursor-pointer whitespace-nowrap"
             aria-label="Connect on WhatsApp"
           >
-            <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-            <span className="font-semibold">WhatsApp: {WHATSAPP_DISPLAY}</span>
+            <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" color="#FFFFFF" />
+            <span className="font-semibold text-[11px] sm:text-xs">WhatsApp</span>
+            <span className="font-semibold text-xs hidden md:inline">: {WHATSAPP_DISPLAY}</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -103,7 +104,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="lg:hidden p-2 rounded-full text-dark-charcoal hover:bg-soft-sage/20 transition-colors focus:outline-none"
+            className="lg:hidden p-1.5 sm:p-2 rounded-full text-dark-charcoal hover:bg-soft-sage/20 transition-colors focus:outline-none shrink-0"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

@@ -398,7 +398,7 @@ export default function SupportRequestForm() {
     >
       <div className="max-w-3xl mx-auto">
         {/* Circular Glassmorphism Card Container */}
-        <div className="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-12 shadow-xl border border-white/60 relative overflow-hidden">
+        <div className="bg-white/85 backdrop-blur-md rounded-3xl p-4 sm:p-10 shadow-xl border border-white/60 relative overflow-hidden w-full max-w-full">
           {/* Subtle Circular Glass Decorative Accents */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-soft-sage/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-56 h-56 bg-amber-100/25 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none" />
@@ -689,8 +689,8 @@ export default function SupportRequestForm() {
                 <label className="block text-xs font-semibold text-dark-charcoal mb-1">
                   WhatsApp Mobile Number <span className="text-rose-500">*</span>
                 </label>
-                <div className="flex gap-2">
-                  <div className="relative w-36 sm:w-44 flex-shrink-0">
+                <div className="flex gap-2 w-full">
+                  <div className="relative w-28 sm:w-44 flex-shrink-0">
                     <select
                       value={countryCode}
                       onChange={(e) => {

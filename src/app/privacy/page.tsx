@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ShieldCheck, Lock, ArrowLeft } from "lucide-react";
-import { WHATSAPP_DISPLAY, TELE_MANAS_NUMBER, EMERGENCY_NUMBER } from "@/lib/constants";
+import { WHATSAPP_DISPLAY } from "@/lib/constants";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -63,10 +63,10 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-lg font-serif font-bold text-dark-charcoal">
-            4. Emergency Situations & Limitations
+            4. Service Scope &amp; Boundaries
           </h2>
           <p>
-            Haven is not equipped to handle acute life-threatening emergencies or severe self-harm interventions. If you or someone you know is in immediate danger, please contact India&apos;s 24/7 Government Mental Health Helpline at <strong>Tele-MANAS ({TELE_MANAS_NUMBER})</strong> or <strong>Emergency Services ({EMERGENCY_NUMBER})</strong> immediately.
+            Haven provides empathetic non-clinical peer listening and emotional presence. We do not provide clinical psychiatric therapy, medical diagnoses, psychological treatment, or medical emergency services.
           </p>
         </section>
 

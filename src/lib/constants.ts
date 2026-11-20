@@ -1,7 +1,5 @@
 export const WHATSAPP_NUMBER = "918810381949";
 export const WHATSAPP_DISPLAY = "+91 8810381949";
-export const TELE_MANAS_NUMBER = "14416";
-export const EMERGENCY_NUMBER = "112";
 
 export interface CategoryDefinition {
   id: string;

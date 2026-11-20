@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, ShieldAlert, FileText } from "lucide-react";
-import { TELE_MANAS_NUMBER, EMERGENCY_NUMBER, WHATSAPP_DISPLAY } from "@/lib/constants";
+import { WHATSAPP_DISPLAY } from "@/lib/constants";
+import { ArrowLeft, FileText, ShieldCheck } from "lucide-react";
 
 export default function TermsPage() {
   return (
@@ -29,14 +29,14 @@ export default function TermsPage() {
       </div>
 
       <div className="space-y-8 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-        {/* Medical Non-Advice Disclaimer */}
-        <div className="p-6 rounded-3xl bg-coral-light/60 border border-coral-soft/30 text-dark-charcoal space-y-2">
-          <div className="flex items-center gap-2 font-bold text-coral-soft">
-            <ShieldAlert className="w-4 h-4" />
-            <span>Non-Medical & Emergency Care Notice</span>
+        {/* Service Scope Notice */}
+        <div className="p-6 rounded-3xl bg-soft-sage/15 border border-soft-sage/30 text-dark-charcoal space-y-2">
+          <div className="flex items-center gap-2 font-bold text-dark-charcoal">
+            <ShieldCheck className="w-4 h-4 text-muted-green" />
+            <span>Non-Medical Peer Listening Service</span>
           </div>
           <p className="text-xs text-charcoal-muted leading-relaxed">
-            Haven is an emotional support and human peer listening service. We are not a medical hospital, mental health clinic, or suicide crisis center. Conversations do not constitute medical, psychiatric, or psychological diagnosis or treatment. In urgent life-threatening crises, immediately call <strong>Tele-MANAS ({TELE_MANAS_NUMBER})</strong> or <strong>Emergency Services ({EMERGENCY_NUMBER})</strong>.
+            Haven provides emotional support and human peer listening. We are not a medical hospital, psychiatric clinic, or mental health facility. Conversations provide empathetic human listening and peer presence, and do not constitute clinical psychotherapy, psychiatric care, or medical diagnosis.
           </p>
         </div>
 
