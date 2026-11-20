@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import SupportRequestForm from "@/components/SupportRequestForm";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import {
@@ -9,15 +10,16 @@ import {
   ChevronRight,
   ShieldCheck,
   Lock,
-  Phone,
   Clock,
   BookOpen,
   ArrowRight,
   HelpCircle,
-  Share2,
+  CheckCircle2,
+  XCircle,
+  Sparkles,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, TELE_MANAS_NUMBER } from "@/lib/constants";
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 
 export interface RelatedArticle {
   title: string;
@@ -31,12 +33,21 @@ export interface SeoLandingProps {
   headline: string;
   subheadline: string;
   readTime?: string;
+  heroImage?: string;
   introParagraphs: string[];
   keySections: {
     heading: string;
     subheading?: string;
     paragraphs: string[];
   }[];
+  practicalSteps?: {
+    step: string;
+    desc: string;
+  }[];
+  serviceBoundaries?: {
+    provides: string[];
+    doesNotProvide: string[];
+  };
   hindiHinglishNote?: string;
   faqs: { q: string; a: string }[];
   relatedArticles?: RelatedArticle[];
@@ -48,16 +59,19 @@ export default function SeoLandingTemplate({
   badge,
   headline,
   subheadline,
-  readTime = "4 min read",
+  readTime = "6 min read",
+  heroImage,
   introParagraphs,
   keySections,
+  practicalSteps,
+  serviceBoundaries,
   hindiHinglishNote,
   faqs,
   relatedArticles = [],
   canonicalSlug,
 }: SeoLandingProps) {
   const directWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hello, I was reading your article on "${pageTitle}" and would like to connect for emotional support.`
+    `Hello Haven Team, I was reading your article on "${pageTitle}" and would like someone to talk to for emotional support.`
   )}`;
 
   const pageUrl = `https://haven.care/${canonicalSlug}`;
@@ -68,15 +82,18 @@ export default function SeoLandingTemplate({
     "@type": "Article",
     headline: headline,
     description: subheadline,
+    image: heroImage || "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800",
     url: pageUrl,
+    datePublished: "2026-02-15T00:00:00+05:30",
+    dateModified: "2026-02-20T00:00:00+05:30",
     publisher: {
       "@type": "Organization",
-      name: "Haven Peer Listening",
+      name: "Haven Human Emotional Support",
       url: "https://haven.care",
     },
     author: {
       "@type": "Organization",
-      name: "Haven Emotional Support Editorial Team",
+      name: "Haven Peer Support Editorial Team",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -97,6 +114,12 @@ export default function SeoLandingTemplate({
       {
         "@type": "ListItem",
         position: 2,
+        name: "Support Topics",
+        item: "https://haven.care/#categories-section",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
         name: pageTitle,
         item: pageUrl,
       },
@@ -133,8 +156,8 @@ export default function SeoLandingTemplate({
       />
 
       {/* Editorial Header Section */}
-      <article className="pt-10 pb-12 sm:pt-16 sm:pb-16 border-b border-soft-sage/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <article className="pt-8 pb-14 sm:pt-14 sm:pb-20 border-b border-soft-sage/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-dark-charcoal/60">
             <Link href="/" className="hover:text-dark-charcoal transition-colors">
@@ -148,7 +171,7 @@ export default function SeoLandingTemplate({
             <span className="text-dark-charcoal font-medium">{pageTitle}</span>
           </nav>
 
-          {/* Badge, Editorial Metadata & H1 */}
+          {/* Badge, Metadata & H1 */}
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-soft-sage/25 text-xs font-semibold text-muted-green">
@@ -159,7 +182,7 @@ export default function SeoLandingTemplate({
                 <Clock className="w-3.5 h-3.5 text-muted-green" />
                 {readTime}
               </span>
-              <span className="text-xs text-dark-charcoal/40">•</span>
+              <span className="text-xs text-dark-charcoal/40">&bull;</span>
               <span className="text-xs text-dark-charcoal/60">
                 Published by Haven Peer Support Team
               </span>
@@ -174,27 +197,41 @@ export default function SeoLandingTemplate({
             </p>
           </div>
 
+          {/* Featured Hero Image if provided */}
+          {heroImage && (
+            <div className="relative h-64 sm:h-96 rounded-3xl overflow-hidden shadow-sm border border-soft-sage/30">
+              <SafeImage
+                src={heroImage}
+                alt={headline}
+                fill
+                priority
+                sizes="(max-width: 800px) 100vw, 800px"
+                className="object-cover"
+              />
+            </div>
+          )}
+
           {/* Quick Support Jump Bar */}
-          <div className="p-4 bg-light-beige/60 rounded-2xl border border-soft-sage/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="p-4 bg-light-beige/70 rounded-2xl border border-soft-sage/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="text-xs text-dark-charcoal/80">
-              <span className="font-semibold text-dark-charcoal">Need someone right now?</span>{" "}
+              <span className="font-semibold text-dark-charcoal">Need someone to talk to right now?</span>{" "}
               You can connect with a caring human listener on WhatsApp.
             </div>
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <a
                 href="#support-form"
-                className="px-4 py-2 bg-muted-green hover:bg-[#68826d] text-white rounded-full text-xs font-semibold shadow-sm transition-all text-center flex-1 sm:flex-none"
+                className="px-4 py-2 bg-dark-charcoal hover:bg-black text-white rounded-full text-xs font-semibold shadow-xs transition-all text-center flex-1 sm:flex-none cursor-pointer"
               >
-                Talk to Someone
+                Request a Listener
               </a>
               <a
                 href={directWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full text-xs font-semibold shadow-sm transition-all text-center flex-1 sm:flex-none flex items-center justify-center gap-1.5"
+                className="px-4 py-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full text-xs font-semibold shadow-xs transition-all text-center flex-1 sm:flex-none flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5" color="#FFFFFF" />
-                <span>WhatsApp</span>
+                <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
               </a>
             </div>
           </div>
@@ -207,7 +244,7 @@ export default function SeoLandingTemplate({
           </div>
 
           {/* Detailed Editorial Sections (H2 & H3) */}
-          <div className="space-y-10 pt-4">
+          <div className="space-y-12 pt-4">
             {keySections.map((section, idx) => (
               <section key={idx} className="space-y-3">
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-dark-charcoal">
@@ -226,6 +263,73 @@ export default function SeoLandingTemplate({
               </section>
             ))}
           </div>
+
+          {/* Practical Next Steps */}
+          {practicalSteps && practicalSteps.length > 0 && (
+            <div className="mt-8 p-6 sm:p-8 bg-white rounded-3xl border border-soft-sage/40 shadow-xs space-y-4">
+              <h3 className="text-lg font-serif font-bold text-dark-charcoal flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-muted-green" />
+                <span>Gentle Steps You Can Take Today</span>
+              </h3>
+              <div className="grid grid-cols-1 gap-3 pt-2">
+                {practicalSteps.map((s, idx) => (
+                  <div key={idx} className="p-4 bg-light-beige/40 rounded-2xl border border-soft-sage/20 space-y-1">
+                    <div className="font-semibold text-xs sm:text-sm text-dark-charcoal">
+                      {idx + 1}. {s.step}
+                    </div>
+                    <p className="text-xs text-dark-charcoal/75 leading-relaxed">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Service Boundaries (What We Provide vs What We Do Not) */}
+          {serviceBoundaries && (
+            <div className="mt-8 p-6 sm:p-8 bg-light-beige/50 rounded-3xl border border-soft-sage/40 space-y-5">
+              <div className="space-y-1">
+                <h3 className="text-base sm:text-lg font-serif font-bold text-dark-charcoal flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-muted-green" />
+                  <span>Clear Boundaries &amp; Scope of Support</span>
+                </h3>
+                <p className="text-xs text-dark-charcoal/70">
+                  We believe in complete transparency about what our peer listening service can and cannot offer.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                <div className="p-4 bg-white rounded-2xl border border-emerald-100 space-y-2">
+                  <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <span>What We Provide</span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs text-dark-charcoal/75">
+                    {serviceBoundaries.provides.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-emerald-600 font-bold">&bull;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-rose-100 space-y-2">
+                  <div className="text-xs font-bold text-rose-800 uppercase tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-4 h-4 text-rose-600" />
+                    <span>What We Do Not Provide</span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs text-dark-charcoal/75">
+                    {serviceBoundaries.doesNotProvide.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-rose-500 font-bold">&bull;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Hindi / Hinglish Search Intent Section */}
           {hindiHinglishNote && (
@@ -249,7 +353,7 @@ export default function SeoLandingTemplate({
               {faqs.map((faq, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-sm"
+                  className="bg-white rounded-2xl p-5 border border-soft-sage/30 shadow-xs"
                 >
                   <h3 className="text-sm sm:text-base font-semibold text-dark-charcoal mb-2">
                     {faq.q}
@@ -273,7 +377,7 @@ export default function SeoLandingTemplate({
                   <Link
                     key={idx}
                     href={rel.slug}
-                    className="p-4 bg-white rounded-2xl border border-soft-sage/30 hover:border-muted-green transition-all shadow-sm group block"
+                    className="p-4 bg-white rounded-2xl border border-soft-sage/30 hover:border-muted-green transition-all shadow-xs group block"
                   >
                     <h3 className="text-sm font-semibold text-dark-charcoal group-hover:text-muted-green transition-colors flex items-center justify-between">
                       <span>{rel.title}</span>
@@ -289,8 +393,8 @@ export default function SeoLandingTemplate({
           )}
 
           {/* Reassuring Transition Callout */}
-          <div className="pt-8 text-center max-w-xl mx-auto">
-            <h3 className="text-2xl font-serif font-bold text-dark-charcoal mb-2">
+          <div className="pt-8 text-center max-w-xl mx-auto space-y-2">
+            <h3 className="text-2xl font-serif font-bold text-dark-charcoal">
               You Don&apos;t Have to Go Through This Alone.
             </h3>
             <p className="text-xs sm:text-sm text-dark-charcoal/70">

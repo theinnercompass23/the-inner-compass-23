@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Heartbreak Support – When You're Struggling After a Breakup | Haven",
+  title: "Heartbreak Support – Someone to Talk to When You Are Hurting | Haven",
   description:
-    "Going through heartbreak can feel overwhelming. Explore ways to process your emotions and find a supportive space to talk with someone.",
+    "Struggling with heartbreak after a breakup? Missing someone deeply? Connect with a compassionate human listener. Real conversations, no judgment, private 1-on-1 WhatsApp support.",
   alternates: {
     canonical: "https://haven.care/heartbreak-support",
   },
   openGraph: {
-    title: "Heartbreak Support – When You're Struggling After a Breakup",
+    title: "Heartbreak Support – Someone to Talk to When You Are Hurting",
     description:
-      "Going through heartbreak can feel overwhelming. Explore ways to process your emotions and find a supportive space to talk with someone.",
+      "Healing from heartbreak takes time and emotional safety. Talk about your grief, difficult memories, and loneliness with an attentive human listener.",
     url: "https://haven.care/heartbreak-support",
     type: "article",
   },
@@ -21,78 +21,131 @@ export default function HeartbreakSupportPage() {
   return (
     <SeoLandingTemplate
       pageTitle="Heartbreak Support"
-      badge="Breakup & Heartbreak Recovery"
-      headline="Finding Someone to Talk to After Heartbreak"
-      subheadline="When the person you used to tell everything to is no longer there, having a gentle, unbiased person to listen can make all the difference."
-      readTime="5 min read"
+      badge="Healing from Breakup &amp; Heartbreak"
+      headline="Heartbroken? You Don't Have to Carry the Grief Alone."
+      subheadline="Heartbreak is a physical and neurological shock as much as an emotional one. When friends tell you to 'just move on,' having someone who truly listens helps you heal with dignity."
+      readTime="8 min read"
+      heroImage="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200"
       canonicalSlug="heartbreak-support"
       introParagraphs={[
-        "Heartbreak is one of the most intense and disorienting human experiences. When a romantic bond fractures, you aren't just losing a partner; you are losing routines, shared jokes, future plans, and the comforting feeling that someone is always in your corner.",
-        "In the days and months following a breakup, it is entirely normal for grief to come in waves. You might feel fine in the morning, only to be struck by a wave of crushing sadness in the evening when silence fills your room. Knowing that someone is willing to sit with you in that space—without offering dismissive advice or telling you to 'just move on'—can bring immense relief.",
+        "The end of a romantic relationship is one of the most destabilizing events a human being can endure. Neurological research demonstrates that social rejection and romantic heartbreak activate the exact same pain pathways in the brain as physical injury. You are not being overly dramatic; your body and mind are processing real withdrawal and profound grief.",
+        "Yet modern culture often treats heartbreak with impatient flippancy. People expect you to bounce back after a few weeks, download dating apps, and pretend you are unaffected. When you still feel shattered months later, you begin to hide your tears out of embarrassment. Haven exists so you never have to pretend you are fine when your heart is aching.",
       ]}
       keySections={[
         {
-          heading: "Why Heartbreak Feels Emotionally and Physically Overwhelming",
-          subheading: "Understanding the neurochemical and emotional shock of a breakup",
+          heading: "1. The Agony of Missing Someone and Difficult Memories",
+          subheading: "Why everyday triggers feel like emotional landmines",
           paragraphs: [
-            "Psychological and neuroscience research shows that romantic rejection activates the same distress neural networks as physical pain. Your nervous system is coping with the sudden withdrawal of emotional safety, shared dopamine, and predictable intimacy.",
-            "This is why heartbreak frequently manifests in physical symptoms: a hollow chest sensation, loss of appetite, insomnia, racing thoughts, and mental fog. It is not an overreaction; it is a profound grief response.",
+            "In the aftermath of a breakup, the world is saturated with reminders. A specific café, a fragrance, a shared joke, or a song played in the grocery store can bring tears to your eyes in seconds. You miss the subtle intimacy of texting someone how your morning went, or having a companion to call on your commute home.",
+            "This constant tidal wave of memory is exhausting. You replay past arguments, wondering what you could have said differently, or you obsess over whether they are already happy without you. Talking through these repetitive thoughts with an empathetic listener releases their grip on your nervous system.",
           ],
         },
         {
-          heading: "Missing Someone and Dealing With Involuntary Memories",
-          subheading: "When every street, song, and notification triggers a reminder",
+          heading: "2. The Exhausting Cycle of Emotional Confusion",
+          subheading: "Loving and resenting someone at the exact same moment",
           paragraphs: [
-            "One of the hardest aspects of moving on is the constant ambush of memories. An old text, a shared playlist, or a familiar coffee shop can suddenly reopen the emotional wound. Many people feel guilty or frustrated with themselves for 'still thinking about them.'",
-            "At Haven, we believe emotional processing requires patience. Forcing yourself to suppress memories often makes them stronger. Speaking out loud about what you miss allows your mind to organize the loss rather than remaining trapped in a loop.",
+            "One of the hardest aspects of heartbreak is cognitive ambivalence. You can recognize intellectually that the relationship was unhealthy or incompatible, yet still wake up at 3:00 AM wishing they were holding your hand. You can feel furious at how they treated you, while simultaneously longing for their warmth.",
+            "Society tells us to pick a narrative: either they were terrible or you were wrong. But human relationships are messy and layered. Having a safe listening space allows you to express your anger, your tenderness, your guilt, and your nostalgia without anyone judging you for your honesty.",
           ],
         },
         {
-          heading: "Why Friends and Family Sometimes Exhaust Their Capacity",
-          subheading: "Finding a private space where you aren't afraid of being a burden",
+          heading: "3. The Social Loneliness of Heartbreak",
+          subheading: "Why friends and family eventually stop wanting to hear about it",
           paragraphs: [
-            "Friends and relatives usually mean well, but after a few weeks, they may inadvertently offer hurried platitudes like 'you deserve better' or 'plenty of fish in the sea.' While well-intentioned, these phrases can make you feel rushed or misunderstood.",
-            "You might also hesitate to reach out to friends because you don't want to feel like a broken record. Having an independent human listener provides a confidential outlet where you can express the same thoughts as many times as you need, without judgment.",
+            "In the first week after a split, loved ones rally around you. But by week four or five, their patience wears thin. They want to see you happy again, so they offer well-intentioned advice: 'There are plenty of fish in the sea,' or 'Just focus on your gym and career!'",
+            "While intended as encouragement, these responses make you feel misunderstood and burdensome. You stop talking about your ex, bottle up your sadness, and suffer in silence. A dedicated peer listener gives you an unconditional container where you can speak about your heartache as long and as often as you need.",
           ],
         },
         {
-          heading: "Small, Gentle Steps Toward Emotional Grounding",
-          subheading: "Rebuilding one quiet day at a time",
+          heading: "4. The Illusion of Closure and the Urge to Reach Out",
+          subheading: "Understanding the temptation of late-night text messages",
           paragraphs: [
-            "Recovery is not about waking up one day completely detached. It is about gradually expanding your ability to hold grief while taking care of basic needs. Small anchors—such as drinking a warm cup of tea, stepping outside for ten minutes of sunlight, or writing down your uncensored feelings—help calm your central nervous system.",
-            "Most importantly, giving voice to your heartache prevents sorrow from hardening into isolation. You deserve to be heard with kindness.",
+            "When loneliness peaks on quiet Friday evenings, the impulse to break 'No Contact' becomes overwhelming. You convince yourself that one final conversation will bring elusive 'closure.' But in reality, closure is rarely granted by the person who hurt you; closure is an internal decision to stop reopening the wound.",
+            "Before sending that message you might regret tomorrow, reaching out to a human listener provides a compassionate emotional buffer. You can vent everything you wanted to say to your ex, receive deep validation, and protect your dignity.",
+          ],
+        },
+        {
+          heading: "5. How Our Human Listening Service Helps You Heal",
+          subheading: "A gentle refuge to unburden your thoughts without unsolicited lectures",
+          paragraphs: [
+            "At Haven, our peer listeners do not tell you what to do, lecture you on relationship red flags, or give generic self-help pep talks. We listen actively, reflect your feelings with genuine warmth, and validate the depth of what you are experiencing.",
+            "Speaking your unspoken grief into the presence of an attentive, compassionate listener transforms chaotic heartbreak into grounded self-compassion. You realize that you are worthy of love, and that your capacity to feel deeply is your strength, not your flaw.",
           ],
         },
       ]}
-      hindiHinglishNote="क्या आप ब्रेकअप या दिल टूटने के बाद अकेलापन महसूस कर रहे हैं? 'Breakup ke baad kis se baat karein?' अगर आपके पास कोई नहीं है जो बिना जज किए आपकी बात सुने, तो हमारे WhatsApp पर कनेक्ट करें। हम हिंदी और हिंग्लिश में शांति से सुनने के लिए तैयार हैं।"
+      practicalSteps={[
+        {
+          step: "Practice the 24-Hour Contact Delay Rule",
+          desc: "Whenever you feel an overwhelming urge to text or call your ex, write the message in your personal notes app and wait 24 hours. Connect with a listener instead.",
+        },
+        {
+          step: "Cleanse Your Digital Space Mindfully",
+          desc: "Archive shared photo albums, hide chat threads, and mute their social profiles so your dopamine system can rest and reset.",
+        },
+        {
+          step: "Honor Your Physical Needs with Compassion",
+          desc: "Eat warm, nourishing meals, drink plenty of water, and get morning sunlight. Heartbreak causes severe physical exhaustion.",
+        },
+        {
+          step: "Surround Yourself with Safe, Non-Judgmental Ears",
+          desc: "Schedule regular check-in conversations with listeners who let you express sadness without rushing your recovery.",
+        },
+      ]}
+      serviceBoundaries={{
+        provides: [
+          "Empathetic, non-judgmental human active listening for heartbreak",
+          "A confidential, private sounding board for grief and confusion",
+          "Validation of emotional pain following breakups or rejection",
+          "Scheduled 1-on-1 private WhatsApp conversations",
+          "A calm, patient space to talk without being rushed into 'moving on'",
+        ],
+        doesNotProvide: [
+          "Dating coaching, seduction techniques, or 'get your ex back' tactics",
+          "Psychiatric therapy, clinical depression diagnosis, or medications",
+          "Private investigation, background checks, or digital tracking",
+          "Legal consultation regarding domestic contracts or divorce proceedings",
+          "Emergency acute crisis hotline response",
+        ],
+      }}
+      hindiHinglishNote="'Breakup ke baad dil toot gaya hai aur koi samajhne wala nahi?' ब्रेकअप के बाद का दर्द और किसी की याद भुलाना बहुत मुश्किल होता है। अगर आपका दिल भारी है और आप किसी ऐसे इंसान से बात करना चाहते हैं जो आपको बिना जज किए सिर्फ सुने, तो आज ही WhatsApp पर हमसे जुड़ें।"
       faqs={[
         {
-          q: "Is it normal to feel like I will never be happy again after a breakup?",
-          a: "Yes. In the acute stages of heartbreak, cognitive narrowing makes the current pain feel permanent. While it feels unbearable right now, emotional intensity gradually stabilizes as you express and process your grief.",
+          q: "How long does heartbreak usually last?",
+          a: "There is no fixed schedule. For some people, acute pain eases in a few months; for others, it takes longer depending on the relationship's depth and circumstances. Allow yourself to heal at your own pace without self-criticism.",
         },
         {
-          q: "Why do I feel lonely even when I am surrounded by friends?",
-          a: "Loneliness after a breakup is not a lack of people; it is the specific absence of emotional intimacy and shared attachment with the person you were closest to.",
+          q: "Why do I feel physical chest pain during heartbreak?",
+          a: "The sudden drop in bonding hormones (oxytocin and dopamine) combined with high cortisol levels causes real physical symptoms: chest tightness, loss of appetite, nausea, and disrupted sleep. It is a genuine bodily reaction.",
         },
         {
-          q: "Can I talk about my breakup on WhatsApp without giving clinical details?",
-          a: "Absolutely. Haven is a human peer listening service. You don't need a medical diagnosis or therapy background. You can simply share what's on your heart.",
+          q: "Can I speak to a listener late at night when loneliness hits?",
+          a: "Yes. We offer flexible booking slots throughout the afternoon, evening, and late-night hours. Select your preferred 24-hour slot on our support form.",
         },
         {
-          q: "How does the date and time scheduling work?",
-          a: "When submitting the form, pick your preferred date and strict 24-hour time. Our peer team will confirm availability directly on WhatsApp.",
+          q: "Will my conversation remain private?",
+          a: "Yes. All conversations are conducted directly over encrypted WhatsApp between you and our listener. We do not sell your personal data or share your details with anyone.",
         },
       ]}
       relatedArticles={[
         {
-          title: "What to Do When You Feel Lonely",
-          slug: "/feeling-lonely",
-          desc: "Navigating deep emotional isolation and finding someone who listens.",
+          title: "Breakup Support",
+          slug: "/breakup-support",
+          desc: "Navigating the immediate emotional shock, confusion, and grief of a recent breakup.",
         },
         {
-          title: "Relationship Difficulties",
-          slug: "/relationship-support",
-          desc: "Understanding misunderstandings, emotional distance, and unspoken relationship pain.",
+          title: "Feeling Lonely Support",
+          slug: "/feeling-lonely",
+          desc: "Coping with the silence of living alone and missing daily companionship.",
+        },
+        {
+          title: "Feeling Misunderstood",
+          slug: "/feeling-misunderstood",
+          desc: "When friends and family dismiss your pain, experience the relief of feeling truly heard.",
+        },
+        {
+          title: "Someone to Talk To",
+          slug: "/someone-to-talk",
+          desc: "Connect with a real human being whose sole focus is listening with patience and empathy.",
         },
       ]}
     />

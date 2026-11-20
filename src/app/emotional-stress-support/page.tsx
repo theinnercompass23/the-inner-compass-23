@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Overthinking & Emotional Stress Support | Talk to Someone | Haven",
+  title: "Emotional Stress & Overthinking Support – Someone to Talk To | Haven",
   description:
-    "Overwhelmed by everyday stress, racing thoughts, or mental exhaustion? Unburden your mind with an attentive human listener without judgment.",
+    "Feeling emotionally overwhelmed, exhausted, or trapped in overthinking? Talk to a calm, empathetic human listener on WhatsApp. Real people, no judgment, 100% confidential.",
   alternates: {
     canonical: "https://haven.care/emotional-stress-support",
   },
   openGraph: {
-    title: "Overthinking & Emotional Stress Support | Talk to Someone",
+    title: "Emotional Stress & Overthinking Support – Someone to Talk To",
     description:
-      "Overwhelmed by everyday stress, racing thoughts, or mental exhaustion? Unburden your mind with an attentive human listener without judgment.",
+      "When racing thoughts, burnout, and everyday overwhelm become too heavy to hold, speaking with an attentive human listener restores mental clarity.",
     url: "https://haven.care/emotional-stress-support",
     type: "article",
   },
@@ -20,75 +20,119 @@ export const metadata: Metadata = {
 export default function EmotionalStressSupportPage() {
   return (
     <SeoLandingTemplate
-      pageTitle="Overthinking & Stress Support"
-      badge="Quiet Your Mind"
-      headline="Overthinking, Racing Thoughts & Emotional Stress: Unburden Your Mind"
-      subheadline="When thoughts replay endlessly in your head and every small problem feels monumental, speaking with a calm listener helps quiet the mental chaos."
-      readTime="5 min read"
+      pageTitle="Emotional Stress Support"
+      badge="Overcoming Mental Fatigue &amp; Overthinking"
+      headline="Feeling Emotionally Overwhelmed? Slow Down. We Are Here to Listen."
+      subheadline="When racing thoughts, burnout, relationship friction, and constant responsibilities overload your nervous system, carrying the mental burden alone leads to exhaustion. Unburden your mind with an attentive human listener."
+      readTime="7 min read"
+      heroImage="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200"
       canonicalSlug="emotional-stress-support"
       introParagraphs={[
-        "Modern life subjects us to non-stop demands: deadlines, financial pressures, family obligations, and societal expectations. When mental exhaustion sets in, our minds often slip into catastrophic overdrive—analyzing worst-case scenarios and second-guessing every choice.",
-        "Overthinking is not a personal failure; it is your brain's misguided attempt to protect you from uncertainty. But keeping all these racing thoughts bottled up inside only fuels the cycle. Speaking your worries out loud helps release the pressure valve.",
+        "Modern life demands that we juggle high-stakes careers, personal finances, relationship maintenance, family duties, and digital notifications without ever showing fatigue. Over time, this chronic sensory and cognitive overload leads to acute emotional exhaustion. You feel like a phone running on 1% battery with twenty apps open in the background.",
+        "When you try to relax, your mind refuses to cooperate. Thoughts race about past mistakes or future catastrophes. You feel irritable, exhausted, and isolated. You don't need a psychiatric diagnosis or toxic positivity; you simply need a dedicated, quiet human ear where you can unload your racing thoughts without feeling judged.",
       ]}
       keySections={[
         {
-          heading: "The Physiology of Chronic Mental Overload",
-          subheading: "Why exhaustion manifests as racing thoughts and physical tension",
+          heading: "1. The Toll of High-Functioning Emotional Exhaustion",
+          subheading: "When you seem completely capable on the outside while drowning on the inside",
           paragraphs: [
-            "When you operate under sustained emotional stress, your body remains stuck in a low-grade fight-or-flight mode. This causes shallow breathing, jaw clenching, headaches, and insomnia.",
-            "In this hyper-aroused state, rational perspective shrinks. Problems that would ordinarily seem manageable take on terrifying proportions. Speaking to someone who is calm and grounded helps regulate your nervous system.",
+            "Many people struggling with emotional stress are highly capable individuals: dependable employees, devoted parents, caring partners, and reliable friends. You meet all your deadlines, make dinner, and smile in meetings. But beneath that polished surface, you feel on the verge of tears at any moment.",
+            "Because you appear so competent, nobody asks if you are okay. When you occasionally express fatigue, people dismiss it: 'You're strong, you'll manage!' This invalidation makes you feel completely alone. A Haven peer listener provides a safe harbor where you don't have to be the strong one; you can be human, vulnerable, and tired.",
           ],
         },
         {
-          heading: "The Paradox of Overthinking: Thinking More, Solving Less",
-          subheading: "Breaking free from the endless loop of 'what-ifs'",
+          heading: "2. The Midnight Trap of Chronic Overthinking",
+          subheading: "Why the mind replays past conversations and imagines worst-case scenarios",
           paragraphs: [
-            "We often tell ourselves, 'If I just think about this a little more, I will find a perfect answer.' In reality, ruminating simply digs the emotional groove deeper without producing practical solutions.",
-            "When you express your swirling thoughts to another human being, you are forced to translate vague dread into structured language. This simple act frequently brings instant clarity and defuses anxiety.",
+            "Overthinking is the brain's misguided attempt to create safety through hypervigilance. When life feels unpredictable or emotional boundaries are crossed, your subconscious mind believes that if it analyzes every past interaction and anticipates every catastrophe, it can protect you from future hurt.",
+            "In reality, rumination only elevates cortisol, spikes heart rates, and robs you of restorative sleep. The most effective antidote to mental loops is vocalization. When thoughts remain trapped inside the skull, they feel immense; when spoken aloud to a calm human listener, they lose their terrifying grip.",
           ],
         },
         {
-          heading: "Why Advice Often Backfires When You Are Stressed",
-          subheading: "Needing space to feel heard before solving problems",
+          heading: "3. The Physical Symptoms of Unexpressed Emotional Pressure",
+          subheading: "How emotional strain manifests in the body",
           paragraphs: [
-            "When you tell friends you are stressed, they usually immediately suggest solutions: 'Have you tried meditation? Have you made a to-do list? You should exercise.' While well-meant, this can feel like another chore.",
-            "What you actually need in moments of acute overwhelm is validation: 'I hear how hard this has been for you. Take a breath. You are safe.' That is the essence of Haven's peer listening.",
+            "Emotional stress does not live exclusively in the mind. It manifests physically: tension headaches, jaw clenching, tightness across the chest, chronic digestive distress, and shallow breathing. When you continually swallow your feelings to keep the peace, your body keeps the score.",
+            "Speaking openly in an empathetic conversation activates the parasympathetic nervous system (the 'rest and digest' response). As you release unspoken fears, your shoulders drop, your breathing deepens, and your nervous system finally feels safe enough to rest.",
           ],
         },
         {
-          heading: "Practical, Low-Pressure Grounding Techniques",
-          subheading: "Simple ways to return to your physical senses",
+          heading: "4. How a Human Listening Session Restores Perspective",
+          subheading: "Zero unsolicited advice, zero lectures—just pure attentive presence",
           paragraphs: [
-            "When your mind starts spiraling, engage your senses: splash cold water on your wrists, notice five physical objects around the room, or step outside and feel the breeze against your face.",
-            "You do not have to conquer everything today. One peaceful breath, one honest conversation at a time.",
+            "Most people don't share their stress with friends because friends immediately try to solve it with advice: 'You should meditate,' or 'You need a new job.' While well-meaning, unsolicited advice feels like another task on an already overflowing to-do list.",
+            "Haven't listeners don't give you homework. We listen with complete attention, validate the weight of what you are carrying, and give you space to sort out your own thoughts. By the end of an hour, you feel lighter, grounded, and able to face tomorrow.",
           ],
         },
       ]}
-      hindiHinglishNote="'Dimaag me bahut overthinking aur stress ho raha hai?' अगर दिमाग में बहुत ज्यादा टेंशन है, नींद नहीं आ रही है और आप किसी समझदार इंसान से बिना झिझक बात करना चाहते हैं, तो हमारे WhatsApp पर कनेक्ट करें। हम आपको पूरी शांति से सुनेंगे।"
+      practicalSteps={[
+        {
+          step: "Practice the 'Brain Dump' Release Exercise",
+          desc: "Before bed, spend 10 minutes writing every worry, to-do item, and fear onto physical paper. Close the notebook and tell your mind: 'These are safely stored until tomorrow.'",
+        },
+        {
+          step: "Implement the 4-7-8 Breathing Calmer",
+          desc: "Inhale through your nose for 4 seconds, hold gently for 7 seconds, and exhale slowly through your mouth for 8 seconds. Repeat 4 times to down-regulate panic.",
+        },
+        {
+          step: "Say 'No' to One Optional Obligation This Week",
+          desc: "Protect your remaining emotional bandwidth by declining social invitations or non-essential commitments without over-explaining.",
+        },
+        {
+          step: "Schedule an Unburdening Conversation on WhatsApp",
+          desc: "Book a private 1-on-1 session with a Haven listener to talk through your stress without judgment.",
+        },
+      ]}
+      serviceBoundaries={{
+        provides: [
+          "Attentive, empathetic, and calming human active listening for emotional stress",
+          "A safe, non-judgmental space to unload racing thoughts and daily overwhelm",
+          "Scheduled 1-on-1 private WhatsApp conversations",
+          "Validation of feelings without patronizing advice or clinical labels",
+          "100% confidential and dignified emotional presence",
+        ],
+        doesNotProvide: [
+          "Clinical psychological treatment for Generalized Anxiety Disorder (GAD) or Panic Disorder",
+          "Psychiatric medical prescriptions or pharmaceutical advice",
+          "Executive career coaching or business management consulting",
+          "Emergency acute medical intervention or 24/7 psychiatric hotline service",
+        ],
+      }}
+      hindiHinglishNote="'Dimag me baaton ka toofan hai aur chain nahi mil raha?' अगर आप काम के तनाव, ओवरथिंकिंग या मानसिक थकान से परेशान हैं और किसी ऐसे इंसान से बात करना चाहते हैं जो शांति से आपकी बात सुने, तो हमारे WhatsApp पर कनेक्ट करें।"
       faqs={[
         {
-          q: "How does talking to a listener help with overthinking?",
-          a: "Translating messy thoughts into speech forces the brain to organize and externalize worries, which significantly reduces the psychological weight of rumination.",
+          q: "How does speaking with a listener help reduce emotional stress?",
+          a: "Vocalizing your thoughts activates different neurological pathways than silent rumination. Putting feelings into spoken words externalizes the stress, reduces amygdala reactivity, and helps you see situations with grounded clarity.",
         },
         {
-          q: "What if I can't clearly explain why I am feeling stressed?",
-          a: "You don't need a neat summary. You can start with, 'I just feel overwhelmed and don't know where to start.' Our listeners are patient and will gently follow your pace.",
+          q: "What if I don't know exactly what is causing my stress?",
+          a: "That is completely fine. Stress is often a cumulative build-up of many small pressures. You can simply tell your listener: 'I just feel overwhelmed and don't know where to start.' We will patiently help you unpack it.",
         },
         {
-          q: "Can I connect late at night?",
-          a: "Yes. In the form, pick your preferred 24-hour time slot (e.g. 23:00 or 01:00), and our team will coordinate with you.",
+          q: "Is Haven an AI tool or chatbot?",
+          a: "No. Haven is strictly real human peer listening. You communicate directly with a kind, attentive human listener.",
         },
       ]}
       relatedArticles={[
         {
-          title: "Loneliness Support",
-          slug: "/feeling-lonely",
-          desc: "Coping with emotional isolation and having nobody to talk to.",
+          title: "Overthinking Support",
+          slug: "/overthinking-support",
+          desc: "Practical perspectives on breaking late-night thought loops and regaining mental calm.",
         },
         {
-          title: "Need Someone to Talk To?",
+          title: "Feeling Lonely Support",
+          slug: "/feeling-lonely",
+          desc: "Navigating urban isolation, living alone, and finding genuine human warmth.",
+        },
+        {
+          title: "Someone to Talk To",
           slug: "/someone-to-talk",
-          desc: "Connect with an empathetic, unbiased human listener online.",
+          desc: "Connect with a compassionate human being who offers respectful, private presence.",
+        },
+        {
+          title: "Feeling Misunderstood",
+          slug: "/feeling-misunderstood",
+          desc: "When people dismiss your stress, experience the steadying comfort of feeling truly heard.",
         },
       ]}
     />

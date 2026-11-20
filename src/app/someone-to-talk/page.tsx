@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Need Someone to Talk To? Find a Human Listener | Haven",
+  title: "Someone to Talk To – Real Human Peer Listening Online | Haven",
   description:
-    "Have nobody to talk to? Connect with an empathetic, compassionate human listener online. Safe, private, and 100% judgment-free on WhatsApp.",
+    "Need someone to talk to right now? Feeling lonely, overwhelmed, or misunderstood? Connect with an attentive human listener on WhatsApp. No judgment, 100% confidential.",
   alternates: {
     canonical: "https://haven.care/someone-to-talk",
   },
   openGraph: {
-    title: "Need Someone to Talk To? Find a Human Listener",
+    title: "Someone to Talk To – Real Human Peer Listening Online",
     description:
-      "Have nobody to talk to? Connect with an empathetic, compassionate human listener online. Safe, private, and 100% judgment-free on WhatsApp.",
+      "No clinical diagnosis, no patronizing advice, no judgment. Connect with an empathetic human listener who is genuinely here to hear you.",
     url: "https://haven.care/someone-to-talk",
     type: "article",
   },
@@ -21,74 +21,125 @@ export default function SomeoneToTalkPage() {
   return (
     <SeoLandingTemplate
       pageTitle="Someone to Talk To"
-      badge="Human Peer Listening"
-      headline="Need Someone to Talk To? Connect With an Empathetic Human Listener"
-      subheadline="Sometimes, all you need is a genuine human being who will listen to your story with patience, dignity, and zero judgment."
-      readTime="5 min read"
+      badge="Empathetic Human Peer Listening"
+      headline="Need Someone to Talk To? We Are Here to Listen."
+      subheadline="Sometimes you don't need a medical diagnosis, an expensive clinical evaluation, or unsolicited advice from friends. You simply need a kind, patient, and non-judgmental human being who will listen to your story."
+      readTime="7 min read"
+      heroImage="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=1200"
       canonicalSlug="someone-to-talk"
       introParagraphs={[
-        "There are moments in life when your heart is full of thoughts, but your contact list feels completely empty. You might scroll through hundreds of phone numbers and realize: there is no one you can call at 10 PM without feeling like a burden, an inconvenience, or an oversharer.",
-        "That is why Haven exists. We are not an automated bot, an algorithm, a clinical hospital, or a social network. We are real human beings dedicated to the simple, transformative act of listening.",
+        "Human beings are fundamentally wired for connection, yet millions of us go through our entire days without ever speaking what is genuinely in our hearts. We talk about grocery lists, project deadlines, quarterly targets, and social pleasantries, but keep our loneliness, relationship heartache, family worries, and secret dreams strictly to ourselves.",
+        "When you search online for 'someone to talk to,' you are often directed toward automated AI chatbots, clinical hospital psychiatric directories, or expensive therapy platforms with three-week waiting lists. But emotional support shouldn't be that complicated or intimidating. Haven connects you with a real, compassionate human listener in a private, 1-on-1 WhatsApp conversation.",
       ]}
       keySections={[
         {
-          heading: "The Rare Gift of Being Heard Without Unsolicited Advice",
-          subheading: "Why active listening is different from ordinary conversation",
+          heading: "1. The Heavy Exhaustion of Carrying Everything Alone",
+          subheading: "When your internal reservoir of strength finally runs dry",
           paragraphs: [
-            "In most everyday conversations, people listen only enough to formulate their next reply. They interrupt with stories about themselves, offer immediate solutions, or tell you how you should feel.",
-            "Genuine peer listening is different. A listener holds a quiet, attentive space where you are the focus. You can pause, search for words, change direction, or express contradictory feelings without being rushed.",
+            "You might have spent years being the 'strong one' in your family or friend group—the person who organizes everything, listens to everyone else's problems, and never complains. But holding up the world while having no one to support you is quietly breaking your spirit.",
+            "Eventually, an emotional tipping point arrives. A minor inconvenience, a harsh remark, or a quiet evening at home makes tears spring to your eyes. You realize: 'I have nobody to talk to who doesn't need something from me.' A Haven peer listener offers an unconditional space where you don't have to give anything; you can simply rest and be cared for.",
           ],
         },
         {
-          heading: "No Diagnosis, No Medical Labels, No Pathologizing",
-          subheading: "A safe haven where normal human struggle is respected",
+          heading: "2. The Relief of Speaking Without Fear of Judgment or Consequences",
+          subheading: "Why talking to a neutral stranger is uniquely liberating",
           paragraphs: [
-            "Not every emotional struggle requires clinical medication or psychiatric evaluation. Often, sadness, loneliness, or frustration is a natural, healthy reaction to difficult life events: a breakup, job stress, bereavement, or social isolation.",
-            "At Haven, we do not diagnose you or attach clinical labels. We meet you simply as one human being to another.",
+            "Sharing your deepest doubts with friends or colleagues is fraught with social risk. You worry they will look at you differently, whisper behind your back, or share your secrets with your partner or boss. So you censor your words, downplaying your pain.",
+            "Speaking with an independent, dedicated peer listener removes all social stakes. Your listener does not know your social circle, has no preconceived biases, and will never use your vulnerability against you. You can express anger, regret, shame, or grief with complete psychological safety.",
           ],
         },
         {
-          heading: "Complete Anonymity and Privacy on WhatsApp",
-          subheading: "Freedom to speak openly without social consequences",
+          heading: "3. Real Human Presence vs. Artificial Chatbots",
+          subheading: "Why algorithmic empathy will never replace a human heart",
           paragraphs: [
-            "Because our listeners are not part of your social circle or family network, you can speak with radical honesty. You don't have to protect reputations, filter embarrassing details, or worry about gossip.",
-            "All conversations occur directly on WhatsApp, protected by end-to-end security and our strict non-disclosure ethics.",
+            "In recent years, many tech platforms have deployed AI chatbots that generate canned, robotic responses like 'I understand you are feeling sad.' While well-intentioned, talking to an algorithm often leaves you feeling more alienated and empty than before.",
+            "A machine does not have a heart; it does not know what it feels like to lose love, to fear the dark, or to ache with loneliness. At Haven, every listener is a living, breathing human being who listens with genuine empathy, patience, and warmth.",
           ],
         },
         {
-          heading: "Taking the First Simple Step",
-          subheading: "You don't need a polished script to begin",
+          heading: "4. How to Request a Conversation Step-by-Step",
+          subheading: "Simple, transparent, and respectful booking",
           paragraphs: [
-            "You don't have to prepare what you are going to say. Simply fill out the form below, select your concern, pick your preferred date and time, and our team will connect with you.",
-            "You do not have to carry everything alone. We are here to listen.",
+            "We make connecting effortless:",
+            "Step 1: Fill out the simple support request form on this page. Choose what you are going through (loneliness, heartbreak, divorce, stress, or just need to talk).",
+            "Step 2: Select your preferred date and 24-hour time slot (please allow at least 1 hour advance notice for coordinator scheduling).",
+            "Step 3: Submit the form to connect directly with our coordinator on WhatsApp. We confirm your listener, and at your scheduled time, your private conversation begins.",
           ],
         },
       ]}
-      hindiHinglishNote="'Mujhe kisi se baat karni hai, par mere paas koi nahi hai.' अगर आप अकेलेपन, दुख या मानसिक तनाव में हैं और सिर्फ एक सुनने वाला कान चाहते हैं, तो हमारे WhatsApp पर कनेक्ट करें। हम हिंदी और हिंग्लish में बिना किसी जजमेंट के सुनने के लिए हमेशा तैयार हैं।"
+      practicalSteps={[
+        {
+          step: "Give Yourself Permission to Be Vulnerable",
+          desc: "Remind yourself that seeking an empathetic ear is a sign of emotional wisdom and strength, not weakness.",
+        },
+        {
+          step: "Choose a Quiet, Private Space for Your Call/Chat",
+          desc: "Find a comfortable corner at home, a parked car, or a quiet bench where you can speak without being overheard.",
+        },
+        {
+          step: "Start with Whatever Feels Lightest",
+          desc: "You don't have to plunge into your deepest trauma in the first minute. You can start by saying: 'I just need to talk about my week.'",
+        },
+        {
+          step: "Schedule Your Dedicated Session on WhatsApp",
+          desc: "Use the support form below to book your private 1-on-1 listening slot with a Haven human listener.",
+        },
+      ]}
+      serviceBoundaries={{
+        provides: [
+          "Attentive, respectful, and non-judgmental human active listening",
+          "A safe, confidential space to unburden thoughts, fears, and hopes",
+          "Scheduled 1-on-1 private WhatsApp conversations with real people",
+          "Validation of everyday emotional challenges without clinical labels",
+          "100% private and discrete communication",
+        ],
+        doesNotProvide: [
+          "Clinical psychotherapy, psychiatry, or medical mental health diagnosis",
+          "Prescriptions, medical advice, or psychiatric treatment plans",
+          "Legal advice, marital mediation, or financial counseling",
+          "Romantic dating services, matchmaking, or personal escorting",
+          "Emergency acute suicide prevention or physical rescue services",
+        ],
+      }}
+      hindiHinglishNote="'Dil me bohot kuch chal raha hai par baat karne ke liye koi nahi hai?' जब दिल भारी हो और समझ न आए कि किससे कहें, तब एक समझदार और सच्चे इंसान से बात करना बहुत सुकून देता है। आज ही WhatsApp पर हमसे जुड़ें, हम आपको ध्यान से सुनेंगे।"
       faqs={[
         {
           q: "What can I talk about during a session?",
-          a: "Anything that is on your mind: loneliness, relationship difficulties, career anxiety, family strain, grief, or simply everyday thoughts you cannot share elsewhere.",
+          a: "Anything that is on your mind: loneliness, heartbreak, marriage tension, family friction, job stress, creative burnout, or simply how your week went. There is no topic too small or too heavy.",
         },
         {
-          q: "Is there any cost or subscription fee?",
-          a: "No. Haven is focused on providing accessible human emotional support without charging subscription fees or locking support behind payment gates.",
+          q: "Is Haven completely confidential?",
+          a: "Yes. All conversations are held directly between you and our listener over encrypted WhatsApp. We do not sell data or share details with third parties.",
         },
         {
-          q: "Can I choose my preferred date and time to connect?",
-          a: "Yes. In the form, pick your exact date and 24-hour time slot (00:00 to 23:59 IST), and our team will confirm availability directly on WhatsApp.",
+          q: "Do I have to do a phone call, or can I text?",
+          a: "You can choose whatever communication mode feels safest and most comfortable for you: private text messaging, voice notes, or voice calls over WhatsApp.",
+        },
+        {
+          q: "How far in advance do I need to book?",
+          a: "Please book at least 1 hour in advance so our coordinator can confirm an available human listener for your selected time.",
         },
       ]}
       relatedArticles={[
         {
-          title: "Loneliness Support",
+          title: "Feeling Lonely Support",
           slug: "/feeling-lonely",
-          desc: "What to do when you feel lonely and have nobody to talk to.",
+          desc: "Navigating quiet evenings, urban isolation, and living alone.",
+        },
+        {
+          title: "Feeling Misunderstood",
+          slug: "/feeling-misunderstood",
+          desc: "When friends and family dismiss your feelings, experience the relief of feeling truly heard.",
+        },
+        {
+          title: "Emotional Stress Support",
+          slug: "/emotional-stress-support",
+          desc: "Techniques and supportive conversations to ease racing thoughts and daily overwhelm.",
         },
         {
           title: "Heartbreak Support",
           slug: "/heartbreak-support",
-          desc: "Processing grief and healing after a romantic breakup.",
+          desc: "Navigating deep emotional grief, difficult memories, and healing after a breakup.",
         },
       ]}
     />

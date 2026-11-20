@@ -3,21 +3,16 @@
 import React from "react";
 import SupportRequestForm from "@/components/SupportRequestForm";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
-import CountriesSection from "@/components/CountriesSection";
+import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
-import WhyPeopleCome from "@/components/WhyPeopleCome";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import SafeImage from "@/components/SafeImage";
-import { Heart, ArrowDown, Lock, ShieldCheck, Compass, Globe, Video } from "lucide-react";
+import { Heart, ArrowDown, Lock, ShieldCheck, Compass } from "lucide-react";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default function HomePage() {
-  const directWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hello, I would like to connect with someone to talk to for emotional support."
-  )}`;
-
   return (
     <div className="bg-warm-white text-dark-charcoal">
       {/* ========================================================= */}
@@ -64,7 +59,7 @@ export default function HomePage() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold bg-white hover:bg-light-beige border border-soft-sage/50 text-dark-charcoal transition-all shadow-sm"
                 >
                   <Compass className="w-4 h-4 text-muted-green" />
-                  <span>Find Your Support</span>
+                  <span>Explore Support Topics</span>
                 </a>
               </div>
 
@@ -114,7 +109,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 2. HIGHLIGHTED SUPPORT REQUEST FORM (Directly after Hero) */}
+      {/* 2. SUPPORT REQUEST FORM (Directly after Hero)             */}
       {/* ========================================================= */}
       <SupportRequestForm />
 
@@ -126,44 +121,31 @@ export default function HomePage() {
       </div>
 
       {/* ========================================================= */}
-      {/* 4. EXPLORE COUNTRIES (International Hubs)                 */}
+      {/* 4. FEATURED SEO ARTICLES                                  */}
       {/* ========================================================= */}
-      <section className="py-16 sm:py-20 border-t border-soft-sage/30 bg-light-beige/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CountriesSection
-            title="Worldwide Emotional Listening Hubs"
-            subtitle="Compassionate, non-judgmental human listening tailored to life in major English-speaking and international nations."
-            showViewAll={true}
-          />
-        </div>
-      </section>
+      <FeaturedArticlesSection />
 
       {/* ========================================================= */}
-      {/* 5. VIDEO STORIES & EXPERIENCES (9:16 Vertical Carousel)   */}
+      {/* 5. VIDEO REVIEWS (Instagram Reels-Inspired 9:16 Gallery)   */}
       {/* ========================================================= */}
-      <section className="py-16 sm:py-20 border-t border-soft-sage/30 bg-white/70">
+      <section className="py-16 sm:py-24 border-t border-soft-sage/30 bg-white/70">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <VideoStoriesSection
             layout="carousel"
             showViewAll={true}
-            title="Real People. Genuine Relief."
-            subtitle="Hear how having someone who truly listens helped people work through heartbreak, isolation, career stress, and quiet evenings."
+            title="Real Stories. Genuine Experiences."
+            subtitle="Watch authentic video reflections from people who found compassionate human listening when they needed it most."
           />
         </div>
       </section>
 
       {/* ========================================================= */}
-      {/* 6. WHY PEOPLE COME TO US                                  */}
-      {/* ========================================================= */}
-      <WhyPeopleCome />
-
-      {/* ========================================================= */}
-      {/* 7. PRIVACY & TRUST SECTION                                */}
+      {/* 6. TRUST AND PRIVACY                                      */}
       {/* ========================================================= */}
       <TrustAndPrivacy />
 
       {/* ========================================================= */}
-      {/* 8. FINAL WHATSAPP CTA                                     */}
+      {/* 7. FINAL WHATSAPP CTA                                     */}
       {/* ========================================================= */}
       <FinalWhatsAppCta />
     </div>

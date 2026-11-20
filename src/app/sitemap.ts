@@ -73,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "family-problems",
     "grief-support",
     "emotional-stress-support",
+    "overthinking-support",
     "feeling-misunderstood",
     "someone-to-talk",
     "talk-to-someone",

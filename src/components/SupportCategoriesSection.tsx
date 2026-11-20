@@ -13,7 +13,9 @@ import {
   UserX,
   Headphones,
   ArrowRight,
-  Smile,
+  BrainCircuit,
+  MessageCircleQuestion,
+  Split,
 } from "lucide-react";
 
 interface CategoryCard {
@@ -22,94 +24,99 @@ interface CategoryCard {
   desc: string;
   slug: string;
   icon: React.ElementType;
-  badge?: string;
 }
 
 export default function SupportCategoriesSection() {
   const categories: CategoryCard[] = [
     {
       id: "loneliness",
-      title: "Loneliness",
-      desc: "For days when you feel isolated, alone even in a crowd, and need a caring, friendly voice.",
+      title: "Feeling Lonely",
+      desc: "For days when you feel deeply isolated, living alone, or alone even in a crowd, and need a caring, friendly voice.",
       slug: "/feeling-lonely",
       icon: HeartHandshake,
     },
     {
       id: "heartbreak",
       title: "Heartbreak",
-      desc: "Navigating deep grief, heavy memories, sleepless nights, and healing after a painful breakup.",
+      desc: "Navigating deep emotional pain, heavy memories, sleepless nights, and the quiet journey of healing after a breakup.",
       slug: "/heartbreak-support",
       icon: HeartOff,
     },
     {
       id: "divorce",
-      title: "Divorce & Separation",
-      desc: "Coping with the end of a marriage, personal adjustment, and rebuilding your life peacefully.",
+      title: "Divorce",
+      desc: "Coping with the painful end of a marriage, altered routines, social scrutiny, and finding peace in a new life chapter.",
       slug: "/divorce-support",
       icon: HeartCrack,
     },
     {
-      id: "marriage",
-      title: "Marriage Problems",
-      desc: "A neutral space to express marital tension, unspoken sorrow, communication gaps, and fatigue.",
-      slug: "/marriage-problems",
-      icon: ShieldAlert,
+      id: "separation",
+      title: "Separation",
+      desc: "Working through the uncertainty, silence, physical distance, and emotional adjustment of being separated.",
+      slug: "/separation-support",
+      icon: Split,
     },
     {
       id: "relationship",
-      title: "Relationship Difficulties",
-      desc: "Working through misunderstandings, trust cracks, emotional distance, and unspoken pain.",
+      title: "Relationship Problems",
+      desc: "Untangling communication gaps, trust cracks, growing emotional distance, and unspoken friction in your partnership.",
       slug: "/relationship-support",
       icon: Users,
     },
     {
+      id: "marriage",
+      title: "Marriage Problems",
+      desc: "A neutral, compassionate haven to express marital friction, feeling unheard by your spouse, and unspoken fatigue.",
+      slug: "/marriage-problems",
+      icon: ShieldAlert,
+    },
+    {
       id: "family",
-      title: "Family Problems",
-      desc: "When domestic friction, parental expectations, or family conflict become too heavy to hold.",
+      title: "Family Conflicts",
+      desc: "When domestic expectations, parental pressure, or generational disagreements become too heavy to carry alone.",
       slug: "/family-problems",
       icon: Users,
     },
     {
       id: "grief",
-      title: "Grief & Loss",
-      desc: "A safe and patient haven to speak about losing someone you love without feeling rushed.",
+      title: "Grief and Loss",
+      desc: "A safe, patient refuge to talk about losing someone you love, honor memories, and mourn without feeling rushed.",
       slug: "/grief-support",
       icon: CloudRain,
     },
     {
       id: "stress",
       title: "Emotional Stress",
-      desc: "Overthinking, racing thoughts, panic, and mental weight — unburden yourself with someone who listens.",
+      desc: "Racing thoughts, everyday overwhelm, and heavy mental fatigue — unburden yourself with someone who genuinely listens.",
       slug: "/emotional-stress-support",
       icon: Sparkles,
     },
     {
+      id: "overthinking",
+      title: "Overthinking",
+      desc: "When your mind replays past conversations and worries about the future late at night. Slow down and ground your thoughts.",
+      slug: "/overthinking-support",
+      icon: BrainCircuit,
+    },
+    {
       id: "misunderstood",
       title: "Feeling Misunderstood",
-      desc: "When people around dismiss your feelings. Experience the comfort of feeling truly heard.",
+      desc: "When people close to you dismiss or downplay your feelings. Experience the steadying relief of being truly heard.",
       slug: "/feeling-misunderstood",
       icon: UserX,
     },
     {
       id: "someone",
       title: "Someone to Talk To",
-      desc: "No labels, no advice, no clinical jargon. Just a real, empathetic human listener.",
+      desc: "No clinical diagnosis, no patronizing advice, and no judgment. Just a real, empathetic human listener who is here for you.",
       slug: "/someone-to-talk",
       icon: Headphones,
-    },
-    {
-      id: "children",
-      title: "Support for Children",
-      desc: "Safe emotional guidance and listening support requested with parent/guardian consent.",
-      slug: "/support-for-children",
-      icon: Smile,
-      badge: "Kids & Guardians",
     },
   ];
 
   return (
     <section className="py-16 sm:py-24 bg-warm-white border-t border-soft-sage/20 relative overflow-hidden">
-      {/* Circular glass accents in background */}
+      {/* Subtle circular glass accents in background */}
       <div className="absolute top-1/2 left-10 w-96 h-96 bg-soft-sage/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-amber-100/20 rounded-full blur-3xl pointer-events-none" />
 
@@ -126,7 +133,7 @@ export default function SupportCategoriesSection() {
           </p>
         </div>
 
-        {/* Category Cards Grid with Circular Glassmorphism */}
+        {/* Category Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((c) => {
             const Icon = c.icon;
@@ -140,11 +147,6 @@ export default function SupportCategoriesSection() {
                     <div className="w-14 h-14 rounded-full bg-soft-sage/20 text-muted-green flex items-center justify-center group-hover:scale-110 group-hover:bg-soft-sage/30 transition-all shadow-xs">
                       <Icon className="w-6 h-6" />
                     </div>
-                    {c.badge && (
-                      <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-200 shadow-xs">
-                        {c.badge}
-                      </span>
-                    )}
                   </div>
                   <h3 className="text-lg font-serif font-semibold text-dark-charcoal mb-2 group-hover:text-muted-green transition-colors">
                     {c.title}
@@ -164,7 +166,7 @@ export default function SupportCategoriesSection() {
                   </Link>
 
                   <span className="text-[11px] text-dark-charcoal/50">
-                    Article &amp; Support
+                    Dedicated Article &bull; Support
                   </span>
                 </div>
               </div>
