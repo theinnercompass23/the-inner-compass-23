@@ -7,6 +7,7 @@ import InnerCompassSection from "@/components/InnerCompassSection";
 import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
 import AiFaqSection from "@/components/AiFaqSection";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
+import MeetFounderSection from "@/components/MeetFounderSection";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import SafeImage from "@/components/SafeImage";
@@ -368,7 +369,12 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 8. TRUST AND PRIVACY                                      */}
+      {/* 8. MEET OUR FOUNDER                                       */}
+      {/* ========================================================= */}
+      <MeetFounderSection />
+
+      {/* ========================================================= */}
+      {/* 9. TRUST AND PRIVACY                                      */}
       {/* ========================================================= */}
       <TrustAndPrivacy />
 

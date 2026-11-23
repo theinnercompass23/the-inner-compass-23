@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import GuardianSupportForm from "@/components/GuardianSupportForm";
+import MeetFounderSection from "@/components/MeetFounderSection";
 import { buildDirectWhatsAppUrl } from "@/lib/constants";
 
 // 6 Pillars data directly matching the Odoo carousel
@@ -848,6 +849,9 @@ export default function SupportForChildrenClient() {
           </div>
         </div>
       </section>
+
+      {/* 8.5 MEET OUR FOUNDER */}
+      <MeetFounderSection id="about-founder" className="bg-[#FFFBF6]" />
 
       {/* 9. GUARDIAN CONSULTATION & ENQUIRY FORM */}
       <section
