@@ -156,45 +156,68 @@ export default function SupportForChildrenClient() {
 
   return (
     <div className="bg-[#FFFBF6] text-[#384347] font-sans antialiased min-h-screen selection:bg-[#7ED1ED]/40 selection:text-black">
-      {/* 1. CLEAN SCOUT EMBLEM HEADER */}
-      <header className="sticky top-0 z-40 bg-[#FFFBF6]/95 backdrop-blur-md border-b border-[#384347]/10 py-3.5 sm:py-4 transition-all">
+      {/* 1. CLEAN SCOUT EMBLEM HEADER (Fixed on scroll with Highlighted Inner Compass Logo) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FFFBF6]/95 backdrop-blur-md border-b border-[#384347]/15 py-2.5 sm:py-3 shadow-xs transition-all w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo & Brand Identification */}
           <Link
             href="/support-for-children"
-            className="flex items-center gap-3 sm:gap-4 group focus:outline-hidden"
+            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-hidden"
           >
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden shadow-xs border border-[#384347]/15 bg-white p-0.5 group-hover:scale-105 transition-transform shrink-0">
+            <div className="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden shadow-xs border border-[#384347]/15 bg-white p-0.5 group-hover:scale-105 transition-transform shrink-0">
               <Image
                 src="/scl/scout-logo-clean.png"
                 alt="SCOUT — Social Confidence Oration & Unfolding Talents"
                 fill
-                sizes="(max-width: 640px) 56px, 64px"
+                sizes="(max-width: 640px) 44px, 52px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-serif font-bold text-2xl sm:text-3xl text-[#292D2A] tracking-wider leading-none">
+              <span className="font-serif font-bold text-xl sm:text-2xl text-[#292D2A] tracking-wider leading-none">
                 SCOUT
               </span>
-              <span className="text-[10px] sm:text-xs text-[#595F5A] tracking-wider uppercase font-medium mt-1">
+              <span className="text-[9px] sm:text-[10px] text-[#595F5A] tracking-wider uppercase font-medium mt-1">
                 Social Confidence Oration &amp; Unfolding Talents
               </span>
             </div>
           </Link>
 
-          {/* Clean Return to The Inner Compass 23 Navigation */}
+          {/* Highlighted The Inner Compass 23 Navigation with Official Logo */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#384347]/80 hover:text-[#292D2A] font-semibold transition-all px-4 py-2 rounded-full border border-[#384347]/15 bg-white/80 hover:bg-white shadow-2xs shrink-0"
+            className="inline-flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm text-[#292D2A] hover:text-black font-semibold transition-all px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-soft-sage/60 bg-white hover:bg-warm-white shadow-xs hover:shadow-md hover:scale-[1.02] shrink-0 group ring-1 ring-black/5"
+            aria-label="Return to The Inner Compass 23"
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-muted-green" />
-            <span className="hidden sm:inline">Return to The Inner Compass 23</span>
-            <span className="sm:hidden">The Inner Compass 23</span>
+            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
+            
+            {/* Highlighted Logo Emblem */}
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-soft-sage/60 flex items-center justify-center p-0.5 overflow-hidden shadow-2xs shrink-0 ring-2 ring-muted-green/25 group-hover:ring-muted-green/45 transition-all">
+              <Image
+                src="/the-inner-compass-icon.png"
+                alt="The Inner Compass 23 Logo"
+                fill
+                sizes="32px"
+                className="object-contain p-0.5"
+                priority
+              />
+            </div>
+
+            <div className="flex flex-col text-left leading-tight">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-green font-bold hidden sm:inline">
+                Return to
+              </span>
+              <span className="font-serif font-bold text-xs sm:text-sm text-dark-charcoal">
+                The Inner Compass 23
+              </span>
+            </div>
           </Link>
         </div>
       </header>
+
+      {/* Spacer for Fixed Header so content is never covered */}
+      <div className="h-[68px] sm:h-[78px]" aria-hidden="true" />
 
       {/* 2. HERO SECTION: "Build real world confidence." (Exact match to Section 3 of Odoo) */}
       <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden border-b border-[#384347]/10">

@@ -3,12 +3,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Heart, ChevronDown } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import RegionSelector from "@/components/RegionSelector";
 
 export default function Footer() {
+  const pathname = usePathname();
   const [openSection, setOpenSection] = useState<string | null>(null);
+
+  // Dedicated children support page uses its own isolated SCOUT footer
+  const isChildrenPage = pathname === "/support-for-children" || pathname === "/scout";
+  if (isChildrenPage) {
+    return null;
+  }
 
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);

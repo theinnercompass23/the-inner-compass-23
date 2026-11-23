@@ -36,40 +36,47 @@ export default function Navbar() {
     return pathname === href || pathname.startsWith(href + "/");
   };
 
+  // Dedicated children support page uses its own isolated SCOUT header
+  const isChildrenPage = pathname === "/support-for-children" || pathname === "/scout";
+  if (isChildrenPage) {
+    return null;
+  }
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 w-full overflow-hidden ${
-        scrolled
-          ? "bg-warm-white/95 backdrop-blur-md shadow-xs border-b border-soft-sage/30"
-          : "bg-warm-white/90 backdrop-blur-md border-b border-soft-sage/20"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-6">
-        {/* Left: Clean Brand Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
-          aria-label="The Inner Compass 23 Home"
-        >
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-soft-sage/40 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform shrink-0 p-0.5 overflow-hidden">
-            <Image
-              src="/the-inner-compass-icon.png"
-              alt="The Inner Compass 23 Logo"
-              fill
-              sizes="(max-width: 640px) 36px, 40px"
-              className="object-contain p-0.5"
-              priority
-            />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="text-base sm:text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none truncate">
-              The Inner Compass 23
-            </span>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5 truncate">
-              Human Emotional Support
-            </span>
-          </div>
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 w-full overflow-hidden ${
+          scrolled
+            ? "bg-warm-white/95 backdrop-blur-md shadow-xs border-b border-soft-sage/30"
+            : "bg-warm-white/90 backdrop-blur-md border-b border-soft-sage/20"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-6">
+          {/* Left: Clean Brand Logo with Highlighted Emblem */}
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
+            aria-label="The Inner Compass 23 Home"
+          >
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-soft-sage/60 ring-2 ring-muted-green/20 flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:ring-muted-green/40 transition-all shrink-0 p-0.5 overflow-hidden">
+              <Image
+                src="/the-inner-compass-icon.png"
+                alt="The Inner Compass 23 Logo"
+                fill
+                sizes="(max-width: 640px) 40px, 44px"
+                className="object-contain p-0.5"
+                priority
+              />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="text-base sm:text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none truncate">
+                The Inner Compass 23
+              </span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5 truncate">
+                Human Emotional Support
+              </span>
+            </div>
+          </Link>
 
         {/* Center: Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
@@ -186,6 +193,9 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+      </header>
+      {/* Spacer so page content starts cleanly below fixed navbar */}
+      <div className="h-16 sm:h-18" aria-hidden="true" />
+    </>
   );
 }
