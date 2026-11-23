@@ -184,31 +184,31 @@ export default function SupportForChildrenClient() {
             </div>
           </Link>
 
-          {/* Highlighted The Inner Compass 23 Navigation with Official Logo */}
+          {/* Prominently Highlighted The Inner Compass 23 Navigation with Official Logo */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#292D2A] hover:text-black font-semibold transition-all px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border-2 border-muted-green/40 bg-white hover:bg-warm-white shadow-xs hover:shadow-md hover:scale-[1.02] shrink-0 group ring-2 ring-muted-green/20"
+            className="inline-flex items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-md hover:shadow-xl hover:scale-[1.02] transition-all shrink-0 border border-white/20 group ring-2 ring-emerald-500/30"
             aria-label="Return to The Inner Compass 23"
           >
-            <ArrowLeft className="w-4 h-4 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
+            <ArrowLeft className="w-4 h-4 text-emerald-400 group-hover:-translate-x-0.5 transition-transform shrink-0" />
             
-            {/* Highlighted Logo Emblem - Larger, Crisp & Highly Visible */}
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-muted-green/50 flex items-center justify-center overflow-hidden shadow-xs shrink-0 ring-2 ring-emerald-500/25 group-hover:ring-emerald-500/50 transition-all p-0.5">
+            {/* Prominently Highlighted Logo Emblem - Ultra-Crisp, Large & Highly Visible */}
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-emerald-400 ring-2 ring-emerald-400/40 flex items-center justify-center overflow-hidden shadow-sm shrink-0 p-1">
               <Image
                 src="/the-inner-compass-icon.png"
                 alt="The Inner Compass 23 Logo"
                 fill
-                sizes="40px"
-                className="object-contain p-0.5"
+                sizes="48px"
+                className="object-contain"
                 priority
               />
             </div>
 
             <div className="flex flex-col text-left leading-tight">
-              <span className="text-[10px] uppercase tracking-wider text-muted-green font-bold block">
+              <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">
                 Return to
               </span>
-              <span className="font-serif font-bold text-xs sm:text-sm text-dark-charcoal">
+              <span className="font-serif font-bold text-xs sm:text-sm text-white">
                 The Inner Compass 23
               </span>
             </div>
