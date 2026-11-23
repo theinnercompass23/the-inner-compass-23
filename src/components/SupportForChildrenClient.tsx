@@ -184,34 +184,15 @@ export default function SupportForChildrenClient() {
             </div>
           </Link>
 
-          {/* Prominently Highlighted The Inner Compass 23 Navigation with Official Logo */}
+          {/* Clean, Sleek & Elegant Return to The Inner Compass 23 Button */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-md hover:shadow-xl hover:scale-[1.02] transition-all shrink-0 border border-white/20 group ring-2 ring-emerald-500/30"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#384347] hover:text-[#212529] font-medium transition-all px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#384347]/20 bg-white hover:bg-white/90 shadow-2xs hover:shadow-xs shrink-0 group"
             aria-label="Return to The Inner Compass 23"
           >
-            <ArrowLeft className="w-4 h-4 text-emerald-400 group-hover:-translate-x-0.5 transition-transform shrink-0" />
-            
-            {/* Prominently Highlighted Logo Emblem - Ultra-Crisp, Large & Highly Visible */}
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-emerald-400 ring-2 ring-emerald-400/40 flex items-center justify-center overflow-hidden shadow-sm shrink-0 p-1">
-              <Image
-                src="/the-inner-compass-icon.png"
-                alt="The Inner Compass 23 Logo"
-                fill
-                sizes="48px"
-                className="object-contain"
-                priority
-              />
-            </div>
-
-            <div className="flex flex-col text-left leading-tight">
-              <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">
-                Return to
-              </span>
-              <span className="font-serif font-bold text-xs sm:text-sm text-white">
-                The Inner Compass 23
-              </span>
-            </div>
+            <ArrowLeft className="w-3.5 h-3.5 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
+            <span className="hidden sm:inline">Return to The Inner Compass 23</span>
+            <span className="sm:hidden">The Inner Compass 23</span>
           </Link>
         </div>
       </header>
