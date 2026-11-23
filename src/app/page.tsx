@@ -91,31 +91,33 @@ export default function HomePage() {
                   href={buildDirectWhatsAppUrl("Hello, I would like to connect with an Active Listener to share my unspoken pain.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap border border-white/10"
                 >
                   <Headphones className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Connect with an Active Listener</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 opacity-70" />
                 </a>
 
                 <a
                   href={buildDirectWhatsAppUrl("Hello, I would like to connect with a Life Alchemist to decode my cosmic patterns & awaken my inner wisdom.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap border border-white/10"
                 >
-                  <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                  <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>Connect with a Life Alchemist</span>
+                  <ArrowRight className="w-4 h-4 opacity-70" />
                 </a>
 
                 <a
                   href={buildDirectWhatsAppUrl("Hello, I would like to connect with a Spiritual Cartographer to transform my journey by aligning my inner compass with purpose of my life.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap border border-white/10"
                 >
-                  <Compass className="w-4 h-4 text-muted-green shrink-0" />
+                  <Compass className="w-4 h-4 text-emerald-300 shrink-0" />
                   <span>Connect with a Spiritual Cartographer</span>
+                  <ArrowRight className="w-4 h-4 opacity-70" />
                 </a>
 
                 <a
