@@ -45,34 +45,34 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 w-full overflow-hidden ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 w-full ${
           scrolled
             ? "bg-warm-white/95 backdrop-blur-md shadow-xs border-b border-soft-sage/30"
             : "bg-warm-white/90 backdrop-blur-md border-b border-soft-sage/20"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-6">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-6">
           {/* Left: Clean Brand Logo with Highlighted Emblem */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
+            className="flex items-center gap-2 sm:gap-3 group shrink min-w-0"
             aria-label="The Inner Compass 23 Home"
           >
-            <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border-2 border-emerald-600/70 ring-4 ring-emerald-500/30 ring-offset-2 ring-offset-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:ring-emerald-500/50 transition-all shrink-0 p-1 overflow-hidden">
+            <div className="relative w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-emerald-600/70 ring-2 sm:ring-4 ring-emerald-500/30 ring-offset-1 sm:ring-offset-2 ring-offset-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:ring-emerald-500/50 transition-all shrink-0 p-0.5 sm:p-1 overflow-hidden">
               <Image
                 src="/the-inner-compass-icon.png"
                 alt="The Inner Compass 23 Logo"
                 fill
-                sizes="(max-width: 640px) 48px, 52px"
+                sizes="(max-width: 640px) 36px, 48px"
                 className="object-contain p-0.5"
                 priority
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-base sm:text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none truncate">
+              <span className="text-xs sm:text-xl font-serif font-bold text-dark-charcoal tracking-tight leading-none truncate">
                 The Inner Compass 23
               </span>
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5 truncate">
+              <span className="text-[8px] sm:text-[10px] uppercase tracking-wider text-dark-charcoal/60 font-medium mt-0.5 truncate hidden xs:inline">
                 Human Emotional Support
               </span>
             </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right: WhatsApp CTA + Highlighted Contact CTA (Both Phone & Laptop) */}
-        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* Laptop Mode: WhatsApp CTA */}
           <a
             href={buildDirectWhatsAppUrl()}
@@ -119,15 +119,15 @@ export default function Navbar() {
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
             title="Chat on WhatsApp"
-            className="sm:hidden w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-xs shrink-0"
+            className="sm:hidden w-7 h-7 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-xs shrink-0"
           >
-            <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+            <WhatsAppIcon className="w-3.5 h-3.5" color="#FFFFFF" />
           </a>
 
-          {/* Contact Button - Highlighted prominently in BOTH Phone and Laptop view! */}
+          {/* Contact Button */}
           <Link
             href="/contact"
-            className={`inline-flex items-center justify-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap shadow-xs hover:shadow-md ${
+            className={`inline-flex items-center justify-center px-2.5 py-1 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all whitespace-nowrap shadow-xs hover:shadow-md ${
               pathname === "/contact"
                 ? "bg-black text-white ring-2 ring-muted-green"
                 : "bg-dark-charcoal hover:bg-black text-white"
@@ -136,12 +136,12 @@ export default function Navbar() {
             Contact
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - fully padded with breathing room, never cut off */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="lg:hidden p-1.5 sm:p-2 rounded-full text-dark-charcoal hover:bg-soft-sage/20 transition-colors focus:outline-none shrink-0"
+            className="lg:hidden p-1.5 sm:p-2 rounded-lg text-dark-charcoal hover:bg-soft-sage/25 transition-colors focus:outline-none shrink-0"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
