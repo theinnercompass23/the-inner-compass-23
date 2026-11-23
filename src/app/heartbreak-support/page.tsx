@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Heartbreak Support – Someone to Talk to When You Are Hurting | Haven",
+  title: "Heartbreak Support – Someone to Talk to When You Are Hurting | The Inner Compass 23",
   description:
     "Struggling with heartbreak after a breakup? Missing someone deeply? Connect with a compassionate human listener. Real conversations, no judgment, private 1-on-1 WhatsApp support.",
   keywords: [
@@ -39,7 +39,7 @@ export default function HeartbreakSupportPage() {
       canonicalSlug="heartbreak-support"
       introParagraphs={[
         "The end of a romantic relationship is one of the most destabilizing events a human being can endure. Neurological research demonstrates that social rejection and romantic heartbreak activate the exact same pain pathways in the brain as physical injury. You are not being overly dramatic; your body and mind are processing real withdrawal and profound grief.",
-        "Yet modern culture often treats heartbreak with impatient flippancy. People expect you to bounce back after a few weeks, download dating apps, and pretend you are unaffected. When you still feel shattered months later, you begin to hide your tears out of embarrassment. Haven exists so you never have to pretend you are fine when your heart is aching.",
+        "Yet modern culture often treats heartbreak with impatient flippancy. People expect you to bounce back after a few weeks, download dating apps, and pretend you are unaffected. When you still feel shattered months later, you begin to hide your tears out of embarrassment. The Inner Compass 23 exists so you never have to pretend you are fine when your heart is aching.",
       ]}
       keySections={[
         {
@@ -78,7 +78,7 @@ export default function HeartbreakSupportPage() {
           heading: "5. How Our Human Listening Service Helps You Heal",
           subheading: "A gentle refuge to unburden your thoughts without unsolicited lectures",
           paragraphs: [
-            "At Haven, our peer listeners do not tell you what to do, lecture you on relationship red flags, or give generic self-help pep talks. We listen actively, reflect your feelings with genuine warmth, and validate the depth of what you are experiencing.",
+            "At The Inner Compass 23, our peer listeners do not tell you what to do, lecture you on relationship red flags, or give generic self-help pep talks. We listen actively, reflect your feelings with genuine warmth, and validate the depth of what you are experiencing.",
             "Speaking your unspoken grief into the presence of an attentive, compassionate listener transforms chaotic heartbreak into grounded self-compassion. You realize that you are worthy of love, and that your capacity to feel deeply is your strength, not your flaw.",
           ],
         },
@@ -125,7 +125,7 @@ export default function HeartbreakSupportPage() {
         },
         {
           q: "Is there a website where I can talk to someone anonymously when I feel lonely after a breakup?",
-          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+          a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
         },
         {
           q: "How long does heartbreak usually last?",

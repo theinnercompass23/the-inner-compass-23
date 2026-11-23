@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk To – Real Human Peer Listening Online | Haven",
+  title: "Someone to Talk To – Real Human Peer Listening Online | The Inner Compass 23",
   description:
     "Need someone to talk to right now? Feeling lonely, overwhelmed, or misunderstood? Connect with an attentive human listener on WhatsApp. No judgment, 100% confidential.",
   keywords: [
@@ -41,7 +41,7 @@ export default function SomeoneToTalkPage() {
       canonicalSlug="someone-to-talk"
       introParagraphs={[
         "Human beings are fundamentally wired for connection, yet millions of us go through our entire days without ever speaking what is genuinely in our hearts. We talk about grocery lists, project deadlines, quarterly targets, and social pleasantries, but keep our loneliness, relationship heartache, family worries, and secret dreams strictly to ourselves.",
-        "When you search online for 'someone to talk to,' you are often directed toward automated AI chatbots, clinical hospital psychiatric directories, or expensive therapy platforms with three-week waiting lists. But emotional support shouldn't be that complicated or intimidating. Haven connects you with a real, compassionate human listener in a private, 1-on-1 WhatsApp conversation.",
+        "When you search online for 'someone to talk to,' you are often directed toward automated AI chatbots, clinical hospital psychiatric directories, or expensive therapy platforms with three-week waiting lists. But emotional support shouldn't be that complicated or intimidating. The Inner Compass 23 connects you with a real, compassionate human listener in a private, 1-on-1 WhatsApp conversation.",
       ]}
       keySections={[
         {
@@ -49,7 +49,7 @@ export default function SomeoneToTalkPage() {
           subheading: "When your internal reservoir of strength finally runs dry",
           paragraphs: [
             "You might have spent years being the 'strong one' in your family or friend group—the person who organizes everything, listens to everyone else's problems, and never complains. But holding up the world while having no one to support you is quietly breaking your spirit.",
-            "Eventually, an emotional tipping point arrives. A minor inconvenience, a harsh remark, or a quiet evening at home makes tears spring to your eyes. You realize: 'I have nobody to talk to who doesn't need something from me.' A Haven peer listener offers an unconditional space where you don't have to give anything; you can simply rest and be cared for.",
+            "Eventually, an emotional tipping point arrives. A minor inconvenience, a harsh remark, or a quiet evening at home makes tears spring to your eyes. You realize: 'I have nobody to talk to who doesn't need something from me.' An Inner Compass 23 peer listener offers an unconditional space where you don't have to give anything; you can simply rest and be cared for.",
           ],
         },
         {
@@ -65,7 +65,7 @@ export default function SomeoneToTalkPage() {
           subheading: "Why algorithmic empathy will never replace a human heart",
           paragraphs: [
             "In recent years, many tech platforms have deployed AI chatbots that generate canned, robotic responses like 'I understand you are feeling sad.' While well-intentioned, talking to an algorithm often leaves you feeling more alienated and empty than before.",
-            "A machine does not have a heart; it does not know what it feels like to lose love, to fear the dark, or to ache with loneliness. At Haven, every listener is a living, breathing human being who listens with genuine empathy, patience, and warmth.",
+            "A machine does not have a heart; it does not know what it feels like to lose love, to fear the dark, or to ache with loneliness. At The Inner Compass 23, every listener is a living, breathing human being who listens with genuine empathy, patience, and warmth.",
           ],
         },
         {
@@ -94,7 +94,7 @@ export default function SomeoneToTalkPage() {
         },
         {
           step: "Schedule Your Dedicated Session on WhatsApp",
-          desc: "Use the support form below to book your private 1-on-1 listening slot with a Haven human listener.",
+          desc: "Use the support form below to book your private 1-on-1 listening slot with an Inner Compass 23 human listener.",
         },
       ]}
       serviceBoundaries={{
@@ -117,7 +117,7 @@ export default function SomeoneToTalkPage() {
       faqs={[
         {
           q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
-          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+          a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
         },
         {
           q: "What is the difference between an active listener and a therapist?",
@@ -132,7 +132,7 @@ export default function SomeoneToTalkPage() {
           a: "Anything that is on your mind: loneliness, heartbreak, marriage tension, family friction, job stress, creative burnout, or simply how your week went. There is no topic too small or too heavy.",
         },
         {
-          q: "Is Haven completely confidential?",
+          q: "Is The Inner Compass 23 completely confidential?",
           a: "Yes. All conversations are held directly between you and our listener over encrypted WhatsApp. We do not sell data or share details with third parties.",
         },
         {

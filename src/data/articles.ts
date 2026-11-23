@@ -21,7 +21,7 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "February 18, 2026",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
   {
     id: "navigating-divorce-maze",
@@ -33,7 +33,7 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "February 15, 2026",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
   {
     id: "heartbreak-digital-age",
@@ -45,7 +45,7 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "February 12, 2026",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
   {
     id: "exhaustion-of-pretending",
@@ -57,7 +57,7 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "February 08, 2026",
     readTime: "5 min read",
     image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
   {
     id: "anatomy-of-overthinking",
@@ -69,7 +69,7 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "February 05, 2026",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
   {
     id: "separation-marital-strain",
@@ -81,6 +81,6 @@ export const FEATURED_ARTICLES: EditorialArticle[] = [
     date: "January 29, 2026",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?auto=format&fit=crop&q=80&w=800",
-    author: "Haven Editorial Team",
+    author: "The Inner Compass 23 Editorial Team",
   },
 ];

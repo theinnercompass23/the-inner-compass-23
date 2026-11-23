@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SafeImage from "@/components/SafeImage";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import SpotifyPodcastSection from "@/components/SpotifyPodcastSection";
 import { CITIES_DATA, getCityBySlug, getCitiesByCountry } from "@/data/cities";
@@ -53,7 +52,7 @@ export async function generateMetadata({
   const reg = getRegionalModifiers(city.countrySlug);
 
   // Exact formulas specified in blueprint:
-  const pageTitle = `${issue.name} Support & Anonymous Listeners in ${city.name} | 24/7 Online Help – Haven`;
+  const pageTitle = `${issue.name} Support & Anonymous Listeners in ${city.name} | 24/7 Online Help – The Inner Compass 23`;
   const metaDescription = `Feeling lonely or dealing with ${issue.name} in ${city.name}? Talk anonymously to a trained listener or ${reg.counselorSpelling} online 24/7. Zero judgment, instant connect, no real name required.`;
 
   return {
@@ -151,11 +150,11 @@ export default async function DynamicCityIssuePage({
         "dateModified": "2026-02-20T08:00:00+00:00",
         "author": {
           "@type": "Organization",
-          "name": "Haven Emotional Support Team",
+          "name": "The Inner Compass 23 Emotional Support Team",
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care",
         },
         "mainEntityOfPage": {
@@ -168,7 +167,7 @@ export default async function DynamicCityIssuePage({
         "name": `${issue.name} Emotional Listening Support in ${city.name}`,
         "provider": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care",
         },
         "serviceType": "Peer Support & Non-Clinical Active Listening",
@@ -192,7 +191,7 @@ export default async function DynamicCityIssuePage({
     ],
   };
 
-  const whatsappMessage = `Hello Haven Team, I am reaching out from ${city.name}, ${city.countryName} regarding ${issue.name} and would like to connect anonymously with someone to talk to.`;
+  const whatsappMessage = `Hello The Inner Compass 23 Team, I am reaching out from ${city.name}, ${city.countryName} regarding ${issue.name} and would like to connect anonymously with someone to talk to.`;
 
   return (
     <div className="space-y-14 sm:space-y-20 pb-20 bg-warm-white text-dark-charcoal w-full overflow-x-hidden">
@@ -253,7 +252,7 @@ export default async function DynamicCityIssuePage({
                   className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>WhatsApp Connect ({WHATSAPP_DISPLAY})</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -310,7 +309,7 @@ export default async function DynamicCityIssuePage({
             Where can I talk to someone anonymously in {city.name}?
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/80 leading-relaxed">
-            In a bustling city like {city.name}, admitting that you are emotionally overwhelmed or lonely can feel intimidating. Haven provides a strictly confidential online listening sanctuary where you can connect directly with a compassionate human being without sharing your real name, home address, social profiles, or medical insurance details.
+            In a bustling city like {city.name}, admitting that you are emotionally overwhelmed or lonely can feel intimidating. The Inner Compass 23 provides a strictly confidential online listening sanctuary where you can connect directly with a compassionate human being without sharing your real name, home address, social profiles, or medical insurance details.
           </p>
           <p className="text-xs sm:text-sm text-dark-charcoal/70 leading-relaxed">
             All conversations are 1-on-1 via WhatsApp. You can choose a temporary nickname, share what is on your chest, and log off whenever you feel ready.
@@ -326,7 +325,7 @@ export default async function DynamicCityIssuePage({
             Best online emotional support for {issue.name.toLowerCase()} in {city.name}
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/80 leading-relaxed">
-            Navigating {issue.name.toLowerCase()} in {city.name} involves unique local pressures: career competition, long commutes, expensive housing, and social networks where people rarely talk about real vulnerability. Haven pairs you with an attentive listener who understands how to hold space for {issue.description.toLowerCase()}
+            Navigating {issue.name.toLowerCase()} in {city.name} involves unique local pressures: career competition, long commutes, expensive housing, and social networks where people rarely talk about real vulnerability. The Inner Compass 23 pairs you with an attentive listener who understands how to hold space for {issue.description.toLowerCase()}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
             {issue.symptoms.map((symptom, idx) => (
@@ -347,7 +346,7 @@ export default async function DynamicCityIssuePage({
             Feeling lonely in {city.name}: who to talk to at night
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/80 leading-relaxed">
-            Loneliness hits hardest when darkness falls across {city.name}. Friends have gone to sleep, the apartment is dead quiet, and racing thoughts start to replay painful memories or future anxieties. Haven listeners coordinate sessions across {city.timezone}, giving you someone warm and attentive to speak with even at 2:00 AM or 3:00 AM.
+            Loneliness hits hardest when darkness falls across {city.name}. Friends have gone to sleep, the apartment is dead quiet, and racing thoughts start to replay painful memories or future anxieties. The Inner Compass 23 listeners coordinate sessions across {city.timezone}, giving you someone warm and attentive to speak with even at 2:00 AM or 3:00 AM.
           </p>
         </div>
 
@@ -360,7 +359,7 @@ export default async function DynamicCityIssuePage({
             Affordable {issue.name.toLowerCase()} {reg.counselingSpelling} in {city.name} without waitlist
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/80 leading-relaxed">
-            Traditional therapy in {city.name} often requires long waiting periods (sometimes 6 to 12 weeks), complex health insurance referrals, and high session copays. Haven offers immediate human active listening with zero subscription locks and {reg.currencyOrAffordability.toLowerCase()}.
+            Traditional therapy in {city.name} often requires long waiting periods (sometimes 6 to 12 weeks), complex health insurance referrals, and high session copays. The Inner Compass 23 offers immediate human active listening with zero subscription locks and {reg.currencyOrAffordability.toLowerCase()}.
           </p>
         </div>
 
@@ -386,7 +385,7 @@ export default async function DynamicCityIssuePage({
             Talk to a trained listener in {city.name} instead of a therapist
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/80 leading-relaxed">
-            Not every emotional struggle is a psychiatric illness. Most of the time, what you need is simply a compassionate, non-judgmental human being who won&apos;t evaluate you, label you with clinical disorders, or give patronizing advice. Haven listeners are trained to offer pure, patient, active listening from one human to another.
+            Not every emotional struggle is a psychiatric illness. Most of the time, what you need is simply a compassionate, non-judgmental human being who won&apos;t evaluate you, label you with clinical disorders, or give patronizing advice. The Inner Compass 23 listeners are trained to offer pure, patient, active listening from one human to another.
           </p>
         </div>
       </section>
@@ -395,7 +394,7 @@ export default async function DynamicCityIssuePage({
       {/* 3. SPOTIFY PODCAST & AI CALM AUDIO INTEGRATION            */}
       {/* ========================================================= */}
       <SpotifyPodcastSection
-        title={`Listen to Haven on Spotify: Calming Reflections for ${city.name}`}
+        title={`Listen to The Inner Compass 23 on Spotify: Calming Reflections for ${city.name}`}
         subtitle={`Tune in to guided mindful episodes on Spotify, or play our calming interactive audio previews below before connecting with your ${city.name} listener.`}
         badge="Official Spotify Podcast &amp; Calming Voice Station"
       />
@@ -515,7 +514,28 @@ export default async function DynamicCityIssuePage({
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener in {city.name}.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );

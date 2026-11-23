@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Haven — Human Emotional Support & Peer Listening Service",
+  title: "The Inner Compass 23 — Human Emotional Support & Peer Listening Service",
   description:
     "Sometimes, you just need someone to listen. Private, confidential human emotional support for loneliness, divorce, separation, breakups, grief, and personal struggles. Connect directly on WhatsApp with compassionate human listeners worldwide.",
   keywords: [
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     "online listening service Australia",
     "someone to talk to in Dubai",
   ],
-  authors: [{ name: "Haven Human Support Team" }],
+  authors: [{ name: "The Inner Compass 23 Support Team" }],
   metadataBase: new URL("https://haven.care"),
   alternates: {
     canonical: "https://haven.care",
@@ -90,17 +90,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Haven — Human Emotional Support & Peer Listening Service",
+    title: "The Inner Compass 23 — Human Emotional Support & Peer Listening Service",
     description:
       "Whether you're feeling lonely, dealing with separation, or need someone to listen, we're here without judgment. Real people, real conversations, no judgment.",
     url: "https://haven.care",
-    siteName: "Haven",
+    siteName: "The Inner Compass 23",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Haven — Human Emotional Support & Peer Listening",
+    title: "The Inner Compass 23 — Human Emotional Support & Peer Listening",
     description:
       "Sometimes, you just need someone to listen. Connect privately on WhatsApp for non-judgmental human support.",
   },
@@ -112,9 +112,9 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://haven.care/#organization",
-      "name": "Haven Human Emotional Support",
+      "name": "The Inner Compass 23 — Human Emotional Support",
       "url": "https://haven.care",
-      "logo": "https://haven.care/favicon.ico",
+      "logo": "https://haven.care/the-inner-compass-logo.png",
       "description":
         "A private, safe, and confidential human emotional support and peer listening service for people navigating loneliness, heartbreak, separation, divorce, and personal struggles.",
       "contactPoint": {
@@ -161,7 +161,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://haven.care/#website",
       "url": "https://haven.care",
-      "name": "Haven",
+      "name": "The Inner Compass 23",
       "publisher": {
         "@id": "https://haven.care/#organization"
       }
@@ -188,7 +188,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-warm-white text-dark-charcoal font-sans">
         <LeadProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-16 sm:pt-18">{children}</main>
           <Footer />
           <FloatingWhatsApp />
         </LeadProvider>

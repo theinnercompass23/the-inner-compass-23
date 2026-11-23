@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Feeling Lonely? Someone to Talk to When You Feel Isolated | Haven",
+  title: "Feeling Lonely? Someone to Talk to When You Feel Isolated | The Inner Compass 23",
   description:
     "Feeling lonely even in a crowded room? Living alone and need someone to talk to? Connect with a warm, caring human listener on WhatsApp. No judgment, 100% confidential.",
   keywords: [
@@ -43,7 +43,7 @@ export default function FeelingLonelyPage() {
       canonicalSlug="feeling-lonely"
       introParagraphs={[
         "In our hyper-connected world of instant messaging and social media followers, loneliness has reached epidemic proportions. We can scroll through hundreds of updates while sitting in an empty room, feeling an acute, hollow ache in our chest. Loneliness is not about the number of contacts in your phone; it is about having a safe space where you can share your authentic inner reality without fear of rejection.",
-        "Whether you live alone in a busy metropolis, work remotely from home, relocated to a new city, or feel completely isolated inside a marriage or family, your desire for human connection is fundamentally healthy. Haven provides a warm, respectful human haven where you can speak freely and be heard.",
+        "Whether you live alone in a busy metropolis, work remotely from home, relocated to a new city, or feel completely isolated inside a marriage or family, your desire for human connection is fundamentally healthy. The Inner Compass 23 provides a warm, respectful human haven where you can speak freely and be heard.",
       ]}
       keySections={[
         {
@@ -67,14 +67,14 @@ export default function FeelingLonelyPage() {
           subheading: "Why people who need connection the most often hesitate to reach out",
           paragraphs: [
             "When loneliness persists, it breeds an irrational sense of shame. You hesitate to call old friends because you fear appearing needy, pathetic, or exhausting. You tell yourself: 'They have their own busy lives and families; I don't want to burden them with my loneliness.'",
-            "This self-silencing creates a vicious cycle: the more isolated you feel, the more hesitant you become to reach out. At Haven, our listeners are specifically dedicated to holding space for you. You never have to apologize for taking up space or worry that you are being a burden. Listening to you with genuine patience is why we exist.",
+            "This self-silencing creates a vicious cycle: the more isolated you feel, the more hesitant you become to reach out. At The Inner Compass 23, our listeners are specifically dedicated to holding space for you. You never have to apologize for taking up space or worry that you are being a burden. Listening to you with genuine patience is why we exist.",
           ],
         },
         {
           heading: "4. What Happens During a Conversation with a Human Listener?",
           subheading: "A simple, relaxed, and judgment-free connection",
           paragraphs: [
-            "A conversation with a Haven peer listener is not a clinical interrogation or an awkward scripted exchange. It is a genuine, respectful human conversation. You can talk about your daily thoughts, what you are reading, a painful memory from your past, or simply how hard the past week has been.",
+            "A conversation with an Inner Compass 23 peer listener is not a clinical interrogation or an awkward scripted exchange. It is a genuine, respectful human conversation. You can talk about your daily thoughts, what you are reading, a painful memory from your past, or simply how hard the past week has been.",
             "Our listeners do not interrupt you to offer unsolicited advice or tell you to 'put yourself out there.' We listen attentively, reflect your thoughts with care, and remind you that your feelings are valid. Even a single hour of feeling truly understood can break the grip of chronic isolation.",
           ],
         },
@@ -125,7 +125,7 @@ export default function FeelingLonelyPage() {
       faqs={[
         {
           q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
-          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+          a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
         },
         {
           q: "What is the difference between an active listener and a therapist?",
@@ -148,8 +148,8 @@ export default function FeelingLonelyPage() {
           a: "Yes. Many of our clients schedule regular weekly or bi-weekly check-in conversations as an emotional grounding anchor.",
         },
         {
-          q: "Is Haven an AI chatbot or automated service?",
-          a: "No. Haven is 100% real human peer listening. You communicate directly with empathetic, trained human beings.",
+          q: "Is The Inner Compass 23 an AI chatbot or automated service?",
+          a: "No. The Inner Compass 23 is 100% real human peer listening. You communicate directly with empathetic, trained human beings.",
         },
       ]}
       relatedArticles={[

@@ -38,7 +38,7 @@ export interface RankingScenario {
 export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
   {
     pageUrl: "/",
-    pageTitle: "Haven Homepage – Human Emotional Support & Peer Listening",
+    pageTitle: "The Inner Compass 23 Homepage – Human Emotional Support & Peer Listening",
     primaryKeyword: "human emotional support online",
     secondaryKeywords: [
       "talk to someone online",
@@ -58,7 +58,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "koi meri baat sunne wala chahiye",
     ],
     searchIntent: "Commercial Investigation",
-    suggestedTitleTag: "Haven – Sometimes, You Just Need Someone to Listen | Human Support",
+    suggestedTitleTag: "The Inner Compass 23 – Sometimes, You Just Need Someone to Listen | Human Support",
     suggestedMetaDescription:
       "Connect with an empathetic human listener on WhatsApp. A safe, confidential space for loneliness, heartbreak, marriage problems, and grief. Zero judgment.",
     internalLinks: [
@@ -90,7 +90,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "breakup ke baad akelapan",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Heartbreak Support – When You're Struggling After a Breakup | Haven",
+    suggestedTitleTag: "Heartbreak Support – When You're Struggling After a Breakup | The Inner Compass 23",
     suggestedMetaDescription:
       "Going through heartbreak can feel overwhelming. Explore ways to process your emotions and find a supportive, confidential space to talk with someone.",
     internalLinks: [
@@ -120,7 +120,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "bahut akelapan lag raha hai",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Feeling Lonely? Find Someone to Talk to Online | Haven",
+    suggestedTitleTag: "Feeling Lonely? Find Someone to Talk to Online | The Inner Compass 23",
     suggestedMetaDescription:
       "Feeling lonely and have nobody to talk to? Explore the reality of emotional isolation and connect with a compassionate human listener online.",
     internalLinks: [
@@ -149,7 +149,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "talaq ke baad samaj ka dabav",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Emotional Support After Divorce – Someone to Talk To | Haven",
+    suggestedTitleTag: "Emotional Support After Divorce – Someone to Talk To | The Inner Compass 23",
     suggestedMetaDescription:
       "Going through a divorce or separation? You don't have to carry the emotional burden alone. Find a safe, judgment-free space to speak with a human listener.",
     internalLinks: [
@@ -177,7 +177,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "husband wife separation me kis se baat karein",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Someone to Talk to After Separation | Emotional Support | Haven",
+    suggestedTitleTag: "Someone to Talk to After Separation | Emotional Support | The Inner Compass 23",
     suggestedMetaDescription:
       "Dealing with separation? Find an empathetic, safe space to talk through loneliness, uncertainty, and difficult emotional changes without judgment.",
     internalLinks: [
@@ -205,7 +205,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "sasural ka tension kis se share karein",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Need Someone to Talk to About Marriage Problems? | Haven",
+    suggestedTitleTag: "Need Someone to Talk to About Marriage Problems? | The Inner Compass 23",
     suggestedMetaDescription:
       "Experiencing emotional distance, silent resentment, or communication gaps in your marriage? Find a confidential, neutral human listener to unburden your thoughts.",
     internalLinks: [
@@ -232,7 +232,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "partner se baat nahi ho rahi kis se share karun",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Relationship Problems? Find Someone Who Will Listen | Haven",
+    suggestedTitleTag: "Relationship Problems? Find Someone Who Will Listen | The Inner Compass 23",
     suggestedMetaDescription:
       "Experiencing relationship anxiety, trust dilemmas, or constant misunderstandings? Connect with an empathetic human listener for private, calm support.",
     internalLinks: [
@@ -259,7 +259,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "ghar ke jhagde kis se share karein",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Family Problems? Find a Safe Space to Talk | Haven",
+    suggestedTitleTag: "Family Problems? Find a Safe Space to Talk | The Inner Compass 23",
     suggestedMetaDescription:
       "Facing family conflicts, generational pressure, or emotional estrangement? Find a confidential, compassionate human listener to speak freely.",
     internalLinks: [
@@ -286,7 +286,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "kisi ki maut ke baad akelapan",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Someone to Talk to After Losing Someone You Love | Grief Support | Haven",
+    suggestedTitleTag: "Someone to Talk to After Losing Someone You Love | Grief Support | The Inner Compass 23",
     suggestedMetaDescription:
       "Grieving the loss of someone close? Find a patient, compassionate human listener to share your memories and tears without being told to 'move on.'",
     internalLinks: [
@@ -313,7 +313,7 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "tension ke waqt kis se baat karein",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Overthinking & Emotional Stress Support | Talk to Someone | Haven",
+    suggestedTitleTag: "Overthinking & Emotional Stress Support | Talk to Someone | The Inner Compass 23",
     suggestedMetaDescription:
       "Overwhelmed by everyday stress, racing thoughts, or mental exhaustion? Unburden your mind with an attentive human listener without judgment.",
     internalLinks: [
@@ -341,12 +341,12 @@ export const KEYWORD_INVENTORY: PageKeywordInventory[] = [
       "bacha chup rehta hai kya karein",
     ],
     searchIntent: "Informational",
-    suggestedTitleTag: "Support for Children – A Safe Space to Be Heard | Haven",
+    suggestedTitleTag: "Support for Children – A Safe Space to Be Heard | The Inner Compass 23",
     suggestedMetaDescription:
       "A gentle, safe emotional resource for children and parents. Learn how to express big feelings and request supervised parent/guardian guidance.",
     internalLinks: [
       { targetUrl: "/family-problems", anchorText: "family harmony and understanding" },
-      { targetUrl: "/", anchorText: "Haven home" },
+      { targetUrl: "/", anchorText: "The Inner Compass 23 home" },
     ],
   },
 ];

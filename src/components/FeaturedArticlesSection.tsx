@@ -27,15 +27,92 @@ export default function FeaturedArticlesSection() {
 
           <Link
             href="/#categories-section"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-green hover:text-dark-charcoal transition-colors group cursor-pointer self-start sm:self-end"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-muted-green hover:text-dark-charcoal transition-colors group cursor-pointer self-start sm:self-end"
           >
             <span>Explore All 12 Support Guides</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* 6 Featured Article Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile Swipe Indicator Bar */}
+        <div className="flex md:hidden items-center justify-between text-xs text-dark-charcoal/60 px-1 -mt-4 -mb-8">
+          <span className="flex items-center gap-1.5 font-medium">
+            <span>Swipe articles</span>
+            <ArrowRight className="w-3.5 h-3.5 text-muted-green" />
+          </span>
+          <Link
+            href="/#categories-section"
+            className="text-[11px] font-semibold text-muted-green hover:underline inline-flex items-center gap-0.5"
+          >
+            <span>All Guides</span>
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+
+        {/* Mobile Horizontal Carousel (Swipeable Right to Left) */}
+        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar">
+          {FEATURED_ARTICLES.map((article) => (
+            <article
+              key={article.id}
+              className="w-[82vw] max-w-[340px] snap-center shrink-0 rounded-3xl bg-white border border-soft-sage/40 overflow-hidden shadow-xs flex flex-col justify-between"
+            >
+              <div>
+                <div className="relative h-44 overflow-hidden">
+                  <SafeImage
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    sizes="340px"
+                    className="object-cover"
+                  />
+                  <div className="absolute top-3 left-3 z-20">
+                    <span className="px-3 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-bold text-dark-charcoal uppercase tracking-wider border border-white/60 shadow-xs">
+                      {article.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 space-y-2.5">
+                  <div className="flex items-center gap-2 text-[10px] text-dark-charcoal/50">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3 text-muted-green" />
+                      {article.date}
+                    </span>
+                    <span>&bull;</span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-muted-green" />
+                      {article.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-serif font-bold text-dark-charcoal leading-snug">
+                    <Link href={article.slug}>{article.title}</Link>
+                  </h3>
+
+                  <p className="text-xs text-dark-charcoal/70 line-clamp-2 leading-relaxed">
+                    {article.excerpt}
+                  </p>
+                </div>
+              </div>
+
+              <div className="px-5 pb-5 pt-2 border-t border-soft-sage/20 flex items-center justify-between">
+                <Link
+                  href={article.slug}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-green"
+                >
+                  <span>Read Guide</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <span className="text-[10px] text-dark-charcoal/40 font-medium">
+                  Editorial Team
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Desktop 6 Featured Article Cards Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {FEATURED_ARTICLES.map((article) => (
             <article
               key={article.id}

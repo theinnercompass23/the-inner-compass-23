@@ -8,14 +8,14 @@ import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 import { VIDEO_STORIES } from "@/data/videoStories";
 
 export const metadata: Metadata = {
-  title: "Real Customer Video Stories & Experiences — Human Emotional Support | Haven",
+  title: "Real Customer Video Stories & Experiences — Human Emotional Support | The Inner Compass 23",
   description:
     "Watch real customer video reviews and heartfelt feedback from individuals who needed someone to listen during loneliness, heartbreak, divorce, and personal stress.",
   alternates: {
     canonical: "https://haven.care/video-stories",
   },
   openGraph: {
-    title: "Real Customer Video Stories & Experiences — Haven",
+    title: "Real Customer Video Stories & Experiences — The Inner Compass 23",
     description:
       "Watch authentic video reflections from people around the world who found compassionate human listening when they needed it most.",
     url: "https://haven.care/video-stories",
@@ -27,8 +27,8 @@ export default function VideoStoriesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Haven Customer Video Stories & Reviews",
-    "description": "Authentic video stories and feedback from people who found emotional relief through Haven peer listening.",
+    "name": "The Inner Compass 23 Customer Video Stories & Reviews",
+    "description": "Authentic video stories and feedback from people who found emotional relief through The Inner Compass 23 peer listening.",
     "itemListElement": VIDEO_STORIES.filter((v) => v.isPublished).map((v, i) => ({
       "@type": "ListItem",
       "position": i + 1,
@@ -97,7 +97,7 @@ export default function VideoStoriesPage() {
           </div>
           <div className="space-y-1">
             <h4 className="font-semibold text-dark-charcoal">Private First</h4>
-            <p>If you choose to use Haven, your conversations remain strictly confidential. Sharing your story is always 100% optional.</p>
+            <p>If you choose to use The Inner Compass 23, your conversations remain strictly confidential. Sharing your story is always 100% optional.</p>
           </div>
         </div>
       </div>
@@ -121,13 +121,13 @@ export default function VideoStoriesPage() {
             className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
           >
             <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-            <span>Chat on WhatsApp: {WHATSAPP_DISPLAY}</span>
+            <span>Chat on WhatsApp</span>
           </a>
           <Link
-            href="/#support-form"
+            href="/contact"
             className="px-6 py-3 rounded-full bg-dark-charcoal hover:bg-black text-warm-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
           >
-            <span>Book a Time Slot</span>
+            <span>Contact Support Form</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

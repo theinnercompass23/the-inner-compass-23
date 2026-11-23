@@ -31,10 +31,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Eastern Time (EST / EDT, UTC-5)",
     heroImage: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=1200",
     tagline: "Someone to Talk to in New York City — Confidential Human Listening",
-    metaTitle: "Someone to Talk to in New York City — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in New York City — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in NYC? Connect with a compassionate human listener. Real people, real conversations, no judgment. Private 1-on-1 support via WhatsApp.",
-    intro: "New York City is one of the most vibrant cities on earth, yet it also has one of the highest concentrations of single-person households and late-night loneliness. Surrounded by millions of people, you can still feel entirely alone. Haven provides a private, comforting space to be heard without judgment.",
-    localContext: "Living in NYC involves intense career competition, soaring rents, and crowded subway cars that paradoxically amplify personal isolation. When relationships fracture or work pressure mounts, traditional therapy can cost $200+ per session with long waiting lists. Haven offers immediate, non-clinical human listening.",
+    intro: "New York City is one of the most vibrant cities on earth, yet it also has one of the highest concentrations of single-person households and late-night loneliness. Surrounded by millions of people, you can still feel entirely alone. The Inner Compass 23 provides a private, comforting space to be heard without judgment.",
+    localContext: "Living in NYC involves intense career competition, soaring rents, and crowded subway cars that paradoxically amplify personal isolation. When relationships fracture or work pressure mounts, traditional therapy can cost $200+ per session with long waiting lists. The Inner Compass 23 offers immediate, non-clinical human listening.",
     situations: [
       "Feeling lonely in New York City where to talk to someone online",
       "Affordable divorce emotional support counselor in New York",
@@ -48,7 +48,7 @@ export const CITIES_DATA: CityData[] = [
     faqs: [
       {
         q: "Is there a website where I can talk to someone anonymously when I feel lonely in NYC?",
-        a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
+        a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
       },
       {
         q: "What is the difference between an active listener and a therapist?",
@@ -64,7 +64,7 @@ export const CITIES_DATA: CityData[] = [
       },
       {
         q: "Do you have a physical office in NYC?",
-        a: "No. Haven is an online human peer listening service delivered completely remotely over WhatsApp. This ensures 100% privacy and comfort without needing to commute to an office."
+        a: "No. The Inner Compass 23 is an online human peer listening service delivered completely remotely over WhatsApp. This ensures 100% privacy and comfort without needing to commute to an office."
       }
     ],
     nearbyCitySlugs: ["boston", "chicago", "miami"]
@@ -80,10 +80,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Pacific Time (PST / PDT, UTC-8)",
     heroImage: "https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&q=80&w=1200",
     tagline: "Human Listening Service & Emotional Support in Los Angeles",
-    metaTitle: "Someone to Talk to in Los Angeles — Private Human Peer Listening | Haven",
+    metaTitle: "Someone to Talk to in Los Angeles — Private Human Peer Listening | The Inner Compass 23",
     metaDescription: "Feeling lonely, anxious, or heartbroken in LA? Connect with an attentive human listener. Real people, real conversations, no judgment. 1-on-1 WhatsApp emotional support.",
     intro: "Behind the sunny skies and creative energy of Los Angeles, many residents struggle with transient social networks, traffic isolation, and career volatility. Having someone neutral who listens with genuine empathy brings immense comfort.",
-    localContext: "LA can feel sprawling and emotionally isolating. When a relationship ends or creative projects stall, carrying the emotional weight alone feels overwhelming. Haven offers a gentle, judgment-free sounding board.",
+    localContext: "LA can feel sprawling and emotionally isolating. When a relationship ends or creative projects stall, carrying the emotional weight alone feels overwhelming. The Inner Compass 23 offers a gentle, judgment-free sounding board.",
     situations: [
       "Best online active listener for loneliness in Los Angeles",
       "How to survive weekends alone after getting divorced in Southern California",
@@ -97,7 +97,7 @@ export const CITIES_DATA: CityData[] = [
     faqs: [
       {
         q: "Is there an online active listening platform for Los Angeles residents?",
-        a: "Yes. Haven offers 24/7 private, judgment-free active listening for LA residents dealing with loneliness, heartbreak, or career stress without clinical therapy paperwork."
+        a: "Yes. The Inner Compass 23 offers 24/7 private, judgment-free active listening for LA residents dealing with loneliness, heartbreak, or career stress without clinical therapy paperwork."
       },
       {
         q: "What is the difference between an active listener and a therapist?",
@@ -105,7 +105,7 @@ export const CITIES_DATA: CityData[] = [
       },
       {
         q: "Can I get emotional support in California without health insurance?",
-        a: "Yes. Online active listening and peer emotional support platforms like Haven offer transparent, accessible direct access without insurance paperwork or doctor referrals."
+        a: "Yes. Online active listening and peer emotional support platforms like The Inner Compass 23 offer transparent, accessible direct access without insurance paperwork or doctor referrals."
       },
       {
         q: "What time can I book in Los Angeles?",
@@ -125,9 +125,9 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Central Time (CST / CDT, UTC-6)",
     heroImage: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Peer Listening in Chicago",
-    metaTitle: "Someone to Talk to in Chicago — Emotional Support Online | Haven",
+    metaTitle: "Someone to Talk to in Chicago — Emotional Support Online | The Inner Compass 23",
     metaDescription: "Feeling lonely or stressed in Chicago? Connect with a compassionate human listener. Real people, real conversations, no judgment. 1-on-1 support via WhatsApp.",
-    intro: "Chicago's deep winter freeze and demanding metropolitan pace can intensify feelings of isolation. When you need to talk about relationship heartache, marital tension, or quiet stress, Haven is here to listen.",
+    intro: "Chicago's deep winter freeze and demanding metropolitan pace can intensify feelings of isolation. When you need to talk about relationship heartache, marital tension, or quiet stress, The Inner Compass 23 is here to listen.",
     localContext: "Long winter months in the Windy City make reaching out in person challenging. Having an immediate, private WhatsApp ear gives Chicagoans an approachable outlet to speak freely.",
     situations: [
       "Confidential breakup support chat for Chicago residents",
@@ -142,15 +142,15 @@ export const CITIES_DATA: CityData[] = [
     faqs: [
       {
         q: "Who can I talk to when going through a divorce in Chicago and feeling completely alone?",
-        a: "During a divorce, you can talk to a divorce-focused active listener on Haven for immediate late-night venting, or connect with dedicated peer support specialists who understand separation and post-divorce loneliness."
+        a: "During a divorce, you can talk to a divorce-focused active listener on The Inner Compass 23 for immediate late-night venting, or connect with dedicated peer support specialists who understand separation and post-divorce loneliness."
       },
       {
         q: "Is there a website to vent to a real person without signing up or insurance in Chicago?",
-        a: "Yes. Haven lets you connect directly via WhatsApp without complicated signups, clinical forms, or health insurance."
+        a: "Yes. The Inner Compass 23 lets you connect directly via WhatsApp without complicated signups, clinical forms, or health insurance."
       },
       {
         q: "Is this service therapy?",
-        a: "No. Haven is non-clinical human peer support. We do not provide clinical therapy or medical treatment; we provide attentive, non-judgmental human listening."
+        a: "No. The Inner Compass 23 is non-clinical human peer support. We do not provide clinical therapy or medical treatment; we provide attentive, non-judgmental human listening."
       }
     ],
     nearbyCitySlugs: ["new-york", "boston", "miami"]
@@ -166,10 +166,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Pacific Time (PST / PDT, UTC-8)",
     heroImage: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=1200",
     tagline: "Confidential Human Emotional Listening in the Bay Area",
-    metaTitle: "Someone to Talk to in San Francisco — Private Human Support | Haven",
+    metaTitle: "Someone to Talk to in San Francisco — Private Human Support | The Inner Compass 23",
     metaDescription: "Overwhelmed by tech pressure, imposter syndrome, or loneliness in SF? Talk to a compassionate human listener. Real people, no AI bots, no judgment.",
     intro: "In the capital of artificial intelligence, what people need most is genuine human connection. The Bay Area's intense startup culture, high cost of living, and hyper-intellectual environment can leave deep emotional needs neglected.",
-    localContext: "Tech professionals and transplants in Silicon Valley often feel pressured to appear effortlessly successful. Admitting you are lonely, heartbroken, or anxious feels vulnerable. Haven offers a private sanctuary separate from tech circles.",
+    localContext: "Tech professionals and transplants in Silicon Valley often feel pressured to appear effortlessly successful. Admitting you are lonely, heartbroken, or anxious feels vulnerable. The Inner Compass 23 offers a private sanctuary separate from tech circles.",
     situations: [
       "Startup burnout, founder stress, and imposter syndrome",
       "Transplant loneliness and feeling emotionally disconnected",
@@ -179,7 +179,7 @@ export const CITIES_DATA: CityData[] = [
     faqs: [
       {
         q: "Do you use AI in your conversations?",
-        a: "Never. Haven is 100% human-to-human. Every conversation is with a real, attentive person who listens with empathy."
+        a: "Never. The Inner Compass 23 is 100% human-to-human. Every conversation is with a real, attentive person who listens with empathy."
       }
     ],
     nearbyCitySlugs: ["los-angeles", "seattle"]
@@ -195,10 +195,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Pacific Time (PST / PDT, UTC-8)",
     heroImage: "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?auto=format&fit=crop&q=80&w=1200",
     tagline: "Warm Human Listening Through the Seattle Winter",
-    metaTitle: "Someone to Talk to in Seattle — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Seattle — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling isolated by the Seattle Freeze or seasonal blues? Connect with a compassionate human listener. Real people, real conversations, no judgment.",
     intro: "The Pacific Northwest's overcast skies and the well-known 'Seattle Freeze' can make forming close, supportive bonds difficult. When you are hurting or lonely, you don't have to carry the weight alone.",
-    localContext: "Relocating for major tech employers in Seattle often leaves newcomers isolated. Haven provides a warm, confidential ear to unburden your thoughts without social awkwardness.",
+    localContext: "Relocating for major tech employers in Seattle often leaves newcomers isolated. The Inner Compass 23 provides a warm, confidential ear to unburden your thoughts without social awkwardness.",
     situations: [
       "Seasonal affective blues and long winter darkness",
       "Overcoming the difficulty of finding genuine friends in Seattle",
@@ -224,9 +224,9 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Eastern Time (EST / EDT, UTC-5)",
     heroImage: "https://images.unsplash.com/photo-1501979376754-2ff867a4f659?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Peer Support in Greater Boston",
-    metaTitle: "Someone to Talk to in Boston — Human Listening Service | Haven",
+    metaTitle: "Someone to Talk to in Boston — Human Listening Service | The Inner Compass 23",
     metaDescription: "Feeling academic pressure, loneliness, or heartbreak in Boston? Connect with an attentive human listener. Real people, real conversations, no judgment.",
-    intro: "Boston's concentration of universities, hospitals, and biotech firms creates an ambitious, driven environment where admitting emotional vulnerability feels difficult. Haven provides a non-judgmental space to speak freely.",
+    intro: "Boston's concentration of universities, hospitals, and biotech firms creates an ambitious, driven environment where admitting emotional vulnerability feels difficult. The Inner Compass 23 provides a non-judgmental space to speak freely.",
     localContext: "Students, researchers, and young professionals in Boston frequently face acute stress and living-alone loneliness. Having an outside, impartial listener offers immediate clarity.",
     situations: [
       "Academic and professional performance pressure",
@@ -253,9 +253,9 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Eastern Time (EST / EDT, UTC-5)",
     heroImage: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200",
     tagline: "24/7 Anonymous Emotional Support Platform in Miami",
-    metaTitle: "24/7 Anonymous Emotional Support Platform in Miami | Haven",
+    metaTitle: "24/7 Anonymous Emotional Support Platform in Miami | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Miami? Connect with a compassionate human listener 24/7. Real people, no judgment. 1-on-1 private WhatsApp support.",
-    intro: "Behind the glamorous skyline and beaches of Miami, many residents experience intense social loneliness, transient relationships, and post-breakup heartbreak. Haven provides a 24/7 confidential space to talk freely to a real human being without judgment.",
+    intro: "Behind the glamorous skyline and beaches of Miami, many residents experience intense social loneliness, transient relationships, and post-breakup heartbreak. The Inner Compass 23 provides a 24/7 confidential space to talk freely to a real human being without judgment.",
     localContext: "South Florida's high cost of living, transient population, and fast-paced culture can make genuine, lasting connection difficult. When navigating divorce, breakup grief, or late-night overthinking, finding immediate human listening without insurance paperwork or long waiting lists is essential.",
     situations: [
       "24/7 anonymous emotional support platform in Miami",
@@ -269,11 +269,11 @@ export const CITIES_DATA: CityData[] = [
     faqs: [
       {
         q: "Is there a 24/7 anonymous emotional support platform in Miami?",
-        a: "Yes. Haven provides 24/7 private, judgment-free human active listening for Miami and South Florida residents directly over WhatsApp."
+        a: "Yes. The Inner Compass 23 provides 24/7 private, judgment-free human active listening for Miami and South Florida residents directly over WhatsApp."
       },
       {
         q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
-        a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
+        a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details."
       },
       {
         q: "Can I get emotional support in Miami without health insurance?",
@@ -299,10 +299,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "GMT / BST (UTC+0 / UTC+1)",
     heroImage: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1200",
     tagline: "Someone to Talk to in London — Confidential Human Listening",
-    metaTitle: "Someone to Talk to in London — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in London — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in London? Connect with a compassionate human listener. Real people, real conversations, no judgment. 1-on-1 support via WhatsApp.",
-    intro: "London is a bustling global metropolis, but living among nearly ten million people often feels profoundly lonely. In crowded tube carriages and shared flats, finding someone who genuinely listens without judgment is rare. Haven provides that safe space.",
-    localContext: "The London grind, high rents, and transient friendships lead many young professionals and long-time residents to suffer in silence. NHS talking therapies often have waiting lists of 6 to 18 weeks. Haven offers immediate, non-clinical human peer support.",
+    intro: "London is a bustling global metropolis, but living among nearly ten million people often feels profoundly lonely. In crowded tube carriages and shared flats, finding someone who genuinely listens without judgment is rare. The Inner Compass 23 provides that safe space.",
+    localContext: "The London grind, high rents, and transient friendships lead many young professionals and long-time residents to suffer in silence. NHS talking therapies often have waiting lists of 6 to 18 weeks. The Inner Compass 23 offers immediate, non-clinical human peer support.",
     situations: [
       "Flatmate disconnection and living alone in Greater London",
       "Relationship breakups, divorce, and dating exhaustion",
@@ -312,8 +312,8 @@ export const CITIES_DATA: CityData[] = [
     ],
     faqs: [
       {
-        q: "How does Haven compare to NHS services?",
-        a: "Haven offers non-clinical peer support with zero waiting lists. We do not provide clinical psychiatric prescriptions, but rather a warm, confidential human ear."
+        q: "How does The Inner Compass 23 compare to NHS services?",
+        a: "The Inner Compass 23 offers non-clinical peer support with zero waiting lists. We do not provide clinical psychiatric prescriptions, but rather a warm, confidential human ear."
       },
       {
         q: "What London hours are covered?",
@@ -333,10 +333,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "GMT / BST (UTC+0 / UTC+1)",
     heroImage: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Listening Support in Manchester",
-    metaTitle: "Someone to Talk to in Manchester — Human Peer Listening | Haven",
+    metaTitle: "Someone to Talk to in Manchester — Human Peer Listening | The Inner Compass 23",
     metaDescription: "Feeling lonely or stressed in Manchester? Connect with an attentive human listener. Real people, real conversations, no judgment. Private WhatsApp support.",
     intro: "Manchester is celebrated for its warmth and vibrant culture, but personal struggles, breakups, and family strain can leave someone feeling isolated. Having a dedicated person who listens changes everything.",
-    localContext: "From the city center to Greater Manchester, people often hesitate to burden close friends with deep personal sadness. Haven provides an impartial, respectful confidant.",
+    localContext: "From the city center to Greater Manchester, people often hesitate to burden close friends with deep personal sadness. The Inner Compass 23 provides an impartial, respectful confidant.",
     situations: [
       "Feeling lonely despite a lively social scene",
       "Relationship heartbreak and post-separation sadness",
@@ -345,7 +345,7 @@ export const CITIES_DATA: CityData[] = [
     ],
     faqs: [
       {
-        q: "Is Haven an emergency crisis line?",
+        q: "Is The Inner Compass 23 an emergency crisis line?",
         a: "No. If in immediate crisis in the UK, please contact Samaritans on 116 123 or call 999."
       }
     ],
@@ -362,10 +362,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "GMT / BST (UTC+0 / UTC+1)",
     heroImage: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80&w=1200",
     tagline: "Compassionate Human Peer Support in Birmingham",
-    metaTitle: "Someone to Talk to in Birmingham — Human Listening Service | Haven",
+    metaTitle: "Someone to Talk to in Birmingham — Human Listening Service | The Inner Compass 23",
     metaDescription: "Facing family tension, marital strain, or loneliness in Birmingham? Talk to a compassionate human listener. Real people, no judgment. 1-on-1 via WhatsApp.",
-    intro: "As the UK's second city, Birmingham is home to diverse communities where traditional expectations often make it hard to talk openly about personal struggles. Haven offers a private, respectful listening ear.",
-    localContext: "Marital conflicts, generational expectations, and quiet loneliness can be hard to discuss within family networks. Haven provides complete confidentiality and empathy.",
+    intro: "As the UK's second city, Birmingham is home to diverse communities where traditional expectations often make it hard to talk openly about personal struggles. The Inner Compass 23 offers a private, respectful listening ear.",
+    localContext: "Marital conflicts, generational expectations, and quiet loneliness can be hard to discuss within family networks. The Inner Compass 23 provides complete confidentiality and empathy.",
     situations: [
       "Family conflicts and cultural expectations",
       "Marriage problems and relationship doubts",
@@ -393,10 +393,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Eastern Time (EST / EDT, UTC-5)",
     heroImage: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&q=80&w=1200",
     tagline: "Someone to Talk to in Toronto — Human Emotional Support",
-    metaTitle: "Someone to Talk to in Toronto — Human Peer Listening | Haven",
+    metaTitle: "Someone to Talk to in Toronto — Human Peer Listening | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Toronto? Connect with a compassionate human listener. Real people, real conversations, no judgment. Private WhatsApp support.",
-    intro: "Toronto is Canada's financial powerhouse, but soaring housing costs, intense professional demands, and harsh winter freezes often lead to a quiet sense of loneliness. Haven offers a safe harbor when you need someone to listen.",
-    localContext: "In the Greater Toronto Area (GTA), many individuals live far from their extended families or childhood communities. Carrying relationship breakups or career stress alone is burdensome. Haven provides an immediate, judgment-free ear.",
+    intro: "Toronto is Canada's financial powerhouse, but soaring housing costs, intense professional demands, and harsh winter freezes often lead to a quiet sense of loneliness. The Inner Compass 23 offers a safe harbor when you need someone to listen.",
+    localContext: "In the Greater Toronto Area (GTA), many individuals live far from their extended families or childhood communities. Carrying relationship breakups or career stress alone is burdensome. The Inner Compass 23 provides an immediate, judgment-free ear.",
     situations: [
       "Winter freeze isolation and seasonal emotional dips",
       "High cost of living anxiety and housing stress",
@@ -422,10 +422,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Pacific Time (PST / PDT, UTC-8)",
     heroImage: "https://images.unsplash.com/photo-1559511260-66a65e09b245?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Listening Through Rainy Vancouver Days",
-    metaTitle: "Someone to Talk to in Vancouver — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Vancouver — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Struggling with social isolation, rainy blues, or relationship heartbreak in Vancouver? Connect with an attentive human listener. Real people, no judgment.",
     intro: "Surrounded by mountains and ocean, Vancouver is visually stunning, yet local surveys consistently highlight high levels of social disconnection. When gray rainy days weigh heavily, having someone attentive to talk to brings warmth.",
-    localContext: "The 'Vancouver loneliness' phenomenon is well known among residents and newcomers alike. Reaching out to Haven gives you an empathetic, non-clinical listener without long healthcare delays.",
+    localContext: "The 'Vancouver loneliness' phenomenon is well known among residents and newcomers alike. Reaching out to The Inner Compass 23 gives you an empathetic, non-clinical listener without long healthcare delays.",
     situations: [
       "Seasonal mood changes during extended rainy months",
       "Difficulty establishing deep, dependable social connections",
@@ -434,7 +434,7 @@ export const CITIES_DATA: CityData[] = [
     ],
     faqs: [
       {
-        q: "Is Haven crisis intervention?",
+        q: "Is The Inner Compass 23 crisis intervention?",
         a: "No. For acute crisis support in Canada, please call or text 988."
       }
     ],
@@ -453,10 +453,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "AEST / AEDT (UTC+10 / UTC+11)",
     heroImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=1200",
     tagline: "Someone to Talk to in Sydney — Private Human Listening Support",
-    metaTitle: "Someone to Talk to in Sydney — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Sydney — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or stressed in Sydney? Connect with a compassionate human listener. Real people, real conversations, no judgment. 1-on-1 via WhatsApp.",
     intro: "Sydney's iconic harbor and beach culture mask an intense urban pressure cooker. With some of the world's highest housing costs and fast-paced lifestyles, thousands of Sydneysiders struggle with quiet loneliness and relationship stress.",
-    localContext: "Whether commuting from the Western Suburbs or living alone in the Eastern Suburbs, carrying life's burdens in silence takes an emotional toll. Haven gives you a private, patient listener right when you need one.",
+    localContext: "Whether commuting from the Western Suburbs or living alone in the Eastern Suburbs, carrying life's burdens in silence takes an emotional toll. The Inner Compass 23 gives you a private, patient listener right when you need one.",
     situations: [
       "High cost of living pressure and rental stress",
       "Feeling lonely despite busy social calendars",
@@ -482,10 +482,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "AEST / AEDT (UTC+10 / UTC+11)",
     heroImage: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Peer Listening in Melbourne",
-    metaTitle: "Someone to Talk to in Melbourne — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Melbourne — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling lonely, anxious, or heartbroken in Melbourne? Connect with an attentive human listener. Real people, real conversations, no judgment. Private WhatsApp support.",
-    intro: "Melbourne's café laneways and creative spirit make it a cultural capital, but extended winter chill and shifting social circles can create profound isolation. Haven provides a warm, respectful ear to share what's on your heart.",
-    localContext: "Young professionals, students, and transplants in Melbourne often experience intense overthinking and relationship strain. Haven offers an approachable, non-clinical outlet without judgment.",
+    intro: "Melbourne's café laneways and creative spirit make it a cultural capital, but extended winter chill and shifting social circles can create profound isolation. The Inner Compass 23 provides a warm, respectful ear to share what's on your heart.",
+    localContext: "Young professionals, students, and transplants in Melbourne often experience intense overthinking and relationship strain. The Inner Compass 23 offers an approachable, non-clinical outlet without judgment.",
     situations: [
       "Winter isolation and seasonal mood changes",
       "Relationship heartbreak, breakups, and separation",
@@ -513,10 +513,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Gulf Standard Time (GST, UTC+4)",
     heroImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200",
     tagline: "Someone to Talk to in Dubai — Private Expat Emotional Support",
-    metaTitle: "Someone to Talk to in Dubai — Confidential Expat Listening | Haven",
+    metaTitle: "Someone to Talk to in Dubai — Confidential Expat Listening | The Inner Compass 23",
     metaDescription: "Feeling lonely, stressed, or heartbroken in Dubai? Connect with a compassionate human listener. Real people, real conversations, no judgment. 100% discreet 1-on-1 via WhatsApp.",
-    intro: "In a city defined by ambitious career milestones and glamorous lifestyles, admitting you feel lonely or heartbroken is difficult. Over 85% of Dubai's population are expatriates living away from family roots. Haven provides a discreet sanctuary to talk freely.",
-    localContext: "Transient friendships, corporate pressure, and high living costs in Dubai can create intense personal stress. Many professionals worry that discussing emotional struggles locally could impact their career. Haven offers complete outside confidentiality and understanding of 'Fadfedah' (فضفضة).",
+    intro: "In a city defined by ambitious career milestones and glamorous lifestyles, admitting you feel lonely or heartbroken is difficult. Over 85% of Dubai's population are expatriates living away from family roots. The Inner Compass 23 provides a discreet sanctuary to talk freely.",
+    localContext: "Transient friendships, corporate pressure, and high living costs in Dubai can create intense personal stress. Many professionals worry that discussing emotional struggles locally could impact their career. The Inner Compass 23 offers complete outside confidentiality and understanding of 'Fadfedah' (فضفضة).",
     situations: [
       "Expat loneliness and feeling far from family support",
       "High corporate expectations and career performance anxiety",
@@ -547,9 +547,9 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Gulf Standard Time (GST, UTC+4)",
     heroImage: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&q=80&w=1200",
     tagline: "Discreet Human Peer Support in Abu Dhabi",
-    metaTitle: "Someone to Talk to in Abu Dhabi — Private Expat Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Abu Dhabi — Private Expat Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling stressed, lonely, or heartbroken in Abu Dhabi? Connect with an attentive human listener. Real people, real conversations, no judgment. Private WhatsApp support.",
-    intro: "Abu Dhabi offers a more measured pace than Dubai, but expat families and professionals still experience the isolation of being thousands of miles from home. Haven gives you a patient, understanding listener whenever life feels heavy.",
+    intro: "Abu Dhabi offers a more measured pace than Dubai, but expat families and professionals still experience the isolation of being thousands of miles from home. The Inner Compass 23 gives you a patient, understanding listener whenever life feels heavy.",
     localContext: "From government and energy sector careers to international family life, having an outside confidant who listens without judgment brings immense emotional comfort.",
     situations: [
       "Living far from childhood friends and extended family",
@@ -578,10 +578,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "CET / CEST (UTC+1 / UTC+2)",
     heroImage: "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&q=80&w=1200",
     tagline: "Jemand zum Reden in Berlin — Empathische menschliche Unterstützung",
-    metaTitle: "Jemand zum Reden in Berlin — Menschliches Zuhören Online | Haven",
+    metaTitle: "Jemand zum Reden in Berlin — Menschliches Zuhören Online | The Inner Compass 23",
     metaDescription: "Einsam, überfordert oder Liebeskummer in Berlin? Finde jemanden zum Reden. Echte Menschen, echte Gespräche, ohne Vorurteile. Vertraulich über WhatsApp.",
-    intro: "Berlin ist pulsierend, kreativ und voller Möglichkeiten — doch gerade hier fühlen sich viele Menschen in der Anonymität der Großstadt verloren. Haven bietet einen geschützten Raum, um Sorgen und Liebeskummer offen auszusprechen.",
-    localContext: "Ob internationale Expats oder Einheimische: Zwischen Winterkälte und hektischem Alltag fehlt oft jemand, der einfach nur aufmerksam zuhört. Haven bietet empathisches Zuhören ohne bürokratische Hürden.",
+    intro: "Berlin ist pulsierend, kreativ und voller Möglichkeiten — doch gerade hier fühlen sich viele Menschen in der Anonymität der Großstadt verloren. The Inner Compass 23 bietet einen geschützten Raum, um Sorgen und Liebeskummer offen auszusprechen.",
+    localContext: "Ob internationale Expats oder Einheimische: Zwischen Winterkälte und hektischem Alltag fehlt oft jemand, der einfach nur aufmerksam zuhört. The Inner Compass 23 bietet empathisches Zuhören ohne bürokratische Hürden.",
     situations: [
       "Großstadteinsamkeit und das Gefühl, unsichtbar zu sein",
       "Liebeskummer, Trennungsschmerz und Beziehungsfragen",
@@ -609,10 +609,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "CET / CEST (UTC+1 / UTC+2)",
     heroImage: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&q=80&w=1200",
     tagline: "Een Luisterend Oor in Amsterdam — Human Emotional Support",
-    metaTitle: "Someone to Talk to in Amsterdam — Luisterend Oor Online | Haven",
+    metaTitle: "Someone to Talk to in Amsterdam — Luisterend Oor Online | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Amsterdam? Connect with a compassionate human listener. Real people, real conversations, no judgment.",
-    intro: "Amsterdam's historic canals and cycling streets hide a quiet urban loneliness experienced by locals, students, and expats alike. Haven provides a non-judgmental listening ear when you need someone to confide in.",
-    localContext: "Fast housing markets, busy social circles, and dark rainy winters can create emotional fatigue. Haven offers a private, accessible sounding board over WhatsApp.",
+    intro: "Amsterdam's historic canals and cycling streets hide a quiet urban loneliness experienced by locals, students, and expats alike. The Inner Compass 23 provides a non-judgmental listening ear when you need someone to confide in.",
+    localContext: "Fast housing markets, busy social circles, and dark rainy winters can create emotional fatigue. The Inner Compass 23 offers a private, accessible sounding board over WhatsApp.",
     situations: [
       "Expat and student loneliness in the Randstad",
       "Relationship heartbreak and personal transitions",
@@ -640,10 +640,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "Singapore Time (SGT, UTC+8)",
     heroImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=1200",
     tagline: "Confidential Human Emotional Listening in Singapore",
-    metaTitle: "Someone to Talk to in Singapore — Private Human Support | Haven",
+    metaTitle: "Someone to Talk to in Singapore — Private Human Support | The Inner Compass 23",
     metaDescription: "Feeling stressed, lonely, or heartbroken in Singapore? Connect with an attentive human listener. Real people, real conversations, no judgment. 1-on-1 via WhatsApp.",
-    intro: "Singapore's relentless drive and high performance culture can make pausing to acknowledge emotional strain feel impossible. Haven provides a gentle, confidential space to unburden your thoughts without fear of judgment.",
-    localContext: "Long working hours, family expectations, and relationship heartbreaks can lead to silent emotional exhaustion. Haven offers a completely neutral, private peer listener.",
+    intro: "Singapore's relentless drive and high performance culture can make pausing to acknowledge emotional strain feel impossible. The Inner Compass 23 provides a gentle, confidential space to unburden your thoughts without fear of judgment.",
+    localContext: "Long working hours, family expectations, and relationship heartbreaks can lead to silent emotional exhaustion. The Inner Compass 23 offers a completely neutral, private peer listener.",
     situations: [
       "High workplace stress, corporate burnout, and long hours",
       "Family pressure and generational expectations",
@@ -671,10 +671,10 @@ export const CITIES_DATA: CityData[] = [
     timezone: "GMT / IST (UTC+0 / UTC+1)",
     heroImage: "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=1200",
     tagline: "Empathetic Human Peer Listening in Dublin",
-    metaTitle: "Someone to Talk to in Dublin — Human Emotional Support | Haven",
+    metaTitle: "Someone to Talk to in Dublin — Human Emotional Support | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Dublin? Connect with a compassionate human listener. Real people, real conversations, no judgment. 1-on-1 via WhatsApp.",
-    intro: "Dublin is famed for its warmth and social spirit, yet intense rental stress, tech workplace pressure, and relationship struggles leave many people feeling quietly isolated. Haven offers an impartial ear when you need someone to talk to.",
-    localContext: "Many professionals and students living in shared accommodation in Dublin find it hard to discuss personal heartbreak or vulnerability. Haven provides complete confidentiality.",
+    intro: "Dublin is famed for its warmth and social spirit, yet intense rental stress, tech workplace pressure, and relationship struggles leave many people feeling quietly isolated. The Inner Compass 23 offers an impartial ear when you need someone to talk to.",
+    localContext: "Many professionals and students living in shared accommodation in Dublin find it hard to discuss personal heartbreak or vulnerability. The Inner Compass 23 provides complete confidentiality.",
     situations: [
       "Living alone or in crowded flatshares with no privacy to vent",
       "Tech sector burnout and job market anxiety",
@@ -683,7 +683,7 @@ export const CITIES_DATA: CityData[] = [
     ],
     faqs: [
       {
-        q: "Is Haven an emergency service?",
+        q: "Is The Inner Compass 23 an emergency service?",
         a: "No. For emergency crisis support in Ireland, contact Samaritans on 116 123 or call 999."
       }
     ],
@@ -702,9 +702,9 @@ export const CITIES_DATA: CityData[] = [
     timezone: "NZST / NZDT (UTC+12 / UTC+13)",
     heroImage: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&q=80&w=1200",
     tagline: "Caring Human Emotional Support Across Auckland",
-    metaTitle: "Someone to Talk to in Auckland — Human Listening Service | Haven",
+    metaTitle: "Someone to Talk to in Auckland — Human Listening Service | The Inner Compass 23",
     metaDescription: "Feeling lonely, heartbroken, or overwhelmed in Auckland? Connect with a compassionate human listener. Real people, real conversations, no judgment.",
-    intro: "Auckland's coastal lifestyle is beautiful, but the pressures of modern life, distance from international family, and relationship sorrow can feel heavy. Haven provides a private, caring person who listens with empathy.",
+    intro: "Auckland's coastal lifestyle is beautiful, but the pressures of modern life, distance from international family, and relationship sorrow can feel heavy. The Inner Compass 23 provides a private, caring person who listens with empathy.",
     localContext: "Whether navigating a tough breakup or feeling distant from friends, having an impartial person to talk to offers instant emotional relief without clinical barriers.",
     situations: [
       "Geographical distance from international family roots",

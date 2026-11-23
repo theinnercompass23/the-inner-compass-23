@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Emotional Stress & Overthinking Support – Someone to Talk To | Haven",
+  title: "Emotional Stress & Overthinking Support – Someone to Talk To | The Inner Compass 23",
   description:
     "Feeling emotionally overwhelmed, exhausted, or trapped in overthinking? Talk to a calm, empathetic human listener on WhatsApp. Real people, no judgment, 100% confidential.",
   alternates: {
@@ -37,7 +37,7 @@ export default function EmotionalStressSupportPage() {
           subheading: "When you seem completely capable on the outside while drowning on the inside",
           paragraphs: [
             "Many people struggling with emotional stress are highly capable individuals: dependable employees, devoted parents, caring partners, and reliable friends. You meet all your deadlines, make dinner, and smile in meetings. But beneath that polished surface, you feel on the verge of tears at any moment.",
-            "Because you appear so competent, nobody asks if you are okay. When you occasionally express fatigue, people dismiss it: 'You're strong, you'll manage!' This invalidation makes you feel completely alone. A Haven peer listener provides a safe harbor where you don't have to be the strong one; you can be human, vulnerable, and tired.",
+            "Because you appear so competent, nobody asks if you are okay. When you occasionally express fatigue, people dismiss it: 'You're strong, you'll manage!' This invalidation makes you feel completely alone. An Inner Compass 23 peer listener provides a safe harbor where you don't have to be the strong one; you can be human, vulnerable, and tired.",
           ],
         },
         {
@@ -61,7 +61,7 @@ export default function EmotionalStressSupportPage() {
           subheading: "Zero unsolicited advice, zero lectures—just pure attentive presence",
           paragraphs: [
             "Most people don't share their stress with friends because friends immediately try to solve it with advice: 'You should meditate,' or 'You need a new job.' While well-meaning, unsolicited advice feels like another task on an already overflowing to-do list.",
-            "Haven't listeners don't give you homework. We listen with complete attention, validate the weight of what you are carrying, and give you space to sort out your own thoughts. By the end of an hour, you feel lighter, grounded, and able to face tomorrow.",
+            "The Inner Compass 23't listeners don't give you homework. We listen with complete attention, validate the weight of what you are carrying, and give you space to sort out your own thoughts. By the end of an hour, you feel lighter, grounded, and able to face tomorrow.",
           ],
         },
       ]}
@@ -80,7 +80,7 @@ export default function EmotionalStressSupportPage() {
         },
         {
           step: "Schedule an Unburdening Conversation on WhatsApp",
-          desc: "Book a private 1-on-1 session with a Haven listener to talk through your stress without judgment.",
+          desc: "Book a private 1-on-1 session with an Inner Compass 23 listener to talk through your stress without judgment.",
         },
       ]}
       serviceBoundaries={{
@@ -109,8 +109,8 @@ export default function EmotionalStressSupportPage() {
           a: "That is completely fine. Stress is often a cumulative build-up of many small pressures. You can simply tell your listener: 'I just feel overwhelmed and don't know where to start.' We will patiently help you unpack it.",
         },
         {
-          q: "Is Haven an AI tool or chatbot?",
-          a: "No. Haven is strictly real human peer listening. You communicate directly with a kind, attentive human listener.",
+          q: "Is The Inner Compass 23 an AI tool or chatbot?",
+          a: "No. The Inner Compass 23 is strictly real human peer listening. You communicate directly with a kind, attentive human listener.",
         },
       ]}
       relatedArticles={[

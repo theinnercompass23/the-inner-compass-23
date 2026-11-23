@@ -2,11 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
+import InnerCompassSection from "@/components/InnerCompassSection";
 import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
-import VideoStoriesSection from "@/components/VideoStoriesSection";
-import SpotifyPodcastSection from "@/components/SpotifyPodcastSection";
 import AiFaqSection from "@/components/AiFaqSection";
 import TrustAndPrivacy from "@/components/TrustAndPrivacy";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
@@ -15,6 +13,7 @@ import SafeImage from "@/components/SafeImage";
 import {
   Heart,
   ArrowDown,
+  ArrowRight,
   Lock,
   ShieldCheck,
   Compass,
@@ -24,8 +23,15 @@ import {
   Sparkles,
   CheckCircle2,
   Globe,
+  Phone,
 } from "lucide-react";
-import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, buildDirectWhatsAppUrl } from "@/lib/constants";
+import {
+  WHATSAPP_DISPLAY,
+  WHATSAPP_NUMBER,
+  buildDirectWhatsAppUrl,
+  CALL_DISPLAY,
+  buildDirectCallUrl,
+} from "@/lib/constants";
 
 export default function HomePage() {
   return (
@@ -70,27 +76,44 @@ export default function HomePage() {
               </div>
 
               <p className="text-xs sm:text-sm text-dark-charcoal/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                No clinical diagnoses, no patronizing advice, and zero automated AI chatbots. Just compassionate, trained human listeners ready to connect with you one-on-one.
+                No clinical diagnoses, no patronizing advice, and zero automated AI chatbots. Trained active human listeners, counsellors, and spiritual leaders ready to connect with you one-on-one.
               </p>
 
               {/* Primary Call-to-Actions */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full">
-                <a
-                  href="#support-form"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer"
+              <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 w-full">
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
                 >
-                  <span>Connect with a Listener</span>
-                  <ArrowDown className="w-4 h-4" />
-                </a>
+                  <span>Connect with an Active Listener</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                >
+                  <Heart className="w-4 h-4 text-muted-green fill-muted-green/20 shrink-0" />
+                  <span>Connect with a Counsellor</span>
+                </Link>
 
                 <a
                   href={buildDirectWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
                 >
-                  <WhatsAppIcon className="w-4 h-4 shrink-0" color="#FFFFFF" />
-                  <span>Direct WhatsApp: {WHATSAPP_DISPLAY}</span>
+                  <WhatsAppIcon className="w-4.5 h-4.5 shrink-0" color="#FFFFFF" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+
+                <a
+                  href={buildDirectCallUrl()}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                  title={`Call ${CALL_DISPLAY}`}
+                >
+                  <Phone className="w-4 h-4 shrink-0" />
+                  <span>Call: {CALL_DISPLAY}</span>
                 </a>
               </div>
 
@@ -177,12 +200,12 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 2. SUPPORT REQUEST FORM (Directly after Hero)             */}
+      {/* 1.5 THE INNER COMPASS 23 JOURNEY SECTION                  */}
       {/* ========================================================= */}
-      <SupportRequestForm />
+      <InnerCompassSection />
 
       {/* ========================================================= */}
-      {/* 3. SUPPORT CATEGORIES (What You Can Talk About)           */}
+      {/* 2. SUPPORT CATEGORIES (What You Can Talk About)           */}
       {/* ========================================================= */}
       <div id="categories-section" className="scroll-mt-16">
         <SupportCategoriesSection />
@@ -194,26 +217,7 @@ export default function HomePage() {
       <FeaturedArticlesSection />
 
       {/* ========================================================= */}
-      {/* 5. VIDEO REVIEWS (Instagram Reels-Inspired 9:16 Gallery)   */}
-      {/* ========================================================= */}
-      <section className="py-16 sm:py-28 border-t border-soft-sage/30 bg-white/70">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <VideoStoriesSection
-            layout="carousel"
-            showViewAll={true}
-            title="Real Stories. Genuine Experiences."
-            subtitle="Watch authentic video reflections from everyday individuals who found compassionate human listening when they needed it most."
-          />
-        </div>
-      </section>
-
-      {/* ========================================================= */}
-      {/* 6. SPOTIFY PODCAST & AI VOICE CALM REFLECTIONS            */}
-      {/* ========================================================= */}
-      <SpotifyPodcastSection />
-
-      {/* ========================================================= */}
-      {/* 7. AI-READY FAQS & FEATURED SNIPPETS SECTION              */}
+      {/* 5. AI-READY FAQS & FEATURED SNIPPETS SECTION              */}
       {/* ========================================================= */}
       <AiFaqSection
         title="Frequently Asked Questions & AI Answers"

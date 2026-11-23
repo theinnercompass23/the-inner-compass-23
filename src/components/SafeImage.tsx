@@ -13,7 +13,7 @@ export default function SafeImage({
   src,
   alt,
   fallbackSrc,
-  fallbackText = "Haven &bull; Human Emotional Support",
+  fallbackText = "The Inner Compass 23 &bull; Human Emotional Support",
   className = "",
   fill,
   priority,
@@ -27,7 +27,7 @@ export default function SafeImage({
       return (
         <Image
           src={fallbackSrc}
-          alt={alt || "Haven Support"}
+          alt={alt || "The Inner Compass 23 Support"}
           fill={fill}
           className={className}
           priority={priority}
@@ -71,7 +71,7 @@ export default function SafeImage({
       )}
       <Image
         src={src}
-        alt={alt || "Haven Emotional Support"}
+        alt={alt || "The Inner Compass 23 Emotional Support"}
         fill={fill}
         priority={priority}
         className={`${className} transition-opacity duration-300 ${

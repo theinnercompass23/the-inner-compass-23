@@ -187,7 +187,7 @@ export default function SpotifyPodcastSection({
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-base sm:text-lg text-dark-charcoal">
-                    Listen to Haven on Spotify
+                    Listen to The Inner Compass 23 on Spotify
                   </h3>
                   <p className="text-[11px] text-dark-charcoal/60">
                     Official Emotional Support &amp; Mindful Active Listening Series
@@ -209,7 +209,7 @@ export default function SpotifyPodcastSection({
             {/* Official Spotify Iframe Embed */}
             <div className="w-full rounded-2xl overflow-hidden shadow-xs bg-black">
               <iframe
-                title="Haven Spotify Podcast Episode"
+                title="The Inner Compass 23 Spotify Podcast Episode"
                 src="https://open.spotify.com/embed/episode/3Ard2e43YuXqp0Vk4UXBs7?utm_source=generator&theme=0"
                 width="100%"
                 height="152"

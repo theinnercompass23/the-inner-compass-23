@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HelpCircle, ChevronDown, Sparkles, MessageCircle, ShieldCheck } from "lucide-react";
+import { HelpCircle, ChevronDown, Sparkles, MessageCircle, ShieldCheck, ArrowRight } from "lucide-react";
 import { AI_READY_FAQS } from "@/data/aiFaqs";
 
 interface AiFaqSectionProps {
@@ -59,7 +59,52 @@ export default function AiFaqSection({
           </p>
         </div>
 
-        <div className="space-y-3.5">
+        {/* Mobile Horizontal Swipe FAQs (Right to Left / Swipeable) */}
+        <div className="block md:hidden space-y-3">
+          <div className="flex items-center justify-between text-xs text-dark-charcoal/60 px-1">
+            <span className="flex items-center gap-1.5 font-medium">
+              <span>Swipe questions</span>
+              <ArrowRight className="w-3.5 h-3.5 text-muted-green" />
+            </span>
+            <span className="text-[11px] text-muted-green font-semibold">
+              {AI_READY_FAQS.length} Questions
+            </span>
+          </div>
+
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar">
+            {AI_READY_FAQS.map((faq, idx) => (
+              <div
+                key={idx}
+                className="w-[85vw] max-w-[340px] snap-center shrink-0 p-5 rounded-3xl bg-white border border-soft-sage/40 shadow-xs flex flex-col justify-between space-y-3"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-soft-sage/25 text-muted-green flex items-center justify-center shrink-0 mt-0.5">
+                      <HelpCircle className="w-4 h-4" />
+                    </div>
+                    <h3 className="font-semibold text-sm text-dark-charcoal leading-snug">
+                      {faq.q}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-dark-charcoal/80 leading-relaxed pl-9">
+                    {faq.a}
+                  </p>
+                </div>
+
+                <div className="pl-9 pt-2 border-t border-soft-sage/20 flex items-center justify-between text-[11px] text-muted-green font-medium">
+                  <div className="flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>Fact Sheet</span>
+                  </div>
+                  <span className="text-dark-charcoal/40 font-normal">#{idx + 1} of {AI_READY_FAQS.length}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Vertical Accordion */}
+        <div className="hidden md:block space-y-3.5">
           {AI_READY_FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (

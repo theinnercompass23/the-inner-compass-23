@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import SafeImage from "@/components/SafeImage";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import FinalWhatsAppCta from "@/components/FinalWhatsAppCta";
 import {
   Heart,
@@ -75,7 +74,7 @@ export default function SeoLandingTemplate({
   canonicalSlug,
 }: SeoLandingProps) {
   const directWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hello Haven Team, I was reading your article on "${pageTitle}" and would like someone to talk to for emotional support.`
+    `Hello The Inner Compass 23 Team, I was reading your article on "${pageTitle}" and would like someone to talk to for emotional support.`
   )}`;
 
   const pageUrl = `https://haven.care/${canonicalSlug}`;
@@ -92,12 +91,12 @@ export default function SeoLandingTemplate({
     dateModified: "2026-02-20T00:00:00+05:30",
     publisher: {
       "@type": "Organization",
-      name: "Haven Human Emotional Support",
+      name: "The Inner Compass 23",
       url: "https://haven.care",
     },
     author: {
       "@type": "Organization",
-      name: "Haven Peer Support Editorial Team",
+      name: "The Inner Compass 23 Editorial Team",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -188,7 +187,7 @@ export default function SeoLandingTemplate({
               </span>
               <span className="text-xs text-dark-charcoal/40">&bull;</span>
               <span className="text-xs text-dark-charcoal/60">
-                Updated February 2026 &bull; Haven Editorial Board
+                Updated February 2026 &bull; The Inner Compass 23 Editorial Board
               </span>
             </div>
 
@@ -235,7 +234,7 @@ export default function SeoLandingTemplate({
                 className="px-4 py-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full text-xs font-semibold shadow-xs transition-all text-center flex-1 sm:flex-none flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5" color="#FFFFFF" />
-                <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
@@ -419,11 +418,129 @@ export default function SeoLandingTemplate({
             </div>
             <div className="space-y-1 text-xs">
               <div className="font-semibold text-sm text-dark-charcoal">
-                Reviewed by Haven Peer Support Editorial &amp; Safeguarding Team
+                Reviewed by The Inner Compass 23 Editorial &amp; Safeguarding Team
               </div>
               <p className="text-dark-charcoal/70 leading-relaxed">
-                Our content is authored by experienced peer listeners and emotional support practitioners. Haven adheres to strict active-listening protocols, compassionate presence, and non-clinical safeguarding boundaries.
+                Our content is authored by experienced peer listeners and emotional support practitioners. The Inner Compass 23 adheres to strict active-listening protocols, compassionate presence, and non-clinical safeguarding boundaries.
               </p>
+            </div>
+          </div>
+
+          {/* Local City Listening Support Hubs (Image 2 2-Column Grid) */}
+          <div className="pt-10 border-t border-soft-sage/20 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+              <div className="space-y-1">
+                <h3 className="text-xl font-serif font-bold text-dark-charcoal">
+                  Connect with a Dedicated Listener in Your City
+                </h3>
+                <p className="text-xs text-dark-charcoal/70">
+                  Attentive human peer support matched to your local timezone across the US and worldwide.
+                </p>
+              </div>
+              <Link
+                href="/locations"
+                className="text-xs font-semibold text-muted-green hover:underline inline-flex items-center gap-1 shrink-0"
+              >
+                <span>Explore All Cities &rarr;</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 pt-1">
+              <Link
+                href="/locations/united-states/new-york"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  New York City, NY
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  EST &bull; Late-Night Venting
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/los-angeles"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  Los Angeles, CA
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  PST &bull; Career &amp; Breakups
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/chicago"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  Chicago, IL
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  CST &bull; Divorce &amp; Loneliness
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/miami"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  Miami, FL
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  EST &bull; 24/7 Anonymous Support
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/san-francisco"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  San Francisco, CA
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  PST &bull; Startup Burnout &amp; Empathy
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/seattle"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  Seattle, WA
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  PST &bull; Seasonal Blues
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-states/boston"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  Boston, MA
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  EST &bull; Young Adult Support
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/united-kingdom/london"
+                className="p-4 rounded-2xl bg-white border border-soft-sage/40 hover:border-muted-green shadow-xs hover:shadow-md transition-all group block space-y-1 cursor-pointer"
+              >
+                <div className="font-semibold text-xs sm:text-sm text-dark-charcoal group-hover:text-muted-green transition-colors">
+                  London, UK
+                </div>
+                <div className="text-[11px] text-dark-charcoal/50">
+                  GMT &bull; Tube Isolation
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -454,21 +571,24 @@ export default function SeoLandingTemplate({
           )}
 
           {/* Reassuring Transition Callout */}
-          <div className="pt-8 text-center max-w-xl mx-auto space-y-2">
+          <div className="pt-8 text-center max-w-xl mx-auto space-y-4">
             <h3 className="text-2xl font-serif font-bold text-dark-charcoal">
               You Don&apos;t Have to Go Through This Alone.
             </h3>
             <p className="text-xs sm:text-sm text-dark-charcoal/70">
-              Fill out the brief support request below to choose your date &amp; time, and connect with our team on WhatsApp.
+              Fill out our confidential contact form or connect with our human listeners directly on WhatsApp.
             </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+              >
+                Go to Contact Form
+              </Link>
+            </div>
           </div>
         </div>
       </article>
-
-      {/* Embedded Support Form */}
-      <div className="py-6">
-        <SupportRequestForm />
-      </div>
 
       {/* Final WhatsApp CTA */}
       <FinalWhatsAppCta />

@@ -12,9 +12,9 @@ export interface SupportRequest {
   support_categories: string[];
   other_category_text?: string;
   additional_message?: string;
-  preferred_date: string; // DD/MM/YYYY
-  preferred_time: string; // 24-hour format HH:MM (e.g. "15:30", "00:00", "23:59")
-  timezone: string; // "Asia/Kolkata"
+  preferred_date?: string; // DD/MM/YYYY
+  preferred_time?: string; // 24-hour format HH:MM (e.g. "15:30", "00:00", "23:59")
+  timezone?: string; // "Asia/Kolkata"
   preferred_language?: PreferredLanguage | string;
   is_child_request?: boolean;
   guardian_name?: string;

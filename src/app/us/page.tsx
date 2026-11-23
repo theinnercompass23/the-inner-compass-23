@@ -14,12 +14,11 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Online Emotional Support & Active Listening USA — Anonymous 24/7 Chat | Haven",
+  title: "Online Emotional Support & Active Listening USA — Anonymous 24/7 Chat | The Inner Compass 23",
   description:
     "Private, anonymous human emotional support and active listening across the United States. Connect 24/7 on WhatsApp for loneliness, divorce, heartbreak, and 3 AM emotional venting without insurance or waiting lists.",
   keywords: [
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
     canonical: "https://haven.care/us",
   },
   openGraph: {
-    title: "Online Emotional Support & Active Listening USA — Haven",
+    title: "Online Emotional Support & Active Listening USA — The Inner Compass 23",
     description:
       "Private, confidential human emotional support across NYC, LA, Chicago, Miami, and nationwide. Connect 24/7 on WhatsApp.",
     url: "https://haven.care/us",
@@ -127,7 +126,7 @@ export default function UnitedStatesPage() {
   const faqs = [
     {
       q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
-      a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+      a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
     },
     {
       q: "What is the difference between an active listener and a therapist?",
@@ -180,11 +179,11 @@ export default function UnitedStatesPage() {
         "dateModified": "2026-02-20T08:00:00+00:00",
         "author": {
           "@type": "Organization",
-          "name": "Haven Human Support Team"
+          "name": "The Inner Compass 23 Human Support Team"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care"
         },
         "mainEntityOfPage": {
@@ -197,7 +196,7 @@ export default function UnitedStatesPage() {
         "name": "Human Emotional Support & Peer Listening in the United States",
         "provider": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care"
         },
         "serviceType": "Peer Support & Active Listening",
@@ -257,14 +256,14 @@ export default function UnitedStatesPage() {
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    "Hello Haven Team, I am reaching out from the United States and would like someone to talk to for emotional support."
+                    "Hello The Inner Compass 23 Team, I am reaching out from the United States and would like someone to talk to for emotional support."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -359,7 +358,7 @@ export default function UnitedStatesPage() {
             A Compassionate Alternative to Expensive Therapy or Automated Bots
           </h3>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            Many Americans find that traditional therapy is financially out of reach or bogged down by month-long waiting lists. Other platforms force you to speak to artificial intelligence bots that sound empty and formulaic. Haven is built on a timeless premise: <strong>pure human presence</strong>. We do not provide clinical therapy, medical prescriptions, or psychiatric evaluation. We provide attentive, private, respectful listening from one human being to another.
+            Many Americans find that traditional therapy is financially out of reach or bogged down by month-long waiting lists. Other platforms force you to speak to artificial intelligence bots that sound empty and formulaic. The Inner Compass 23 is built on a timeless premise: <strong>pure human presence</strong>. We do not provide clinical therapy, medical prescriptions, or psychiatric evaluation. We provide attentive, private, respectful listening from one human being to another.
           </p>
         </div>
       </section>
@@ -379,7 +378,28 @@ export default function UnitedStatesPage() {
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Frequently Asked Questions */}

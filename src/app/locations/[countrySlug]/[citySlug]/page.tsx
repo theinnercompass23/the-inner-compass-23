@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SafeImage from "@/components/SafeImage";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import CityProgrammaticLinks from "@/components/CityProgrammaticLinks";
@@ -50,7 +49,7 @@ export async function generateMetadata({
   const city = getCityBySlug(countrySlug, citySlug);
   if (!city) return {};
 
-  const pageTitle = `Someone to Talk to in ${city.name} — Anonymous Human Emotional Support | 24/7 Online Help – Haven`;
+  const pageTitle = `Someone to Talk to in ${city.name} — Anonymous Human Emotional Support | 24/7 Online Help – The Inner Compass 23`;
   const metaDescription = `Feeling lonely or dealing with emotional stress in ${city.name}? Talk anonymously to a trained listener or counselor online 24/7. Zero judgment, instant connect, no real name required.`;
 
   return {
@@ -126,11 +125,11 @@ export default async function CityPage({
         "dateModified": "2026-02-20T08:00:00+00:00",
         "author": {
           "@type": "Organization",
-          "name": "Haven Emotional Support Editorial Team"
+          "name": "The Inner Compass 23 Emotional Support Editorial Team"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care"
         },
         "mainEntityOfPage": {
@@ -143,7 +142,7 @@ export default async function CityPage({
         "name": `Human Emotional Listening Support in ${city.name}`,
         "provider": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23 Human Emotional Support",
           "url": "https://haven.care"
         },
         "serviceType": "Peer Support & Non-Clinical Active Listening",
@@ -234,14 +233,14 @@ export default async function CityPage({
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    `Hello Haven Team, I am reaching out from ${city.name}, ${city.countryName} and would like someone to talk to for emotional support.`
+                    `Hello The Inner Compass 23 Team, I am reaching out from ${city.name}, ${city.countryName} and would like someone to talk to for emotional support.`
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -356,7 +355,7 @@ export default async function CityPage({
             Many adults in {city.name} do not have a psychiatric disorder or clinical illness—they are simply experiencing painful life transitions, loneliness, or chronic relationship friction. Formal therapy can involve intimidating medical paperwork, high out-of-pocket fees, and weeks-long waiting lists.
           </p>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            Similarly, talking to friends often results in well-intentioned but unhelpful advice: &ldquo;Just stay positive,&rdquo; or &ldquo;Download a dating app.&rdquo; A Haven peer listener offers what is rarely found elsewhere: pure, non-judgmental active listening. We hold a safe, patient space where you can speak your truth without being interrupted, analyzed, or rushed.
+            Similarly, talking to friends often results in well-intentioned but unhelpful advice: &ldquo;Just stay positive,&rdquo; or &ldquo;Download a dating app.&rdquo; An Inner Compass 23 peer listener offers what is rarely found elsewhere: pure, non-judgmental active listening. We hold a safe, patient space where you can speak your truth without being interrupted, analyzed, or rushed.
           </p>
         </div>
       </section>
@@ -522,7 +521,7 @@ export default async function CityPage({
             We treat your personal details with the utmost care and respect. Your phone number, name, and conversation details are never shared with employers, uploaded to medical insurance databases, or sold to third parties. All conversations occur directly over encrypted WhatsApp messaging.
           </p>
           <p className="text-xs sm:text-sm text-dark-charcoal/70 leading-relaxed">
-            <strong>Clear Scope:</strong> Haven is a peer listening service, not a psychiatric clinic or medical facility. We cannot promise absolute confidentiality in rare situations where there is immediate life-threatening danger, severe self-harm risk, or child abuse, in which case safeguarding authorities must be contacted.
+            <strong>Clear Scope:</strong> The Inner Compass 23 is a peer listening service, not a psychiatric clinic or medical facility. We cannot promise absolute confidentiality in rare situations where there is immediate life-threatening danger, severe self-harm risk, or child abuse, in which case safeguarding authorities must be contacted.
           </p>
         </div>
       </section>
@@ -589,7 +588,7 @@ export default async function CityPage({
               <span>Do I need to visit an office in {city.name}?</span>
             </h3>
             <p className="text-xs text-dark-charcoal/75 pl-6 leading-relaxed">
-              No. Haven is completely remote and conducted over private WhatsApp messaging. This protects your privacy and allows you to connect comfortably from home.
+              No. The Inner Compass 23 is completely remote and conducted over private WhatsApp messaging. This protects your privacy and allows you to connect comfortably from home.
             </p>
           </div>
 
@@ -649,7 +648,7 @@ export default async function CityPage({
 
       {/* Spotify Podcast & Calming Audio Section */}
       <SpotifyPodcastSection
-        title={`Listen to Haven on Spotify: Calming Reflections for ${city.name}`}
+        title={`Listen to The Inner Compass 23 on Spotify: Calming Reflections for ${city.name}`}
         subtitle={`Stream our guided mindful emotional support episodes on Spotify, or play our interactive binaural audio previews directly below.`}
         badge="Official Spotify Podcast &amp; Calming Voice Station"
       />
@@ -712,7 +711,28 @@ export default async function CityPage({
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener in {city.name}.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );

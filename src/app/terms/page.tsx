@@ -36,7 +36,7 @@ export default function TermsPage() {
             <span>Non-Medical Peer Listening Service</span>
           </div>
           <p className="text-xs text-charcoal-muted leading-relaxed">
-            Haven provides emotional support and human peer listening. We are not a medical hospital, psychiatric clinic, or mental health facility. Conversations provide empathetic human listening and peer presence, and do not constitute clinical psychotherapy, psychiatric care, or medical diagnosis.
+            The Inner Compass 23 provides emotional support and human peer listening. We are not a medical hospital, psychiatric clinic, or mental health facility. Conversations provide empathetic human listening and peer presence, and do not constitute clinical psychotherapy, psychiatric care, or medical diagnosis.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function TermsPage() {
             1. Scope of Service
           </h2>
           <p>
-            Haven facilitates private conversations between individuals seeking emotional support and our team of trained human peer listeners via WhatsApp ({WHATSAPP_DISPLAY}). Our role is to provide compassionate listening, human presence, and non-judgmental acceptance.
+            The Inner Compass 23 facilitates private conversations between individuals seeking emotional support and our team of trained human peer listeners via WhatsApp ({WHATSAPP_DISPLAY}). Our role is to provide compassionate listening, human presence, and non-judgmental acceptance.
           </p>
         </section>
 
@@ -72,7 +72,7 @@ export default function TermsPage() {
             4. Limitation of Liability
           </h2>
           <p>
-            To the fullest extent permissible by applicable law in India, Haven and its peer listeners shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use of or inability to use this listening service.
+            To the fullest extent permissible by applicable law in India, The Inner Compass 23 and its peer listeners shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use of or inability to use this listening service.
           </p>
         </section>
       </div>

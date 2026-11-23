@@ -1,5 +1,8 @@
 export const WHATSAPP_NUMBER = "918810381949";
 export const WHATSAPP_DISPLAY = "+91 8810381949";
+export const CALL_NUMBER = "+918810381949";
+export const CALL_DISPLAY = "+91 8810381949";
+export const buildDirectCallUrl = () => `tel:${CALL_NUMBER}`;
 
 export interface CategoryDefinition {
   id: string;
@@ -209,6 +212,7 @@ export const HOMEPAGE_CATEGORY_CARDS = [
 ];
 
 export const COUNTRY_CODES = [
+  { code: "+91", country: "India", flag: "🇮🇳" },
   { code: "+1", country: "United States", flag: "🇺🇸" },
   { code: "+44", country: "United Kingdom", flag: "🇬🇧" },
   { code: "+1", country: "Canada", flag: "🇨🇦" },
@@ -233,7 +237,6 @@ export const COUNTRY_CODES = [
   { code: "+358", country: "Finland", flag: "🇫🇮" },
   { code: "+33", country: "France", flag: "🇫🇷" },
   { code: "+60", country: "Malaysia", flag: "🇲🇾" },
-  { code: "+91", country: "India (भारत)", flag: "🇮🇳" },
 ];
 
 export const TARGET_TIMEZONES = [
@@ -280,8 +283,8 @@ export function buildWhatsAppMessage(data: {
   email: string;
   categories: string[];
   otherText?: string;
-  preferredDate: string; // DD/MM/YYYY
-  preferredTime: string; // HH:MM 24h
+  preferredDate?: string; // DD/MM/YYYY
+  preferredTime?: string; // HH:MM 24h
   timezone?: string;
   additionalMessage?: string;
   guardianName?: string;
@@ -297,7 +300,7 @@ export function buildWhatsAppMessage(data: {
   const lines: string[] = [];
 
   if (data.isChildRequest) {
-    lines.push("Hello Haven Team, I am reaching out as a Parent/Guardian regarding support for a child.");
+    lines.push("Hello The Inner Compass 23 Team, I am reaching out as a Parent/Guardian regarding support for a child.");
     lines.push("");
     lines.push(`Guardian Name: ${data.guardianName?.trim() || data.fullName.trim()}`);
     if (data.fullName && data.guardianName && data.fullName !== data.guardianName) {
@@ -318,9 +321,15 @@ export function buildWhatsAppMessage(data: {
   lines.push(`WhatsApp Number: ${fullPhone}`);
   lines.push(`Email: ${data.email.trim()}`);
   lines.push(`Concern: ${concernList || "Emotional Support"}`);
-  lines.push(`Preferred Date: ${data.preferredDate}`);
-  lines.push(`Preferred Time: ${data.preferredTime} (24-Hour Clock)`);
-  lines.push(`Timezone: ${data.timezone || "Asia/Kolkata"}`);
+  if (data.preferredDate) {
+    lines.push(`Preferred Date: ${data.preferredDate}`);
+  }
+  if (data.preferredTime) {
+    lines.push(`Preferred Time: ${data.preferredTime} (24-Hour Clock)`);
+  }
+  if (data.timezone) {
+    lines.push(`Timezone: ${data.timezone}`);
+  }
 
   if (data.additionalMessage && data.additionalMessage.trim().length > 0) {
     lines.push(`Additional Message: ${data.additionalMessage.trim()}`);
@@ -344,8 +353,8 @@ export function buildWhatsAppUrl(data: {
   email: string;
   categories: string[];
   otherText?: string;
-  preferredDate: string;
-  preferredTime: string;
+  preferredDate?: string;
+  preferredTime?: string;
   timezone?: string;
   additionalMessage?: string;
   guardianName?: string;

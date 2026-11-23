@@ -174,7 +174,7 @@ export function getDynamicFaqs(
   return [
     {
       q: `Where can I talk to someone anonymously about ${issueName} in ${cityName}?`,
-      a: `On Haven Emotional Support, residents of ${cityName} can connect anonymously 24/7 with trained active listeners or licensed ${reg.counselorSpelling}s via chat, voice, or video using just a temporary nickname—no real name or personal details required.`,
+      a: `On The Inner Compass 23 Emotional Support, residents of ${cityName} can connect anonymously 24/7 with trained active listeners or licensed ${reg.counselorSpelling}s via chat, voice, or video using just a temporary nickname—no real name or personal details required.`,
     },
     {
       q: `Is online emotional support in ${cityName} better than visiting a local clinic?`,
@@ -186,7 +186,7 @@ export function getDynamicFaqs(
     },
     {
       q: `Can I get support in ${cityName} without insurance or long-term subscriptions?`,
-      a: `Yes. Haven offers transparent, flexible access without insurance paperwork or forced monthly lock-ins, making emotional care accessible across ${cityName} and ${countryName}.`,
+      a: `Yes. The Inner Compass 23 offers transparent, flexible access without insurance paperwork or forced monthly lock-ins, making emotional care accessible across ${cityName} and ${countryName}.`,
     },
     {
       q: `Is my conversation about ${issueName} kept completely private?`,

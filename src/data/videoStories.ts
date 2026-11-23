@@ -46,7 +46,7 @@ export const VIDEO_STORIES: VideoStory[] = [
     duration: "1:12",
     isVerified: true,
     reviewDate: "Jan 2026",
-    quote: "“I didn't need medical therapy—I just needed someone who didn't judge me. Haven gave me that space.”",
+    quote: "“I didn't need medical therapy—I just needed someone who didn't judge me. The Inner Compass 23 gave me that space.”",
     isPublished: true,
   },
   {
@@ -78,7 +78,7 @@ export const VIDEO_STORIES: VideoStory[] = [
     duration: "1:28",
     isVerified: true,
     reviewDate: "Jan 2026",
-    quote: "“Complete discretion and respect. In Dubai, gossip spreads fast—Haven gave me absolute privacy.”",
+    quote: "“Complete discretion and respect. In Dubai, gossip spreads fast—The Inner Compass 23 gave me absolute privacy.”",
     isPublished: true,
   },
   {

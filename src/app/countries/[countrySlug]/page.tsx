@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SafeImage from "@/components/SafeImage";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import VideoStoriesSection from "@/components/VideoStoriesSection";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import {
@@ -108,7 +107,7 @@ export default async function CountryPage({
         "name": `Human Emotional Support in ${country.name}`,
         "provider": {
           "@type": "Organization",
-          "name": "Haven Human Emotional Support",
+          "name": "The Inner Compass 23",
           "url": "https://haven.care"
         },
         "serviceType": "Peer Support & Active Listening",
@@ -182,14 +181,14 @@ export default async function CountryPage({
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    `Hello Haven Team, I am reaching out from ${country.name} and would like someone to talk to for emotional support.`
+                    `Hello The Inner Compass 23 Team, I am reaching out from ${country.name} and would like someone to talk to for emotional support.`
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -493,7 +492,28 @@ export default async function CountryPage({
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener in {country.name}.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* 10. Country FAQs */}

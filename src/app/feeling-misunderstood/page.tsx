@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Feeling Misunderstood? Find Someone Who Truly Hears You | Haven",
+  title: "Feeling Misunderstood? Find Someone Who Truly Hears You | The Inner Compass 23",
   description:
     "Tired of people dismissing, minimizing, or misjudging your feelings? Experience the profound comfort of speaking to an empathetic human listener who validates your reality.",
   alternates: {
@@ -68,7 +68,7 @@ export default function FeelingMisunderstoodPage() {
         },
         {
           step: "Seek Dedicated Human Listeners Who Value Your Depth",
-          desc: "Schedule a 1-on-1 listening session on WhatsApp with a Haven listener to speak your unvarnished truth without fear.",
+          desc: "Schedule a 1-on-1 listening session on WhatsApp with an Inner Compass 23 listener to speak your unvarnished truth without fear.",
         },
       ]}
       serviceBoundaries={{

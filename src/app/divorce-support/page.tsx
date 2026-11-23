@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Divorce Support – Someone to Talk to During a Difficult Life Change | Haven",
+  title: "Divorce Support – Someone to Talk to During a Difficult Life Change | The Inner Compass 23",
   description:
     "Looking for someone to talk to during divorce? Feeling lonely after separation? Connect with an empathetic human peer listener. Real conversations, no judgment, 100% private.",
   keywords: [
@@ -88,7 +88,7 @@ export default function DivorceSupportPage() {
           heading: "6. How Our Human Listening Service Works",
           subheading: "A transparent, private, and human-centered process",
           paragraphs: [
-            "Connecting with a Haven peer listener is designed to be frictionless and stress-free:",
+            "Connecting with an Inner Compass 23 peer listener is designed to be frictionless and stress-free:",
             "Step 1: Fill out the simple support request form below, selecting 'Divorce' as your topic and specifying your preferred date and time.",
             "Step 2: Our coordinator reviews your slot and assigns a dedicated human listener who will confirm the booking directly with you on WhatsApp.",
             "Step 3: At your scheduled time, you connect 1-on-1 via WhatsApp. You share as much or as little as you feel comfortable sharing. You set the pace; we listen with kindness, discretion, and absolute respect.",
@@ -156,8 +156,8 @@ export default function DivorceSupportPage() {
           a: "Yes. You are completely free to express anger, frustration, regret, or sadness. Our listeners do not judge your feelings or police your emotional expression.",
         },
         {
-          q: "Is Haven a legal or divorce counseling service?",
-          a: "No. Haven is strictly an emotional support and human peer listening service. We do not provide legal advice, financial counsel, or psychiatric treatment. For legal proceedings, consult a qualified family lawyer.",
+          q: "Is The Inner Compass 23 a legal or divorce counseling service?",
+          a: "No. The Inner Compass 23 is strictly an emotional support and human peer listening service. We do not provide legal advice, financial counsel, or psychiatric treatment. For legal proceedings, consult a qualified family lawyer.",
         },
         {
           q: "How do I book a private conversation on WhatsApp?",

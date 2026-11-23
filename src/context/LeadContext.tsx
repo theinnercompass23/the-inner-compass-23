@@ -14,8 +14,8 @@ export interface SubmitFormData {
   categories: string[];
   otherCategoryText?: string;
   additionalMessage?: string;
-  preferredDate: string; // DD/MM/YYYY
-  preferredTime: string; // strict 24h format HH:MM
+  preferredDate?: string; // DD/MM/YYYY
+  preferredTime?: string; // strict 24h format HH:MM
   timezone?: string;
   preferredLanguage?: string;
   isChildRequest?: boolean;

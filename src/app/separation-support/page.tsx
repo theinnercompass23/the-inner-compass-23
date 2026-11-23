@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Separation Support – Someone to Talk to During Relationship Separation | Haven",
+  title: "Separation Support – Someone to Talk to During Relationship Separation | The Inner Compass 23",
   description:
     "Going through a relationship or marital separation? Dealing with painful uncertainty and altered routines? Talk to an empathetic human listener on WhatsApp.",
   alternates: {
@@ -29,7 +29,7 @@ export default function SeparationSupportPage() {
       canonicalSlug="separation-support"
       introParagraphs={[
         "Unlike divorce, which at least provides legal clarity and a formal conclusion, relationship separation often exists in a distressing gray area. You live apart, yet your lives remain entangled. You wonder: Are we working toward reconciliation, or are we slowly inching toward a permanent breakup? What should I tell our children, our parents, and our mutual friends?",
-        "This persistent ambiguity takes a heavy toll on your nervous system. You oscillate between hoping things will heal and bracing for the worst. Haven provides a private, judgment-free emotional sounding board where you can express your doubts, fears, and hopes without anyone taking sides.",
+        "This persistent ambiguity takes a heavy toll on your nervous system. You oscillate between hoping things will heal and bracing for the worst. The Inner Compass 23 provides a private, judgment-free emotional sounding board where you can express your doubts, fears, and hopes without anyone taking sides.",
       ]}
       keySections={[
         {

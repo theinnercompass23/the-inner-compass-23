@@ -7,14 +7,14 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Explore Countries — Worldwide Human Emotional Support & Peer Listening | Haven",
+  title: "Explore Countries — Worldwide Human Emotional Support & Peer Listening | The Inner Compass 23",
   description:
-    "Explore Haven's dedicated country hubs across the United States, United Kingdom, Canada, Australia, Germany, UAE, Singapore, Ireland, Netherlands, and New Zealand. Real people, real conversations, no judgment.",
+    "Explore The Inner Compass 23's dedicated country hubs across the United States, United Kingdom, Canada, Australia, Germany, UAE, Singapore, Ireland, Netherlands, and New Zealand. Real people, real conversations, no judgment.",
   alternates: {
     canonical: "https://haven.care/countries",
   },
   openGraph: {
-    title: "Explore Countries — Haven Human Emotional Support",
+    title: "Explore Countries — The Inner Compass 23 Human Emotional Support",
     description:
       "Find compassionate, non-judgmental human listening support tailored to your country and local timezone.",
     url: "https://haven.care/countries",
@@ -83,13 +83,13 @@ export default function CountriesPage() {
             className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
           >
             <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-            <span>Chat on WhatsApp: {WHATSAPP_DISPLAY}</span>
+            <span>Chat on WhatsApp</span>
           </a>
           <Link
-            href="/#support-form"
+            href="/contact"
             className="px-6 py-3 rounded-full bg-dark-charcoal hover:bg-black text-warm-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
           >
-            <span>Book a Time Slot</span>
+            <span>Contact Support Form</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

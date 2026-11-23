@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
+import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl, CALL_DISPLAY, buildDirectCallUrl } from "@/lib/constants";
 
 export default function FinalWhatsAppCta() {
   const whatsappUrl = buildDirectWhatsAppUrl();
+  const callUrl = buildDirectCallUrl();
 
   return (
     <section className="py-16 sm:py-24 bg-dark-charcoal text-white relative overflow-hidden">
@@ -28,25 +30,33 @@ export default function FinalWhatsAppCta() {
           If you are sitting in silence right now with a heavy heart, take one small step. Message our team directly and someone will be there to listen.
         </p>
 
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <a
+            href={callUrl}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg hover:shadow-xl transition-all cursor-pointer group"
+          >
+            <Phone className="w-4.5 h-4.5" />
+            <span>Call: {CALL_DISPLAY}</span>
+          </a>
+
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg hover:shadow-xl transition-all cursor-pointer group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg hover:shadow-xl transition-all cursor-pointer group"
           >
             <WhatsAppIcon className="w-5 h-5" color="#FFFFFF" />
-            <span>Chat on WhatsApp ({WHATSAPP_DISPLAY})</span>
+            <span>Chat on WhatsApp</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
 
-          <a
-            href="#support-form"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all cursor-pointer"
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all cursor-pointer"
           >
             <span>Fill Request Form</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
             1. Nature of Our Emotional Support Service
           </h2>
           <p>
-            Haven provides human emotional support and peer listening. We are not a hospital, clinical medical practice, or formal psychiatric facility. When you contact us, you connect with caring human listeners who offer empathy and a listening ear.
+            The Inner Compass 23 provides human emotional support and peer listening. We are not a hospital, clinical medical practice, or formal psychiatric facility. When you contact us, you connect with caring human listeners who offer empathy and a listening ear.
           </p>
         </section>
 
@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
             4. Service Scope &amp; Boundaries
           </h2>
           <p>
-            Haven provides empathetic non-clinical peer listening and emotional presence. We do not provide clinical psychiatric therapy, medical diagnoses, psychological treatment, or medical emergency services.
+            The Inner Compass 23 provides empathetic non-clinical peer listening and emotional presence. We do not provide clinical psychiatric therapy, medical diagnoses, psychological treatment, or medical emergency services.
           </p>
         </section>
 

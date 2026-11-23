@@ -14,12 +14,11 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk to Online Australia — Human Listening & Emotional Support | Haven",
+  title: "Someone to Talk to Online Australia — Human Listening & Emotional Support | The Inner Compass 23",
   description:
     "Feeling lonely, heartbroken, or stressed in Australia? Connect with an attentive human listener. Real people, real conversations, no judgment. Private 1-on-1 support for Sydney, Melbourne, Brisbane, Perth, and nationwide via WhatsApp.",
   keywords: [
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     canonical: "https://haven.care/au",
   },
   openGraph: {
-    title: "Someone to Talk to Online Australia — Haven Human Peer Support",
+    title: "Someone to Talk to Online Australia — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across Australia. Speak with someone who truly listens without judgment.",
     url: "https://haven.care/au",
@@ -88,16 +87,16 @@ export default function AustraliaPage() {
 
   const faqs = [
     {
-      q: "How does Haven support Australians facing personal challenges?",
-      a: "Whether you are navigating a painful breakup, dealing with separation, or feeling isolated in an Australian city far from your support network, Haven provides a calm, confidential space to talk freely without clinical evaluation or long waitlists.",
+      q: "How does The Inner Compass 23 support Australians facing personal challenges?",
+      a: "Whether you are navigating a painful breakup, dealing with separation, or feeling isolated in an Australian city far from your support network, The Inner Compass 23 provides a calm, confidential space to talk freely without clinical evaluation or long waitlists.",
     },
     {
       q: "What Australian timezones do you cover?",
       a: "We support Australian Eastern Time (AEST / AEDT: Sydney, Melbourne, Brisbane), Australian Central Time (Adelaide), and Australian Western Time (AWST: Perth). You can pick your local time slot in the booking form.",
     },
     {
-      q: "Is Haven an emergency crisis service?",
-      a: "No. Haven provides non-clinical peer support and human listening. If you are experiencing a crisis, please dial 000 for emergency services or contact Lifeline Australia at 13 11 14 (available 24/7).",
+      q: "Is The Inner Compass 23 an emergency crisis service?",
+      a: "No. The Inner Compass 23 provides non-clinical peer support and human listening. If you are experiencing a crisis, please dial 000 for emergency services or contact Lifeline Australia at 13 11 14 (available 24/7).",
     },
     {
       q: "How does the WhatsApp conversation work?",
@@ -111,7 +110,7 @@ export default function AustraliaPage() {
     "name": "Human Emotional Support & Peer Listening in Australia",
     "provider": {
       "@type": "Organization",
-      "name": "Haven Human Emotional Support",
+      "name": "The Inner Compass 23 Human Emotional Support",
       "url": "https://haven.care"
     },
     "serviceType": "Peer Support & Active Listening",
@@ -158,14 +157,14 @@ export default function AustraliaPage() {
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    "Hello Haven Team, I am reaching out from Australia and would like someone to talk to for emotional support."
+                    "Hello The Inner Compass 23 Team, I am reaching out from Australia and would like someone to talk to for emotional support."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -256,7 +255,7 @@ export default function AustraliaPage() {
             A Safe Space for Everyday Emotional Burdens
           </h3>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            Haven does not provide clinical psychological therapy, mental health diagnoses, or medical treatment. We are a human peer listening service designed for everyday people who need someone attentive, understanding, and respectful to talk to about loneliness, heartbreak, or life stress without judgment.
+            The Inner Compass 23 does not provide clinical psychological therapy, mental health diagnoses, or medical treatment. We are a human peer listening service designed for everyday people who need someone attentive, understanding, and respectful to talk to about loneliness, heartbreak, or life stress without judgment.
           </p>
         </div>
       </section>
@@ -276,7 +275,28 @@ export default function AustraliaPage() {
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Australia FAQs */}

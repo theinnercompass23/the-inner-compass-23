@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Marriage Problems Support – Someone to Talk to About Marital Stress | Haven",
+  title: "Marriage Problems Support – Someone to Talk to About Marital Stress | The Inner Compass 23",
   description:
     "Experiencing marriage problems, communication breakdown, or emotional distance with your spouse? Connect with a compassionate, neutral human listener on WhatsApp.",
   alternates: {
@@ -61,7 +61,7 @@ export default function MarriageProblemsPage() {
           subheading: "Understanding the distinction between clinical therapy and emotional listening",
           paragraphs: [
             "If you and your spouse are actively seeking to rebuild communication together, resolve deep clinical trauma, or address infidelity systematically, seeking a licensed marriage and family therapist (LMFT) is highly encouraged.",
-            "However, when you need individual emotional relief—a place to vent without your spouse present, process your confusion, and speak your truth without clinical labels—Haven's peer listening service provides an immediate, affordable, and warm sanctuary.",
+            "However, when you need individual emotional relief—a place to vent without your spouse present, process your confusion, and speak your truth without clinical labels—The Inner Compass 23's peer listening service provides an immediate, affordable, and warm sanctuary.",
           ],
         },
       ]}
@@ -80,7 +80,7 @@ export default function MarriageProblemsPage() {
         },
         {
           step: "Schedule an Individual Decompression Session",
-          desc: "Book a private 1-on-1 session on WhatsApp with a Haven listener to unburden yourself and find peaceful emotional clarity.",
+          desc: "Book a private 1-on-1 session on WhatsApp with an Inner Compass 23 listener to unburden yourself and find peaceful emotional clarity.",
         },
       ]}
       serviceBoundaries={{

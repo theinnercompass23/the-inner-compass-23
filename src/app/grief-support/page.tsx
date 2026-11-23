@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Grief & Loss Support – Someone to Talk to When You Are Grieving | Haven",
+  title: "Grief & Loss Support – Someone to Talk to When You Are Grieving | The Inner Compass 23",
   description:
     "Grieving the loss of someone you love? Feeling like everyone expects you to 'move on'? Connect with a patient, compassionate human listener on WhatsApp. 100% confidential.",
   alternates: {
@@ -29,7 +29,7 @@ export default function GriefSupportPage() {
       canonicalSlug="grief-support"
       introParagraphs={[
         "The death of a parent, spouse, sibling, child, close friend, or beloved companion alters the trajectory of life forever. In the immediate days following a funeral or memorial, people gather, send condolences, and offer food. But weeks and months later, society goes back to its normal routine, while you are left standing in the silent wreckage of a world that no longer makes sense.",
-        "You quickly discover that modern culture is uncomfortable with prolonged sorrow. People offer well-meaning platitudes: 'They are in a better place,' or 'Time heals all wounds.' While meant to comfort, these words often silence you. You stop talking about the person you lost because you don't want to make others uncomfortable. Haven provides a sacred, patient space where you can weep, share stories, and mourn without apology.",
+        "You quickly discover that modern culture is uncomfortable with prolonged sorrow. People offer well-meaning platitudes: 'They are in a better place,' or 'Time heals all wounds.' While meant to comfort, these words often silence you. You stop talking about the person you lost because you don't want to make others uncomfortable. The Inner Compass 23 provides a sacred, patient space where you can weep, share stories, and mourn without apology.",
       ]}
       keySections={[
         {
@@ -53,7 +53,7 @@ export default function GriefSupportPage() {
           subheading: "Mourning pet loss, estranged relatives, miscarriages, and unacknowledged bonds",
           paragraphs: [
             "Not all grief is socially recognized. The agonizing loss of a beloved pet, the death of an estranged parent with whom you had complicated unresolved history, the silent heartbreak of pregnancy loss, or the passing of an unspoken relationship often receives zero formal bereavement leave or societal empathy.",
-            "When people tell you 'It was just a dog' or 'You can try again,' the pain of feeling invalidated compounds the loss. At Haven, all grief is honored. We understand that love is love, and the depth of your pain reflects the depth of your connection.",
+            "When people tell you 'It was just a dog' or 'You can try again,' the pain of feeling invalidated compounds the loss. At The Inner Compass 23, all grief is honored. We understand that love is love, and the depth of your pain reflects the depth of your connection.",
           ],
         },
         {
@@ -61,7 +61,7 @@ export default function GriefSupportPage() {
           subheading: "Recognizing prolonged grief disorder and clinical needs",
           paragraphs: [
             "For most people, grief is a painful natural process that requires compassionate companionship rather than medical intervention. However, if months have passed and you experience persistent feelings that life is not worth living, severe self-neglect, or hallucinations, seeking a licensed clinical grief counselor or medical professional is essential.",
-            "Haven's peer listeners provide gentle, empathetic listening for everyday bereavement. We are here to walk beside you in your sorrow, offering patient warmth without clinical judgment.",
+            "The Inner Compass 23's peer listeners provide gentle, empathetic listening for everyday bereavement. We are here to walk beside you in your sorrow, offering patient warmth without clinical judgment.",
           ],
         },
       ]}
@@ -80,7 +80,7 @@ export default function GriefSupportPage() {
         },
         {
           step: "Schedule an Empathetic Listening Conversation",
-          desc: "Book a private 1-on-1 session on WhatsApp with a Haven listener to speak freely about your memories and feelings.",
+          desc: "Book a private 1-on-1 session on WhatsApp with an Inner Compass 23 listener to speak freely about your memories and feelings.",
         },
       ]}
       serviceBoundaries={{

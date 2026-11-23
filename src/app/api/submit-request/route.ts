@@ -58,19 +58,20 @@ export async function POST(request: Request) {
       );
     }
 
-    // 6. Strict Date & Time Booking Validation (Server-side)
-    // Convert DD/MM/YYYY to YYYY-MM-DD if needed
-    let isoDate = preferredDate;
-    if (preferredDate && preferredDate.includes("/")) {
-      const parts = preferredDate.split("/");
-      if (parts.length === 3) {
-        isoDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+    // 6. Date & Time Booking Validation (Server-side, if provided)
+    if (preferredDate && preferredTime) {
+      let isoDate = preferredDate;
+      if (preferredDate.includes("/")) {
+        const parts = preferredDate.split("/");
+        if (parts.length === 3) {
+          isoDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+        }
       }
-    }
 
-    const dateTimeVal = validateBookingDateTime(isoDate, preferredTime || "");
-    if (!dateTimeVal.isValid) {
-      return NextResponse.json({ error: dateTimeVal.error }, { status: 400 });
+      const dateTimeVal = validateBookingDateTime(isoDate, preferredTime);
+      if (!dateTimeVal.isValid) {
+        return NextResponse.json({ error: dateTimeVal.error }, { status: 400 });
+      }
     }
 
     // 7. Consent

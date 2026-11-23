@@ -14,12 +14,11 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk to Online Canada — Human Emotional Support | Haven",
+  title: "Someone to Talk to Online Canada — Human Emotional Support | The Inner Compass 23",
   description:
     "Feeling lonely, isolated, or heartbroken in Canada? Connect with a compassionate human listener. Real people, real conversations, no judgment. Private 1-on-1 support for Toronto, Vancouver, Montreal, Calgary, and across Canada.",
   keywords: [
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     canonical: "https://haven.care/ca",
   },
   openGraph: {
-    title: "Someone to Talk to Online Canada — Haven Human Peer Support",
+    title: "Someone to Talk to Online Canada — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across Canada. Speak with someone who truly listens without judgment.",
     url: "https://haven.care/ca",
@@ -82,8 +81,8 @@ export default function CanadaPage() {
 
   const faqs = [
     {
-      q: "How does Haven support Canadians experiencing seasonal isolation?",
-      a: "Canada's long winter months and early darkness often intensify feelings of loneliness and isolation. Haven provides a warm, confidential sounding board accessible from the comfort and privacy of your home over WhatsApp, without any clinical stigma.",
+      q: "How does The Inner Compass 23 support Canadians experiencing seasonal isolation?",
+      a: "Canada's long winter months and early darkness often intensify feelings of loneliness and isolation. The Inner Compass 23 provides a warm, confidential sounding board accessible from the comfort and privacy of your home over WhatsApp, without any clinical stigma.",
     },
     {
       q: "What Canadian timezones do you accommodate?",
@@ -91,7 +90,7 @@ export default function CanadaPage() {
     },
     {
       q: "Is this a substitute for therapy or crisis care?",
-      a: "No. Haven is peer listening and empathetic human conversation. If you are experiencing suicidal thoughts or severe distress, please dial 988 (Canada's Suicide Crisis Helpline) or 911 for emergency response.",
+      a: "No. The Inner Compass 23 is peer listening and empathetic human conversation. If you are experiencing suicidal thoughts or severe distress, please dial 988 (Canada's Suicide Crisis Helpline) or 911 for emergency response.",
     },
     {
       q: "How private is my information?",
@@ -105,7 +104,7 @@ export default function CanadaPage() {
     "name": "Human Emotional Support & Peer Listening in Canada",
     "provider": {
       "@type": "Organization",
-      "name": "Haven Human Emotional Support",
+      "name": "The Inner Compass 23 Human Emotional Support",
       "url": "https://haven.care"
     },
     "serviceType": "Peer Support & Active Listening",
@@ -152,14 +151,14 @@ export default function CanadaPage() {
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    "Hello Haven Team, I am reaching out from Canada and would like someone to talk to for emotional support."
+                    "Hello The Inner Compass 23 Team, I am reaching out from Canada and would like someone to talk to for emotional support."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -250,7 +249,7 @@ export default function CanadaPage() {
             No Waiting Lists, No Clinical Labels, Just Human Listening
           </h3>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            Finding accessible mental healthcare in Canada can sometimes require months of navigating public waitlists. Haven does not provide psychiatric diagnoses, medical treatments, or formal psychotherapy. We offer immediate, private peer listening from compassionate human listeners who care about your story.
+            Finding accessible mental healthcare in Canada can sometimes require months of navigating public waitlists. The Inner Compass 23 does not provide psychiatric diagnoses, medical treatments, or formal psychotherapy. We offer immediate, private peer listening from compassionate human listeners who care about your story.
           </p>
         </div>
       </section>
@@ -270,7 +269,28 @@ export default function CanadaPage() {
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Canada FAQs */}

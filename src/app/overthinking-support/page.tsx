@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Overthinking Support – Someone to Talk to When Your Mind Won't Stop | Haven",
+  title: "Overthinking Support – Someone to Talk to When Your Mind Won't Stop | The Inner Compass 23",
   description:
     "Trapped in chronic overthinking, midnight worry loops, and mental exhaustion? Connect with a calming, empathetic human listener on WhatsApp. No judgment, 100% confidential.",
   keywords: [
@@ -104,7 +104,7 @@ export default function OverthinkingSupportPage() {
         },
         {
           q: "Is there a website where I can talk to someone anonymously when I feel lonely?",
-          a: "Yes. Online active listening and emotional support platforms like Haven let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
+          a: "Yes. Online active listening and emotional support platforms like The Inner Compass 23 let you connect with trained human listeners 24/7 using a temporary nickname, without sharing your real name, phone number, or insurance details.",
         },
         {
           q: "What is the difference between an active listener and a therapist?",

@@ -14,12 +14,11 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk to Online UK — Human Listening & Emotional Support | Haven",
+  title: "Someone to Talk to Online UK — Human Listening & Emotional Support | The Inner Compass 23",
   description:
     "Feeling lonely, heartbroken, or overwhelmed in the UK? Connect with a compassionate human listener. Real people, real conversations, no judgment. Private 1-on-1 support for London, Manchester, Birmingham, and across Great Britain.",
   keywords: [
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     canonical: "https://haven.care/uk",
   },
   openGraph: {
-    title: "Someone to Talk to Online UK — Haven Human Peer Support",
+    title: "Someone to Talk to Online UK — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across the United Kingdom. Speak with someone who truly listens without judgment.",
     url: "https://haven.care/uk",
@@ -88,8 +87,8 @@ export default function UnitedKingdomPage() {
 
   const faqs = [
     {
-      q: "How does Haven differ from NHS mental health services in the UK?",
-      a: "Haven offers non-clinical human peer listening. While the NHS provides medical and psychiatric care, waiting lists for talking therapies can often take months. Haven gives you immediate, confidential human connection right when you need to be heard, without clinical diagnosis or medical records.",
+      q: "How does The Inner Compass 23 differ from NHS mental health services in the UK?",
+      a: "The Inner Compass 23 offers non-clinical human peer listening. While the NHS provides medical and psychiatric care, waiting lists for talking therapies can often take months. The Inner Compass 23 gives you immediate, confidential human connection right when you need to be heard, without clinical diagnosis or medical records.",
     },
     {
       q: "What hours are available for UK residents?",
@@ -100,8 +99,8 @@ export default function UnitedKingdomPage() {
       a: "Simply submit your details and preferred time slot using our form. You will be connected directly to our support coordinator on WhatsApp (+91 8810381949), where a friendly, respectful listener will welcome you.",
     },
     {
-      q: "Is Haven an emergency crisis service?",
-      a: "No. Haven is peer listening for life's personal struggles. If you are in immediate danger, harm, or acute crisis, please call 111, contact the Samaritans at 116 123, or call 999 in an emergency.",
+      q: "Is The Inner Compass 23 an emergency crisis service?",
+      a: "No. The Inner Compass 23 is peer listening for life's personal struggles. If you are in immediate danger, harm, or acute crisis, please call 111, contact the Samaritans at 116 123, or call 999 in an emergency.",
     },
   ];
 
@@ -111,7 +110,7 @@ export default function UnitedKingdomPage() {
     "name": "Human Emotional Support & Peer Listening in the United Kingdom",
     "provider": {
       "@type": "Organization",
-      "name": "Haven Human Emotional Support",
+      "name": "The Inner Compass 23 Human Emotional Support",
       "url": "https://haven.care"
     },
     "serviceType": "Peer Support & Active Listening",
@@ -158,14 +157,14 @@ export default function UnitedKingdomPage() {
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    "Hello Haven Team, I am reaching out from the UK and would like someone to talk to for emotional support."
+                    "Hello The Inner Compass 23 Team, I am reaching out from the UK and would like someone to talk to for emotional support."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -257,7 +256,7 @@ export default function UnitedKingdomPage() {
             Human Connection Without Clinical Bureaucracy
           </h3>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            We are not a substitute for clinical psychological care or emergency medical intervention. Haven exists for the millions of people who are not in medical danger, but who feel desperately lonely, stuck after a heartbreak, overwhelmed by family friction, or in need of someone patient to listen. No paperwork, no clinical files, just pure human presence.
+            We are not a substitute for clinical psychological care or emergency medical intervention. The Inner Compass 23 exists for the millions of people who are not in medical danger, but who feel desperately lonely, stuck after a heartbreak, overwhelmed by family friction, or in need of someone patient to listen. No paperwork, no clinical files, just pure human presence.
           </p>
         </div>
       </section>
@@ -277,7 +276,28 @@ export default function UnitedKingdomPage() {
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* UK FAQs */}

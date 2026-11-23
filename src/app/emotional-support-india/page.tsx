@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Online Emotional Support in India — Private Peer Listening Service | Haven",
+  title: "Online Emotional Support in India — Private Peer Listening Service | The Inner Compass 23",
   description:
-    "Looking for someone to talk to in India? Haven offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
+    "Looking for someone to talk to in India? The Inner Compass 23 offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
   alternates: {
     canonical: "https://haven.care/emotional-support-india",
   },
   openGraph: {
     title: "Online Emotional Support in India — Private Peer Listening Service",
     description:
-      "Looking for someone to talk to in India? Haven offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
+      "Looking for someone to talk to in India? The Inner Compass 23 offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
     url: "https://haven.care/emotional-support-india",
     type: "article",
   },
@@ -28,7 +28,7 @@ export default function EmotionalSupportIndiaPage() {
       readTime="5 min read"
       introParagraphs={[
         "Modern life in Indian metropolitan cities like Bangalore, Mumbai, Delhi-NCR, Pune, and Hyderabad has brought immense opportunity, but also unprecedented loneliness. Millions of young professionals and students move away from their hometowns, living alone in compact flats and working grueling hours.",
-        "When the workday ends and the silence takes over, the lack of authentic human connection can feel unbearable. Haven bridges this gap by providing an accessible, immediate human listener directly on WhatsApp (+91 8810381949).",
+        "When the workday ends and the silence takes over, the lack of authentic human connection can feel unbearable. The Inner Compass 23 bridges this gap by providing an accessible, immediate human listener directly on WhatsApp (+91 8810381949).",
       ]}
       hindiHinglishNote="भारत में रहकर जब अकेलापन घेर ले ('Dil ki baat karne ke liye koi chahiye'), तो हमारी टीम आपके साथ है। अपनी पसंदीदा भाषा हिंदी या अंग्रेजी में खुलकर बात करें।"
       keySections={[
@@ -52,7 +52,7 @@ export default function EmotionalSupportIndiaPage() {
           heading: "Free Access Without Financial Hurdles",
           subheading: "Support when you need it most",
           paragraphs: [
-            "Therapy sessions in India can cost ₹2,000 to ₹5,000 per hour, making emotional support inaccessible to students and young earners. Haven eliminates payment barriers so you have a real human to confide in without financial stress.",
+            "Therapy sessions in India can cost ₹2,000 to ₹5,000 per hour, making emotional support inaccessible to students and young earners. The Inner Compass 23 eliminates payment barriers so you have a real human to confide in without financial stress.",
             "You are never alone in this country. Reach out whenever you need someone to listen.",
           ],
         },

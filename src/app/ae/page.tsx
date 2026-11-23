@@ -14,12 +14,11 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
-import SupportRequestForm from "@/components/SupportRequestForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Someone to Talk to in Dubai & UAE — Private Expat Emotional Support | Haven",
+  title: "Someone to Talk to in Dubai & UAE — Private Expat Emotional Support | The Inner Compass 23",
   description:
     "Feeling lonely, stressed, or heartbroken in Dubai or Abu Dhabi? Connect with a compassionate human listener. Real people, real conversations, no judgment. 100% confidential 1-on-1 peer support for expatriates and residents via WhatsApp.",
   keywords: [
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     canonical: "https://haven.care/ae",
   },
   openGraph: {
-    title: "Someone to Talk to in Dubai & UAE — Haven Human Peer Support",
+    title: "Someone to Talk to in Dubai & UAE — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support in Dubai, Abu Dhabi, and across the UAE. Speak with someone who truly listens without judgment.",
     url: "https://haven.care/ae",
@@ -70,8 +69,8 @@ export default function UnitedArabEmiratesPage() {
 
   const faqs = [
     {
-      q: "Why is Haven particularly suited for expatriates living in the UAE?",
-      a: "Over 85% of the UAE's population is comprised of international expatriates living thousands of miles away from their families and childhood friends. The pressure to appear successful can make it difficult to admit when you are lonely, stressed, or hurting. Haven provides a completely neutral, discreet, and private space where you can share your real emotions without affecting your social or professional standing.",
+      q: "Why is The Inner Compass 23 particularly suited for expatriates living in the UAE?",
+      a: "Over 85% of the UAE's population is comprised of international expatriates living thousands of miles away from their families and childhood friends. The pressure to appear successful can make it difficult to admit when you are lonely, stressed, or hurting. The Inner Compass 23 provides a completely neutral, discreet, and private space where you can share your real emotions without affecting your social or professional standing.",
     },
     {
       q: "What languages can I speak in?",
@@ -83,7 +82,7 @@ export default function UnitedArabEmiratesPage() {
     },
     {
       q: "Is this a medical or psychiatric service?",
-      a: "No. Haven is non-clinical human peer support. We do not prescribe medication, diagnose mental conditions, or provide clinical psychotherapy. If you are experiencing acute medical or psychological emergencies, please contact UAE National Crisis lines or emergency services on 999.",
+      a: "No. The Inner Compass 23 is non-clinical human peer support. We do not prescribe medication, diagnose mental conditions, or provide clinical psychotherapy. If you are experiencing acute medical or psychological emergencies, please contact UAE National Crisis lines or emergency services on 999.",
     },
   ];
 
@@ -93,7 +92,7 @@ export default function UnitedArabEmiratesPage() {
     "name": "Human Emotional Support & Peer Listening in the UAE",
     "provider": {
       "@type": "Organization",
-      "name": "Haven Human Emotional Support",
+      "name": "The Inner Compass 23 Human Emotional Support",
       "url": "https://haven.care"
     },
     "serviceType": "Peer Support & Active Listening",
@@ -140,14 +139,14 @@ export default function UnitedArabEmiratesPage() {
                 </a>
                 <a
                   href={buildDirectWhatsAppUrl(
-                    "Hello Haven Team, I am reaching out from the UAE and would like someone to talk to for emotional support."
+                    "Hello The Inner Compass 23 Team, I am reaching out from the UAE and would like someone to talk to for emotional support."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
-                  <span>Direct WhatsApp Connect</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
 
@@ -238,7 +237,7 @@ export default function UnitedArabEmiratesPage() {
             Non-Clinical Listening That Respects Your Privacy
           </h3>
           <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
-            We understand that many professionals in the UAE hesitate to seek support because they worry about employer records or social gossip. Haven is completely separate from your employer, insurance, or local clinics. We are non-clinical peer listeners. You can speak under a pseudonym or first name only. What you discuss is held with utmost dignity and privacy.
+            We understand that many professionals in the UAE hesitate to seek support because they worry about employer records or social gossip. The Inner Compass 23 is completely separate from your employer, insurance, or local clinics. We are non-clinical peer listeners. You can speak under a pseudonym or first name only. What you discuss is held with utmost dignity and privacy.
           </p>
         </div>
       </section>
@@ -258,7 +257,28 @@ export default function UnitedArabEmiratesPage() {
           </p>
         </div>
 
-        <SupportRequestForm />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-soft-sage/40 shadow-sm text-center max-w-xl mx-auto space-y-4">
+          <p className="text-xs sm:text-sm text-dark-charcoal/75 leading-relaxed">
+            Fill our quick confidential request form or connect directly on WhatsApp to speak with a listener.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-dark-charcoal hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-all"
+            >
+              Open Contact Form
+            </Link>
+            <a
+              href={buildDirectWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* UAE FAQs */}

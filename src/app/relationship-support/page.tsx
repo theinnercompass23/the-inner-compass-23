@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Relationship Support – Someone to Talk to About Relationship Problems | Haven",
+  title: "Relationship Support – Someone to Talk to About Relationship Problems | The Inner Compass 23",
   description:
     "Feeling unheard, distant, or anxious in your relationship? Need a safe, neutral space to untangle your feelings? Connect with an empathetic human listener on WhatsApp.",
   alternates: {
@@ -37,7 +37,7 @@ export default function RelationshipSupportPage() {
           subheading: "When words are spoken but connection is absent",
           paragraphs: [
             "One of the loneliest experiences in life is feeling invisible inside your own romantic partnership. You try to explain what is hurting you, but your partner gets defensive, shuts down ('stonewalling'), or minimizes your concerns with: 'You're overreacting' or 'You're too sensitive.'",
-            "Over time, you stop bringing up issues to avoid conflict. But silence does not heal problems; it transforms unspoken hurt into deep emotional exhaustion and chronic resentment. Having a Haven peer listener who truly hears you validates your inner reality and breaks the feeling of being crazy.",
+            "Over time, you stop bringing up issues to avoid conflict. But silence does not heal problems; it transforms unspoken hurt into deep emotional exhaustion and chronic resentment. Having an Inner Compass 23 peer listener who truly hears you validates your inner reality and breaks the feeling of being crazy.",
           ],
         },
         {
@@ -102,7 +102,7 @@ export default function RelationshipSupportPage() {
       faqs={[
         {
           q: "Can my partner and I join the conversation together?",
-          a: "No. Haven is an individual peer listening service. We provide 1-on-1 confidential space for you as an individual to express your feelings without pressure from your partner.",
+          a: "No. The Inner Compass 23 is an individual peer listening service. We provide 1-on-1 confidential space for you as an individual to express your feelings without pressure from your partner.",
         },
         {
           q: "Will the listener tell me whether I should leave my relationship?",

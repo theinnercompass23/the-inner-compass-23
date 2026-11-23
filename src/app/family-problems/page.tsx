@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeoLandingTemplate from "@/components/SeoLandingTemplate";
 
 export const metadata: Metadata = {
-  title: "Family Conflicts Support – Someone to Talk to About Family Problems | Haven",
+  title: "Family Conflicts Support – Someone to Talk to About Family Problems | The Inner Compass 23",
   description:
     "Struggling with toxic family dynamics, parental pressure, or generational conflict? Connect with an empathetic human peer listener on WhatsApp. 100% confidential.",
   alternates: {
@@ -60,7 +60,7 @@ export default function FamilyProblemsPage() {
           heading: "4. How a Human Listening Session Brings Immediate Relief",
           subheading: "A neutral refuge where you never have to justify your feelings",
           paragraphs: [
-            "At Haven, our peer listeners do not tell you to cut off your family or force you to forgive people who hurt you. We listen to your real feelings—your sadness, your anger, and your love for them—without any agenda.",
+            "At The Inner Compass 23, our peer listeners do not tell you to cut off your family or force you to forgive people who hurt you. We listen to your real feelings—your sadness, your anger, and your love for them—without any agenda.",
             "Speaking freely allows you to decompress from heavy family friction, regain emotional composure, and approach your family with steady calm.",
           ],
         },
@@ -80,7 +80,7 @@ export default function FamilyProblemsPage() {
         },
         {
           step: "Schedule a Decompression Session After Family Visits",
-          desc: "Book a private 1-on-1 session on WhatsApp with a Haven listener to unburden yourself and release toxic stress.",
+          desc: "Book a private 1-on-1 session on WhatsApp with an Inner Compass 23 listener to unburden yourself and release toxic stress.",
         },
       ]}
       serviceBoundaries={{
@@ -110,7 +110,7 @@ export default function FamilyProblemsPage() {
         },
         {
           q: "Will the listener tell my family what I said?",
-          a: "Never. All conversations with Haven listeners are 100% confidential and held directly between you and our team on WhatsApp.",
+          a: "Never. All conversations with The Inner Compass 23 listeners are 100% confidential and held directly between you and our team on WhatsApp.",
         },
       ]}
       relatedArticles={[

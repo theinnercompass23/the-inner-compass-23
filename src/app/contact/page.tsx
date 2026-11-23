@@ -3,11 +3,12 @@ import { Mail, MapPin, Clock, Phone, Lock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 import SupportRequestForm from "@/components/SupportRequestForm";
+import InnerCompassSection from "@/components/InnerCompassSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us – Connect With Haven | Human Emotional Support",
+  title: "Contact Us – Connect With The Inner Compass 23 | Human Emotional Support",
   description:
-    "Get in touch with Haven's peer support team directly on WhatsApp or submit a support request with your preferred date and time.",
+    "Get in touch with The Inner Compass 23's peer support team directly on WhatsApp or submit a support request with your preferred date and time.",
   alternates: {
     canonical: "https://haven.care/contact",
   },
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const directWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hello Haven team, I would like to reach out regarding your emotional support service."
+    "Hello The Inner Compass 23 team, I would like to reach out regarding your emotional support service."
   )}`;
 
   return (
@@ -81,15 +82,18 @@ export default function ContactPage() {
             <div className="w-12 h-12 rounded-2xl bg-soft-sage/20 text-muted-green flex items-center justify-center">
               <Clock className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-semibold text-dark-charcoal">Availability &amp; Timezone</h3>
+            <h3 className="text-base font-semibold text-dark-charcoal">Availability &amp; Response</h3>
             <p className="text-xs text-dark-charcoal/65 leading-relaxed">
-              Operating on Indian Standard Time (IST / Asia/Kolkata). Request any 24-hour time slot.
+              Open 24/7 for emotional listening requests worldwide. We respond promptly via private WhatsApp.
             </p>
-            <p className="text-sm font-semibold text-dark-charcoal">Flexible 24/7 Requests</p>
-            <p className="text-xs text-dark-charcoal/50">Our team confirms availability on WhatsApp</p>
+            <p className="text-sm font-semibold text-dark-charcoal">Flexible 24/7 Support</p>
+            <p className="text-xs text-dark-charcoal/50">Confidential human listeners ready to assist</p>
           </div>
         </div>
       </section>
+
+      {/* The Inner Compass 23 Reflection Section */}
+      <InnerCompassSection className="border-t border-soft-sage/20 bg-warm-white/60 -mt-4 pb-0" />
 
       {/* Embedded Support Form */}
       <div className="pb-16">
