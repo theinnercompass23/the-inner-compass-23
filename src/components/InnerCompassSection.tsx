@@ -28,7 +28,8 @@ export default function InnerCompassSection({ className = "" }: InnerCompassSect
 
           {/* Heading & Subtitle with Official Logo */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 relative z-10">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white border border-soft-sage/40 shadow-xs overflow-hidden p-2 shrink-0">
+            {/* Highlighted Official Logo Emblem */}
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white border-2 border-emerald-600/70 ring-4 ring-emerald-500/25 ring-offset-2 ring-offset-white shadow-md hover:shadow-xl hover:scale-105 transition-all overflow-hidden p-2 shrink-0">
               <Image
                 src="/the-inner-compass-icon.png"
                 alt="The Inner Compass 23"

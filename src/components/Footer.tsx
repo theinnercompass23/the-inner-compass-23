@@ -61,7 +61,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="relative w-9 h-9 rounded-full bg-white border border-soft-sage/40 flex items-center justify-center shadow-xs overflow-hidden p-0.5 shrink-0">
+              <div className="relative w-10 h-10 rounded-full bg-white border-2 border-emerald-600/70 ring-2 ring-emerald-500/25 flex items-center justify-center shadow-xs overflow-hidden p-0.5 shrink-0">
                 <Image
                   src="/the-inner-compass-icon.png"
                   alt="The Inner Compass 23"

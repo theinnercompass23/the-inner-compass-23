@@ -58,7 +58,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
             aria-label="The Inner Compass 23 Home"
           >
-            <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border-2 border-muted-green/60 ring-4 ring-emerald-500/25 flex items-center justify-center shadow-md group-hover:scale-105 group-hover:ring-emerald-500/50 transition-all shrink-0 p-1 overflow-hidden">
+            <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border-2 border-emerald-600/70 ring-4 ring-emerald-500/30 ring-offset-2 ring-offset-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:ring-emerald-500/50 transition-all shrink-0 p-1 overflow-hidden">
               <Image
                 src="/the-inner-compass-icon.png"
                 alt="The Inner Compass 23 Logo"
