@@ -270,16 +270,15 @@ export default function SupportForChildrenClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-stretch">
             {/* Left Big Graphic: masonry_square.webp */}
-            <div className="lg:col-span-5 rounded-2xl overflow-hidden bg-[#FAF9F6] flex items-center justify-center p-6 border border-[#384347]/10 shadow-xs min-h-[320px]">
-              <div className="relative w-full h-72 sm:h-80">
-                <Image
-                  src="/scl/masonry_square.webp"
-                  alt="Social Confidence Lab children growth framework"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-contain"
-                />
-              </div>
+            <div className="lg:col-span-5 relative w-full rounded-2xl overflow-hidden border border-[#384347]/10 shadow-xs min-h-[300px] sm:min-h-[350px] aspect-4/3 sm:aspect-square lg:aspect-auto">
+              <Image
+                src="/scl/masonry_square.webp"
+                alt="Social Confidence Lab children growth framework"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
+                className="object-cover object-center w-full h-full"
+                priority
+              />
             </div>
 
             {/* 4 Feature Cards */}
