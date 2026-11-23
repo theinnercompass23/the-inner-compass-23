@@ -23,14 +23,12 @@ import {
   Sparkles,
   CheckCircle2,
   Globe,
-  Phone,
+  Headphones,
 } from "lucide-react";
 import {
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
   buildDirectWhatsAppUrl,
-  CALL_DISPLAY,
-  buildDirectCallUrl,
 } from "@/lib/constants";
 
 export default function HomePage() {
@@ -55,65 +53,79 @@ export default function HomePage() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span>Real Listeners Online Now</span>
+                  <span>Active Listeners Online Now</span>
                 </div>
 
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-soft-sage/20 border border-soft-sage/35 text-[11px] sm:text-xs font-medium text-dark-charcoal/80">
-                  <Heart className="w-3.5 h-3.5 fill-muted-green/20 text-muted-green" />
-                  <span>Real People &bull; No Judgment</span>
+                  <Sparkles className="w-3.5 h-3.5 text-muted-green" />
+                  <span>Life Alchemists, No Judgement</span>
                 </div>
               </div>
 
-              {/* Main Headline */}
-              <div className="space-y-3">
+              {/* Main Headline & Verbatim Copy */}
+              <div className="space-y-4">
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-dark-charcoal tracking-tight leading-[1.15] break-words">
                   Sometimes, You Just Need <br className="hidden sm:inline" />
                   <span className="italic font-normal text-muted-green">Someone to Listen.</span>
                 </h1>
-                <p className="text-sm sm:text-lg text-dark-charcoal/80 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Whatever you are carrying—loneliness, a difficult separation, heartbreak, or unspoken stress—you deserve a private space where you can express yourself without judgment.
-                </p>
+                <div className="text-sm sm:text-base text-dark-charcoal/85 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0 space-y-2">
+                  <p>
+                    Our Active listeners listen your unspoken pain,
+                  </p>
+                  <p>
+                    Our life Alchemists decode your cosmic patterns &amp; awaken your inner wisdom.
+                  </p>
+                  <p>
+                    Our Spiritual Cartographers transform your journey by aligning your inner compass with purpose of your life.
+                  </p>
+                </div>
               </div>
 
               <p className="text-xs sm:text-sm text-dark-charcoal/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                No clinical diagnoses, no patronizing advice, and zero automated AI chatbots. Trained active human listeners, counsellors, and spiritual leaders ready to connect with you one-on-one.
+                No clinical diagnoses, no patronizing advice, and zero automated AI chatbots. Trained active human listeners, life alchemists, and spiritual cartographers ready to connect with you one-on-one.
               </p>
 
               {/* Primary Call-to-Actions */}
               <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 w-full">
-                <Link
-                  href="/contact"
+                <a
+                  href={buildDirectWhatsAppUrl("Hello, I would like to connect with an Active Listener to share my unspoken pain.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal hover:bg-black text-warm-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
                 >
+                  <Headphones className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Connect with an Active Listener</span>
                   <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  href="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
-                >
-                  <Heart className="w-4 h-4 text-muted-green fill-muted-green/20 shrink-0" />
-                  <span>Connect with a Counsellor</span>
-                </Link>
+                </a>
 
                 <a
-                  href={buildDirectWhatsAppUrl()}
+                  href={buildDirectWhatsAppUrl("Hello, I would like to connect with a Life Alchemist to decode my cosmic patterns & awaken my inner wisdom.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                >
+                  <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                  <span>Connect with a Life Alchemist</span>
+                </a>
+
+                <a
+                  href={buildDirectWhatsAppUrl("Hello, I would like to connect with a Spiritual Cartographer to transform my journey by aligning my inner compass with purpose of my life.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/60 hover:border-muted-green shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
+                >
+                  <Compass className="w-4 h-4 text-muted-green shrink-0" />
+                  <span>Connect with a Spiritual Cartographer</span>
+                </a>
+
+                <a
+                  href={buildDirectWhatsAppUrl("Hello, I would like to connect on WhatsApp.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
                 >
                   <WhatsAppIcon className="w-4.5 h-4.5 shrink-0" color="#FFFFFF" />
-                  <span>Chat on WhatsApp</span>
-                </a>
-
-                <a
-                  href={buildDirectCallUrl()}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer whitespace-nowrap"
-                  title={`Call ${CALL_DISPLAY}`}
-                >
-                  <Phone className="w-4 h-4 shrink-0" />
-                  <span>Call: {CALL_DISPLAY}</span>
+                  <span>Chat on WhatsApp or Call on WhatsApp</span>
                 </a>
               </div>
 

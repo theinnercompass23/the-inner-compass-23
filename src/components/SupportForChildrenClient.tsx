@@ -9,14 +9,13 @@ import {
   ChevronDown,
   CheckCircle2,
   Sparkles,
-  Phone,
   ArrowRight,
   ArrowLeft,
   Mail,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import GuardianSupportForm from "@/components/GuardianSupportForm";
-import { buildDirectWhatsAppUrl, buildDirectCallUrl, CALL_DISPLAY } from "@/lib/constants";
+import { buildDirectWhatsAppUrl } from "@/lib/constants";
 
 // 6 Pillars data directly matching the Odoo carousel
 const PILLARS = [
@@ -138,7 +137,6 @@ export default function SupportForChildrenClient() {
   const whatsappUrl = buildDirectWhatsAppUrl(
     "Hello! I am enquiring about SCOUT by The Social Confidence Lab for my child. Please share details regarding course batches and consultation."
   );
-  const callUrl = buildDirectCallUrl();
 
   // Carousel State
   const [activeSlide, setActiveSlide] = useState(0);
@@ -246,14 +244,6 @@ export default function SupportForChildrenClient() {
                 >
                   <WhatsAppIcon className="w-5 h-5" color="#FFFFFF" />
                   <span>Chat on WhatsApp</span>
-                </a>
-
-                <a
-                  href={callUrl}
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg bg-white border border-[#384347]/20 text-[#384347] font-semibold text-sm hover:bg-[#FAF9F6] transition-all"
-                >
-                  <Phone className="w-4 h-4 text-muted-green" />
-                  <span>Call Us</span>
                 </a>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Clock, Phone, Lock } from "lucide-react";
+import { Mail, MapPin, Clock, Lock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/constants";
 import SupportRequestForm from "@/components/SupportRequestForm";

@@ -2,13 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl, CALL_DISPLAY, buildDirectCallUrl } from "@/lib/constants";
+import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 
 export default function FinalWhatsAppCta() {
-  const whatsappUrl = buildDirectWhatsAppUrl();
-  const callUrl = buildDirectCallUrl();
+  const whatsappUrl = buildDirectWhatsAppUrl("Hello, I would like to connect for emotional support.");
 
   return (
     <section className="py-16 sm:py-24 bg-dark-charcoal text-white relative overflow-hidden">
@@ -32,21 +31,13 @@ export default function FinalWhatsAppCta() {
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a
-            href={callUrl}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg hover:shadow-xl transition-all cursor-pointer group"
-          >
-            <Phone className="w-4.5 h-4.5" />
-            <span>Call: {CALL_DISPLAY}</span>
-          </a>
-
-          <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg hover:shadow-xl transition-all cursor-pointer group"
           >
             <WhatsAppIcon className="w-5 h-5" color="#FFFFFF" />
-            <span>Chat on WhatsApp</span>
+            <span>Chat on WhatsApp or Call on WhatsApp</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
 

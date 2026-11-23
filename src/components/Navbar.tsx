@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Heart, Menu, X, ArrowRight, Phone } from "lucide-react";
-import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl, CALL_DISPLAY, buildDirectCallUrl } from "@/lib/constants";
+import { Heart, Menu, X, ArrowRight } from "lucide-react";
+import { WHATSAPP_DISPLAY, buildDirectWhatsAppUrl } from "@/lib/constants";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Navbar() {
@@ -91,39 +91,30 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right: Call CTA + WhatsApp CTA + Highlighted Contact CTA (Both Phone & Laptop) */}
+        {/* Right: WhatsApp CTA + Highlighted Contact CTA (Both Phone & Laptop) */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          {/* Laptop Mode: Direct Call Button */}
-          <a
-            href={buildDirectCallUrl()}
-            className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-xs font-semibold bg-white hover:bg-warm-white text-dark-charcoal border border-soft-sage/70 hover:border-muted-green shadow-xs hover:shadow-md transition-all cursor-pointer whitespace-nowrap"
-            aria-label="Direct Phone Call"
-            title={`Direct Phone Call: ${CALL_DISPLAY}`}
-          >
-            <Phone className="w-3.5 h-3.5 text-muted-green shrink-0" />
-            <span className="font-semibold text-xs">Call Us</span>
-          </a>
-
           {/* Laptop Mode: WhatsApp CTA */}
           <a
             href={buildDirectWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xs hover:shadow-md transition-all cursor-pointer whitespace-nowrap"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xs hover:shadow-md transition-all cursor-pointer whitespace-nowrap"
             aria-label="Connect on WhatsApp"
           >
             <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" color="#FFFFFF" />
             <span className="font-semibold text-xs">Chat on WhatsApp</span>
           </a>
 
-          {/* Mobile Only: Quick Call Icon Button */}
+          {/* Mobile Only: Quick WhatsApp Icon Button */}
           <a
-            href={buildDirectCallUrl()}
-            aria-label="Direct Call"
-            title={`Direct Call: ${CALL_DISPLAY}`}
-            className="lg:hidden w-8 h-8 rounded-full bg-soft-sage/30 hover:bg-soft-sage/60 text-dark-charcoal border border-soft-sage/50 flex items-center justify-center shadow-xs shrink-0"
+            href={buildDirectWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            title="Chat on WhatsApp"
+            className="sm:hidden w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-xs shrink-0"
           >
-            <Phone className="w-3.5 h-3.5 text-muted-green" />
+            <WhatsAppIcon className="w-4 h-4" color="#FFFFFF" />
           </a>
 
           {/* Contact Button - Highlighted prominently in BOTH Phone and Laptop view! */}
@@ -181,23 +172,15 @@ export default function Navbar() {
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <div className="grid grid-cols-2 gap-2 pt-1">
-              <a
-                href={buildDirectCallUrl()}
-                className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-full text-xs font-semibold bg-white border border-soft-sage/60 text-dark-charcoal shadow-xs w-full"
-              >
-                <Phone className="w-3.5 h-3.5 text-muted-green" />
-                <span>Call Us</span>
-              </a>
-
+            <div className="pt-1">
               <a
                 href={buildDirectWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] text-white shadow-xs w-full"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xs transition-all w-full"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5" color="#FFFFFF" />
-                <span>WhatsApp</span>
+                <WhatsAppIcon className="w-4 h-4 shrink-0" color="#FFFFFF" />
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
