@@ -187,25 +187,25 @@ export default function SupportForChildrenClient() {
           {/* Highlighted The Inner Compass 23 Navigation with Official Logo */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm text-[#292D2A] hover:text-black font-semibold transition-all px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-soft-sage/60 bg-white hover:bg-warm-white shadow-xs hover:shadow-md hover:scale-[1.02] shrink-0 group ring-1 ring-black/5"
+            className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#292D2A] hover:text-black font-semibold transition-all px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border-2 border-muted-green/40 bg-white hover:bg-warm-white shadow-xs hover:shadow-md hover:scale-[1.02] shrink-0 group ring-2 ring-muted-green/20"
             aria-label="Return to The Inner Compass 23"
           >
-            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
+            <ArrowLeft className="w-4 h-4 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
             
-            {/* Highlighted Logo Emblem */}
-            <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-soft-sage/60 flex items-center justify-center p-0.5 overflow-hidden shadow-2xs shrink-0 ring-2 ring-muted-green/25 group-hover:ring-muted-green/45 transition-all">
+            {/* Highlighted Logo Emblem - Larger, Crisp & Highly Visible */}
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-muted-green/50 flex items-center justify-center overflow-hidden shadow-xs shrink-0 ring-2 ring-emerald-500/25 group-hover:ring-emerald-500/50 transition-all p-0.5">
               <Image
                 src="/the-inner-compass-icon.png"
                 alt="The Inner Compass 23 Logo"
                 fill
-                sizes="32px"
+                sizes="40px"
                 className="object-contain p-0.5"
                 priority
               />
             </div>
 
             <div className="flex flex-col text-left leading-tight">
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-green font-bold hidden sm:inline">
+              <span className="text-[10px] uppercase tracking-wider text-muted-green font-bold block">
                 Return to
               </span>
               <span className="font-serif font-bold text-xs sm:text-sm text-dark-charcoal">
