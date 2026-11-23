@@ -1,5 +1,5 @@
 import React from "react";
-import { Award, UserCheck, Heart, Sparkles } from "lucide-react";
+import { Award, UserCheck, Heart, Compass } from "lucide-react";
 
 interface MeetFounderSectionProps {
   className?: string;
@@ -60,7 +60,7 @@ export default function MeetFounderSection({
 
             <div className="space-y-2">
               <h4 className="text-sm font-serif font-bold text-dark-charcoal flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-muted-green" />
+                <Compass className="w-4 h-4 text-muted-green" />
                 <span>The Vision</span>
               </h4>
               <p className="text-xs text-dark-charcoal/75 leading-relaxed">

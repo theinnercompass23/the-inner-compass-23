@@ -152,8 +152,7 @@ export default function SupportCategoriesSection() {
                     className="object-contain"
                   />
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-muted-green text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
-                  <Sparkles className="w-3.5 h-3.5 fill-white/30" />
+                <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-muted-green text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
                   <span>SCOUT &bull; Children &amp; Youth Support</span>
                 </div>
               </div>

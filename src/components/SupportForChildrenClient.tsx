@@ -204,7 +204,6 @@ export default function SupportForChildrenClient() {
             <div className="lg:col-span-6 space-y-6">
               {/* SCOUT Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FDE5C1] text-[#384347] text-xs font-bold shadow-2xs border border-[#384347]/15">
-                <Sparkles className="w-3.5 h-3.5 text-[#384347]" />
                 <span>SCOUT &bull; Social Confidence Oration &amp; Unfolding Talents</span>
               </div>
 
