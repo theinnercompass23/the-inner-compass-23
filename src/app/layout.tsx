@@ -104,6 +104,9 @@ export const metadata: Metadata = {
     description:
       "Sometimes, you just need someone to listen. Connect privately on WhatsApp for non-judgmental human support.",
   },
+  verification: {
+    google: "google1df1e5f69523e99f",
+  },
 };
 
 const jsonLd = {
