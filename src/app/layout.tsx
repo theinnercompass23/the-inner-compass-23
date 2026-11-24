@@ -22,6 +22,16 @@ export const metadata: Metadata = {
     "Sometimes, you just need someone to listen. Private, confidential human emotional support for loneliness, divorce, separation, breakups, grief, and personal struggles. Connect directly on WhatsApp with compassionate human listeners worldwide.",
   keywords: [
     // Core Platform Short-Tail
+    "counseling",
+    "online counseling",
+    "online counseling worldwide",
+    "confidential counseling online",
+    "counseling for depression",
+    "counseling for loneliness",
+    "counseling for heartbreak",
+    "divorce counseling",
+    "holistic counseling",
+    "talk to a counselor online",
     "online emotional support",
     "active listening service",
     "anonymous chat support",
@@ -214,6 +224,18 @@ const jsonLd = {
         { "@type": "Country", "name": "Germany" },
         { "@type": "Country", "name": "India" }
       ]
+    },
+    {
+      "@type": "CounselingService",
+      "@id": "https://www.theinnercompass23.com/#counseling-service",
+      "name": "The Inner Compass 23 — Online Counseling & Emotional Support Worldwide",
+      "provider": {
+        "@id": "https://www.theinnercompass23.com/#organization"
+      },
+      "serviceType": "Online Counseling, Human Active Listening & Life Alchemy",
+      "description":
+        "Confidential, accessible online counseling and peer active listening for loneliness, grief, heartbreak, divorce, and personal struggles worldwide.",
+      "url": "https://www.theinnercompass23.com/counseling"
     },
     {
       "@type": "EducationalOrganization",

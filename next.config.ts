@@ -22,6 +22,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/online-counseling",
+        destination: "/counseling",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

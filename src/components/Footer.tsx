@@ -23,6 +23,7 @@ export default function Footer() {
   };
 
   const supportTopics = [
+    { label: "Online Counseling", href: "/counseling" },
     { label: "Loneliness Support", href: "/feeling-lonely" },
     { label: "Heartbreak Recovery", href: "/heartbreak-support" },
     { label: "Divorce Support", href: "/divorce-support" },

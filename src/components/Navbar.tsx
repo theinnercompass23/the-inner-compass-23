@@ -24,6 +24,7 @@ export default function Navbar() {
   // Clean navigation items with dedicated distinct pages
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "Counseling", href: "/counseling" },
     { label: "Countries", href: "/countries" },
     { label: "Support Topics", href: "/support-topics" },
     { label: "Articles", href: "/articles" },
