@@ -58,13 +58,13 @@ export const metadata: Metadata = {
     "24/7 anonymous emotional support platform in miami",
   ],
   alternates: {
-    canonical: "https://haven.care/us",
+    canonical: "https://www.theinnercompass23.com/us",
   },
   openGraph: {
     title: "Online Emotional Support & Active Listening USA — The Inner Compass 23",
     description:
       "Private, confidential human emotional support across NYC, LA, Chicago, Miami, and nationwide. Connect 24/7 on WhatsApp.",
-    url: "https://haven.care/us",
+    url: "https://www.theinnercompass23.com/us",
     locale: "en_US",
     type: "website",
   },
@@ -160,13 +160,13 @@ export default function UnitedStatesPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://haven.care"
+            "item": "https://www.theinnercompass23.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "United States",
-            "item": "https://haven.care/us"
+            "item": "https://www.theinnercompass23.com/us"
           }
         ]
       },
@@ -184,11 +184,11 @@ export default function UnitedStatesPage() {
         "publisher": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care"
+          "url": "https://www.theinnercompass23.com"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://haven.care/us"
+          "@id": "https://www.theinnercompass23.com/us"
         }
       },
       {
@@ -197,7 +197,7 @@ export default function UnitedStatesPage() {
         "provider": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care"
+          "url": "https://www.theinnercompass23.com"
         },
         "serviceType": "Peer Support & Active Listening",
         "areaServed": {

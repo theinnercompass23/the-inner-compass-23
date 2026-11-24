@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "heartbreak support australia",
   ],
   alternates: {
-    canonical: "https://haven.care/au",
+    canonical: "https://www.theinnercompass23.com/au",
   },
   openGraph: {
     title: "Someone to Talk to Online Australia — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across Australia. Speak with someone who truly listens without judgment.",
-    url: "https://haven.care/au",
+    url: "https://www.theinnercompass23.com/au",
     locale: "en_AU",
     type: "website",
   },
@@ -111,7 +111,7 @@ export default function AustraliaPage() {
     "provider": {
       "@type": "Organization",
       "name": "The Inner Compass 23 Human Emotional Support",
-      "url": "https://haven.care"
+      "url": "https://www.theinnercompass23.com"
     },
     "serviceType": "Peer Support & Active Listening",
     "areaServed": {

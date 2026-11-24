@@ -4,7 +4,7 @@ import { CITIES_DATA } from "@/data/cities";
 import { CORE_ISSUES } from "@/data/issues";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://haven.care";
+  const baseUrl = "https://www.theinnercompass23.com";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

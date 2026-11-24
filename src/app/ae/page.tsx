@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "heartbreak support dubai",
   ],
   alternates: {
-    canonical: "https://haven.care/ae",
+    canonical: "https://www.theinnercompass23.com/ae",
   },
   openGraph: {
     title: "Someone to Talk to in Dubai & UAE — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support in Dubai, Abu Dhabi, and across the UAE. Speak with someone who truly listens without judgment.",
-    url: "https://haven.care/ae",
+    url: "https://www.theinnercompass23.com/ae",
     locale: "en_AE",
     type: "website",
   },
@@ -93,7 +93,7 @@ export default function UnitedArabEmiratesPage() {
     "provider": {
       "@type": "Organization",
       "name": "The Inner Compass 23 Human Emotional Support",
-      "url": "https://haven.care"
+      "url": "https://www.theinnercompass23.com"
     },
     "serviceType": "Peer Support & Active Listening",
     "areaServed": {

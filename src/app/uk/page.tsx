@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "divorce support conversation uk",
   ],
   alternates: {
-    canonical: "https://haven.care/uk",
+    canonical: "https://www.theinnercompass23.com/uk",
   },
   openGraph: {
     title: "Someone to Talk to Online UK — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across the United Kingdom. Speak with someone who truly listens without judgment.",
-    url: "https://haven.care/uk",
+    url: "https://www.theinnercompass23.com/uk",
     locale: "en_GB",
     type: "website",
   },
@@ -111,7 +111,7 @@ export default function UnitedKingdomPage() {
     "provider": {
       "@type": "Organization",
       "name": "The Inner Compass 23 Human Emotional Support",
-      "url": "https://haven.care"
+      "url": "https://www.theinnercompass23.com"
     },
     "serviceType": "Peer Support & Active Listening",
     "areaServed": {

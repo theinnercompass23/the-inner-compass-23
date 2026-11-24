@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Feeling unheard, distant, or anxious in your relationship? Need a safe, neutral space to untangle your feelings? Connect with an empathetic human listener on WhatsApp.",
   alternates: {
-    canonical: "https://haven.care/relationship-support",
+    canonical: "https://www.theinnercompass23.com/relationship-support",
   },
   openGraph: {
     title: "Relationship Support – Someone to Talk to About Relationship Problems",
     description:
       "When communication breaks down or trust feels fragile, speaking with a neutral human listener brings relief and clarity. 100% confidential 1-on-1 support.",
-    url: "https://haven.care/relationship-support",
+    url: "https://www.theinnercompass23.com/relationship-support",
     type: "article",
   },
 };

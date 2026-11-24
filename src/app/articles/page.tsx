@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "In-depth editorial articles exploring loneliness, heartbreak, marriage transitions, and how compassionate human conversations restore mental clarity.",
   alternates: {
-    canonical: "https://haven.care/articles",
+    canonical: "https://www.theinnercompass23.com/articles",
   },
 };
 

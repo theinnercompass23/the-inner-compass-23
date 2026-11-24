@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "overthinking support",
   ],
   alternates: {
-    canonical: "https://haven.care/overthinking-support",
+    canonical: "https://www.theinnercompass23.com/overthinking-support",
   },
   openGraph: {
     title: "Overthinking Support – Someone to Talk to When Your Mind Won't Stop",
     description:
       "When racing thoughts replay past conversations and anticipate worst-case scenarios, talking to a human listener restores peace and mental grounding.",
-    url: "https://haven.care/overthinking-support",
+    url: "https://www.theinnercompass23.com/overthinking-support",
     type: "article",
   },
 };
@@ -100,7 +100,7 @@ export default function OverthinkingSupportPage() {
       faqs={[
         {
           q: "Who can I call or chat with at 3am when feeling depressed or overwhelmed?",
-          a: "You can connect with an empathetic human peer listener on Haven. We provide confidential, non-judgmental WhatsApp support for midnight anxiety, racing thoughts, and late-night insomnia.",
+          a: "You can connect with an empathetic human peer listener on The Inner Compass 23. We provide confidential, non-judgmental WhatsApp support for midnight anxiety, racing thoughts, and late-night insomnia.",
         },
         {
           q: "Is there a website where I can talk to someone anonymously when I feel lonely?",

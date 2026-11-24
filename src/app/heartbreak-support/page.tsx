@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "post breakup loneliness",
   ],
   alternates: {
-    canonical: "https://haven.care/heartbreak-support",
+    canonical: "https://www.theinnercompass23.com/heartbreak-support",
   },
   openGraph: {
     title: "Heartbreak Support – Someone to Talk to When You Are Hurting",
     description:
       "Healing from heartbreak takes time and emotional safety. Talk about your grief, difficult memories, and loneliness with an attentive human listener.",
-    url: "https://haven.care/heartbreak-support",
+    url: "https://www.theinnercompass23.com/heartbreak-support",
     type: "article",
   },
 };

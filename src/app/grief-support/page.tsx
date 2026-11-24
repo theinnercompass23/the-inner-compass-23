@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Grieving the loss of someone you love? Feeling like everyone expects you to 'move on'? Connect with a patient, compassionate human listener on WhatsApp. 100% confidential.",
   alternates: {
-    canonical: "https://haven.care/grief-support",
+    canonical: "https://www.theinnercompass23.com/grief-support",
   },
   openGraph: {
     title: "Grief & Loss Support – Someone to Talk to When You Are Grieving",
     description:
       "Grief has no expiration date. Speak freely about your memories, sorrow, and love with a patient human listener who will never rush your healing.",
-    url: "https://haven.care/grief-support",
+    url: "https://www.theinnercompass23.com/grief-support",
     type: "article",
   },
 };

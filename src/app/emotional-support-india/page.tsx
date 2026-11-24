@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Looking for someone to talk to in India? The Inner Compass 23 offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
   alternates: {
-    canonical: "https://haven.care/emotional-support-india",
+    canonical: "https://www.theinnercompass23.com/emotional-support-india",
   },
   openGraph: {
     title: "Online Emotional Support in India — Private Peer Listening Service",
     description:
       "Looking for someone to talk to in India? The Inner Compass 23 offers private, confidential human emotional support via WhatsApp for loneliness, career burnout, heartbreak, and stress.",
-    url: "https://haven.care/emotional-support-india",
+    url: "https://www.theinnercompass23.com/emotional-support-india",
     type: "article",
   },
 };

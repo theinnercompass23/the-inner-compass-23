@@ -76,24 +76,24 @@ export const metadata: Metadata = {
     "someone to talk to in Dubai",
   ],
   authors: [{ name: "The Inner Compass 23 Support Team" }],
-  metadataBase: new URL("https://haven.care"),
+  metadataBase: new URL("https://www.theinnercompass23.com"),
   alternates: {
-    canonical: "https://haven.care",
+    canonical: "https://www.theinnercompass23.com",
     languages: {
-      "en-US": "https://haven.care/us",
-      "en-GB": "https://haven.care/uk",
-      "en-CA": "https://haven.care/ca",
-      "en-AU": "https://haven.care/au",
-      "en-AE": "https://haven.care/ae",
-      "en": "https://haven.care",
-      "x-default": "https://haven.care",
+      "en-US": "https://www.theinnercompass23.com/us",
+      "en-GB": "https://www.theinnercompass23.com/uk",
+      "en-CA": "https://www.theinnercompass23.com/ca",
+      "en-AU": "https://www.theinnercompass23.com/au",
+      "en-AE": "https://www.theinnercompass23.com/ae",
+      "en": "https://www.theinnercompass23.com",
+      "x-default": "https://www.theinnercompass23.com",
     },
   },
   openGraph: {
     title: "The Inner Compass 23 — Human Emotional Support & Peer Listening Service",
     description:
       "Whether you're feeling lonely, dealing with separation, or need someone to listen, we're here without judgment. Real people, real conversations, no judgment.",
-    url: "https://haven.care",
+    url: "https://www.theinnercompass23.com",
     siteName: "The Inner Compass 23",
     locale: "en_US",
     type: "website",
@@ -114,10 +114,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://haven.care/#organization",
+      "@id": "https://www.theinnercompass23.com/#organization",
       "name": "The Inner Compass 23 — Human Emotional Support",
-      "url": "https://haven.care",
-      "logo": "https://haven.care/the-inner-compass-logo.png",
+      "url": "https://www.theinnercompass23.com",
+      "logo": "https://www.theinnercompass23.com/the-inner-compass-logo.png",
       "description":
         "A private, safe, and confidential human emotional support and peer listening service for people navigating loneliness, heartbreak, separation, divorce, and personal struggles.",
       "contactPoint": {
@@ -141,10 +141,10 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": "https://haven.care/#service",
+      "@id": "https://www.theinnercompass23.com/#service",
       "name": "Human Peer Listening & Emotional Support",
       "provider": {
-        "@id": "https://haven.care/#organization"
+        "@id": "https://www.theinnercompass23.com/#organization"
       },
       "serviceType": "Peer Support & Non-Clinical Active Listening",
       "description":
@@ -162,11 +162,11 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://haven.care/#website",
-      "url": "https://haven.care",
+      "@id": "https://www.theinnercompass23.com/#website",
+      "url": "https://www.theinnercompass23.com",
       "name": "The Inner Compass 23",
       "publisher": {
-        "@id": "https://haven.care/#organization"
+        "@id": "https://www.theinnercompass23.com/#organization"
       }
     }
   ]

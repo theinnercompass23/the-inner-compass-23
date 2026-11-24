@@ -56,12 +56,12 @@ export async function generateMetadata({
     title: pageTitle,
     description: metaDescription,
     alternates: {
-      canonical: `https://haven.care/locations/${city.countrySlug}/${city.slug}`,
+      canonical: `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}`,
     },
     openGraph: {
       title: pageTitle,
       description: metaDescription,
-      url: `https://haven.care/locations/${city.countrySlug}/${city.slug}`,
+      url: `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}`,
       type: "article",
     },
   };
@@ -94,25 +94,25 @@ export default async function CityPage({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://haven.care"
+            "item": "https://www.theinnercompass23.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Locations",
-            "item": "https://haven.care/locations"
+            "item": "https://www.theinnercompass23.com/locations"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": city.countryName,
-            "item": `https://haven.care/countries/${city.countrySlug}`
+            "item": `https://www.theinnercompass23.com/countries/${city.countrySlug}`
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": city.name,
-            "item": `https://haven.care/locations/${city.countrySlug}/${city.slug}`
+            "item": `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}`
           }
         ]
       },
@@ -130,11 +130,11 @@ export default async function CityPage({
         "publisher": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care"
+          "url": "https://www.theinnercompass23.com"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `https://haven.care/locations/${city.countrySlug}/${city.slug}`
+          "@id": `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}`
         }
       },
       {
@@ -143,7 +143,7 @@ export default async function CityPage({
         "provider": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care"
+          "url": "https://www.theinnercompass23.com"
         },
         "serviceType": "Peer Support & Non-Clinical Active Listening",
         "areaServed": {

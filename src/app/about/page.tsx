@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Learn about The Inner Compass 23's mission and founder Dr. Aarti Aggarwal, MPT: empathetic, judgment-free human listening for anyone feeling lonely, heartbroken, or emotionally overwhelmed.",
   alternates: {
-    canonical: "https://haven.care/about",
+    canonical: "https://www.theinnercompass23.com/about",
   },
 };
 

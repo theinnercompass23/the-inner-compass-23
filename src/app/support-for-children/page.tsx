@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Supportive classes and workshops for your children that build confidence, social ease, and practical skills for everyday success. 6 Pillars, 14 Skill Domains by The Social Confidence Lab.",
   alternates: {
-    canonical: "https://haven.care/support-for-children",
+    canonical: "https://www.theinnercompass23.com/support-for-children",
   },
   openGraph: {
     title: "SCOUT — Helping Every Child Find Their Voice and Their Place | The Social Confidence Lab",
     description:
       "Supportive classes and workshops for your children that build confidence, social ease, and practical skills for everyday success. 6 Pillars, 14 Skill Domains by The Social Confidence Lab.",
-    url: "https://haven.care/support-for-children",
+    url: "https://www.theinnercompass23.com/support-for-children",
     type: "website",
   },
 };

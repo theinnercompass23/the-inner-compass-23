@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Going through a relationship or marital separation? Dealing with painful uncertainty and altered routines? Talk to an empathetic human listener on WhatsApp.",
   alternates: {
-    canonical: "https://haven.care/separation-support",
+    canonical: "https://www.theinnercompass23.com/separation-support",
   },
   openGraph: {
     title: "Separation Support – Someone to Talk to During Relationship Separation",
     description:
       "Separation brings heavy emotional limbo and quiet anxiety. Find a safe, non-judgmental space to speak with a human peer listener.",
-    url: "https://haven.care/separation-support",
+    url: "https://www.theinnercompass23.com/separation-support",
     type: "article",
   },
 };

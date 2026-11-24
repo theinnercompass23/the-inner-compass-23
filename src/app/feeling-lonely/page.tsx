@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     "someone to talk to when lonely",
   ],
   alternates: {
-    canonical: "https://haven.care/feeling-lonely",
+    canonical: "https://www.theinnercompass23.com/feeling-lonely",
   },
   openGraph: {
     title: "Feeling Lonely? Someone to Talk to When You Feel Isolated",
     description:
       "Loneliness is not a personal failure; it is an emotional signal that you crave genuine connection. Speak with a dedicated human peer listener today.",
-    url: "https://haven.care/feeling-lonely",
+    url: "https://www.theinnercompass23.com/feeling-lonely",
     type: "article",
   },
 };

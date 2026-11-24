@@ -70,12 +70,12 @@ export async function generateMetadata({
       ...reg.primaryModifiers,
     ],
     alternates: {
-      canonical: `https://haven.care/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
+      canonical: `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
     },
     openGraph: {
       title: pageTitle,
       description: metaDescription,
-      url: `https://haven.care/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
+      url: `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
       type: "article",
     },
   };
@@ -100,7 +100,7 @@ export default async function DynamicCityIssuePage({
   const siblingCities = getCitiesByCountry(city.countrySlug).filter((c) => c.slug !== city.slug).slice(0, 6);
   const otherIssues = CORE_ISSUES.filter((i) => i.slug !== issue.slug);
 
-  const pageUrl = `https://haven.care/locations/${city.countrySlug}/${city.slug}/${issue.slug}`;
+  const pageUrl = `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}/${issue.slug}`;
 
   // Structured Data (Article + FAQPage + BreadcrumbList + Service)
   const jsonLd = {
@@ -113,25 +113,25 @@ export default async function DynamicCityIssuePage({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://haven.care",
+            "item": "https://www.theinnercompass23.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Locations",
-            "item": "https://haven.care/locations",
+            "item": "https://www.theinnercompass23.com/locations",
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": city.countryName,
-            "item": `https://haven.care/countries/${city.countrySlug}`,
+            "item": `https://www.theinnercompass23.com/countries/${city.countrySlug}`,
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": city.name,
-            "item": `https://haven.care/locations/${city.countrySlug}/${city.slug}`,
+            "item": `https://www.theinnercompass23.com/locations/${city.countrySlug}/${city.slug}`,
           },
           {
             "@type": "ListItem",
@@ -155,7 +155,7 @@ export default async function DynamicCityIssuePage({
         "publisher": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care",
+          "url": "https://www.theinnercompass23.com",
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -168,7 +168,7 @@ export default async function DynamicCityIssuePage({
         "provider": {
           "@type": "Organization",
           "name": "The Inner Compass 23 Human Emotional Support",
-          "url": "https://haven.care",
+          "url": "https://www.theinnercompass23.com",
         },
         "serviceType": "Peer Support & Non-Clinical Active Listening",
         "areaServed": {

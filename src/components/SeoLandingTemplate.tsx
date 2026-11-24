@@ -77,7 +77,7 @@ export default function SeoLandingTemplate({
     `Hello The Inner Compass 23 Team, I was reading your article on "${pageTitle}" and would like someone to talk to for emotional support.`
   )}`;
 
-  const pageUrl = `https://haven.care/${canonicalSlug}`;
+  const pageUrl = `https://www.theinnercompass23.com/${canonicalSlug}`;
 
   // Structured Data (Article + FAQPage + BreadcrumbList)
   const articleSchema = {
@@ -92,7 +92,7 @@ export default function SeoLandingTemplate({
     publisher: {
       "@type": "Organization",
       name: "The Inner Compass 23",
-      url: "https://haven.care",
+      url: "https://www.theinnercompass23.com",
     },
     author: {
       "@type": "Organization",
@@ -112,13 +112,13 @@ export default function SeoLandingTemplate({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://haven.care",
+        item: "https://www.theinnercompass23.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Support Topics",
-        item: "https://haven.care/#categories-section",
+        item: "https://www.theinnercompass23.com/#categories-section",
       },
       {
         "@type": "ListItem",

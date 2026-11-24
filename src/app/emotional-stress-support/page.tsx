@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Feeling emotionally overwhelmed, exhausted, or trapped in overthinking? Talk to a calm, empathetic human listener on WhatsApp. Real people, no judgment, 100% confidential.",
   alternates: {
-    canonical: "https://haven.care/emotional-stress-support",
+    canonical: "https://www.theinnercompass23.com/emotional-stress-support",
   },
   openGraph: {
     title: "Emotional Stress & Overthinking Support – Someone to Talk To",
     description:
       "When racing thoughts, burnout, and everyday overwhelm become too heavy to hold, speaking with an attentive human listener restores mental clarity.",
-    url: "https://haven.care/emotional-stress-support",
+    url: "https://www.theinnercompass23.com/emotional-stress-support",
     type: "article",
   },
 };

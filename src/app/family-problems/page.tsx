@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Struggling with toxic family dynamics, parental pressure, or generational conflict? Connect with an empathetic human peer listener on WhatsApp. 100% confidential.",
   alternates: {
-    canonical: "https://haven.care/family-problems",
+    canonical: "https://www.theinnercompass23.com/family-problems",
   },
   openGraph: {
     title: "Family Conflicts Support – Someone to Talk to About Family Problems",
     description:
       "When domestic expectations and family friction become too heavy to hold, speaking with a compassionate, neutral human listener brings relief and clarity.",
-    url: "https://haven.care/family-problems",
+    url: "https://www.theinnercompass23.com/family-problems",
     type: "article",
   },
 };

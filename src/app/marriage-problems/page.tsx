@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Experiencing marriage problems, communication breakdown, or emotional distance with your spouse? Connect with a compassionate, neutral human listener on WhatsApp.",
   alternates: {
-    canonical: "https://haven.care/marriage-problems",
+    canonical: "https://www.theinnercompass23.com/marriage-problems",
   },
   openGraph: {
     title: "Marriage Problems Support – Someone to Talk to About Marital Stress",
     description:
       "When marital tension and silent resentment become too heavy to hold, speaking with a neutral human listener brings relief and calm perspective.",
-    url: "https://haven.care/marriage-problems",
+    url: "https://www.theinnercompass23.com/marriage-problems",
     type: "article",
   },
 };

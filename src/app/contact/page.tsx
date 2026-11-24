@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Get in touch with The Inner Compass 23's peer support team directly on WhatsApp or submit a support request with your preferred date and time.",
   alternates: {
-    canonical: "https://haven.care/contact",
+    canonical: "https://www.theinnercompass23.com/contact",
   },
 };
 
@@ -68,9 +68,9 @@ export default function ContactPage() {
             <p className="text-xs text-dark-charcoal/65 leading-relaxed">
               For general inquiries, privacy deletion requests, or feedback.
             </p>
-            <p className="text-sm font-semibold text-dark-charcoal">support@haven.care</p>
+            <p className="text-sm font-semibold text-dark-charcoal">theinnercompass23.info@gmail.com</p>
             <a
-              href="mailto:support@haven.care"
+              href="mailto:theinnercompass23.info@gmail.com"
               className="inline-flex items-center gap-2 text-xs font-semibold text-muted-green hover:underline pt-1"
             >
               Send an Email &rarr;

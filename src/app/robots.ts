@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://haven.care/sitemap.xml",
+    sitemap: "https://www.theinnercompass23.com/sitemap.xml",
   };
 }

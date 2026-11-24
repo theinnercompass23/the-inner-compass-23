@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Explore The Inner Compass 23's dedicated country hubs across the United States, United Kingdom, Canada, Australia, Germany, UAE, Singapore, Ireland, Netherlands, and New Zealand. Real people, real conversations, no judgment.",
   alternates: {
-    canonical: "https://haven.care/countries",
+    canonical: "https://www.theinnercompass23.com/countries",
   },
   openGraph: {
     title: "Explore Countries — The Inner Compass 23 Human Emotional Support",
     description:
       "Find compassionate, non-judgmental human listening support tailored to your country and local timezone.",
-    url: "https://haven.care/countries",
+    url: "https://www.theinnercompass23.com/countries",
     type: "website",
   },
 };

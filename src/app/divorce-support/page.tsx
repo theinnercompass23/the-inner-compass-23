@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     "someone to talk to after divorce",
   ],
   alternates: {
-    canonical: "https://haven.care/divorce-support",
+    canonical: "https://www.theinnercompass23.com/divorce-support",
   },
   openGraph: {
     title: "Divorce Support – Someone to Talk to During a Difficult Life Change",
     description:
       "Divorce is more than a legal event—it alters routines, identities, and relationships. Find a safe, non-judgmental space to speak with a human listener.",
-    url: "https://haven.care/divorce-support",
+    url: "https://www.theinnercompass23.com/divorce-support",
     type: "article",
   },
 };

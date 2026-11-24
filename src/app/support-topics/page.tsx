@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Explore our complete directory of emotional support topics: loneliness, heartbreak, divorce, separation, family stress, and overthinking. Compassionate human listeners ready to connect 24/7.",
   alternates: {
-    canonical: "https://haven.care/support-topics",
+    canonical: "https://www.theinnercompass23.com/support-topics",
   },
 };
 

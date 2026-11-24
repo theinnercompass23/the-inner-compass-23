@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     "who can i call or chat with at 3am when feeling depressed",
   ],
   alternates: {
-    canonical: "https://haven.care/someone-to-talk",
+    canonical: "https://www.theinnercompass23.com/someone-to-talk",
   },
   openGraph: {
     title: "Someone to Talk To – Real Human Peer Listening Online",
     description:
       "No clinical diagnosis, no patronizing advice, no judgment. Connect with an empathetic human listener who is genuinely here to hear you.",
-    url: "https://haven.care/someone-to-talk",
+    url: "https://www.theinnercompass23.com/someone-to-talk",
     type: "article",
   },
 };

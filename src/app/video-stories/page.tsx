@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description:
     "Watch real customer video reviews and heartfelt feedback from individuals who needed someone to listen during loneliness, heartbreak, divorce, and personal stress.",
   alternates: {
-    canonical: "https://haven.care/video-stories",
+    canonical: "https://www.theinnercompass23.com/video-stories",
   },
   openGraph: {
     title: "Real Customer Video Stories & Experiences — The Inner Compass 23",
     description:
       "Watch authentic video reflections from people around the world who found compassionate human listening when they needed it most.",
-    url: "https://haven.care/video-stories",
+    url: "https://www.theinnercompass23.com/video-stories",
     type: "website",
   },
 };

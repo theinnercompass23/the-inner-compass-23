@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "heartbreak support canada",
   ],
   alternates: {
-    canonical: "https://haven.care/ca",
+    canonical: "https://www.theinnercompass23.com/ca",
   },
   openGraph: {
     title: "Someone to Talk to Online Canada — The Inner Compass 23 Human Peer Support",
     description:
       "Private, confidential human emotional support across Canada. Speak with someone who truly listens without judgment.",
-    url: "https://haven.care/ca",
+    url: "https://www.theinnercompass23.com/ca",
     locale: "en_CA",
     type: "website",
   },
@@ -105,7 +105,7 @@ export default function CanadaPage() {
     "provider": {
       "@type": "Organization",
       "name": "The Inner Compass 23 Human Emotional Support",
-      "url": "https://haven.care"
+      "url": "https://www.theinnercompass23.com"
     },
     "serviceType": "Peer Support & Active Listening",
     "areaServed": {

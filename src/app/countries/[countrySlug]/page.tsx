@@ -46,12 +46,12 @@ export async function generateMetadata({
     title: country.metaTitle,
     description: country.metaDescription,
     alternates: {
-      canonical: `https://haven.care/countries/${country.slug}`,
+      canonical: `https://www.theinnercompass23.com/countries/${country.slug}`,
     },
     openGraph: {
       title: country.metaTitle,
       description: country.metaDescription,
-      url: `https://haven.care/countries/${country.slug}`,
+      url: `https://www.theinnercompass23.com/countries/${country.slug}`,
       type: "website",
     },
   };
@@ -86,19 +86,19 @@ export default async function CountryPage({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://haven.care"
+            "item": "https://www.theinnercompass23.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Countries",
-            "item": "https://haven.care/countries"
+            "item": "https://www.theinnercompass23.com/countries"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": country.name,
-            "item": `https://haven.care/countries/${country.slug}`
+            "item": `https://www.theinnercompass23.com/countries/${country.slug}`
           }
         ]
       },
@@ -108,7 +108,7 @@ export default async function CountryPage({
         "provider": {
           "@type": "Organization",
           "name": "The Inner Compass 23",
-          "url": "https://haven.care"
+          "url": "https://www.theinnercompass23.com"
         },
         "serviceType": "Peer Support & Active Listening",
         "areaServed": {

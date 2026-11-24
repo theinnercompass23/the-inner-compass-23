@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Tired of people dismissing, minimizing, or misjudging your feelings? Experience the profound comfort of speaking to an empathetic human listener who validates your reality.",
   alternates: {
-    canonical: "https://haven.care/feeling-misunderstood",
+    canonical: "https://www.theinnercompass23.com/feeling-misunderstood",
   },
   openGraph: {
     title: "Feeling Misunderstood? Find Someone Who Truly Hears You",
     description:
       "Tired of people dismissing or misjudging your feelings? Experience the profound comfort of speaking to an empathetic human listener who validates your reality.",
-    url: "https://haven.care/feeling-misunderstood",
+    url: "https://www.theinnercompass23.com/feeling-misunderstood",
     type: "article",
   },
 };
