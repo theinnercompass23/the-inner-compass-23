@@ -5,89 +5,108 @@ import { CORE_ISSUES } from "@/data/issues";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.theinnercompass23.com";
+  const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${baseUrl}/us`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 0.95,
     },
     {
       url: `${baseUrl}/uk`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ca`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/au`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ae`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/countries`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/video-stories`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/support-for-children`,
-      lastModified: "2026-02-20",
-      changeFrequency: "monthly",
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/scout`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/children`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/courses`,
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: "2026-02-20",
+      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
     },
@@ -115,15 +134,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const topicRoutes: MetadataRoute.Sitemap = topicSlugs.map((slug) => ({
     url: `${baseUrl}/${slug}`,
-    lastModified: "2026-02-20",
+    lastModified: now,
     changeFrequency: "weekly",
-    priority: 0.8,
+    priority: 0.85,
   }));
 
   // Country Routes
   const countryRoutes: MetadataRoute.Sitemap = COUNTRIES_DATA.map((country) => ({
     url: `${baseUrl}/countries/${country.slug}`,
-    lastModified: "2026-02-20",
+    lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
   }));
@@ -131,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // City Routes
   const cityRoutes: MetadataRoute.Sitemap = CITIES_DATA.map((city) => ({
     url: `${baseUrl}/locations/${city.countrySlug}/${city.slug}`,
-    lastModified: "2026-02-20",
+    lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
   }));
@@ -142,7 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const issue of CORE_ISSUES) {
       cityIssueRoutes.push({
         url: `${baseUrl}/locations/${city.countrySlug}/${city.slug}/${issue.slug}`,
-        lastModified: "2026-02-20",
+        lastModified: now,
         changeFrequency: "weekly",
         priority: 0.8,
       });

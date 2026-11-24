@@ -92,17 +92,38 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Inner Compass 23 — Human Emotional Support & Peer Listening Service",
     description:
-      "Whether you're feeling lonely, dealing with separation, or need someone to listen, we're here without judgment. Real people, real conversations, no judgment.",
+      "Whether you're feeling lonely, dealing with separation, or need someone to listen, we're here without judgment. Real people, real conversations, 24/7 on WhatsApp.",
     url: "https://www.theinnercompass23.com",
     siteName: "The Inner Compass 23",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://www.theinnercompass23.com/the-inner-compass-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "The Inner Compass 23 — Human Emotional Support & Peer Listening",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Inner Compass 23 — Human Emotional Support & Peer Listening",
     description:
       "Sometimes, you just need someone to listen. Connect privately on WhatsApp for non-judgmental human support.",
+    images: ["https://www.theinnercompass23.com/the-inner-compass-logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   verification: {
     google: "google1df1e5f69523e99f",
@@ -115,15 +136,24 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.theinnercompass23.com/#organization",
-      "name": "The Inner Compass 23 — Human Emotional Support",
+      "name": "The Inner Compass 23",
+      "alternateName": ["The Inner Compass", "Inner Compass 23"],
       "url": "https://www.theinnercompass23.com",
       "logo": "https://www.theinnercompass23.com/the-inner-compass-logo.png",
+      "image": "https://www.theinnercompass23.com/the-inner-compass-logo.png",
+      "slogan": "Awaken Within. Discover Beyond.",
       "description":
-        "A private, safe, and confidential human emotional support and peer listening service for people navigating loneliness, heartbreak, separation, divorce, and personal struggles.",
+        "A private, safe, and confidential human emotional support and peer listening service for people navigating loneliness, heartbreak, separation, divorce, and personal struggles worldwide.",
+      "email": "theinnercompass23.info@gmail.com",
+      "telephone": "+91-8810381949",
+      "founder": {
+        "@id": "https://www.theinnercompass23.com/#founder"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-8810381949",
         "contactType": "customer support",
+        "contactOption": "HearingImpairedSupported",
         "availableLanguage": ["English", "Hindi"],
         "areaServed": [
           "US",
@@ -137,7 +167,31 @@ const jsonLd = {
           "NZ",
           "IN"
         ]
-      }
+      },
+      "sameAs": [
+        "https://open.spotify.com/episode/3Ard2e43YuXqp0Vk4UXBs7"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.theinnercompass23.com/#founder",
+      "name": "Dr. Aarti Aggarwal",
+      "honorificSuffix": "MPT",
+      "jobTitle": "Founder & CEO, Healthcare & Whole-Person Wellness Leader",
+      "worksFor": {
+        "@id": "https://www.theinnercompass23.com/#organization"
+      },
+      "description":
+        "Healthcare professional with over 25 years of experience in musculoskeletal physiotherapy, Chinese medicine, acupuncture, astrology, and holistic emotional counseling.",
+      "image": "https://www.theinnercompass23.com/the-inner-compass-icon.png",
+      "knowsAbout": [
+        "Human Emotional Support",
+        "Active Listening",
+        "Holistic Health",
+        "Musculoskeletal Physiotherapy",
+        "Chinese Medicine & Acupuncture",
+        "Emotional Healing & Social Confidence"
+      ]
     },
     {
       "@type": "Service",
@@ -146,7 +200,7 @@ const jsonLd = {
       "provider": {
         "@id": "https://www.theinnercompass23.com/#organization"
       },
-      "serviceType": "Peer Support & Non-Clinical Active Listening",
+      "serviceType": "Peer Support, Non-Clinical Active Listening & Emotional Venting",
       "description":
         "Compassionate, non-judgmental human peer listening conversations via private WhatsApp messaging. Real people, real conversations, no clinical checklists.",
       "areaServed": [
@@ -157,17 +211,106 @@ const jsonLd = {
         { "@type": "Country", "name": "United Arab Emirates" },
         { "@type": "Country", "name": "Ireland" },
         { "@type": "Country", "name": "Singapore" },
-        { "@type": "Country", "name": "Germany" }
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "India" }
       ]
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.theinnercompass23.com/#scout",
+      "name": "The Social Confidence Lab (SCL) — SCOUT Program",
+      "alternateName": "SCOUT by SCL",
+      "url": "https://www.theinnercompass23.com/support-for-children",
+      "description":
+        "SCOUT (Social Confidence Oration & Unfolding Talents) is an elite communication, speech, public speaking, and emotional resilience program for children and teenagers.",
+      "parentOrganization": {
+        "@id": "https://www.theinnercompass23.com/#organization"
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://www.theinnercompass23.com/#website",
       "url": "https://www.theinnercompass23.com",
       "name": "The Inner Compass 23",
+      "alternateName": "The Inner Compass 23 — Human Emotional Support",
       "publisher": {
         "@id": "https://www.theinnercompass23.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.theinnercompass23.com/locations?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.theinnercompass23.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a website where I can talk to someone anonymously when I feel lonely?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Online active listening and emotional support platforms like The Inner Compass 23 (https://www.theinnercompass23.com) let you connect with trained, compassionate human listeners 24/7 via private WhatsApp chat using a nickname, without sharing your real name, phone number, or insurance details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between an active listener and a therapist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An active listener provides immediate, judgment-free human presence, empathetic understanding, and emotional companionship when you need to vent about loneliness, relationship stress, or heartbreak. A licensed therapist provides clinical mental healthcare for clinical depression, trauma, or psychiatric conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who founded The Inner Compass 23?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Inner Compass 23 was founded by Dr. Aarti Aggarwal, MPT, a whole-person wellness leader and healthcare professional with over 25 years of experience in musculoskeletal physiotherapy, acupuncture, holistic counseling, and emotional resilience mentoring."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does online human emotional support work on The Inner Compass 23?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You simply click the WhatsApp button on The Inner Compass 23 to start a private conversation with a verified human listener. There are no registration forms, insurance waitlists, or mandatory personal identifiers. You can chat or speak at your own pace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can I talk to when going through a divorce and feeling completely alone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During divorce or marital separation, you can connect with specialized active listeners at The Inner Compass 23 for non-judgmental emotional venting, empathetic listening, and compassionate guidance through post-divorce loneliness and heartbreak."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my conversation on The Inner Compass 23 confidential and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All conversations are 100% confidential, private, and secured by end-to-end encryption on WhatsApp. The Inner Compass 23 does not sell personal data, track user identities, or require real legal names."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get emotional support online without health insurance in the US or internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Inner Compass 23 provides accessible, transparent emotional peer support worldwide (USA, UK, Canada, Australia, UAE, India) without insurance paperwork, copays, or clinical pre-approvals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the SCOUT program by The Social Confidence Lab (SCL)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SCOUT (Social Confidence Oration & Unfolding Talents) is a children's and teenagers' confidence and communication program by The Social Confidence Lab (SCL), focused on public speaking, social skills, oration, and self-esteem building."
+          }
+        }
+      ]
     }
   ]
 };
