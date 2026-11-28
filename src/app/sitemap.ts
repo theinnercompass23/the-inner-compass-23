@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { COUNTRIES_DATA } from "@/data/countries";
 import { CITIES_DATA } from "@/data/cities";
 import { CORE_ISSUES } from "@/data/issues";
+import { OFFERING_ARTICLES } from "@/data/offeringArticles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.theinnercompass23.com";
@@ -80,6 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.92,
     },
+    ...OFFERING_ARTICLES.map((article) => ({
+      url: `${baseUrl}/articles/${article.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    })),
     {
       url: `${baseUrl}/support-for-children`,
       lastModified: now,

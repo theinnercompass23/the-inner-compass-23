@@ -17,6 +17,7 @@ const PATHWAYS = [
   {
     badge: "Pathway 01 · Foundation",
     title: "INNERVA",
+    href: "/articles/innerva",
     subtitle: "Discover Yourself",
     description:
       "Build deep self-awareness, emotional intelligence, identity clarity, and unshakeable inner confidence.",
@@ -27,6 +28,7 @@ const PATHWAYS = [
   {
     badge: "Pathway 02 · Connection",
     title: "KINORA",
+    href: "/articles/kinora",
     subtitle: "Connect With Others",
     description:
       "Develop social confidence, authentic communication, empathy, meaningful relationships, and true belonging.",
@@ -37,6 +39,7 @@ const PATHWAYS = [
   {
     badge: "Pathway 03 · Mastery",
     title: "NEXTORA",
+    href: "/articles/nextora",
     subtitle: "Grow Beyond Limits",
     description:
       "Step into independence, decisive thinking, leadership, emotional resilience, and everyday life skills.",
@@ -50,6 +53,7 @@ const EXPERIENCES = [
   {
     badge: "Entry Point 01 · Assessment",
     title: "Loneliness & Connection Assessment",
+    href: "/articles/loneliness-and-connection-assessment",
     subtitle: "Understand Your Disconnection. Rediscover Connection.",
     description:
       "Explore loneliness patterns, social disconnection, emotional needs, and clear steps to build meaningful relationships.",
@@ -58,6 +62,7 @@ const EXPERIENCES = [
   {
     badge: "Entry Point 02 · Assessment",
     title: "TIC23 Self-Discovery Test",
+    href: "/articles/tic23-self-discovery-test",
     subtitle: "Understand Who You Are. Discover What's Within.",
     description:
       "Uncover your core identity, values, self-awareness, personal strengths, and inner direction through The Inner Compass 23.",
@@ -66,6 +71,7 @@ const EXPERIENCES = [
   {
     badge: "Entry Point 03 · Guided Intro",
     title: "The Discovery Experience",
+    href: "/articles/the-discovery-experience",
     subtitle: "Experience Growth Before You Begin.",
     description:
       "An introductory interactive experience to understand our approach, join guided activities, and find your ideal pathway.",
@@ -74,6 +80,7 @@ const EXPERIENCES = [
   {
     badge: "Continuing Growth · Membership",
     title: "The Growth Circle",
+    href: "/articles/the-growth-circle",
     subtitle: "Belong. Participate. Keep Growing.",
     description:
       "Our signature recurring membership community with live sessions, guided discussions, monthly challenges, and lasting connection.",
@@ -82,6 +89,7 @@ const EXPERIENCES = [
   {
     badge: "Open Entry · Live Workshops",
     title: "Special Themed Workshops",
+    href: "/articles/special-themed-workshops",
     subtitle: "One Topic. One Experience. One Opportunity to Grow.",
     description:
       "Individually accessible live workshops—join any single topic without committing to a full programme.",
@@ -150,7 +158,7 @@ export default function CompleteOfferingSection() {
             {PATHWAYS.map((item) => (
               <Link
                 key={item.title}
-                href="/contact"
+                href={item.href}
                 className={`w-[84vw] max-w-[340px] md:w-auto md:max-w-none shrink-0 snap-center rounded-3xl p-6 sm:p-7 bg-gradient-to-br ${item.gradient} border-2 border-muted-green/35 hover:border-muted-green shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between text-center relative overflow-hidden`}
               >
                 <div className="space-y-3.5">
@@ -265,7 +273,7 @@ export default function CompleteOfferingSection() {
             {EXPERIENCES.map((exp, idx) => (
               <Link
                 key={exp.title}
-                href="/contact"
+                href={exp.href}
                 className={`w-[84vw] max-w-[340px] md:w-auto md:max-w-none shrink-0 snap-center rounded-3xl p-6 bg-gradient-to-br from-white via-soft-sage/15 to-amber-50/40 border-2 border-muted-green/30 hover:border-muted-green shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between text-center ${
                   idx === EXPERIENCES.length - 1 ? "lg:col-span-2" : ""
                 }`}

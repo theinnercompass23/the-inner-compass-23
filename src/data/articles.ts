@@ -1,3 +1,5 @@
+import { OFFERING_ARTICLES } from "./offeringArticles";
+
 export interface EditorialArticle {
   id: string;
   slug: string;
@@ -11,6 +13,17 @@ export interface EditorialArticle {
 }
 
 export const FEATURED_ARTICLES: EditorialArticle[] = [
+  ...OFFERING_ARTICLES.map((a) => ({
+    id: a.slug,
+    slug: `/articles/${a.slug}`,
+    title: a.title,
+    excerpt: a.metaDescription,
+    category: a.category,
+    date: a.date,
+    readTime: a.readTime,
+    image: a.image,
+    author: "The Inner Compass 23 Editorial Team",
+  })),
   {
     id: "growth-pathways-complete-guide",
     slug: "/articles/growth-pathways-and-experiences",
