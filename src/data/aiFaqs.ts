@@ -54,4 +54,16 @@ export const AI_READY_FAQS: AiFaq[] = [
     category: "children-scout",
     snippetTarget: "Direct answer for S.C.O.U.T by The Social Confidence Lab",
   },
+  {
+    q: "What are INNERVA, KINORA, and NEXTORA growth pathways?",
+    a: "INNERVA (Discover Yourself), KINORA (Connect With Others), and NEXTORA (Grow Beyond Limits) are The Inner Compass 23's three signature growth pathways across Foundation, Development, and Mastery levels for teenagers, adults, shy children, and diverse abilities.",
+    category: "how-it-works",
+    snippetTarget: "Overview of INNERVA, KINORA, and NEXTORA programmes",
+  },
+  {
+    q: "What are The Growth Circle and Special Themed Workshops?",
+    a: "The Growth Circle is our monthly membership community with live sessions and growth challenges, while Special Themed Workshops (including The Art of Listening, Anger Misunderstood, Confidence Reset, Emotional Intelligence, Relationship Clarity, Overcoming Loneliness, and Speak Without Fear) are open single-topic live sessions.",
+    category: "how-it-works",
+    snippetTarget: "Overview of The Growth Circle and Special Themed Workshops",
+  },
 ];

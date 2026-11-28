@@ -12,6 +12,18 @@ export interface EditorialArticle {
 
 export const FEATURED_ARTICLES: EditorialArticle[] = [
   {
+    id: "growth-pathways-complete-guide",
+    slug: "/articles/growth-pathways-and-experiences",
+    title: "INNERVA, KINORA, NEXTORA & Our Complete Growth Ecosystem (With FAQs)",
+    excerpt:
+      "A complete guide to our three signature growth pathways, Loneliness & Connection Assessment, TIC23 Self-Discovery Test, The Growth Circle, and Special Themed Workshops.",
+    category: "Growth Pathways & FAQs",
+    date: "November 28, 2026",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800",
+    author: "The Inner Compass 23 Editorial Team",
+  },
+  {
     id: "living-alone-isolation",
     slug: "/feeling-lonely",
     title: "The Quiet Weight of Living Alone: Understanding Modern Isolation",

@@ -126,6 +126,15 @@ export default function CompleteOfferingSection() {
           <p className="text-sm sm:text-base text-dark-charcoal/75 leading-relaxed">
             Structured programmes designed for teenagers, adults, shy children, and diverse abilities—choose group interaction, private one-to-one, or the complete journey.
           </p>
+          <div className="pt-1">
+            <Link
+              href="/articles/growth-pathways-and-experiences"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-muted-green hover:text-dark-charcoal transition-colors"
+            >
+              <span>Read Complete Guide &amp; FAQs</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         {/* 1. THREE SIGNATURE GROWTH PATHWAYS (Mobile: Horizontal Scroll | Desktop: 3-Col Grid) */}
