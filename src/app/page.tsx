@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import SupportCategoriesSection from "@/components/SupportCategoriesSection";
+import CompleteOfferingSection from "@/components/CompleteOfferingSection";
 import InnerCompassSection from "@/components/InnerCompassSection";
 import FeaturedArticlesSection from "@/components/FeaturedArticlesSection";
 import AiFaqSection from "@/components/AiFaqSection";
@@ -214,6 +215,7 @@ export default function HomePage() {
       {/* ========================================================= */}
       <div id="categories-section" className="scroll-mt-16">
         <SupportCategoriesSection />
+      <CompleteOfferingSection />
       </div>
 
       {/* ========================================================= */}
