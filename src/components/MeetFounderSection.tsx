@@ -25,7 +25,7 @@ export default function MeetFounderSection({
             Meet Our Founder
           </h2>
           <p className="text-xs sm:text-sm text-dark-charcoal/70">
-            The driving force behind The Inner Compass 23 and SCOUT (Social Confidence Lab).
+            The driving force behind The Inner Compass 23 and S.C.O.U.T (Social Confidence Lab).
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function MeetFounderSection({
                 <span>The Vision</span>
               </h4>
               <p className="text-xs text-dark-charcoal/75 leading-relaxed">
-                Dr. Aarti pictures a world where every person and every child, whatever their ability, personality, or circumstances, has the confidence and safe space to be heard. The Inner Compass 23 and SCOUT are her steps toward that goal: welcoming, inclusive spaces where individuals can practice communicating, put feelings into words, build relationships, and feel at ease as they are. Everyone deserves to take part, connect, and belong.
+                Dr. Aarti pictures a world where every person and every child, whatever their ability, personality, or circumstances, has the confidence and safe space to be heard. The Inner Compass 23 and S.C.O.U.T are her steps toward that goal: welcoming, inclusive spaces where individuals can practice communicating, put feelings into words, build relationships, and feel at ease as they are. Everyone deserves to take part, connect, and belong.
               </p>
             </div>
           </div>

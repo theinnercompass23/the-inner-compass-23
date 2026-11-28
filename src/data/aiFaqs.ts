@@ -49,9 +49,9 @@ export const AI_READY_FAQS: AiFaq[] = [
     snippetTarget: "Direct answer snippet for emotional support without health insurance",
   },
   {
-    q: "What is the SCOUT program by The Social Confidence Lab (SCL)?",
-    a: "SCOUT (Social Confidence Oration & Unfolding Talents) is a children's and teenagers' confidence and communication program by The Social Confidence Lab (SCL), focused on public speaking, social skills, oration, and self-esteem building.",
+    q: "What is the S.C.O.U.T program by The Social Confidence Lab (SCL)?",
+    a: "S.C.O.U.T (Social Confidence Oration & Unfolding Talents) is a children's and teenagers' confidence and communication program by The Social Confidence Lab (SCL), focused on public speaking, social skills, oration, and self-esteem building.",
     category: "children-scout",
-    snippetTarget: "Direct answer for SCOUT by The Social Confidence Lab",
+    snippetTarget: "Direct answer for S.C.O.U.T by The Social Confidence Lab",
   },
 ];

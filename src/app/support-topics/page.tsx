@@ -157,11 +157,11 @@ export default function SupportTopicsPage() {
             <div className="relative z-10 space-y-3.5">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-muted-green text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 fill-white/30" />
-                <span>SCOUT &bull; Children &amp; Youth Support</span>
+                <span>S.C.O.U.T &bull; Children &amp; Youth Support</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-dark-charcoal group-hover:text-muted-green transition-colors">
-                SCOUT: Helping Every Child Find Their Voice and Their Place
+                S.C.O.U.T: Helping Every Child Find Their Voice and Their Place
               </h3>
 
               <p className="text-xs sm:text-sm text-dark-charcoal/80 max-w-xl mx-auto leading-relaxed">
@@ -185,7 +185,7 @@ export default function SupportTopicsPage() {
 
               <div className="pt-2 flex justify-center">
                 <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-dark-charcoal group-hover:bg-black text-white shadow-md group-hover:shadow-lg transition-all">
-                  <span>Explore SCOUT for Children</span>
+                  <span>Explore S.C.O.U.T for Children</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>

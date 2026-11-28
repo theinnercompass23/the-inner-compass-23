@@ -118,13 +118,13 @@ export default function GuardianSupportForm() {
           <CheckCircle2 className="w-9 h-9" />
         </div>
         <span className="px-3 py-1 rounded-full bg-soft-sage/20 text-muted-green font-medium text-xs uppercase tracking-wider">
-          SCOUT Guardian Enquiry Saved
+          S.C.O.U.T Guardian Enquiry Saved
         </span>
         <h3 className="font-serif text-2xl sm:text-3xl font-bold text-dark-charcoal mt-3 mb-2">
           Thank you, {submittedLead.guardianName}
         </h3>
         <p className="text-sm text-dark-charcoal/75 max-w-lg mx-auto mb-6 leading-relaxed">
-          Your consultation request for SCOUT has been received. Our team will coordinate with you directly on WhatsApp.
+          Your consultation request for S.C.O.U.T has been received. Our team will coordinate with you directly on WhatsApp.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
@@ -158,7 +158,7 @@ export default function GuardianSupportForm() {
           <ShieldCheck className="w-6 h-6" />
         </div>
         <h2 className="font-serif text-2xl sm:text-3xl font-bold text-dark-charcoal mb-2">
-          SCOUT &bull; Parent &amp; Guardian Consultation Request
+          S.C.O.U.T &bull; Parent &amp; Guardian Consultation Request
         </h2>
         <p className="text-xs sm:text-sm text-dark-charcoal/70 leading-relaxed">
           Request guidance on supporting your child&apos;s emotional wellbeing and social confidence. Direct conversations occur solely with parents or legal guardians.

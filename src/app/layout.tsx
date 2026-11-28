@@ -240,11 +240,11 @@ const jsonLd = {
     {
       "@type": "EducationalOrganization",
       "@id": "https://www.theinnercompass23.com/#scout",
-      "name": "The Social Confidence Lab (SCL) — SCOUT Program",
-      "alternateName": "SCOUT by SCL",
+      "name": "The Social Confidence Lab (SCL) — S.C.O.U.T Program",
+      "alternateName": "S.C.O.U.T by SCL",
       "url": "https://www.theinnercompass23.com/support-for-children",
       "description":
-        "SCOUT (Social Confidence Oration & Unfolding Talents) is an elite communication, speech, public speaking, and emotional resilience program for children and teenagers.",
+        "S.C.O.U.T (Social Confidence Oration & Unfolding Talents) is an elite communication, speech, public speaking, and emotional resilience program for children and teenagers.",
       "parentOrganization": {
         "@id": "https://www.theinnercompass23.com/#organization"
       }
@@ -326,10 +326,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          "name": "What is the SCOUT program by The Social Confidence Lab (SCL)?",
+          "name": "What is the S.C.O.U.T program by The Social Confidence Lab (SCL)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SCOUT (Social Confidence Oration & Unfolding Talents) is a children's and teenagers' confidence and communication program by The Social Confidence Lab (SCL), focused on public speaking, social skills, oration, and self-esteem building."
+            "text": "S.C.O.U.T (Social Confidence Oration & Unfolding Talents) is a children's and teenagers' confidence and communication program by The Social Confidence Lab (SCL), focused on public speaking, social skills, oration, and self-esteem building."
           }
         }
       ]

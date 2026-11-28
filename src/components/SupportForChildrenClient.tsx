@@ -89,7 +89,7 @@ const COURSES = [
   },
   {
     id: "only-children",
-    title: "Only Children",
+    title: "Single Child",
     badge: "Peer Dynamics",
     description:
       "Ideal for children who need more opportunities to practise sharing, collaboration and everyday peer dynamics.",
@@ -136,7 +136,7 @@ const FAQS = [
 
 export default function SupportForChildrenClient() {
   const whatsappUrl = buildDirectWhatsAppUrl(
-    "Hello! I am enquiring about SCOUT by The Social Confidence Lab for my child. Please share details regarding course batches and consultation."
+    "Hello! I am enquiring about S.C.O.U.T by The Social Confidence Lab for my child. Please share details regarding course batches and consultation."
   );
 
   // Carousel State
@@ -155,19 +155,19 @@ export default function SupportForChildrenClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="bg-[#FFFBF6] text-[#384347] font-sans antialiased min-h-screen selection:bg-[#7ED1ED]/40 selection:text-black">
-      {/* 1. CLEAN SCOUT EMBLEM HEADER (Fixed on scroll with Highlighted Inner Compass Logo) */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FFFBF6]/95 backdrop-blur-md border-b border-[#384347]/15 py-2.5 sm:py-3 shadow-xs transition-all w-full">
+    <div className="bg-[#FFFBF6] text-[#23493E] font-sans antialiased min-h-screen selection:bg-[#7ED1ED]/40 selection:text-black">
+      {/* 1. CLEAN S.C.O.U.T EMBLEM HEADER (Fixed on scroll with Highlighted Inner Compass Logo) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FFFBF6]/95 backdrop-blur-md border-b border-[#23493E]/15 py-2.5 sm:py-3 shadow-xs transition-all w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo & Brand Identification */}
           <Link
             href="/support-for-children"
             className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-hidden"
           >
-            <div className="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden shadow-xs border border-[#384347]/15 bg-white p-0.5 group-hover:scale-105 transition-transform shrink-0">
+            <div className="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden shadow-xs border border-[#23493E]/15 bg-white p-0.5 group-hover:scale-105 transition-transform shrink-0">
               <Image
                 src="/scl/scout-logo-clean.png"
-                alt="SCOUT — Social Confidence Oration & Unfolding Talents"
+                alt="S.C.O.U.T — Social Confidence Oration & Unfolding Talents"
                 fill
                 sizes="(max-width: 640px) 44px, 52px"
                 className="object-contain"
@@ -175,10 +175,10 @@ export default function SupportForChildrenClient() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-serif font-bold text-xl sm:text-2xl text-[#292D2A] tracking-wider leading-none">
-                SCOUT
+              <span className="font-serif font-bold text-xl sm:text-2xl text-[#17332B] tracking-wider leading-none">
+                S.C.O.U.T
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#595F5A] tracking-wider uppercase font-medium mt-1">
+              <span className="text-[9px] sm:text-[10px] text-[#48655B] tracking-wider uppercase font-medium mt-1">
                 Social Confidence Oration &amp; Unfolding Talents
               </span>
             </div>
@@ -187,7 +187,7 @@ export default function SupportForChildrenClient() {
           {/* Clean, Sleek & Elegant Return to The Inner Compass 23 Button */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#384347] hover:text-[#212529] font-medium transition-all px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#384347]/20 bg-white hover:bg-white/90 shadow-2xs hover:shadow-xs shrink-0 group"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#23493E] hover:text-[#17332B] font-medium transition-all px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#23493E]/20 bg-white hover:bg-white/90 shadow-2xs hover:shadow-xs shrink-0 group"
             aria-label="Return to The Inner Compass 23"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-muted-green group-hover:-translate-x-0.5 transition-transform shrink-0" />
@@ -201,28 +201,28 @@ export default function SupportForChildrenClient() {
       <div className="h-[68px] sm:h-[78px]" aria-hidden="true" />
 
       {/* 2. HERO SECTION: "Build real world confidence." (Exact match to Section 3 of Odoo) */}
-      <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden border-b border-[#384347]/10">
+      <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6">
-              {/* SCOUT Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FDE5C1] text-[#384347] text-xs font-bold shadow-2xs border border-[#384347]/15">
-                <span>SCOUT &bull; Social Confidence Oration &amp; Unfolding Talents</span>
+              {/* S.C.O.U.T Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FDE5C1] text-[#23493E] text-xs font-bold shadow-2xs border border-[#23493E]/15">
+                <span>S.C.O.U.T &bull; Social Confidence Oration &amp; Unfolding Talents</span>
               </div>
 
               {/* Exact Odoo Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#384347] font-normal tracking-tight leading-[1.15]">
-                Build real world <strong className="font-bold text-[#212529]">confidence.</strong>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#23493E] font-normal tracking-tight leading-[1.15]">
+                Build real world <strong className="font-bold text-[#17332B]">confidence.</strong>
               </h1>
 
               {/* Exact Odoo Lead Paragraph with highlighted text */}
-              <p className="text-lg sm:text-xl text-[#384347]/90 leading-relaxed font-normal">
+              <p className="text-lg sm:text-xl text-[#23493E]/90 leading-relaxed font-normal">
                 Supportive classes and workshops{" "}
                 <strong className="font-semibold">
                   <span
                     style={{ backgroundColor: "rgba(255, 214, 99, 0.6)" }}
-                    className="px-1.5 py-0.5 rounded text-[#212529]"
+                    className="px-1.5 py-0.5 rounded text-[#17332B]"
                   >
                     for your children
                   </span>
@@ -234,7 +234,7 @@ export default function SupportForChildrenClient() {
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <a
                   href="#parent-guardian-form"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#212529] font-bold text-sm sm:text-base shadow-sm transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#17332B] font-bold text-sm sm:text-base shadow-sm transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Contact Us</span>
                   <ArrowRight className="w-4 h-4" />
@@ -270,11 +270,11 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 3. MASONRY FEATURE BLOCK (Exact Match to Section 4 of Odoo) */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#384347]/10">
+      <section className="py-16 sm:py-24 bg-white border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-stretch">
             {/* Left Big Graphic: masonry_square.webp */}
-            <div className="lg:col-span-5 relative w-full rounded-2xl overflow-hidden border border-[#384347]/10 shadow-xs min-h-[300px] sm:min-h-[350px] aspect-4/3 sm:aspect-square lg:aspect-auto">
+            <div className="lg:col-span-5 relative w-full rounded-2xl overflow-hidden border border-[#23493E]/10 shadow-xs min-h-[300px] sm:min-h-[350px] aspect-4/3 sm:aspect-square lg:aspect-auto">
               <Image
                 src="/scl/masonry_square.webp"
                 alt="Social Confidence Lab children growth framework"
@@ -288,11 +288,11 @@ export default function SupportForChildrenClient() {
             {/* 4 Feature Cards */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Card 1: 14 Skill Domains */}
-              <div className="bg-[#FFFBF6] border border-[#384347]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]">
-                <h2 className="text-2xl font-serif font-bold text-[#384347] mb-2">
+              <div className="bg-[#FFFBF6] border border-[#23493E]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]">
+                <h2 className="text-2xl font-serif font-bold text-[#23493E] mb-2">
                   14 Skill Domains
                 </h2>
-                <p className="text-sm sm:text-base text-[#384347]/80 leading-snug">
+                <p className="text-sm sm:text-base text-[#23493E]/80 leading-snug">
                   Caters to each personality type
                 </p>
               </div>
@@ -302,12 +302,12 @@ export default function SupportForChildrenClient() {
                 style={{
                   backgroundImage: "linear-gradient(135deg, #FFFFFF -400%, #FDE5C1 100%)",
                 }}
-                className="border border-[#384347]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]"
+                className="border border-[#23493E]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]"
               >
-                <h2 className="text-2xl font-serif font-bold text-[#384347] mb-2">
+                <h2 className="text-2xl font-serif font-bold text-[#23493E] mb-2">
                   Practice First Method
                 </h2>
-                <p className="text-sm sm:text-base text-[#384347]/85 leading-snug">
+                <p className="text-sm sm:text-base text-[#23493E]/85 leading-snug">
                   Role-play and real-world challenges, not just theory
                 </p>
               </div>
@@ -317,22 +317,22 @@ export default function SupportForChildrenClient() {
                 style={{
                   backgroundImage: "linear-gradient(135deg, #FFFFFF -400%, #7ED1ED 100%)",
                 }}
-                className="border border-[#384347]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]"
+                className="border border-[#23493E]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]"
               >
-                <h2 className="text-2xl font-serif font-bold text-[#384347] mb-2">
+                <h2 className="text-2xl font-serif font-bold text-[#23493E] mb-2">
                   Measurable Outcomes
                 </h2>
-                <p className="text-sm sm:text-base text-[#384347]/85 leading-snug">
+                <p className="text-sm sm:text-base text-[#23493E]/85 leading-snug">
                   5 dimensional scoring across 3 tracks
                 </p>
               </div>
 
               {/* Card 4: Community Focus */}
-              <div className="bg-[#FFFBF6] border border-[#384347]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]">
-                <h2 className="text-2xl font-serif font-bold text-[#384347] mb-2">
+              <div className="bg-[#FFFBF6] border border-[#23493E]/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-end shadow-2xs hover:shadow-sm transition-shadow min-h-[160px]">
+                <h2 className="text-2xl font-serif font-bold text-[#23493E] mb-2">
                   Community Focus
                 </h2>
-                <p className="text-sm sm:text-base text-[#384347]/80 leading-snug">
+                <p className="text-sm sm:text-base text-[#23493E]/80 leading-snug">
                   Helping students in building healthy connections
                 </p>
               </div>
@@ -342,7 +342,7 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 4. CAROUSEL / 6 PILLARS & 14 SKILL DOMAINS (Exact Match to Section 5 of Odoo) */}
-      <section id="pillars" className="py-16 sm:py-24 bg-[#384347] text-white">
+      <section id="pillars" className="py-16 sm:py-24 bg-[#23493E] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -362,7 +362,7 @@ export default function SupportForChildrenClient() {
             {activeSlide === 0 ? (
               /* Overview Slide */
               <div className="p-8 sm:p-16 lg:p-20 text-center flex flex-col items-center justify-center min-h-[420px] bg-gradient-to-b from-white/10 to-transparent">
-                <div className="w-16 h-16 rounded-2xl bg-[#7ED1ED] text-[#212529] flex items-center justify-center font-bold text-2xl mb-6 shadow-md">
+                <div className="w-16 h-16 rounded-2xl bg-[#7ED1ED] text-[#17332B] flex items-center justify-center font-bold text-2xl mb-6 shadow-md">
                   6
                 </div>
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4">
@@ -373,7 +373,7 @@ export default function SupportForChildrenClient() {
                 </p>
                 <button
                   onClick={() => setActiveSlide(1)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#212529] font-bold text-sm shadow-md transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#17332B] font-bold text-sm shadow-md transition-all"
                 >
                   <span>Explore Pillar 1: Emotional Intelligence</span>
                   <ChevronRight className="w-4 h-4" />
@@ -392,7 +392,7 @@ export default function SupportForChildrenClient() {
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#384347] via-transparent to-transparent lg:hidden" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#23493E] via-transparent to-transparent lg:hidden" />
                 </div>
 
                 {/* Pillar Content */}
@@ -409,7 +409,7 @@ export default function SupportForChildrenClient() {
                   <div className="pt-4 flex flex-wrap gap-3">
                     <a
                       href="#parent-guardian-form"
-                      className="px-5 py-2.5 rounded-lg bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#212529] font-bold text-sm transition-all"
+                      className="px-5 py-2.5 rounded-lg bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#17332B] font-bold text-sm transition-all"
                     >
                       Enquire About This Pillar &rarr;
                     </a>
@@ -434,7 +434,7 @@ export default function SupportForChildrenClient() {
                   onClick={() => setActiveSlide(0)}
                   className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
                     activeSlide === 0
-                      ? "bg-[#7ED1ED] text-[#212529]"
+                      ? "bg-[#7ED1ED] text-[#17332B]"
                       : "bg-white/10 text-white/70 hover:bg-white/20"
                   }`}
                 >
@@ -446,7 +446,7 @@ export default function SupportForChildrenClient() {
                     onClick={() => setActiveSlide(idx + 1)}
                     className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
                       activeSlide === idx + 1
-                        ? "bg-[#7ED1ED] text-[#212529]"
+                        ? "bg-[#7ED1ED] text-[#17332B]"
                         : "bg-white/10 text-white/70 hover:bg-white/20"
                     }`}
                   >
@@ -488,17 +488,17 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 5. COURSES SECTION: "3 Unique Courses" (From Odoo /courses) */}
-      <section id="courses" className="py-16 sm:py-24 bg-[#FFFBF6] border-b border-[#384347]/10">
+      <section id="courses" className="py-16 sm:py-24 bg-[#FFFBF6] border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Headline */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#FDE5C1] text-[#384347] text-xs font-bold tracking-wider uppercase border border-[#384347]/10">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#FDE5C1] text-[#23493E] text-xs font-bold tracking-wider uppercase border border-[#23493E]/10">
               Personalized Programs
             </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#384347] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#23493E] tracking-tight">
               3 Unique Courses
             </h2>
-            <p className="text-base sm:text-lg text-[#384347]/85 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-[#23493E]/85 leading-relaxed font-normal">
               Each course type specially catered for your child, underscoring their more immediate needs and further strengthening what they already know.
             </p>
           </div>
@@ -508,29 +508,29 @@ export default function SupportForChildrenClient() {
             {COURSES.map((course) => (
               <div
                 key={course.id}
-                className="bg-white rounded-3xl border border-[#384347]/10 p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-lg transition-all"
+                className="bg-white rounded-3xl border border-[#23493E]/10 p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-lg transition-all"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#384347] text-xs font-bold">
+                    <span className="px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#23493E] text-xs font-bold">
                       {course.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-serif font-bold text-[#384347]">
+                  <h3 className="text-2xl font-serif font-bold text-[#23493E]">
                     {course.title}
                   </h3>
 
-                  <p className="text-sm text-[#384347]/80 leading-relaxed">
+                  <p className="text-sm text-[#23493E]/80 leading-relaxed">
                     {course.description}
                   </p>
 
-                  <div className="border-t border-[#384347]/10 pt-4 space-y-2.5">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#384347]/60">
+                  <div className="border-t border-[#23493E]/10 pt-4 space-y-2.5">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#23493E]/60">
                       Curriculum Highlights
                     </div>
                     {course.bullets.map((bullet, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#384347]">
+                      <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#23493E]">
                         <CheckCircle2 className="w-4 h-4 text-muted-green shrink-0 mt-0.5" />
                         <span>{bullet}</span>
                       </div>
@@ -538,13 +538,13 @@ export default function SupportForChildrenClient() {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#384347]/10 space-y-3">
-                  <p className="text-xs italic text-[#384347]/70 text-center">
+                <div className="pt-6 mt-6 border-t border-[#23493E]/10 space-y-3">
+                  <p className="text-xs italic text-[#23493E]/70 text-center">
                     {course.pricingNote}
                   </p>
                   <a
                     href="#parent-guardian-form"
-                    className="block w-full py-3 rounded-xl bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#212529] font-bold text-xs sm:text-sm text-center shadow-xs transition-colors"
+                    className="block w-full py-3 rounded-xl bg-[#7ED1ED] hover:bg-[#91d8f0] text-[#17332B] font-bold text-xs sm:text-sm text-center shadow-xs transition-colors"
                   >
                     Enquire for {course.title} &rarr;
                   </a>
@@ -554,24 +554,24 @@ export default function SupportForChildrenClient() {
           </div>
 
           {/* Steady Growth Model */}
-          <div className="bg-[#FAF9F6] rounded-3xl border border-[#384347]/10 p-8 sm:p-12 space-y-8">
+          <div className="bg-[#FAF9F6] rounded-3xl border border-[#23493E]/10 p-8 sm:p-12 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#384347]">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#23493E]">
                 Our Steady Growth Model
               </h3>
-              <p className="text-sm sm:text-base text-[#384347]/80">
+              <p className="text-sm sm:text-base text-[#23493E]/80">
                 A structured 3-stage progression where instructors evaluate every child&apos;s comfort and confidence.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Level 1 */}
-              <div className="bg-white rounded-2xl p-6 border border-[#384347]/10 shadow-2xs space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FDE5C1] text-[#384347] font-bold text-lg flex items-center justify-center">
+              <div className="bg-white rounded-2xl p-6 border border-[#23493E]/10 shadow-2xs space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#FDE5C1] text-[#23493E] font-bold text-lg flex items-center justify-center">
                   1
                 </div>
-                <h4 className="text-lg font-serif font-bold text-[#384347]">Beginner</h4>
-                <ul className="text-xs sm:text-sm text-[#384347]/85 space-y-1.5 list-disc list-inside">
+                <h4 className="text-lg font-serif font-bold text-[#23493E]">Beginner</h4>
+                <ul className="text-xs sm:text-sm text-[#23493E]/85 space-y-1.5 list-disc list-inside">
                   <li>Understanding self and others</li>
                   <li>Learning core social skills</li>
                   <li>Practising simple interactions</li>
@@ -580,12 +580,12 @@ export default function SupportForChildrenClient() {
               </div>
 
               {/* Level 2 */}
-              <div className="bg-white rounded-2xl p-6 border border-[#384347]/10 shadow-2xs space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#7ED1ED]/40 text-[#212529] font-bold text-lg flex items-center justify-center">
+              <div className="bg-white rounded-2xl p-6 border border-[#23493E]/10 shadow-2xs space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#7ED1ED]/40 text-[#17332B] font-bold text-lg flex items-center justify-center">
                   2
                 </div>
-                <h4 className="text-lg font-serif font-bold text-[#384347]">Intermediate</h4>
-                <ul className="text-xs sm:text-sm text-[#384347]/85 space-y-1.5 list-disc list-inside">
+                <h4 className="text-lg font-serif font-bold text-[#23493E]">Intermediate</h4>
+                <ul className="text-xs sm:text-sm text-[#23493E]/85 space-y-1.5 list-disc list-inside">
                   <li>Navigating varied social situations</li>
                   <li>Combining multiple social skills</li>
                   <li>Handling unexpected responses</li>
@@ -594,12 +594,12 @@ export default function SupportForChildrenClient() {
               </div>
 
               {/* Level 3 */}
-              <div className="bg-white rounded-2xl p-6 border border-[#384347]/10 shadow-2xs space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#384347] text-white font-bold text-lg flex items-center justify-center">
+              <div className="bg-white rounded-2xl p-6 border border-[#23493E]/10 shadow-2xs space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#23493E] text-white font-bold text-lg flex items-center justify-center">
                   3
                 </div>
-                <h4 className="text-lg font-serif font-bold text-[#384347]">Advanced</h4>
-                <ul className="text-xs sm:text-sm text-[#384347]/85 space-y-1.5 list-disc list-inside">
+                <h4 className="text-lg font-serif font-bold text-[#23493E]">Advanced</h4>
+                <ul className="text-xs sm:text-sm text-[#23493E]/85 space-y-1.5 list-disc list-inside">
                   <li>Managing complex social situations</li>
                   <li>Adapting to different contexts</li>
                   <li>Leading and problem-solving</li>
@@ -608,7 +608,7 @@ export default function SupportForChildrenClient() {
               </div>
             </div>
 
-            <p className="text-center text-sm font-semibold text-[#384347]/90 pt-2">
+            <p className="text-center text-sm font-semibold text-[#23493E]/90 pt-2">
               One program, delivered through age-banded cohorts and flexible individual or small-group formats.
             </p>
           </div>
@@ -616,10 +616,10 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 6. "Designed specially for..." SECTION (Exact Match to Sections 6, 7, 8, 9 of Odoo) */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#384347]/10">
+      <section className="py-16 sm:py-24 bg-white border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#384347] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#23493E] tracking-tight">
               Designed specially for...
             </h2>
           </div>
@@ -627,19 +627,19 @@ export default function SupportForChildrenClient() {
           {/* Row 1: Shy & Introverted Children (Text left, Image right) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <span className="px-3 py-1 rounded-full bg-[#FDE5C1] text-[#384347] text-xs font-bold">
+              <span className="px-3 py-1 rounded-full bg-[#FDE5C1] text-[#23493E] text-xs font-bold">
                 Cohort 1
               </span>
-              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#384347]">
+              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#23493E]">
                 Shy &amp; Introverted Children
               </h3>
-              <p className="text-base sm:text-lg text-[#384347]/85 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#23493E]/85 leading-relaxed">
                 A safe, repeatable space to build a voice - from the first hello to leading a group activity.
               </p>
               <div className="pt-2">
                 <a
                   href="#parent-guardian-form"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#384347] hover:text-black border-b border-[#7ED1ED] pb-0.5"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#23493E] hover:text-black border-b border-[#7ED1ED] pb-0.5"
                 >
                   <span>Explore Shy &amp; Introverted Support</span>
                   <ChevronRight className="w-4 h-4" />
@@ -673,19 +673,19 @@ export default function SupportForChildrenClient() {
               </div>
             </div>
             <div className="lg:col-span-5 lg:offset-1 order-1 lg:order-2 space-y-4">
-              <span className="px-3 py-1 rounded-full bg-[#7ED1ED]/30 text-[#212529] text-xs font-bold">
+              <span className="px-3 py-1 rounded-full bg-[#7ED1ED]/30 text-[#17332B] text-xs font-bold">
                 Cohort 2
               </span>
-              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#384347]">
+              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#23493E]">
                 Specially-Abled Children
               </h3>
-              <p className="text-base sm:text-lg text-[#384347]/85 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#23493E]/85 leading-relaxed">
                 Structured, low-stigma rehearsal for children who need explicit teaching of cues that most kids absorb effortlessly.
               </p>
               <div className="pt-2">
                 <a
                   href="#parent-guardian-form"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#384347] hover:text-black border-b border-[#7ED1ED] pb-0.5"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#23493E] hover:text-black border-b border-[#7ED1ED] pb-0.5"
                 >
                   <span>Explore Specially-Abled Support</span>
                   <ChevronRight className="w-4 h-4" />
@@ -694,24 +694,24 @@ export default function SupportForChildrenClient() {
             </div>
           </div>
 
-          {/* Row 3: Only Children (Text left, Image right) */}
+          {/* Row 3: Single Child (Text left, Image right) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8">
             <div className="lg:col-span-5 space-y-4">
-              <span className="px-3 py-1 rounded-full bg-[#FDE5C1] text-[#384347] text-xs font-bold">
+              <span className="px-3 py-1 rounded-full bg-[#FDE5C1] text-[#23493E] text-xs font-bold">
                 Cohort 3
               </span>
-              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#384347]">
-                Only Children
+              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#23493E]">
+                Single Child
               </h3>
-              <p className="text-base sm:text-lg text-[#384347]/85 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#23493E]/85 leading-relaxed">
                 Extra practice with sharing, turn-taking and group dynamics that siblings would otherwise provide at home.
               </p>
               <div className="pt-2">
                 <a
                   href="#parent-guardian-form"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#384347] hover:text-black border-b border-[#7ED1ED] pb-0.5"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#23493E] hover:text-black border-b border-[#7ED1ED] pb-0.5"
                 >
-                  <span>Explore Only Children Support</span>
+                  <span>Explore Single Child Support</span>
                   <ChevronRight className="w-4 h-4" />
                 </a>
               </div>
@@ -720,7 +720,7 @@ export default function SupportForChildrenClient() {
               <div className="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden shadow-md">
                 <Image
                   src="/scl/single_child.jpg"
-                  alt="Only Child practicing social ease"
+                  alt="Single Child practicing social ease"
                   fill
                   sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover"
@@ -732,30 +732,30 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 7. KEY MILESTONES CARD (Exact Match to Section 10 of Odoo) */}
-      <section className="py-16 sm:py-24 bg-[#FDE5C1] border-b border-[#384347]/10">
+      <section className="py-16 sm:py-24 bg-[#FDE5C1] border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Headline */}
             <div className="lg:col-span-7 space-y-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-white text-[#384347] text-xs font-bold shadow-2xs">
+              <span className="inline-block px-3 py-1 rounded-full bg-white text-[#23493E] text-xs font-bold shadow-2xs">
                 Measurable Growth
               </span>
-              <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#384347] tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#23493E] tracking-tight">
                 Keep track with our key Milestones
               </h2>
-              <p className="text-base sm:text-lg text-[#384347]/85 max-w-xl">
+              <p className="text-base sm:text-lg text-[#23493E]/85 max-w-xl">
                 Every child progresses through clear, transparent evaluation checkpoints so guardians observe tangible behavioral improvements.
               </p>
             </div>
 
             {/* Floating Card: "Check each one!" */}
             <div className="lg:col-span-5">
-              <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-[#384347]/10 space-y-5">
-                <div className="flex items-center justify-between border-b border-[#384347]/10 pb-3">
-                  <h3 className="text-xl font-serif font-bold text-[#384347]">
+              <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-[#23493E]/10 space-y-5">
+                <div className="flex items-center justify-between border-b border-[#23493E]/10 pb-3">
+                  <h3 className="text-xl font-serif font-bold text-[#23493E]">
                     Check each one!
                   </h3>
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#7ED1ED]/25 text-[#384347]">
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#7ED1ED]/25 text-[#23493E]">
                     5 Checkpoints
                   </span>
                 </div>
@@ -768,8 +768,8 @@ export default function SupportForChildrenClient() {
                     "Problem-Solving",
                     "Social Confidence",
                   ].map((milestone, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-[#384347]">
-                      <div className="w-6 h-6 rounded-full bg-[#7ED1ED]/30 text-[#212529] flex items-center justify-center shrink-0">
+                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-[#23493E]">
+                      <div className="w-6 h-6 rounded-full bg-[#7ED1ED]/30 text-[#17332B] flex items-center justify-center shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-muted-green" />
                       </div>
                       <span>{milestone}</span>
@@ -780,7 +780,7 @@ export default function SupportForChildrenClient() {
                 <div className="pt-2">
                   <a
                     href="#parent-guardian-form"
-                    className="block w-full py-3 rounded-xl bg-[#384347] hover:bg-black text-white font-bold text-center text-xs sm:text-sm shadow-md transition-all"
+                    className="block w-full py-3 rounded-xl bg-[#23493E] hover:bg-black text-white font-bold text-center text-xs sm:text-sm shadow-md transition-all"
                   >
                     Start Your Child&apos;s Journey &rarr;
                   </a>
@@ -792,16 +792,16 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 8. FREQUENTLY ASKED QUESTIONS (Exact Match to Section 11 of Odoo) */}
-      <section id="faq" className="py-16 sm:py-24 bg-[#FFFBF6] border-b border-[#384347]/10">
+      <section id="faq" className="py-16 sm:py-24 bg-[#FFFBF6] border-b border-[#23493E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Questions Accordion */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#384347] text-xs font-bold tracking-wider uppercase mb-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#23493E] text-xs font-bold tracking-wider uppercase mb-3">
                   Clarifications &amp; Help
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#384347]">
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#23493E]">
                   Frequently Asked Questions
                 </h2>
               </div>
@@ -812,22 +812,22 @@ export default function SupportForChildrenClient() {
                   return (
                     <div
                       key={idx}
-                      className="bg-white rounded-2xl border border-[#384347]/10 overflow-hidden shadow-2xs transition-all"
+                      className="bg-white rounded-2xl border border-[#23493E]/10 overflow-hidden shadow-2xs transition-all"
                     >
                       <button
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-[#384347] hover:text-black transition-colors"
+                        className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-[#23493E] hover:text-black transition-colors"
                       >
                         <span className="text-base sm:text-lg">{faq.q}</span>
                         <ChevronDown
-                          className={`w-5 h-5 text-[#384347]/60 shrink-0 transition-transform duration-200 ${
-                            isOpen ? "rotate-180 text-[#384347]" : ""
+                          className={`w-5 h-5 text-[#23493E]/60 shrink-0 transition-transform duration-200 ${
+                            isOpen ? "rotate-180 text-[#23493E]" : ""
                           }`}
                         />
                       </button>
 
                       {isOpen && (
-                        <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-[#384347]/85 border-t border-[#384347]/5 leading-relaxed">
+                        <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-[#23493E]/85 border-t border-[#23493E]/5 leading-relaxed">
                           <p>{faq.a}</p>
                         </div>
                       )}
@@ -859,17 +859,17 @@ export default function SupportForChildrenClient() {
       {/* 9. GUARDIAN CONSULTATION & ENQUIRY FORM */}
       <section
         id="parent-guardian-form"
-        className="py-16 sm:py-24 bg-white border-b border-[#384347]/10"
+        className="py-16 sm:py-24 bg-white border-b border-[#23493E]/10"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-3">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#384347] text-xs font-bold tracking-wider uppercase">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#7ED1ED]/20 text-[#23493E] text-xs font-bold tracking-wider uppercase">
               Parent &amp; Guardian Support
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#384347]">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#23493E]">
               Enquire for Your Child
             </h2>
-            <p className="text-sm sm:text-base text-[#384347]/80 max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-[#23493E]/80 max-w-xl mx-auto leading-relaxed">
               Fill out this confidential enquiry form. Our lead educator will connect with you via WhatsApp to understand your child&apos;s specific needs and recommend the right cohort.
             </p>
           </div>
@@ -880,13 +880,13 @@ export default function SupportForChildrenClient() {
       </section>
 
       {/* 10. EXACT ODOO FOOTER (Dual Branding & Email Contacts) */}
-      <footer className="bg-[#FFFBF6] pt-16 pb-12 border-t border-[#384347]/10 text-[#384347]">
+      <footer className="bg-[#FFFBF6] pt-16 pb-12 border-t border-[#23493E]/10 text-[#23493E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
             {/* Pages Navigation */}
             <div className="lg:col-span-3 space-y-4">
-              <h5 className="font-serif font-bold text-lg text-[#384347]">Pages</h5>
-              <ul className="space-y-2 text-sm text-[#384347]/80">
+              <h5 className="font-serif font-bold text-lg text-[#23493E]">Pages</h5>
+              <ul className="space-y-2 text-sm text-[#23493E]/80">
                 <li>
                   <Link href="/support-for-children" className="hover:text-black hover:underline transition-colors">
                     Home
@@ -912,12 +912,12 @@ export default function SupportForChildrenClient() {
 
             {/* Direct Contact Info */}
             <div className="lg:col-span-5 space-y-4">
-              <h5 className="font-serif font-bold text-lg text-[#384347]">Contact Us</h5>
+              <h5 className="font-serif font-bold text-lg text-[#23493E]">Contact Us</h5>
               <div className="space-y-2 text-sm">
                 <div>
                   <a
                     href="mailto:thesocialconfidencelab@gmail.com"
-                    className="inline-flex items-center gap-2 text-[#384347] hover:text-black hover:underline font-medium transition-colors"
+                    className="inline-flex items-center gap-2 text-[#23493E] hover:text-black hover:underline font-medium transition-colors"
                   >
                     <Mail className="w-4 h-4 text-muted-green" />
                     <span>thesocialconfidencelab@gmail.com</span>
@@ -926,7 +926,7 @@ export default function SupportForChildrenClient() {
                 <div>
                   <a
                     href="mailto:theinnercompass23.info@gmail.com"
-                    className="inline-flex items-center gap-2 text-[#384347] hover:text-black hover:underline font-medium transition-colors"
+                    className="inline-flex items-center gap-2 text-[#23493E] hover:text-black hover:underline font-medium transition-colors"
                   >
                     <Mail className="w-4 h-4 text-muted-green" />
                     <span>theinnercompass23.info@gmail.com</span>
@@ -959,11 +959,11 @@ export default function SupportForChildrenClient() {
                 />
               </div>
 
-              {/* SCOUT Circular Emblem Logo */}
-              <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#384347]/15 bg-white p-1 shadow-xs">
+              {/* S.C.O.U.T Circular Emblem Logo */}
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#23493E]/15 bg-white p-1 shadow-xs">
                 <Image
                   src="/scl/scout-logo-clean.png"
-                  alt="SCOUT — Social Confidence Oration & Unfolding Talents"
+                  alt="S.C.O.U.T — Social Confidence Oration & Unfolding Talents"
                   fill
                   sizes="80px"
                   className="object-contain"
@@ -973,7 +973,7 @@ export default function SupportForChildrenClient() {
           </div>
 
           {/* Subfooter */}
-          <div className="border-t border-[#384347]/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#384347]/70">
+          <div className="border-t border-[#23493E]/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#23493E]/70">
             <p className="font-medium">
               Powered by TheInnerCompass23
             </p>
@@ -986,7 +986,7 @@ export default function SupportForChildrenClient() {
                 href="https://codeorbit.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline text-[#384347]/80 font-medium"
+                className="hover:underline text-[#23493E]/80 font-medium"
               >
                 created by codeorbit.cloud
               </a>

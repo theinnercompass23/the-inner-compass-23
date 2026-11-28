@@ -557,7 +557,7 @@ export default function SupportRequestForm() {
                   href="/support-for-children"
                   className="font-semibold text-muted-green hover:underline flex items-center gap-1"
                 >
-                  Visit SCOUT (Children) &rarr;
+                  Visit S.C.O.U.T (Children) &rarr;
                 </Link>
               </div>
 

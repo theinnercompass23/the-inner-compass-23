@@ -12,7 +12,7 @@ export default function Footer() {
   const pathname = usePathname();
   const [openSection, setOpenSection] = useState<string | null>(null);
 
-  // Dedicated children support page uses its own isolated SCOUT footer
+  // Dedicated children support page uses its own isolated S.C.O.U.T footer
   const isChildrenPage = pathname === "/support-for-children" || pathname === "/scout";
   if (isChildrenPage) {
     return null;
@@ -48,7 +48,7 @@ export default function Footer() {
     { label: "Countries Directory", href: "/countries" },
     { label: "Support Topics Hub", href: "/support-topics" },
     { label: "Articles & Perspectives", href: "/articles" },
-    { label: "SCOUT (Children Support)", href: "/support-for-children" },
+    { label: "S.C.O.U.T (Children Support)", href: "/support-for-children" },
     { label: "Spotify Podcast", href: "https://open.spotify.com/episode/3Ard2e43YuXqp0Vk4UXBs7" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
@@ -227,7 +227,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-dark-charcoal">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-dark-charcoal">Terms of Service</Link>
-            <Link href="/support-for-children" className="hover:text-dark-charcoal">SCOUT (Children)</Link>
+            <Link href="/support-for-children" className="hover:text-dark-charcoal">S.C.O.U.T (Children)</Link>
             <Link href="/contact" className="hover:text-dark-charcoal">Contact</Link>
           </div>
         </div>
